@@ -1,0 +1,16 @@
+speeches:
+  name: speeches
+  description: Some of the greatest words ever spoken.
+  cover: assets/images/speeches.jpg
+getting-started:
+  name: getting-started
+  description: False
+  cover: False
+algorithm:
+  name: algorithm
+  description: False
+  cover: False
+guide:
+  name: guide
+  description: A series of Guide.
+  cover: False
