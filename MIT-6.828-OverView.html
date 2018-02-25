@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MIT 6.828 OverView" />
-    <meta property="og:description" content="Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (&quot;Applying 6.033&quot;) What do applications want from an O/S? Abstract the hardware for convenience and portability Multiplex the hardware among" />
+    <meta property="og:description" content="Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (“Applying 6.033”) What do applications want from an O/S? Abstract the hardware for convenience and portability Multiplex the hardware among" />
     <meta property="og:url" content="http://localhost:4000/MIT-6.828-OverView" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Guide" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MIT 6.828 OverView" />
-    <meta name="twitter:description" content="Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (&quot;Applying 6.033&quot;) What do applications want from an O/S? Abstract the hardware for convenience and portability Multiplex the hardware among" />
+    <meta name="twitter:description" content="Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (“Applying 6.033”) What do applications want from an O/S? Abstract the hardware for convenience and portability Multiplex the hardware among" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/MIT-6.828-OverView"
     },
-    "description": "Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (&quot;Applying 6.033&quot;) What do applications want from an O/S? Abstract the hardware for convenience and portability Multiplex the hardware among"
+    "description": "Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (“Applying 6.033”) What do applications want from an O/S? Abstract the hardware for convenience and portability Multiplex the hardware among"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="MIT 6.828 OverView" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -172,92 +184,94 @@ into the {body} of the default.hbs template -->
                     <h2 id="description">Description</h2>
 
 <ul>
-<li><p>6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。<br></p></li>
-<li><p><a href="https://pdos.csail.mit.edu/6.828/2017/schedule.html">schedule</a><br></p></li>
+  <li>
+    <p>6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。<br /></p>
+  </li>
+  <li>
+    <p><a href="https://pdos.csail.mit.edu/6.828/2017/schedule.html">schedule</a><br /></p>
+  </li>
 </ul>
 
-<h2 id="6-828-goals">6.828 goals</h2>
+<h2 id="6828-goals">6.828 goals</h2>
 
 <ul>
-<li>Understand operating systems in detail by designing and implementing a small O/S <br></li>
-<li>Hands-on experience with building systems  (&quot;Applying 6.033&quot;) <br></li>
+  <li>Understand operating systems in detail by designing and implementing a small O/S <br /></li>
+  <li>Hands-on experience with building systems  (“Applying 6.033”) <br /></li>
 </ul>
 
-<h2 id="what-do-applications-want-from-an-o-s">What do applications want from an O/S?</h2>
+<h2 id="what-do-applications-want-from-an-os">What do applications want from an O/S?</h2>
 
 <ul>
-<li>Abstract the hardware for convenience and portability<br></li>
-<li>Multiplex the hardware among multiple applications<br></li>
-<li>Isolate applications to contain bugs<br></li>
-<li>Allow sharing among applications<br></li>
+  <li>Abstract the hardware for convenience and portability<br /></li>
+  <li>Multiplex the hardware among multiple applications<br /></li>
+  <li>Isolate applications to contain bugs<br /></li>
+  <li>Allow sharing among applications<br /></li>
 </ul>
 
 <h2 id="what-is-an-os">What is an OS?</h2>
 
 <ul>
-<li>e.g. OSX, Windows, Linux<br></li>
-<li>the small view: a h/w management library<br></li>
-<li>the big view: physical machine -&gt; abstract one w/ better properties<br></li>
+  <li>e.g. OSX, Windows, Linux<br /></li>
+  <li>the small view: a h/w management library<br /></li>
+  <li>the big view: physical machine -&gt; abstract one w/ better properties<br /></li>
 </ul>
 
 <h2 id="organization-layered-picture">Organization: layered picture</h2>
-
 <ul>
-<li>h/w: CPU, mem, disk<br></li>
-<li>kernel: [various services]<br></li>
-<li>user: applications, e.g. vi and gcc<br></li>
-<li>we care a lot about the interfaces and internel kernel structure<br></li>
+  <li>h/w: CPU, mem, disk<br /></li>
+  <li>kernel: [various services]<br /></li>
+  <li>user: applications, e.g. vi and gcc<br /></li>
+  <li>we care a lot about the interfaces and internel kernel structure<br /></li>
 </ul>
 
-<h2 id="what-services-does-an-o-s-kernel-typically-provide">What services does an O/S kernel typically provide?</h2>
-
+<h2 id="what-services-does-an-os-kernel-typically-provide">What services does an O/S kernel typically provide?</h2>
 <ul>
-<li>processes<br></li>
-<li>memory<br></li>
-<li>file contents<br></li>
-<li>directories and file names<br></li>
-<li>security<br></li>
-<li>many others: users, IPC, network, time, terminals<br></li>
+  <li>processes<br /></li>
+  <li>memory<br /></li>
+  <li>file contents<br /></li>
+  <li>directories and file names<br /></li>
+  <li>security<br /></li>
+  <li>many others: users, IPC, network, time, terminals<br /></li>
 </ul>
 
-<h2 id="what-does-an-o-s-abstraction-look-like">What does an O/S abstraction look like?</h2>
-
+<h2 id="what-does-an-os-abstraction-look-like">What does an O/S abstraction look like?</h2>
 <ul>
-<li>Applications only see them via system calls<br></li>
-<li>Examples, from UNIX / Linux:<br>
-<code class="prettyprint">c
-fd = open(&quot;out&quot;, 1);
-write(fd, &quot;hello\n&quot;, 6);
-pid = fork();
-</code></li>
+  <li>Applications only see them via system calls<br /></li>
+  <li>Examples, from UNIX / Linux:<br />
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">"out"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="s">"hello</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+  <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
 
-<h2 id="why-is-o-s-design-implementation-hard-interesting">Why is O/S design/implementation hard/interesting?</h2>
-
+<h2 id="why-is-os-designimplementation-hardinteresting">Why is O/S design/implementation hard/interesting?</h2>
 <ul>
-<li>the environment is unforgiving: weird h/w, no debugger<br></li>
-<li>it must be efficient (thus low-level?)<br>
-...but abstract/portable (thus high-level?)<br></li>
-<li>powerful (thus many features?)<br>
-...but simple (thus a few composable building blocks?)<br></li>
-<li>features interact: <code class="prettyprint">fd = open(); ...; fork()</code><br></li>
-<li>behaviors interact: CPU priority vs memory allocator.<br></li>
-<li>open problems: security, multi-core<br></li>
+  <li>the environment is unforgiving: weird h/w, no debugger<br /></li>
+  <li>it must be efficient (thus low-level?)<br />
+  …but abstract/portable (thus high-level?)<br /></li>
+  <li>powerful (thus many features?)<br />
+  …but simple (thus a few composable building blocks?)<br /></li>
+  <li>features interact: <code class="highlighter-rouge">fd = open(); ...; fork()</code><br /></li>
+  <li>behaviors interact: CPU priority vs memory allocator.<br /></li>
+  <li>open problems: security, multi-core<br /></li>
 </ul>
 
 <h2 id="my-system-information">My System Information</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">Distributor ID: Ubuntu
-Description:    Ubuntu 14.04.5 LTS
-Release:        14.04
-Codename:       trusty
-</code></pre></div>
-<h3 id="start-your-journey">Start your journey !</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.5 LTS
+Release:		14.04
+Codename:		trusty
+</code></pre></div></div>
+
+<h3 id="start-your-journey-">Start your journey !</h3>
 
 <figure>
-    <a href="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"><img src="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"></a>
-    <figcaption>
-        fighting.
-    </figcaption>
+	<a href="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"><img src="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg" /></a>
+	<figcaption>
+		fighting.
+	</figcaption>
 </figure>
 
                 </div>
@@ -308,6 +322,28 @@ Codename:       trusty
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -506,7 +542,7 @@ Codename:       trusty
                     <h2 class="post-card-title">初识连分数</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 \(r\)，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 \(r\) 为有理数，那么当小数部分为 \(0\) 时，过程中止。 连分数一般简写作： \( x = [a_0;a_1,a_2,a_3]\) For example : \(3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 \) \(4.082 = 4 + 0.082,</p>
+                    <p>Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 $r$，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 $r$ 为有理数，那么当小数部分为 $0$ 时，过程中止。 连分数一般简写作： $ x = [a_0;a_1,a_2,a_3]$ For example : $3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 $ $4.082 = 4 + 0.082,</p>
                 </section>
             </a>
             <footer class="post-card-meta">

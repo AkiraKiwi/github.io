@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,9 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="About" />
-    <meta property="og:description" content="Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time. > If you'd like to set up a site like" />
+    <meta property="og:description" content="drone is a personal publishing platform designed for modern post. 
+
+> If you'd like to set up a site like this for yourself, head over to [drone.org](https://github.com/AkiraKiwi/github.io) and give a try!" />
     <meta property="og:url" content="http://localhost:4000/about/" />
     <meta property="og:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -40,7 +53,9 @@
     <meta property="article:modified_time" content="" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About" />
-    <meta name="twitter:description" content="Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time. > If you'd like to set up a site like" />
+    <meta name="twitter:description" content="drone is a personal publishing platform designed for modern post. 
+
+> If you'd like to set up a site like this for yourself, head over to [drone.org](https://github.com/AkiraKiwi/github.io) and give a try!" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -70,7 +85,9 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/about/"
     },
-    "description": "Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time. > If you'd like to set up a site like"
+    "description": "drone is a personal publishing platform designed for modern post. 
+
+> If you'd like to set up a site like this for yourself, head over to [drone.org](https://github.com/AkiraKiwi/github.io) and give a try!"
 }
     </script>
 
@@ -85,6 +102,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="About" href="/feed.xml" />
 
+    
 
 </head>
 <body class="page-template">
@@ -151,15 +169,11 @@ into the {body} of the default.hbs template -->
             
 
             <section class="post-full-content">
-                <p>Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time.</p>
+                <p>drone is a personal publishing platform designed for modern post.</p>
 
 <blockquote>
-<p>If you&#39;d like to set up a site like this for yourself, head over to <a href="https://ghost.org/">Ghost.org</a> and start a free 14 day trial to give Ghost a try!</p>
+  <p>If you’d like to set up a site like this for yourself, head over to <a href="https://github.com/AkiraKiwi/github.io">drone.org</a> and give a try!</p>
 </blockquote>
-
-<p>If you&#39;re a developer: Ghost is a completely open source (MIT) Node.js application built on a JSON API with an Ember.js admin client. It works with MySQL and SQLite, and is publicly available <a href="https://github.com/TryGhost/ghost">on Github</a>.</p>
-
-<p>If you need help with using Ghost, you&#39;ll find a ton of useful articles on <a href="https://help.ghost.org/">our knowledgebase</a>, as well as extensive <a href="https://docs.ghost.org/">developer documentation</a>.</p>
 
             </section>
 

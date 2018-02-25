@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Codeforces Educational Round #23" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the Educational Round #23 of the codeforces Problem C 给出两个整数 \(n,s\)， 设 \(n\) 的数位和为 \(ds\)，求在区间 \([1,n]\) 之间满足 \( det = (x-ds)≥s \) 的数 \(x\) 有多少个？ 数据范围：\( 1 ≤ n,s ≤ 10^{18}\) Solution 1 通过计算我们可以发现 \( det\) 每间隔 \(10\) 个数增加一次，整体上是递增的，那么我们可以在区间 \([1,n]\) 内通过二分查找出第一个满足 \(det&gt;=s\)的数 \(x\)，那么答案就是\(n-x+1\) AC code" />
+    <meta property="og:description" content="Contest Information source: It’s from the Educational Round #23 of the codeforces Problem C 给出两个整数 $n,s$， 设 $n$ 的数位和为 $ds$，求在区间 $[1,n]$ 之间满足 $ det = (x-ds)≥s $ 的数 $x$ 有多少个？ 数据范围：$ 1 ≤ n,s ≤ 10^{18}$ Solution 1 通过计算我们可以发现 $ det$ 每间隔 $10$ 个数增加一次，整体上是递增的，那么我们可以在区间 $[1,n]$ 内通过二分查找出第一个满足 $det&gt;=s$的数 $x$，那么答案就是$n-x+1$ AC code" />
     <meta property="og:url" content="http://localhost:4000/CodeForces-Educational-Round-23" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Codeforces Educational Round #23" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the Educational Round #23 of the codeforces Problem C 给出两个整数 \(n,s\)， 设 \(n\) 的数位和为 \(ds\)，求在区间 \([1,n]\) 之间满足 \( det = (x-ds)≥s \) 的数 \(x\) 有多少个？ 数据范围：\( 1 ≤ n,s ≤ 10^{18}\) Solution 1 通过计算我们可以发现 \( det\) 每间隔 \(10\) 个数增加一次，整体上是递增的，那么我们可以在区间 \([1,n]\) 内通过二分查找出第一个满足 \(det&gt;=s\)的数 \(x\)，那么答案就是\(n-x+1\) AC code" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the Educational Round #23 of the codeforces Problem C 给出两个整数 $n,s$， 设 $n$ 的数位和为 $ds$，求在区间 $[1,n]$ 之间满足 $ det = (x-ds)≥s $ 的数 $x$ 有多少个？ 数据范围：$ 1 ≤ n,s ≤ 10^{18}$ Solution 1 通过计算我们可以发现 $ det$ 每间隔 $10$ 个数增加一次，整体上是递增的，那么我们可以在区间 $[1,n]$ 内通过二分查找出第一个满足 $det&gt;=s$的数 $x$，那么答案就是$n-x+1$ AC code" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/CodeForces-Educational-Round-23"
     },
-    "description": "Contest Information source: It&#39;s from the Educational Round #23 of the codeforces Problem C 给出两个整数 \(n,s\)， 设 \(n\) 的数位和为 \(ds\)，求在区间 \([1,n]\) 之间满足 \( det = (x-ds)≥s \) 的数 \(x\) 有多少个？ 数据范围：\( 1 ≤ n,s ≤ 10^{18}\) Solution 1 通过计算我们可以发现 \( det\) 每间隔 \(10\) 个数增加一次，整体上是递增的，那么我们可以在区间 \([1,n]\) 内通过二分查找出第一个满足 \(det&gt;=s\)的数 \(x\)，那么答案就是\(n-x+1\) AC code"
+    "description": "Contest Information source: It’s from the Educational Round #23 of the codeforces Problem C 给出两个整数 $n,s$， 设 $n$ 的数位和为 $ds$，求在区间 $[1,n]$ 之间满足 $ det = (x-ds)≥s $ 的数 $x$ 有多少个？ 数据范围：$ 1 ≤ n,s ≤ 10^{18}$ Solution 1 通过计算我们可以发现 $ det$ 每间隔 $10$ 个数增加一次，整体上是递增的，那么我们可以在区间 $[1,n]$ 内通过二分查找出第一个满足 $det&gt;=s$的数 $x$，那么答案就是$n-x+1$ AC code"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="Codeforces Educational Round #23" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,17 +183,17 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://codeforces.com/contest/817">It&#39;s from the Educational Round #23 of the codeforces</a></p>
+<p>source: <a href="http://codeforces.com/contest/817">It’s from the Educational Round #23 of the codeforces</a></p>
 
 <h2 id="problem-c">Problem C</h2>
 
-<p>给出两个整数 \(n,s\)， 设 \(n\) 的数位和为 \(ds\)，求在区间 \([1,n]\) 之间满足 \( det = (x-ds)≥s \) 的数 \(x\) 有多少个？<br></p>
+<p>给出两个整数 $n,s$， 设 $n$ 的数位和为 $ds$，求在区间 $[1,n]$ 之间满足 $ det = (x-ds)≥s $ 的数 $x$ 有多少个？<br /></p>
 
-<p>数据范围：\( 1 ≤ n,s ≤ 10^{18}\) <br></p>
+<p>数据范围：$ 1 ≤ n,s ≤ 10^{18}$ <br /></p>
 
 <h2 id="solution-1">Solution 1</h2>
 
-<p>通过计算我们可以发现 \( det\) 每间隔 \(10\) 个数增加一次，整体上是递增的，那么我们可以在区间 \([1,n]\) 内通过二分查找出第一个满足 \(det&gt;=s\)的数 \(x\)，那么答案就是\(n-x+1\)<br></p>
+<p>通过计算我们可以发现 $ det$ 每间隔 $10$ 个数增加一次，整体上是递增的，那么我们可以在区间 $[1,n]$ 内通过二分查找出第一个满足 $det&gt;=s$的数 $x$，那么答案就是$n-x+1$<br /></p>
 
 <h2 id="ac-code">AC code</h2>
 
@@ -223,9 +235,9 @@ into the {body} of the default.hbs template -->
 
 <h2 id="solution-2">Solution 2</h2>
 
-<p>因为数位和的范围为 \( [1,162]\)，那么我们可以枚举数位和，每次通过数位统计 \(DP\) 计算出区间 \([1,n]\) 内满足 \(det&gt;=s\) 且数位和等于枚举值的数的数量，累加就是答案<br></p>
+<p>因为数位和的范围为 $ [1,162]$，那么我们可以枚举数位和，每次通过数位统计 $DP$ 计算出区间 $[1,n]$ 内满足 $det&gt;=s$ 且数位和等于枚举值的数的数量，累加就是答案<br /></p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">LL</span> <span class="n">n</span><span class="p">,</span><span class="n">S</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">digits</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
@@ -289,17 +301,17 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-d">Problem D</h2>
 
-<p>给出一个长度为 \(n\) 的序列 \(a_1,...a_n\)，求序列的所有子区间中的最大值和最小值的差值的累加和。<br></p>
+<p>给出一个长度为 $n$ 的序列 $a_1,…a_n$，求序列的所有子区间中的最大值和最小值的差值的累加和。<br /></p>
 
-<p>数据范围：\( 1 ≤ n, a_i ≤ 10^6\) <br></p>
+<p>数据范围：$ 1 ≤ n, a_i ≤ 10^6$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>对于每一个数 \(a_i\)，我们计算出以它为最大值的最长区间：计算这个数左边第一个比它大的数 \(a_l\)，右边第一个比它大的数 \(a_r\)，然后这个数对该区间的贡献为 \( (i-l+1)\times (r-i+1)\times a_i\)，然后累加每个数作为最大值的贡献。<br></p>
+<p>对于每一个数 $a_i$，我们计算出以它为最大值的最长区间：计算这个数左边第一个比它大的数 $a_l$，右边第一个比它大的数 $a_r$，然后这个数对该区间的贡献为 $ (i-l+1)\times (r-i+1)\times a_i$，然后累加每个数作为最大值的贡献。<br /></p>
 
 <p>使用同样的方法计算出每个数作为最小值的贡献，用最大值的贡献减去最小值的贡献，即可得到答案</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-2">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="n">MaxN</span><span class="p">];</span>
@@ -437,6 +449,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -734,7 +768,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">支配集、覆盖集、独立集与匹配</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>1. 点支配集 支配与支配集：设无向图 \\(G(V,E)\\) ，顶点集合 \\(V' \\subseteq V \\) ，若对于 \\( \\forall v \\in (V-V') \\) ，\\( \\exists u \\in V'\\) ，使得 \\( (u,v) \\in E\\) ，则称 \\(u\\) **支配** \\(v\\) ，并称 \\(V'\\) 为</p>
+                    <p>1. 点支配集 支配与支配集：设无向图 $G(V,E)$ ，顶点集合 $V' \\subseteq V $ ，若对于 $ \\forall v \\in (V-V') $ ，$ \\exists u \\in V'$ ，使得 $ (u,v) \\in E$ ，则称 $u$ **支配** $v$ ，并称 $V'$ 为</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -777,7 +811,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">搜索入门</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆</p>
+                    <p>本文参考自”英雄哪里出来”的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆</p>
                 </section>
             </a>
             <footer class="post-card-meta">

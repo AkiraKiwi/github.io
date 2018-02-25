@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="WannaFly Round #2 B" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the nowcoder Description \(N\) 座城市围成一个环，标号为 \(1-N\)，给出 \(d[i]\) 表示第 \(i\) 到 \(i+1\) 座城市的距离。另外还有 \(M\) 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 \(Q\) 个查询，询问两座城市之间的最短路径长度。 数据范围：\( 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} \) Input 4 1 1 2 3 6 1 3 2 5 1" />
+    <meta property="og:description" content="Contest Information source: It’s from the nowcoder Description $N$ 座城市围成一个环，标号为 $1-N$，给出 $d[i]$ 表示第 $i$ 到 $i+1$ 座城市的距离。另外还有 $M$ 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 $Q$ 个查询，询问两座城市之间的最短路径长度。 数据范围：$ 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} $ Input 4 1 1 2 3 6 1 3 2 5 1" />
     <meta property="og:url" content="http://localhost:4000/WannaFly-Round-2-B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-01.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="WannaFly Round #2 B" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the nowcoder Description \(N\) 座城市围成一个环，标号为 \(1-N\)，给出 \(d[i]\) 表示第 \(i\) 到 \(i+1\) 座城市的距离。另外还有 \(M\) 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 \(Q\) 个查询，询问两座城市之间的最短路径长度。 数据范围：\( 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} \) Input 4 1 1 2 3 6 1 3 2 5 1" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the nowcoder Description $N$ 座城市围成一个环，标号为 $1-N$，给出 $d[i]$ 表示第 $i$ 到 $i+1$ 座城市的距离。另外还有 $M$ 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 $Q$ 个查询，询问两座城市之间的最短路径长度。 数据范围：$ 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} $ Input 4 1 1 2 3 6 1 3 2 5 1" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-01.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/WannaFly-Round-2-B"
     },
-    "description": "Contest Information source: It&#39;s from the nowcoder Description \(N\) 座城市围成一个环，标号为 \(1-N\)，给出 \(d[i]\) 表示第 \(i\) 到 \(i+1\) 座城市的距离。另外还有 \(M\) 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 \(Q\) 个查询，询问两座城市之间的最短路径长度。 数据范围：\( 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} \) Input 4 1 1 2 3 6 1 3 2 5 1"
+    "description": "Contest Information source: It’s from the nowcoder Description $N$ 座城市围成一个环，标号为 $1-N$，给出 $d[i]$ 表示第 $i$ 到 $i+1$ 座城市的距离。另外还有 $M$ 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 $Q$ 个查询，询问两座城市之间的最短路径长度。 数据范围：$ 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} $ Input 4 1 1 2 3 6 1 3 2 5 1"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="WannaFly Round #2 B" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,16 +183,16 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="https://www.nowcoder.com/acm/contest/17/B">It&#39;s from the nowcoder</a></p>
+<p>source: <a href="https://www.nowcoder.com/acm/contest/17/B">It’s from the nowcoder</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>\(N\) 座城市围成一个环，标号为 \(1-N\)，给出 \(d[i]\) 表示第 \(i\) 到 \(i+1\) 座城市的距离。另外还有 \(M\) 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 \(Q\) 个查询，询问两座城市之间的最短路径长度。<br></p>
+<p>$N$ 座城市围成一个环，标号为 $1-N$，给出 $d[i]$ 表示第 $i$ 到 $i+1$ 座城市的距离。另外还有 $M$ 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 $Q$ 个查询，询问两座城市之间的最短路径长度。<br /></p>
 
-<p>数据范围：\( 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} \) <br></p>
+<p>数据范围：$ 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤ 20; 1 ≤ d[i],w[i] ≤ 2^{30} $ <br /></p>
 
 <h2 id="input">Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">4 1                                                                                   
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4 1                                                                                   
 1 2 3 6
 1 3 2
 5
@@ -189,22 +201,25 @@ into the {body} of the default.hbs template -->
 1 3
 2 3
 4 3
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="output">Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">1                                                                                     
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1                                                                                     
 5
 2
 2
 3
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>如果没有捷径的话，那么求环上两个点的最短路，只需要比较一下从左边走和从右边走的距离即可。<br><br>
-若加上捷径的话，那么有可能走某些捷径到达目的地的距离会更短一些，那么假设从 \(u\) 到 \(v\) 的最短路需要经过某条捷径，那么最短路上一定也经过了这条捷径的端点。由于最多只有 \(20\) 条捷径，即最多 \(40\) 个捷径端点，那么我们可以预处理出以每个捷径端点为源点的最短路数组，然后对于每个查询，我们先取左边和右边的最短路长度，然后枚举捷径端点，从数组中取该端点到起点和终点的最短路长度，最后保留最小值为答案。<br><br>
-时间复杂度为 : \(O(MNlgN+QM)\)<br></p>
+<p>如果没有捷径的话，那么求环上两个点的最短路，只需要比较一下从左边走和从右边走的距离即可。<br />
+若加上捷径的话，那么有可能走某些捷径到达目的地的距离会更短一些，那么假设从 $u$ 到 $v$ 的最短路需要经过某条捷径，那么最短路上一定也经过了这条捷径的端点。由于最多只有 $20$ 条捷径，即最多 $40$ 个捷径端点，那么我们可以预处理出以每个捷径端点为源点的最短路数组，然后对于每个查询，我们先取左边和右边的最短路长度，然后枚举捷径端点，从数组中取该端点到起点和终点的最短路长度，最后保留最小值为答案。<br />
+时间复杂度为 : $O(MNlgN+QM)$<br /></p>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>                                                                       
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>                                                                       
 <span class="n">LL</span> <span class="n">d</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -247,7 +262,8 @@ into the {body} of the default.hbs template -->
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -296,6 +312,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -636,7 +674,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2015 Southwestern Europe Regional Contest (SWERC) B</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the kattis Description 用 \(26\) 个大写字母分别表示嫌疑人的代号，其中有三个人是 &quot;Black Vienna&quot;，除去这三个人后剩下的 \(23\) 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 \(n\) 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 \(n\) 次查询的基础上，求出 &quot;Black Vienna&quot; 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1</p>
+                    <p>Problem Information source: It’s from the kattis Description 用 $26$ 个大写字母分别表示嫌疑人的代号，其中有三个人是 “Black Vienna”，除去这三个人后剩下的 $23$ 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 $n$ 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 $n$ 次查询的基础上，求出 “Black Vienna” 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1</p>
                 </section>
             </a>
             <footer class="post-card-meta">

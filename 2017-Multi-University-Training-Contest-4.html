@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #4" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 \( d(n) \) 为正整数 \( n \) 的因数个数，要求计算 \( (\sum^r_{i=l}d(i^k))\ mod\ 998244353\) 数据范围：\( 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 \) Solution" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 $ d(n) $ 为正整数 $ n $ 的因数个数，要求计算 $ (\sum^r_{i=l}d(i^k))\ mod\ 998244353$ 数据范围：$ 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 $ Solution" />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-4" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #4" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 \( d(n) \) 为正整数 \( n \) 的因数个数，要求计算 \( (\sum^r_{i=l}d(i^k))\ mod\ 998244353\) 数据范围：\( 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 \) Solution" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 $ d(n) $ 为正整数 $ n $ 的因数个数，要求计算 $ (\sum^r_{i=l}d(i^k))\ mod\ 998244353$ 数据范围：$ 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 $ Solution" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-4"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 \( d(n) \) 为正整数 \( n \) 的因数个数，要求计算 \( (\sum^r_{i=l}d(i^k))\ mod\ 998244353\) 数据范围：\( 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 \) Solution"
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 $ d(n) $ 为正整数 $ n $ 的因数个数，要求计算 $ (\sum^r_{i=l}d(i^k))\ mod\ 998244353$ 数据范围：$ 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 $ Solution"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #4" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,22 +183,22 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+4&source=1&searchmode=source">The 2017 Multi-University Training Contest #4 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+4&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #4 from HDU OJ</a></p>
 
 <h2 id="problem-c">Problem C</h2>
 
-<p>定义 \( d(n) \) 为正整数 \( n \) 的因数个数，要求计算 \( (\sum^r_{i=l}d(i^k))\ mod\ 998244353\)  <br></p>
+<p>定义 $ d(n) $ 为正整数 $ n $ 的因数个数，要求计算 $ (\sum^r_{i=l}d(i^k))\ mod\ 998244353$  <br /></p>
 
-<p>数据范围：\( 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 \) <br></p>
+<p>数据范围：$ 1 ≤ T ≤ 15, 1 ≤ l ≤ r ≤ 10^{12}, r-l ≤ 10^{6}, 1 ≤ k ≤ 10^7 $ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>首先，\(d(n) = (r_1+1)(r_2+1)..(r_k+1), (n = p_1^{r_1}p_2^{r_2}...p_k^{r_k})\) 。<br><br>
-那么，我们需要知道每个数的质因子数的数量和种类，而单独对每个数进行质因子分解，最多可能需要遍历几万个质数，而区间长度最大为 \(10^6\) ，所以时间复杂度过不去。<br><br>
-我们思考，每次分解每一个数的时候都从头枚举一遍质数，而实际上很多质数都不能分解当前这个数，为了减少这种无用操作，我们可以改成枚举质数，然后判断它能分解哪些数：找到区间内第一个能被它分解的数，然后累加该质数得到的数都能被它分解。这样就可以省很多时间，不过由于我们只能找到 \(10^6\) 以内的素数，而数据范围为 \(1^{12}\)，所以可能枚举完素数后有的数还没有被分解完，但它只可能含有一个大于 \(10^6\) 的大质数，所以最后判断一下即可。<br></p>
+<p>首先，$d(n) = (r_1+1)(r_2+1)..(r_k+1), (n = p_1^{r_1}p_2^{r_2}…p_k^{r_k})$ 。<br />
+那么，我们需要知道每个数的质因子数的数量和种类，而单独对每个数进行质因子分解，最多可能需要遍历几万个质数，而区间长度最大为 $10^6$ ，所以时间复杂度过不去。<br />
+我们思考，每次分解每一个数的时候都从头枚举一遍质数，而实际上很多质数都不能分解当前这个数，为了减少这种无用操作，我们可以改成枚举质数，然后判断它能分解哪些数：找到区间内第一个能被它分解的数，然后累加该质数得到的数都能被它分解。这样就可以省很多时间，不过由于我们只能找到 $10^6$ 以内的素数，而数据范围为 $1^{12}$，所以可能枚举完素数后有的数还没有被分解完，但它只可能含有一个大于 $10^6$ 的大质数，所以最后判断一下即可。<br /></p>
 
 <h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">LL</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">LL</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">NICO</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">prime</span><span class="p">[</span><span class="n">NICO</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
 
@@ -250,21 +262,23 @@ into the {body} of the default.hbs template -->
         <span class="n">solve</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="problem-d">Problem D</h2>
 
-<p>给出一个序列 \( a_{1...n} \)，要求计算 \( \frac{size(l,r)}{r-l+1} \) 的最大值，其中 \(size(l,r)\) 为区间 \([l,r]\) 中不同数字的个数 <br></p>
+<p>给出一个序列 $ a_{1…n} $，要求计算 $ \frac{size(l,r)}{r-l+1} $ 的最大值，其中 $size(l,r)$ 为区间 $[l,r]$ 中不同数字的个数 <br /></p>
 
-<p>数据范围：\( 1 ≤ T ≤ 15, 1 ≤ n ≤ 6\times 10^{4}, 1 ≤ a_i ≤ n \) <br></p>
+<p>数据范围：$ 1 ≤ T ≤ 15, 1 ≤ n ≤ 6\times 10^{4}, 1 ≤ a_i ≤ n $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>这是一道很明显的分数规划问题，我们把最优值问题转换为可行性问题：二分答案判定解是否存在。<br></p>
+<p>这是一道很明显的分数规划问题，我们把最优值问题转换为可行性问题：二分答案判定解是否存在。<br /></p>
 
-<p>那么假设 \( ans = \frac{size(l,r)}{r-l+1} \)，将左右端点分开，得到 \( size(l,r)+ans\times l = ans \times (r+1) \)，所以对于每一个答案，每一个区间的 \(ans\times l\)  是固定的，我们只需要从左往右枚举右端点 \(r\)，同时使用线段树维护区间最小值 \( size(l,r)+ans\times l \) ：每次先查找 \(r\) 之前的区间的最小值，然后插入当前位置更新 \(size(l,r)\) ，直到找到一个最小值小于 \(  ans \times (r+1) \) 。<br></p>
+<p>那么假设 $ ans = \frac{size(l,r)}{r-l+1} $，将左右端点分开，得到 $ size(l,r)+ans\times l = ans \times (r+1) $，所以对于每一个答案，每一个区间的 $ans\times l$  是固定的，我们只需要从左往右枚举右端点 $r$，同时使用线段树维护区间最小值 $ size(l,r)+ans\times l $ ：每次先查找 $r$ 之前的区间的最小值，然后插入当前位置更新 $size(l,r)$ ，直到找到一个最小值小于 $  ans \times (r+1) $ 。<br /></p>
 
-<h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">check</span><span class="p">()</span>
+<h2 id="ac-code-1">AC Code</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">check</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">T</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
     <span class="n">CLR</span><span class="p">(</span><span class="n">pre</span><span class="p">);</span>
@@ -302,19 +316,20 @@ into the {body} of the default.hbs template -->
         <span class="n">solve</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="problem-e">Problem E</h2>
 
-<p>给出四个 \(checkpoint\)，其中 \(dis_{1,2}, dis_{2,3}, dis_{3,4}, dis_{4,1}\) 为它们之间的路径长度，问从 \(checkpoint \ 2\) 出发，沿着路径来回跑，最后回到起点时跑的总路径长度大于 \(k\) 的最小总路径长度。 <br></p>
+<p>给出四个 $checkpoint$，其中 $dis_{1,2}, dis_{2,3}, dis_{3,4}, dis_{4,1}$ 为它们之间的路径长度，问从 $checkpoint \ 2$ 出发，沿着路径来回跑，最后回到起点时跑的总路径长度大于 $k$ 的最小总路径长度。 <br /></p>
 
-<p>数据范围：\( 1 ≤ T ≤ 15, 1 ≤ K ≤ 10^{18}, 1 ≤ dis_{i,j} ≤ 30000 \) <br></p>
+<p>数据范围：$ 1 ≤ T ≤ 15, 1 ≤ K ≤ 10^{18}, 1 ≤ dis_{i,j} ≤ 30000 $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>问题相当于让你在图中利用这四条路径构造出一个能从起点出发最后回到起点的方案，由于任何一个方案加上 \(w = 2\times min(dis_{2,3}, dis_{1,2})\) 都能构成一个新的方案，所以我们只需要找到 \(mod\ w = j \) 的能构造出来的最小路径长度即可。</p>
+<p>问题相当于让你在图中利用这四条路径构造出一个能从起点出发最后回到起点的方案，由于任何一个方案加上 $w = 2\times min(dis_{2,3}, dis_{1,2})$ 都能构成一个新的方案，所以我们只需要找到 $mod\ w = j $ 的能构造出来的最小路径长度即可。</p>
 
-<h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
+<h2 id="ac-code-2">AC Code</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
 <span class="n">LL</span> <span class="n">K</span><span class="p">;</span>
 <span class="n">LL</span> <span class="n">d12</span><span class="p">,</span><span class="n">d23</span><span class="p">,</span><span class="n">d34</span><span class="p">,</span><span class="n">d41</span><span class="p">,</span><span class="n">Map</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">];</span>
 
@@ -380,7 +395,8 @@ into the {body} of the default.hbs template -->
         <span class="n">Dijkstra</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -429,6 +445,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -726,7 +764,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #5</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #5 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+5&source=1&searchmode=source) ## Problem A 给出 \\( A\_{1...n},\\ B\_{1...m},\\ k\_{1...q} \\)，求对于每一个 \\( k \\) 有多少对 \\( (i,j)满足，A\_i \\ mod \\ B\_j =</p>
+                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #5 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+5&source=1&searchmode=source) ## Problem A 给出 $ A\_{1...n},\\ B\_{1...m},\\ k\_{1...q} $，求对于每一个 $ k $ 有多少对 $ (i,j)满足，A\_i \\ mod \\ B\_j =</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -769,7 +807,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #3</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: The 2017 Multi-University Training Contest #3 from HDU OJ Problem C 给出一个序列 \(A_1, A_2,.., A_n \) ，定义 \(f(l,r,k)\) 为 \(A[l..r]\) 内的第 \(k\) 大数，且 \(k&gt;r-l+1,f(l,r,k)=0\)。给定 \(k\)，要求计算 \(\sum_{l=1}^n \sum_{r=l}^n f(l,r,k)\) 数据范围：\( 1</p>
+                    <p>Contest Information source: The 2017 Multi-University Training Contest #3 from HDU OJ Problem C 给出一个序列 $A_1, A_2,.., A_n $ ，定义 $f(l,r,k)$ 为 $A[l..r]$ 内的第 $k$ 大数，且 $k&gt;r-l+1,f(l,r,k)=0$。给定 $k$，要求计算 $\sum_{l=1}^n \sum_{r=l}^n f(l,r,k)$ 数据范围：$ 1</p>
                 </section>
             </a>
             <footer class="post-card-meta">

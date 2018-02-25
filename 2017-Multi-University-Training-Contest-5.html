@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #5" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 \( A_{1...n},\ B_{1...m},\ k_{1...q} \)，求对于每一个 \( k \) 有多少对 \( (i,j)满足，A_i \ mod \ B_j = k \) 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 $ A_{1…n},\ B_{1…m},\ k_{1…q} $，求对于每一个 $ k $ 有多少对 $ (i,j)满足，A_i \ mod \ B_j = k $ 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if" />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-5" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #5" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 \( A_{1...n},\ B_{1...m},\ k_{1...q} \)，求对于每一个 \( k \) 有多少对 \( (i,j)满足，A_i \ mod \ B_j = k \) 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 $ A_{1…n},\ B_{1…m},\ k_{1…q} $，求对于每一个 $ k $ 有多少对 $ (i,j)满足，A_i \ mod \ B_j = k $ 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-5"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 \( A_{1...n},\ B_{1...m},\ k_{1...q} \)，求对于每一个 \( k \) 有多少对 \( (i,j)满足，A_i \ mod \ B_j = k \) 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if"
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 $ A_{1…n},\ B_{1…m},\ k_{1…q} $，求对于每一个 $ k $ 有多少对 $ (i,j)满足，A_i \ mod \ B_j = k $ 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #5" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,20 +183,20 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+5&source=1&searchmode=source">The 2017 Multi-University Training Contest #5 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+5&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #5 from HDU OJ</a></p>
 
 <h2 id="problem-a">Problem A</h2>
 
-<p>给出 \( A_{1...n},\ B_{1...m},\ k_{1...q} \)，求对于每一个 \( k \) 有多少对 \( (i,j)满足，A_i  \ mod \ B_j = k \)  <br></p>
+<p>给出 $ A_{1…n},\ B_{1…m},\ k_{1…q} $，求对于每一个 $ k $ 有多少对 $ (i,j)满足，A_i  \ mod \ B_j = k $  <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if \ i ≠ j, \ A_i ≠ A_j, B_i ≠ B_j \) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,m,q,A_i,B_i ≤ 50000, 0 ≤ k_i ≤ max{B_i}, if \ i ≠ j, \ A_i ≠ A_j, B_i ≠ B_j $ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>因为数值范围不大， 所以我们可以把 \( A , B \) 都值域化，利用 \( bitset \) 存储， 从大到小枚举 \(k\) 统计答案，同时插入 \(B_i\) 。<br></p>
+<p>因为数值范围不大， 所以我们可以把 $ A , B $ 都值域化，利用 $ bitset $ 存储， 从大到小枚举 $k$ 统计答案，同时插入 $B_i$ 。<br /></p>
 
 <h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">t</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">B</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">k</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">t</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">B</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">k</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">bool</span> <span class="n">is_b</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span> <span class="n">is_k</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="n">bitset</span><span class="o">&lt;</span><span class="n">MaxN</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span> <span class="c1">//a串值域化A数组， b串值域化B数组
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
@@ -214,30 +226,32 @@ into the {body} of the default.hbs template -->
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">q</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">out</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span><span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span> 
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="problem-b">Problem B</h2>
 
-<p>给出 \( n \) 个字符串，求有多少个长度为 \( 2L \) 的串满足 \( \forall i ∈[1,\|s\|], s[i]≠s[\|s\|-i+1] \) 且包含给出的 \(n\) 个字符串 <br></p>
+<p>给出 $ n $ 个字符串，求有多少个长度为 $ 2L $ 的串满足 $ \forall i ∈[1,$s$], s[i]≠s[$s$-i+1] $ 且包含给出的 $n$ 个字符串 <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n ≤ 6, 1 ≤ L ≤ 100, 1 ≤ \|s_i\| ≤ 20 \) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n ≤ 6, 1 ≤ L ≤ 100, 1 ≤ $s_i$ ≤ 20 $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>当 \(L\) 小于 \(10\) 时，我们可以直接状压枚举所有字符串，然后在AC自动机里判断是否包含了给定串 。<br></p>
+<p>当 $L$ 小于 $10$ 时，我们可以直接状压枚举所有字符串，然后在AC自动机里判断是否包含了给定串 。<br /></p>
 
-<p>当 \(L\) 大于 \(10\) 时，我们定义 \( DP[i][stat][k1][k2] \) 为从中轴线往两边生成了 \(i\) 个字符，当前字符串的匹配状态为 \(stat\)，且左半边在AC自动机上匹配到 \(k1\) 节点， 右半边在AC自动机上匹配到 \(k2\) 节点的方案数。那么对于可能跨过中轴线的字符串，我们可以预先处理出 \(10\) 以内的结果，然后在这个基础上继续 \(DP\)。<br></p>
+<p>当 $L$ 大于 $10$ 时，我们定义 $ DP[i][stat][k1][k2] $ 为从中轴线往两边生成了 $i$ 个字符，当前字符串的匹配状态为 $stat$，且左半边在AC自动机上匹配到 $k1$ 节点， 右半边在AC自动机上匹配到 $k2$ 节点的方案数。那么对于可能跨过中轴线的字符串，我们可以预先处理出 $10$ 以内的结果，然后在这个基础上继续 $DP$。<br /></p>
 
-<p>P.S. AC自动机插入字符时正着插一次，反着插入一次，因为两边匹配的方向不一样。<br></p>
+<p>P.S. AC自动机插入字符时正着插一次，反着插入一次，因为两边匹配的方向不一样。<br /></p>
 
 <h2 id="problem-i">Problem I</h2>
 
-<p>求区间 \( [L,R] \) 内满足能够在 \( d\) 进制下表示成: <br>\(x = (A_1 A_2 .. A_m)_d,\  A_1 - A_m \ is\ a\ permutation\ of\ numbers\ from\ 0\ to\ d-1,\ d&gt;1 \) 的数的个数。 <br></p>
+<p>求区间 $ [L,R] $ 内满足能够在 $ d$ 进制下表示成: <br />$x = (A_1 A_2 .. A_m)_d,\  A_1 - A_m \ is\ a\ permutation\ of\ numbers\ from\ 0\ to\ d-1,\ d&gt;1 $ 的数的个数。 <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 20, 1 ≤ L ≤ R ≤ 10^{5000}, ANS\ mod\ 998244353 \) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 20, 1 ≤ L ≤ R ≤ 10^{5000}, ANS\ mod\ 998244353 $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>首先，原问题转换为求 \([1, x]\) 内的好数个数，做差就是区间答案。对于 \( n\) 进制下的任何一个好数 \(k\)，都有\( n^{n-1} &lt; k &lt; n^n \)，所以每一个进制下的好数范围都互不相交，那么我们只需要求出能表示出满足条件的 \(x\) 的最大的 \(d\) ，然后再用类似康拓展开的方法求出小于它的其它排列的数量就能得到答案。 </p>
+<p>首先，原问题转换为求 $[1, x]$ 内的好数个数，做差就是区间答案。对于 $ n$ 进制下的任何一个好数 $k$，都有$ n^{n-1} &lt; k &lt; n^n $，所以每一个进制下的好数范围都互不相交，那么我们只需要求出能表示出满足条件的 $x$ 的最大的 $d$ ，然后再用类似康拓展开的方法求出小于它的其它排列的数量就能得到答案。</p>
+
 
                 </div>
             </section>
@@ -287,6 +301,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -584,7 +620,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #6</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #6 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+6&source=1&searchmode=source) ## Problem A 给出 \\( N \\) 个字符串 \\(W\_i\\) 和 \\( Q \\) 个查询，每个查询包含两个字符串 \\(S\_i, P\_i\\)，要求输出在之前的 \\( N \\) 个串里，满足以\\(S\_i\\)为前缀，\\(P\_i\\)</p>
+                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #6 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+6&source=1&searchmode=source) ## Problem A 给出 $ N $ 个字符串 $W\_i$ 和 $ Q $ 个查询，每个查询包含两个字符串 $S\_i, P\_i$，要求输出在之前的 $ N $ 个串里，满足以$S\_i$为前缀，$P\_i$</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -627,7 +663,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #4</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 \( d(n) \) 为正整数 \( n \) 的因数个数，要求计算 \( (\sum^r_{i=l}d(i^k))\ mod\ 998244353\) 数据范围：\( 1 ≤ T ≤ 15,</p>
+                    <p>Contest Information source: The 2017 Multi-University Training Contest #4 from HDU OJ Problem C 定义 $ d(n) $ 为正整数 $ n $ 的因数个数，要求计算 $ (\sum^r_{i=l}d(i^k))\ mod\ 998244353$ 数据范围：$ 1 ≤ T ≤ 15,</p>
                 </section>
             </a>
             <footer class="post-card-meta">

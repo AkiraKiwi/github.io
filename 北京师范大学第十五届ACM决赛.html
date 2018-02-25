@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="北京师范大学第十五届ACM决赛" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 \(&gt;0.6*n\) 的队伍 现在有 \(n\) 支队伍参加比赛，第 \(i\) 支队伍的排名是 \(p_i\)， 接下来发送 \(q\) 个事件，分为两种 1. 给定 \( x, y(1≤x,y≤n) \)，表示第 \(x\) 支队伍的排名上升到 \(y\) 。 2. 给定 \( x, y(1≤x,y≤n) \)，查询 \([x,y]\) 区间内获得荣誉提名的队伍的数量。 数据范围：\( T ≤ 500, 1 ≤n≤50000, 1≤q≤50000\) Solution 首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为" />
+    <meta property="og:description" content="Contest Information source: It’s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 $&gt;0.6*n$ 的队伍 现在有 $n$ 支队伍参加比赛，第 $i$ 支队伍的排名是 $p_i$， 接下来发送 $q$ 个事件，分为两种 给定 $ x, y(1≤x,y≤n) $，表示第 $x$ 支队伍的排名上升到 $y$ 。 给定 $ x, y(1≤x,y≤n) $，查询 $[x,y]$ 区间内获得荣誉提名的队伍的数量。 数据范围：$ T ≤ 500, 1 ≤n≤50000, 1≤q≤50000$ Solution 首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为 $1$，然后用前缀和来做区间查询。 现在加入修改后，我们考虑修改产生的影响，因为队伍排名只会被直接往上提，那么只有在原来排名" />
     <meta property="og:url" content="http://localhost:4000/%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%BA%94%E5%B1%8AACM%E5%86%B3%E8%B5%9B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-01.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="北京师范大学第十五届ACM决赛" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 \(&gt;0.6*n\) 的队伍 现在有 \(n\) 支队伍参加比赛，第 \(i\) 支队伍的排名是 \(p_i\)， 接下来发送 \(q\) 个事件，分为两种 1. 给定 \( x, y(1≤x,y≤n) \)，表示第 \(x\) 支队伍的排名上升到 \(y\) 。 2. 给定 \( x, y(1≤x,y≤n) \)，查询 \([x,y]\) 区间内获得荣誉提名的队伍的数量。 数据范围：\( T ≤ 500, 1 ≤n≤50000, 1≤q≤50000\) Solution 首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 $&gt;0.6*n$ 的队伍 现在有 $n$ 支队伍参加比赛，第 $i$ 支队伍的排名是 $p_i$， 接下来发送 $q$ 个事件，分为两种 给定 $ x, y(1≤x,y≤n) $，表示第 $x$ 支队伍的排名上升到 $y$ 。 给定 $ x, y(1≤x,y≤n) $，查询 $[x,y]$ 区间内获得荣誉提名的队伍的数量。 数据范围：$ T ≤ 500, 1 ≤n≤50000, 1≤q≤50000$ Solution 首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为 $1$，然后用前缀和来做区间查询。 现在加入修改后，我们考虑修改产生的影响，因为队伍排名只会被直接往上提，那么只有在原来排名" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-01.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E4%BA%94%E5%B1%8AACM%E5%86%B3%E8%B5%9B"
     },
-    "description": "Contest Information source: It&#39;s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 \(&gt;0.6*n\) 的队伍 现在有 \(n\) 支队伍参加比赛，第 \(i\) 支队伍的排名是 \(p_i\)， 接下来发送 \(q\) 个事件，分为两种 1. 给定 \( x, y(1≤x,y≤n) \)，表示第 \(x\) 支队伍的排名上升到 \(y\) 。 2. 给定 \( x, y(1≤x,y≤n) \)，查询 \([x,y]\) 区间内获得荣誉提名的队伍的数量。 数据范围：\( T ≤ 500, 1 ≤n≤50000, 1≤q≤50000\) Solution 首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为"
+    "description": "Contest Information source: It’s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 $&gt;0.6*n$ 的队伍 现在有 $n$ 支队伍参加比赛，第 $i$ 支队伍的排名是 $p_i$， 接下来发送 $q$ 个事件，分为两种 给定 $ x, y(1≤x,y≤n) $，表示第 $x$ 支队伍的排名上升到 $y$ 。 给定 $ x, y(1≤x,y≤n) $，查询 $[x,y]$ 区间内获得荣誉提名的队伍的数量。 数据范围：$ T ≤ 500, 1 ≤n≤50000, 1≤q≤50000$ Solution 首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为 $1$，然后用前缀和来做区间查询。 现在加入修改后，我们考虑修改产生的影响，因为队伍排名只会被直接往上提，那么只有在原来排名"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="北京师范大学第十五届ACM决赛" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,46 +183,57 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="https://www.nowcoder.com/acm/contest/3#question">It&#39;s from the nowcoder</a></p>
+<p>source: <a href="https://www.nowcoder.com/acm/contest/3#question">It’s from the nowcoder</a></p>
 
 <h2 id="problem-h">Problem H</h2>
 
-<p>定义ACM竞赛中 荣誉提名奖 颁给总排名 \(&gt;0.6*n\) 的队伍 <br></p>
+<p>定义ACM竞赛中 荣誉提名奖 颁给总排名 $&gt;0.6*n$ 的队伍 <br /></p>
 
-<p>现在有 \(n\) 支队伍参加比赛，第 \(i\) 支队伍的排名是 \(p_i\)， 接下来发送 \(q\) 个事件，分为两种 <br><br>
-1. 给定 \( x, y(1≤x,y≤n) \)，表示第 \(x\) 支队伍的排名上升到 \(y\) 。<br><br>
-2. 给定 \( x, y(1≤x,y≤n) \)，查询 \([x,y]\) 区间内获得荣誉提名的队伍的数量。  <br></p>
+<p>现在有 $n$ 支队伍参加比赛，第 $i$ 支队伍的排名是 $p_i$， 接下来发送 $q$ 个事件，分为两种 <br /></p>
+<ol>
+  <li>给定 $ x, y(1≤x,y≤n) $，表示第 $x$ 支队伍的排名上升到 $y$ 。<br /></li>
+  <li>给定 $ x, y(1≤x,y≤n) $，查询 $[x,y]$ 区间内获得荣誉提名的队伍的数量。  <br /></li>
+</ol>
 
-<p>数据范围：\( T ≤ 500, 1 ≤n≤50000, 1≤q≤50000\) <br>   </p>
+<p>数据范围：$ T ≤ 500, 1 ≤n≤50000, 1≤q≤50000$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为 \(1\)，然后用前缀和来做区间查询。<br></p>
+<p>首先，如果不考虑修改，只查询区间内荣誉提名队伍数量，我们很容易想到的是以队伍序号为下标，如果被荣誉提名则标记为 $1$，然后用前缀和来做区间查询。<br /></p>
 
-<p>现在加入修改后，我们考虑修改产生的影响，因为队伍排名只会被直接往上提，那么只有在原来排名 \(&gt;0.6*n\) 的队伍被直接提升到 \(&lt;=0.6*n\) 时，才会改变荣誉提名的队伍：排名为 \(x\) 的队伍会从荣誉提名的队伍中删除，排名在 \(0.6*n\) 的队伍会被加入到 荣誉提名的队伍。<br></p>
+<p>现在加入修改后，我们考虑修改产生的影响，因为队伍排名只会被直接往上提，那么只有在原来排名 $&gt;0.6*n$ 的队伍被直接提升到 $&lt;=0.6*n$ 时，才会改变荣誉提名的队伍：排名为 $x$ 的队伍会从荣誉提名的队伍中删除，排名在 $0.6*n$ 的队伍会被加入到 荣誉提名的队伍。<br /></p>
 
-<p>单点修改+区间查询，显然是用树状数组来实现了。接下来我们只需要解决对于给定的一个队伍序号，如何查询其排名，对于给定的一个排名，我们如何查询其队伍序号，这部分就可以用各种平衡树来实现。<br></p>
+<p>单点修改+区间查询，显然是用树状数组来实现了。接下来我们只需要解决对于给定的一个队伍序号，如何查询其排名，对于给定的一个排名，我们如何查询其队伍序号，这部分就可以用各种平衡树来实现。<br /></p>
 
-<p>下面简单说一下 \(treap\) 的做法：<br></p>
-
-<ul>
-<li><p>首先，我们按照排名排序，将 \(n\) 支队伍按序合并建立 \(treap\)，由于二叉树的性质，\(treap\) 的中序遍历就是排名顺序。<br></p></li>
-<li><p>在建立节点的过程中，我们保存下来每支队伍的序号和它在 \(treap\) 中结点的序号，这样我们就可以直接通过队伍序号找到它在 \(treap\) 中的位置了。<br></p></li>
-<li><p>查询操作：<br></p>
+<p>下面简单说一下 $treap$ 的做法：<br /></p>
 
 <ul>
-<li>给定队伍序号，查询队伍排名：通过序号找到该队伍在 \(treap\) 中的位置。由于二叉树的中序遍历即排名顺序，那么从该节点处一直往上回溯，同时累加左子树的大小，直到根节点。最后结果就是该队伍的排名。<br></li>
-<li>给定队伍排名，查询队伍序号：同样利用中序遍历，从根节点往下搜索，找到对应排名的节点，节点处存储的就是队伍序号。<br></li>
-</ul></li>
-<li><p>修改操作：<br></p>
+  <li>
+    <p>首先，我们按照排名排序，将 $n$ 支队伍按序合并建立 $treap$，由于二叉树的性质，$treap$ 的中序遍历就是排名顺序。<br /></p>
+  </li>
+  <li>
+    <p>在建立节点的过程中，我们保存下来每支队伍的序号和它在 $treap$ 中结点的序号，这样我们就可以直接通过队伍序号找到它在 $treap$ 中的位置了。<br /></p>
+  </li>
+  <li>
+    <p>查询操作：<br /></p>
 
-<ul>
-<li>将序号为 \(x\) 的队伍提升到排名为 \(y\)：先查询对应序号的队伍的排名，然后在 \(treap\) 中提出 \(rank_x\) 的节点，把它拎到 \(y\) 处即可。</li>
-</ul></li>
+    <ul>
+      <li>给定队伍序号，查询队伍排名：通过序号找到该队伍在 $treap$ 中的位置。由于二叉树的中序遍历即排名顺序，那么从该节点处一直往上回溯，同时累加左子树的大小，直到根节点。最后结果就是该队伍的排名。<br /></li>
+      <li>给定队伍排名，查询队伍序号：同样利用中序遍历，从根节点往下搜索，找到对应排名的节点，节点处存储的就是队伍序号。<br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>修改操作：<br /></p>
+
+    <ul>
+      <li>将序号为 $x$ 的队伍提升到排名为 $y$：先查询对应序号的队伍的排名，然后在 $treap$ 中提出 $rank_x$ 的节点，把它拎到 $y$ 处即可。</li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">//bit 树状数组
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//bit 树状数组
 //t 平衡树
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -259,7 +282,8 @@ into the {body} of the default.hbs template -->
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -308,6 +332,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -605,7 +651,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Gym #100247 K</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the Gym #100247 of codeforces](http://codeforces.com/gym/100247/problem/K) ## Problem H \\(n\\) 支队伍参加了 \\(3\\) 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：\\( n ≤ 200000 \\) ## Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 \\(n\\) 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 \\(A\\)，而不满足同一组的两支队伍就会被统计三次，设为\\(B\\)。那么最终答案就是\\( tot - (A+B-tot)/2,tot</p>
+                    <p>## Contest Information source: [It's from the Gym #100247 of codeforces](http://codeforces.com/gym/100247/problem/K) ## Problem H $n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：$ n ≤ 200000 $ ## Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$ tot - (A+B-tot)/2,tot</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -648,7 +694,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Round #431 (Div. 2) D</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the Round #431 (Div. 2) of the codeforces Description 在一个平面坐标系上有一个矩形舞台，四个顶点为 \( (0,0), (w,0), (w,h), (0,h) \)，在舞台的左侧和下方一共有 \(n\) 个舞者， 坐标分别为 \( (x_i, 0), (0, y_i) \)，每个舞者在第 \(t_i\) 时刻会向垂直于其所在坐标系的方向以每秒一个单位的速度移动，如果与其它舞者碰撞，则互相交换移动方向，直到抵达舞台边缘停止。求每个舞者最后抵达的位置。 On</p>
+                    <p>Problem Information source: It’s from the Round #431 (Div. 2) of the codeforces Description 在一个平面坐标系上有一个矩形舞台，四个顶点为 $ (0,0), (w,0), (w,h), (0,h) $，在舞台的左侧和下方一共有 $n$ 个舞者， 坐标分别为 $ (x_i, 0), (0, y_i) $，每个舞者在第 $t_i$ 时刻会向垂直于其所在坐标系的方向以每秒一个单位的速度移动，如果与其它舞者碰撞，则互相交换移动方向，直到抵达舞台边缘停止。求每个舞者最后抵达的位置。 On</p>
                 </section>
             </a>
             <footer class="post-card-meta">

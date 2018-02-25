@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2015 Southwestern Europe Regional Contest (SWERC) B" />
-    <meta property="og:description" content="Problem Information source: It&#39;s from the kattis Description 用 \(26\) 个大写字母分别表示嫌疑人的代号，其中有三个人是 &quot;Black Vienna&quot;，除去这三个人后剩下的 \(23\) 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 \(n\) 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 \(n\) 次查询的基础上，求出 &quot;Black Vienna&quot; 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1 3 AB 1 2 AC 2 1 BC 1 0 Output 506 0 Solution 因为 \( \binom{26}{3}" />
+    <meta property="og:description" content="Problem Information source: It’s from the kattis Description 用 $26$ 个大写字母分别表示嫌疑人的代号，其中有三个人是 “Black Vienna”，除去这三个人后剩下的 $23$ 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 $n$ 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 $n$ 次查询的基础上，求出 “Black Vienna” 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1 3 AB 1 2 AC 2 1 BC 1 0 Output 506 0 Solution 因为 $ \binom{26}{3}" />
     <meta property="og:url" content="http://localhost:4000/2015-SWERC-B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-102710297.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2015 Southwestern Europe Regional Contest (SWERC) B" />
-    <meta name="twitter:description" content="Problem Information source: It&#39;s from the kattis Description 用 \(26\) 个大写字母分别表示嫌疑人的代号，其中有三个人是 &quot;Black Vienna&quot;，除去这三个人后剩下的 \(23\) 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 \(n\) 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 \(n\) 次查询的基础上，求出 &quot;Black Vienna&quot; 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1 3 AB 1 2 AC 2 1 BC 1 0 Output 506 0 Solution 因为 \( \binom{26}{3}" />
+    <meta name="twitter:description" content="Problem Information source: It’s from the kattis Description 用 $26$ 个大写字母分别表示嫌疑人的代号，其中有三个人是 “Black Vienna”，除去这三个人后剩下的 $23$ 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 $n$ 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 $n$ 次查询的基础上，求出 “Black Vienna” 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1 3 AB 1 2 AC 2 1 BC 1 0 Output 506 0 Solution 因为 $ \binom{26}{3}" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-102710297.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2015-SWERC-B"
     },
-    "description": "Problem Information source: It&#39;s from the kattis Description 用 \(26\) 个大写字母分别表示嫌疑人的代号，其中有三个人是 &quot;Black Vienna&quot;，除去这三个人后剩下的 \(23\) 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 \(n\) 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 \(n\) 次查询的基础上，求出 &quot;Black Vienna&quot; 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1 3 AB 1 2 AC 2 1 BC 1 0 Output 506 0 Solution 因为 \( \binom{26}{3}"
+    "description": "Problem Information source: It’s from the kattis Description 用 $26$ 个大写字母分别表示嫌疑人的代号，其中有三个人是 “Black Vienna”，除去这三个人后剩下的 $23$ 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 $n$ 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 $n$ 次查询的基础上，求出 “Black Vienna” 可能的集合数。 Input 3 AB 1 1 AC 2 1 BC 2 1 3 AB 1 2 AC 2 1 BC 1 0 Output 506 0 Solution 因为 $ \binom{26}{3}"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2015 Southwestern Europe Regional Contest (SWERC) B" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,14 +183,14 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="problem-information">Problem Information</h2>
 
-<p>source: <a href="https://open.kattis.com/problems/blackvienna">It&#39;s from the kattis</a></p>
+<p>source: <a href="https://open.kattis.com/problems/blackvienna">It’s from the kattis</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>用 \(26\) 个大写字母分别表示嫌疑人的代号，其中有三个人是 &quot;Black Vienna&quot;，除去这三个人后剩下的 \(23\) 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 \(n\) 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 \(n\) 次查询的基础上，求出 &quot;Black Vienna&quot; 可能的集合数。</p>
+<p>用 $26$ 个大写字母分别表示嫌疑人的代号，其中有三个人是 “Black Vienna”，除去这三个人后剩下的 $23$ 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 $n$ 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 $n$ 次查询的基础上，求出 “Black Vienna” 可能的集合数。</p>
 
 <h2 id="input">Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">3                                                                                     
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3                                                                                     
 AB 1 1
 AC 2 1
 BC 2 1
@@ -186,27 +198,34 @@ BC 2 1
 AB 1 2
 AC 2 1
 BC 1 0
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="output">Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">506                                                                                   
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>506                                                                                   
 0
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>因为 \( \binom{26}{3} = 2600 \)，所以 &quot;Black Vienna&quot; 可能的集合数最多为 \(2600\)，那么我们可以直接枚举集合，然后判定是否合法。<br><br>
-所以问题转换为在 \(26\) 张扑克牌中，有指定的 \(3\) 张两个玩家谁都没有，再有 \(n\) 个查询，每个查询说明其中一个玩拥有这次查询的两张牌中的 \(0/1/2\) 张，最后需要判断这个情况是否合法。那么这就是一道很明显的 2-SAT 问题了<br><br>
-我们定义 \( node(i,p)\) 为玩家 \(p\) 拥有扑克牌 \(i\)，\(FALSE\) 为辅助变量表示错误。<br>
-* \(FALSE\) 表示错误，即 \( FALSE \rightarrow \neg FALSE\) <br> <br>
-* 指定的嫌疑人卡片\(i\)，两个玩家都没有：<br> \( ( node(i ,p_1) \rightarrow FALSE) \wedge ( node(i, p_2) \rightarrow FALSE )  \) <br><br>
-* 除此之外的其它牌不是在玩家1手中就是在玩家2手中：\(( \neg node(i ,p_1) \rightarrow node(i ,p_2) ) \wedge ( node(i ,p_1) \rightarrow \neg node(i ,p_2) ) \)<br><br>
-* 查询操作：<br><br>
-    * 两张卡牌都没有：\( ( node(i_1 ,p) \rightarrow FALSE) \wedge ( node(i_2, p) \rightarrow FALSE ) \)<br><br>
-    * 只有其中一张牌：\( (node(i_1 ,p) \rightarrow \neg node(i_2, p) ) \wedge ( \neg node(i_1 ,p) \rightarrow node(i_2, p) )\) <br> <br>
-    * 两张卡牌都拥有：\(( \neg node(i_1 ,p) \rightarrow  FALSE) \wedge (\neg node(i_2, p) \rightarrow FALSE) \)<br><br>
-转换为析取式子：\( (a \rightarrow b) = (\neg a \vee b) \) 建边 \( &lt; \neg a, b &gt; \)，然后 tarjan 缩点后，判断\(\neg a\) 和 \(a\) 是否在同一个连通块中来决定是否有解。<br></p>
+<p>因为 $ \binom{26}{3} = 2600 $，所以 “Black Vienna” 可能的集合数最多为 $2600$，那么我们可以直接枚举集合，然后判定是否合法。<br />
+所以问题转换为在 $26$ 张扑克牌中，有指定的 $3$ 张两个玩家谁都没有，再有 $n$ 个查询，每个查询说明其中一个玩拥有这次查询的两张牌中的 $0/1/2$ 张，最后需要判断这个情况是否合法。那么这就是一道很明显的 2-SAT 问题了<br />
+我们定义 $ node(i,p)$ 为玩家 $p$ 拥有扑克牌 $i$，$FALSE$ 为辅助变量表示错误。</p>
+<ul>
+  <li>$FALSE$ 表示错误，即 $ FALSE \rightarrow \neg FALSE$ <br /></li>
+  <li>指定的嫌疑人卡片$i$，两个玩家都没有：<br /> $ ( node(i ,p_1) \rightarrow FALSE) \wedge ( node(i, p_2) \rightarrow FALSE )  $ <br /></li>
+  <li>除此之外的其它牌不是在玩家1手中就是在玩家2手中：$( \neg node(i ,p_1) \rightarrow node(i ,p_2) ) \wedge ( node(i ,p_1) \rightarrow \neg node(i ,p_2) ) $<br /></li>
+  <li>查询操作：<br />
+    <ul>
+      <li>两张卡牌都没有：$ ( node(i_1 ,p) \rightarrow FALSE) \wedge ( node(i_2, p) \rightarrow FALSE ) $<br /></li>
+      <li>只有其中一张牌：$ (node(i_1 ,p) \rightarrow \neg node(i_2, p) ) \wedge ( \neg node(i_1 ,p) \rightarrow node(i_2, p) )$ <br /></li>
+      <li>两张卡牌都拥有：$( \neg node(i_1 ,p) \rightarrow  FALSE) \wedge (\neg node(i_2, p) \rightarrow FALSE) $<br />
+转换为析取式子：$ (a \rightarrow b) = (\neg a \vee b) $ 建边 $ &lt; \neg a, b &gt; $，然后 tarjan 缩点后，判断$\neg a$ 和 $a$ 是否在同一个连通块中来决定是否有解。<br /></li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="n">Node</span>                                                                           
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Node</span>                                                                           
 <span class="p">{</span>
     <span class="kt">char</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>
@@ -268,7 +287,8 @@ BC 1 0
         <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -317,6 +337,28 @@ BC 1 0
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -614,7 +656,7 @@ BC 1 0
                     <h2 class="post-card-title">WannaFly Round #2 B</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the nowcoder](https://www.nowcoder.com/acm/contest/17/B) ## Description \\(N\\) 座城市围成一个环，标号为 \\(1-N\\)，给出 \\(d\[i\]\\) 表示第 \\(i\\) 到 \\(i+1\\) 座城市的距离。另外还有 \\(M\\) 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 \\(Q\\) 个查询，询问两座城市之间的最短路径长度。 数据范围：\\( 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤</p>
+                    <p>## Contest Information source: [It's from the nowcoder](https://www.nowcoder.com/acm/contest/17/B) ## Description $N$ 座城市围成一个环，标号为 $1-N$，给出 $d\[i\]$ 表示第 $i$ 到 $i+1$ 座城市的距离。另外还有 $M$ 条捷径，每条捷径连接两座城市，所有路径都是双向边。最后给出 $Q$ 个查询，询问两座城市之间的最短路径长度。 数据范围：$ 1 ≤ N,Q ≤ 52501; 1 ≤ M ≤</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -657,7 +699,7 @@ BC 1 0
                     <h2 class="post-card-title">2016 Nordic Collegiate Programming Contest B</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 &quot;autocorrelation&quot; ，首先输入 &quot;aut&quot; 三个字符，再按下 Tab 键，它匹配到 &quot;autocorrect&quot; ，然后按下两次退格得到 &quot;autocorre&quot; ，最后再输入 &quot;lation&quot; ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 \(n\) 个单词，再给出 \(m\) 个待输入单词，求输入每个单词的最小按键次数。 Input</p>
+                    <p>Problem Information source: It’s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 “autocorrelation” ，首先输入 “aut” 三个字符，再按下 Tab 键，它匹配到 “autocorrect” ，然后按下两次退格得到 “autocorre” ，最后再输入 “lation” ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 $n$ 个单词，再给出 $m$ 个待输入单词，求输入每个单词的最小按键次数。 Input</p>
                 </section>
             </a>
             <footer class="post-card-meta">

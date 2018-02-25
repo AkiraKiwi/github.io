@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="玲珑杯 Round #17 problem B" />
-    <meta property="og:description" content="Problem Information source: It&#39;s from the Round #17 of &quot;LingLong&quot; cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从\(1\)到\(N\)）可以被用来制作. 每条咸鱼都有一个咸鱼值 \( K_i \) ，初始时所有 \( K_i \) 都是\(0\). zhu是一个特别的人，他有\(M\)个咸数（咸鱼数字）, 对于每个咸数\(x\)，他都会让所有满足标号是\(x\)倍数的咸鱼的咸鱼值异或上\(1\). zhu现在想知道经过了这\(M\)个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是\(1\)? As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. Mr.Tang is a salted fish supplier," />
+    <meta property="og:description" content="Problem Information source: It’s from the Round #17 of “LingLong” cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从$1$到$N$）可以被用来制作. 每条咸鱼都有一个咸鱼值 $ K_i $ ，初始时所有 $ K_i $ 都是$0$. zhu是一个特别的人，他有$M$个咸数（咸鱼数字）, 对于每个咸数$x$，他都会让所有满足标号是$x$倍数的咸鱼的咸鱼值异或上$1$. zhu现在想知道经过了这$M$个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是$1$? As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. Mr.Tang is a salted fish supplier," />
     <meta property="og:url" content="http://localhost:4000/%E7%8E%B2%E7%8F%91%E6%9D%AF-Round-17-B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-loli.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="玲珑杯 Round #17 problem B" />
-    <meta name="twitter:description" content="Problem Information source: It&#39;s from the Round #17 of &quot;LingLong&quot; cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从\(1\)到\(N\)）可以被用来制作. 每条咸鱼都有一个咸鱼值 \( K_i \) ，初始时所有 \( K_i \) 都是\(0\). zhu是一个特别的人，他有\(M\)个咸数（咸鱼数字）, 对于每个咸数\(x\)，他都会让所有满足标号是\(x\)倍数的咸鱼的咸鱼值异或上\(1\). zhu现在想知道经过了这\(M\)个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是\(1\)? As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. Mr.Tang is a salted fish supplier," />
+    <meta name="twitter:description" content="Problem Information source: It’s from the Round #17 of “LingLong” cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从$1$到$N$）可以被用来制作. 每条咸鱼都有一个咸鱼值 $ K_i $ ，初始时所有 $ K_i $ 都是$0$. zhu是一个特别的人，他有$M$个咸数（咸鱼数字）, 对于每个咸数$x$，他都会让所有满足标号是$x$倍数的咸鱼的咸鱼值异或上$1$. zhu现在想知道经过了这$M$个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是$1$? As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. Mr.Tang is a salted fish supplier," />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-loli.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E7%8E%B2%E7%8F%91%E6%9D%AF-Round-17-B"
     },
-    "description": "Problem Information source: It&#39;s from the Round #17 of &quot;LingLong&quot; cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从\(1\)到\(N\)）可以被用来制作. 每条咸鱼都有一个咸鱼值 \( K_i \) ，初始时所有 \( K_i \) 都是\(0\). zhu是一个特别的人，他有\(M\)个咸数（咸鱼数字）, 对于每个咸数\(x\)，他都会让所有满足标号是\(x\)倍数的咸鱼的咸鱼值异或上\(1\). zhu现在想知道经过了这\(M\)个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是\(1\)? As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. Mr.Tang is a salted fish supplier,"
+    "description": "Problem Information source: It’s from the Round #17 of “LingLong” cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从$1$到$N$）可以被用来制作. 每条咸鱼都有一个咸鱼值 $ K_i $ ，初始时所有 $ K_i $ 都是$0$. zhu是一个特别的人，他有$M$个咸数（咸鱼数字）, 对于每个咸数$x$，他都会让所有满足标号是$x$倍数的咸鱼的咸鱼值异或上$1$. zhu现在想知道经过了这$M$个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是$1$? As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. Mr.Tang is a salted fish supplier,"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="玲珑杯 Round #17 problem B" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,33 +183,33 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="problem-information">Problem Information</h2>
 
-<p>source: <a href="http://www.ifrog.cc/acm/problem/1138">It&#39;s from the Round #17 of &quot;LingLong&quot; cup</a></p>
+<p>source: <a href="http://www.ifrog.cc/acm/problem/1138">It’s from the Round #17 of “LingLong” cup</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. <br><br>
-tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从\(1\)到\(N\)）可以被用来制作. <br><br>
-每条咸鱼都有一个咸鱼值 \( K_i \) ，初始时所有 \( K_i \) 都是\(0\). <br><br>
-zhu是一个特别的人，他有\(M\)个咸数（咸鱼数字）, 对于每个咸数\(x\)，他都会让所有满足标号是\(x\)倍数的咸鱼的咸鱼值异或上\(1\). <br><br>
-zhu现在想知道经过了这\(M\)个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是\(1\)?</p>
+<p>众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. <br />
+tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从$1$到$N$）可以被用来制作. <br />
+每条咸鱼都有一个咸鱼值 $ K_i $ ，初始时所有 $ K_i $ 都是$0$. <br />
+zhu是一个特别的人，他有$M$个咸数（咸鱼数字）, 对于每个咸数$x$，他都会让所有满足标号是$x$倍数的咸鱼的咸鱼值异或上$1$. <br />
+zhu现在想知道经过了这$M$个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是$1$?</p>
 
-<p>As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. <br><br>
-Mr.Tang is a salted fish supplier, he tells Mr.zhu that there are \(N\) salted fishes (labeled from \(1\) to \(N\) ) which can be used to make it. <br><br>
-Each salted fish has a salted value \(K_i \), and all \(K_i \) are 0 at the beginning. <br><br>
-Mr.Zhu is a special person, he has a number of salons (salted fish value), for each salon \(x\), he will let the salted value of all the salted fish whose label is the multiple of the \(x\) xor by \(1\). <br><br>
-Mr.Zhu now wants to know the final number of salted fish whose salted fish is \(1\) after the \(M\) salons of screening?</p>
+<p>As we all know that Mr.zhu is a chef, and he has a unique salted fish making skills. <br />
+Mr.Tang is a salted fish supplier, he tells Mr.zhu that there are $N$ salted fishes (labeled from $1$ to $N$ ) which can be used to make it. <br />
+Each salted fish has a salted value $K_i $, and all $K_i $ are 0 at the beginning. <br />
+Mr.Zhu is a special person, he has a number of salons (salted fish value), for each salon $x$, he will let the salted value of all the salted fish whose label is the multiple of the $x$ xor by $1$. <br />
+Mr.Zhu now wants to know the final number of salted fish whose salted fish is $1$ after the $M$ salons of screening?</p>
 
 <h2 id="input">Input</h2>
 
-<p>输入的第一行包含一个整数 \( T(1≤T≤1000) \), 表示有 \( T \)组数据。<br><br>
-对于每组数据：<br><br>
-输入第一行只有两个整数\( N(1≤N≤10^9),M(1≤M≤15) \).<br><br>
-接下来一行有 \( M \)个整数，依次对应zhu的每个咸数 \( x(1≤x≤2*10^5) \).</p>
+<p>输入的第一行包含一个整数 $ T(1≤T≤1000) $, 表示有 $ T $组数据。<br />
+对于每组数据：<br />
+输入第一行只有两个整数$ N(1≤N≤10^9),M(1≤M≤15) $.<br />
+接下来一行有 $ M $个整数，依次对应zhu的每个咸数 $ x(1≤x≤2*10^5) $.</p>
 
-<p>The first line of the input contains an integer \(T (1≤T≤1000) \) indicating that there is \(T \) group data.<br><br>
-For each set of data:<br><br>
-The first line of the input contains only two integers \(N (1≤N≤10^9), M (1≤M≤15) \).<br><br>
-The next line has \(M\) integers, followed by Mr.zhu&#39;s every salon \(x (1≤x≤2 * 10 ^ 5) \).</p>
+<p>The first line of the input contains an integer $T (1≤T≤1000) $ indicating that there is $T $ group data.<br />
+For each set of data:<br />
+The first line of the input contains only two integers $N (1≤N≤10^9), M (1≤M≤15) $.<br />
+The next line has $M$ integers, followed by Mr.zhu’s every salon $x (1≤x≤2 * 10 ^ 5) $.</p>
 
 <h2 id="output">Output</h2>
 
@@ -206,29 +218,32 @@ The next line has \(M\) integers, followed by Mr.zhu&#39;s every salon \(x (1≤
 <p>For each set of data, output the answer.</p>
 
 <h2 id="sample-input">Sample Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">2
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
 10 1
 3
 10 1
 1
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="sample-output">Sample Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">3
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
 10
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>我们把需要异或的数定义为被标记的数，异或值为\(1\)则相应于被标记的次数为奇数。<br><br>
-对于某一个咸数 \(x\)，它会标记所有标号是它倍数的咸鱼，总数加上 \(1 \times \frac{N}{x}\) ；<br><br>
-对于任意\(2\)个咸数 \(x,y\)的 \(LCM_{x,y}\), 标号是它的倍数的咸鱼在计算一个咸数的时候已经被标记了\(2\)次，则总数减去\( 2\times \frac{N}{LCM_{x,y}} \)；<br><br>
-对于任意\(3\)个咸数 \( x, y, z \)的\( LCM_{x,y,z} \), 标号是它的倍数的咸鱼在计算一个咸数时被标记了\(3\)次，在计算\(2\)个咸数的时候被减去了\(6\)次，但它最后需要统计为\(1\)次，即\( (3-6+t)=1, t=4 \), 则总数需要加上\( 4\times \frac{N}{LCM_{x,y,z}} \)。<br><br>
-依次类推，我们发现咸数集合大小为偶数时减，为奇数时加，每次计算的系数为 \( 2^{咸数集合大小-1} \)，最后统计的结果就是标记次数为奇数的咸鱼数量。</p>
+<p>我们把需要异或的数定义为被标记的数，异或值为$1$则相应于被标记的次数为奇数。<br />
+对于某一个咸数 $x$，它会标记所有标号是它倍数的咸鱼，总数加上 $1 \times \frac{N}{x}$ ；<br />
+对于任意$2$个咸数 $x,y$的 $LCM_{x,y}$, 标号是它的倍数的咸鱼在计算一个咸数的时候已经被标记了$2$次，则总数减去$ 2\times \frac{N}{LCM_{x,y}} $；<br />
+对于任意$3$个咸数 $ x, y, z $的$ LCM_{x,y,z} $, 标号是它的倍数的咸鱼在计算一个咸数时被标记了$3$次，在计算$2$个咸数的时候被减去了$6$次，但它最后需要统计为$1$次，即$ (3-6+t)=1, t=4 $, 则总数需要加上$ 4\times \frac{N}{LCM_{x,y,z}} $。<br />
+依次类推，我们发现咸数集合大小为偶数时减，为奇数时加，每次计算的系数为 $ 2^{咸数集合大小-1} $，最后统计的结果就是标记次数为奇数的咸鱼数量。</p>
 
-<p>We define the number needed to XOR as the marked number, and the final XOR value is \(1\) which corresponds to that the total marked times is odd. <br><br>
-For a certain salon \(x \), it will mark all the salted fishes whose label is \(x \)&#39;s multiple, so we plus the answer by \(1 \times \frac{N}{x} \); <br><br>
-For the LCM of any two salons \( x,y \), the salted fishes whose label is \(LCM_{x,y} \)&#39;s multiple have been marked twice in the calculation of one salon, then the answer need to minus \(2 \times \frac{N}{LCM_{x,y}} \); <br><br>
-For the LCM of any three salons \(x, y, z \),  the salted fishes whose label is \(LCM_{x,y,z} \)&#39;s multiple have been marked \(3\) times in the calculation of one salon, and are subtracted \(6\) times when calculating two salons, then \((3-6 + t) = 1, t = 4 \). so the answer need to add \(4 \times \frac{N}{LCM_{x,y,z}} \).<br><br>
-And so on, we find that it needs reduction when the size of the salons is even and needs addition when the size of the salons is odd, each calculated coefficient is \(2 ^ {the\ size\ of\ salons -1} \), and the final result is the size of the salt fishes whose marked times are odd.</p>
+<p>We define the number needed to XOR as the marked number, and the final XOR value is $1$ which corresponds to that the total marked times is odd. <br />
+For a certain salon $x $, it will mark all the salted fishes whose label is $x $’s multiple, so we plus the answer by $1 \times \frac{N}{x} $; <br />
+For the LCM of any two salons $ x,y $, the salted fishes whose label is $LCM_{x,y} $’s multiple have been marked twice in the calculation of one salon, then the answer need to minus $2 \times \frac{N}{LCM_{x,y}} $; <br />
+For the LCM of any three salons $x, y, z $,  the salted fishes whose label is $LCM_{x,y,z} $’s multiple have been marked $3$ times in the calculation of one salon, and are subtracted $6$ times when calculating two salons, then $(3-6 + t) = 1, t = 4 $. so the answer need to add $4 \times \frac{N}{LCM_{x,y,z}} $.<br />
+And so on, we find that it needs reduction when the size of the salons is even and needs addition when the size of the salons is odd, each calculated coefficient is $2 ^ {the\ size\ of\ salons -1} $, and the final result is the size of the salt fishes whose marked times are odd.</p>
 
 <h2 id="ac-code">AC code</h2>
 
@@ -273,6 +288,7 @@ And so on, we find that it needs reduction when the size of the salons is even a
     <span class="p">}</span>
     <span class="c1">//system("pause"A);
 </span><span class="p">}</span></code></pre></figure>
+
 
                 </div>
             </section>
@@ -322,6 +338,28 @@ And so on, we find that it needs reduction when the size of the salons is even a
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>

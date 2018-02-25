@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="CodeForces Gym #100247 K" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the Gym #100247 of codeforces Problem H \(n\) 支队伍参加了 \(3\) 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：\( n ≤ 200000 \) Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 \(n\) 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 \(A\)，而不满足同一组的两支队伍就会被统计三次，设为\(B\)。那么最终答案就是\( tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}\)。 AC code int main() { int n; while(~scanf("%d", &amp;n)) { int x,y,z; bit.init(n); for(int i=1;i&lt;=n;i++) { read(x);read(y);read(z); node[i]" />
+    <meta property="og:description" content="Contest Information source: It’s from the Gym #100247 of codeforces Problem H $n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：$ n ≤ 200000 $ Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$ tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}$。 AC code int main() { int n; while(~scanf("%d", &amp;n)) { int x,y,z; bit.init(n); for(int i=1;i&lt;=n;i++) { read(x);read(y);read(z); node[i]" />
     <meta property="og:url" content="http://localhost:4000/CodeForces-Gym-100247-K" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CodeForces Gym #100247 K" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the Gym #100247 of codeforces Problem H \(n\) 支队伍参加了 \(3\) 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：\( n ≤ 200000 \) Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 \(n\) 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 \(A\)，而不满足同一组的两支队伍就会被统计三次，设为\(B\)。那么最终答案就是\( tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}\)。 AC code int main() { int n; while(~scanf("%d", &amp;n)) { int x,y,z; bit.init(n); for(int i=1;i&lt;=n;i++) { read(x);read(y);read(z); node[i]" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the Gym #100247 of codeforces Problem H $n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：$ n ≤ 200000 $ Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$ tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}$。 AC code int main() { int n; while(~scanf("%d", &amp;n)) { int x,y,z; bit.init(n); for(int i=1;i&lt;=n;i++) { read(x);read(y);read(z); node[i]" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/CodeForces-Gym-100247-K"
     },
-    "description": "Contest Information source: It&#39;s from the Gym #100247 of codeforces Problem H \(n\) 支队伍参加了 \(3\) 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：\( n ≤ 200000 \) Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 \(n\) 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 \(A\)，而不满足同一组的两支队伍就会被统计三次，设为\(B\)。那么最终答案就是\( tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}\)。 AC code int main() { int n; while(~scanf("%d", &amp;n)) { int x,y,z; bit.init(n); for(int i=1;i&lt;=n;i++) { read(x);read(y);read(z); node[i]"
+    "description": "Contest Information source: It’s from the Gym #100247 of codeforces Problem H $n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：$ n ≤ 200000 $ Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$ tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}$。 AC code int main() { int n; while(~scanf("%d", &amp;n)) { int x,y,z; bit.init(n); for(int i=1;i&lt;=n;i++) { read(x);read(y);read(z); node[i]"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="CodeForces Gym #100247 K" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,22 +183,23 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://codeforces.com/gym/100247/problem/K">It&#39;s from the Gym #100247 of codeforces</a></p>
+<p>source: <a href="http://codeforces.com/gym/100247/problem/K">It’s from the Gym #100247 of codeforces</a></p>
 
 <h2 id="problem-h">Problem H</h2>
 
-<p>\(n\) 支队伍参加了 \(3\) 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组<br></p>
+<p>$n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组<br /></p>
 
-<p>数据范围：\( n ≤ 200000 \) <br>   </p>
+<p>数据范围：$ n ≤ 200000 $ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 \(n\) 的数量级太大，也不能使用二维树状数组。<br></p>
+<p>我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。<br /></p>
 
-<p>那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 \(A\)，而不满足同一组的两支队伍就会被统计三次，设为\(B\)。那么最终答案就是\(  tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}\)。</p>
+<p>那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$  tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}$。</p>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
     <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">))</span>
@@ -226,7 +239,8 @@ into the {body} of the default.hbs template -->
         <span class="n">out</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span> 
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -275,6 +289,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -572,7 +608,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">初识连分数</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Description * [连分数](https://zh.wikipedia.org/wiki/%E8%BF%9E%E5%88%86%E6%95%B0)形式通常为 : ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/482094f725cb2e8201a58ec1f9cac1ec5188803f) * 连分数常用于无理数的逼近，例如： ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/e1061c96eb54e806655ef0d0298c3135030dfb7c) * 连分数表示的算法： * 考虑实数 \\(r\\)，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 \\(r\\) 为有理数，那么当小数部分为 \\(0\\) 时，过程中止。 * 连分数一般简写作： \\( x = [a\_0;a\_1,a\_2,a\_3]\\) * For example : \\(3.245 = 3 + 0.245,</p>
+                    <p>## Description * [连分数](https://zh.wikipedia.org/wiki/%E8%BF%9E%E5%88%86%E6%95%B0)形式通常为 : ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/482094f725cb2e8201a58ec1f9cac1ec5188803f) * 连分数常用于无理数的逼近，例如： ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/e1061c96eb54e806655ef0d0298c3135030dfb7c) * 连分数表示的算法： * 考虑实数 $r$，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 $r$ 为有理数，那么当小数部分为 $0$ 时，过程中止。 * 连分数一般简写作： $ x = [a\_0;a\_1,a\_2,a\_3]$ * For example : $3.245 = 3 + 0.245,</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -615,7 +651,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">北京师范大学第十五届ACM决赛</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: It&#39;s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 \(&gt;0.6*n\) 的队伍 现在有 \(n\) 支队伍参加比赛，第 \(i\) 支队伍的排名是 \(p_i\)， 接下来发送 \(q\) 个事件，分为两种 1. 给定 \( x, y(1≤x,y≤n) \)，表示第 \(x\) 支队伍的排名上升到 \(y\) 。</p>
+                    <p>Contest Information source: It’s from the nowcoder Problem H 定义ACM竞赛中 荣誉提名奖 颁给总排名 $&gt;0.6*n$ 的队伍 现在有 $n$ 支队伍参加比赛，第 $i$ 支队伍的排名是 $p_i$， 接下来发送 $q$ 个事件，分为两种 给定 $ x, y(1≤x,y≤n) $，表示第 $x$ 支队伍的排名上升到 $y$ 。 给定</p>
                 </section>
             </a>
             <footer class="post-card-meta">

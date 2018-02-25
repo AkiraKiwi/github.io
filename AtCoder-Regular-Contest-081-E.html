@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="AtCoder Regular Contest 081 E" />
-    <meta property="og:description" content="Problem Information source: It&#39;s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 \(A\) ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： * \( 1 ≤ \|A\| ≤ 2 \times 10^5 \) * \(A\) consists of lowercase English letters. Input \(A\) Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English" />
+    <meta property="og:description" content="Problem Information source: It’s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： $ 1 ≤ $A$ ≤ 2 \times 10^5 $ $A$ consists of lowercase English letters. Input $A$ Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that" />
     <meta property="og:url" content="http://localhost:4000/AtCoder-Regular-Contest-081-E" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-Yb054.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AtCoder Regular Contest 081 E" />
-    <meta name="twitter:description" content="Problem Information source: It&#39;s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 \(A\) ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： * \( 1 ≤ \|A\| ≤ 2 \times 10^5 \) * \(A\) consists of lowercase English letters. Input \(A\) Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English" />
+    <meta name="twitter:description" content="Problem Information source: It’s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： $ 1 ≤ $A$ ≤ 2 \times 10^5 $ $A$ consists of lowercase English letters. Input $A$ Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-Yb054.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/AtCoder-Regular-Contest-081-E"
     },
-    "description": "Problem Information source: It&#39;s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 \(A\) ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： * \( 1 ≤ \|A\| ≤ 2 \times 10^5 \) * \(A\) consists of lowercase English letters. Input \(A\) Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English"
+    "description": "Problem Information source: It’s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： $ 1 ≤ $A$ ≤ 2 \times 10^5 $ $A$ consists of lowercase English letters. Input $A$ Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="AtCoder Regular Contest 081 E" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,79 +183,86 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="problem-information">Problem Information</h2>
 
-<p>source: <a href="http://arc081.contest.atcoder.jp/tasks/arc081_c">It&#39;s from the Regular Contest 081 of the AtCoder</a></p>
+<p>source: <a href="http://arc081.contest.atcoder.jp/tasks/arc081_c">It’s from the Regular Contest 081 of the AtCoder</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>给出一个字符串 \(A\) ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。<br></p>
+<p>给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。<br /></p>
 
-<p>数据范围：<br><br>
-* \( 1 ≤ \|A\| ≤ 2 \times 10^5 \) <br><br>
-* \(A\) consists of lowercase English letters.<br></p>
+<p>数据范围：<br /></p>
+<ul>
+  <li>$ 1 ≤ $A$ ≤ 2 \times 10^5 $ <br /></li>
+  <li>$A$ consists of lowercase English letters.<br /></li>
+</ul>
 
 <h2 id="input">Input</h2>
 
-<p>\(A\) <br></p>
+<p>$A$ <br /></p>
 
 <h2 id="output">Output</h2>
 
-<p>Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that are not subsequences of \(A\). <br></p>
+<p>Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that are not subsequences of $A$. <br /></p>
 
 <h2 id="sample-input">Sample Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">atcoderregularcontest
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>atcoderregularcontest
 abcdefghijklmnopqrstuvwxyz
 frqnvhydscshfcgdemurlfrutcpzhopfotpifgepnqjxupnskapziurswqazdwnwbgdhyktfyhqqxpoidfhjdakoxraiedxskywuepzfniuyskxiyjpjlxuqnfgmnjcvtlpnclfkpervxmdbvrbrdn
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="sample-output">Sample Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">b
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b
 aa
 aca
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>首先，字典序最小可以通过从小到大确定答案来解决。那么，我们只需要知道怎么找到最短的非子序列字符串。 <br></p>
+<p>首先，字典序最小可以通过从小到大确定答案来解决。那么，我们只需要知道怎么找到最短的非子序列字符串。 <br /></p>
 
-<p>我们考虑任意一个非子序列的字符串，它一定是匹配到了原串的某一个位置，且该位置后的字符少于 \(26\) 种，<br>
-此时我们添加一个没有出现过的字符即可凑出一个非子序列的字符串。那么再要求字符串长度最短，那么我们可以从最后往前递推，确定每个字符到缺省字符的最短路径。<br></p>
+<p>我们考虑任意一个非子序列的字符串，它一定是匹配到了原串的某一个位置，且该位置后的字符少于 $26$ 种，
+此时我们添加一个没有出现过的字符即可凑出一个非子序列的字符串。那么再要求字符串长度最短，那么我们可以从最后往前递推，确定每个字符到缺省字符的最短路径。<br /></p>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">loc</span><span class="p">[</span><span class="n">MaxN</span><span class="p">][</span><span class="mi">26</span><span class="p">],</span> <span class="n">to</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">dep</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">memcpy</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">to</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">to</span><span class="p">));</span>
-        <span class="n">to</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dep</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">;</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">u</span><span class="o">!=</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">for</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">v</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">v</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">dep</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="sc">'a'</span><span class="p">);</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">memcpy</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">to</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">to</span><span class="p">));</span>
+		<span class="n">to</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dep</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">u</span><span class="o">!=</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">v</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">v</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">dep</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="sc">'a'</span><span class="p">);</span>
+		<span class="n">u</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">];</span>
+	<span class="p">}</span>
+	<span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">))</span>
-        <span class="n">solve</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">))</span>
+		<span class="n">solve</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -292,6 +311,28 @@ aca
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -589,7 +630,7 @@ aca
                     <h2 class="post-card-title">CodeForces Round #431 (Div. 2) D</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the Round #431 (Div. 2) of the codeforces](http://codeforces.com/contest/849/problem/D) ## Description 在一个平面坐标系上有一个矩形舞台，四个顶点为 \\( (0,0), (w,0), (w,h), (0,h) \\)，在舞台的左侧和下方一共有 \\(n\\) 个舞者， 坐标分别为 \\( (x\_i, 0), (0, y\_i) \\)，每个舞者在第 \\(t\_i\\)</p>
+                    <p>## Problem Information source: [It's from the Round #431 (Div. 2) of the codeforces](http://codeforces.com/contest/849/problem/D) ## Description 在一个平面坐标系上有一个矩形舞台，四个顶点为 $ (0,0), (w,0), (w,h), (0,h) $，在舞台的左侧和下方一共有 $n$ 个舞者， 坐标分别为 $ (x\_i, 0), (0, y\_i) $，每个舞者在第 $t\_i$</p>
                 </section>
             </a>
             <footer class="post-card-meta">

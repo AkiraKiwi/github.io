@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="CodeForces Round #436 (Div. 2) F" />
-    <meta property="og:description" content="Problem Information source: It&#39;s from the Round #436 (Div. 2) of the codeforces Description 有一个 \(n\) 个结点，\(m\) 条边的有向图，其中没有自环。定义从 \(s\) 到 \(t\) 的一条路径为一个连续的点集 \( p_1, p_2, p_3, ..., p_k \)，其中 \(p_1 = s, p_k = t \)，从\(p_i\) 到 \(p_{i+1}\) 存在一条有向边，其中 \(t\) 点只能出现一次。 现在给出 \(q\) 个查询，每次询问 \(s_i\) 到 \(t_i\) 字典序最小的那条路径上的第 \(k_i\) 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出" />
+    <meta property="og:description" content="Problem Information source: It’s from the Round #436 (Div. 2) of the codeforces Description 有一个 $n$ 个结点，$m$ 条边的有向图，其中没有自环。定义从 $s$ 到 $t$ 的一条路径为一个连续的点集 $ p_1, p_2, p_3, …, p_k $，其中 $p_1 = s, p_k = t $，从$p_i$ 到 $p_{i+1}$ 存在一条有向边，其中 $t$ 点只能出现一次。 现在给出 $q$ 个查询，每次询问 $s_i$ 到 $t_i$ 字典序最小的那条路径上的第 $k_i$ 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出" />
     <meta property="og:url" content="http://localhost:4000/CodeForces-Round-436-(Div.2)-F" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CodeForces Round #436 (Div. 2) F" />
-    <meta name="twitter:description" content="Problem Information source: It&#39;s from the Round #436 (Div. 2) of the codeforces Description 有一个 \(n\) 个结点，\(m\) 条边的有向图，其中没有自环。定义从 \(s\) 到 \(t\) 的一条路径为一个连续的点集 \( p_1, p_2, p_3, ..., p_k \)，其中 \(p_1 = s, p_k = t \)，从\(p_i\) 到 \(p_{i+1}\) 存在一条有向边，其中 \(t\) 点只能出现一次。 现在给出 \(q\) 个查询，每次询问 \(s_i\) 到 \(t_i\) 字典序最小的那条路径上的第 \(k_i\) 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出" />
+    <meta name="twitter:description" content="Problem Information source: It’s from the Round #436 (Div. 2) of the codeforces Description 有一个 $n$ 个结点，$m$ 条边的有向图，其中没有自环。定义从 $s$ 到 $t$ 的一条路径为一个连续的点集 $ p_1, p_2, p_3, …, p_k $，其中 $p_1 = s, p_k = t $，从$p_i$ 到 $p_{i+1}$ 存在一条有向边，其中 $t$ 点只能出现一次。 现在给出 $q$ 个查询，每次询问 $s_i$ 到 $t_i$ 字典序最小的那条路径上的第 $k_i$ 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/CodeForces-Round-436-(Div.2)-F"
     },
-    "description": "Problem Information source: It&#39;s from the Round #436 (Div. 2) of the codeforces Description 有一个 \(n\) 个结点，\(m\) 条边的有向图，其中没有自环。定义从 \(s\) 到 \(t\) 的一条路径为一个连续的点集 \( p_1, p_2, p_3, ..., p_k \)，其中 \(p_1 = s, p_k = t \)，从\(p_i\) 到 \(p_{i+1}\) 存在一条有向边，其中 \(t\) 点只能出现一次。 现在给出 \(q\) 个查询，每次询问 \(s_i\) 到 \(t_i\) 字典序最小的那条路径上的第 \(k_i\) 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出"
+    "description": "Problem Information source: It’s from the Round #436 (Div. 2) of the codeforces Description 有一个 $n$ 个结点，$m$ 条边的有向图，其中没有自环。定义从 $s$ 到 $t$ 的一条路径为一个连续的点集 $ p_1, p_2, p_3, …, p_k $，其中 $p_1 = s, p_k = t $，从$p_i$ 到 $p_{i+1}$ 存在一条有向边，其中 $t$ 点只能出现一次。 现在给出 $q$ 个查询，每次询问 $s_i$ 到 $t_i$ 字典序最小的那条路径上的第 $k_i$ 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="CodeForces Round #436 (Div. 2) F" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,16 +183,16 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="problem-information">Problem Information</h2>
 
-<p>source: <a href="http://codeforces.com/contest/864/problem/F">It&#39;s from the Round #436 (Div. 2) of the codeforces</a></p>
+<p>source: <a href="http://codeforces.com/contest/864/problem/F">It’s from the Round #436 (Div. 2) of the codeforces</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>有一个 \(n\) 个结点，\(m\) 条边的有向图，其中没有自环。定义从 \(s\) 到 \(t\) 的一条路径为一个连续的点集 \(  p_1, p_2, p_3, ..., p_k \)，其中 \(p_1 = s, p_k = t \)，从\(p_i\) 到 \(p_{i+1}\) 存在一条有向边，其中 \(t\) 点只能出现一次。 <br></p>
+<p>有一个 $n$ 个结点，$m$ 条边的有向图，其中没有自环。定义从 $s$ 到 $t$ 的一条路径为一个连续的点集 $  p_1, p_2, p_3, …, p_k $，其中 $p_1 = s, p_k = t $，从$p_i$ 到 $p_{i+1}$ 存在一条有向边，其中 $t$ 点只能出现一次。 <br /></p>
 
-<p>现在给出 \(q\) 个查询，每次询问 \(s_i\) 到 \(t_i\) 字典序最小的那条路径上的第 \(k_i\) 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出 \(-1\)。<br></p>
+<p>现在给出 $q$ 个查询，每次询问 $s_i$ 到 $t_i$ 字典序最小的那条路径上的第 $k_i$ 个点的标号。如果两点间无法到达，或者不存在字典序最小的路径则输出 $-1$。<br /></p>
 
 <h2 id="input">Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">7 7 5                                                                                
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7 7 5                                                                                
 1 2
 2 3
 1 3
@@ -193,26 +205,28 @@ into the {body} of the default.hbs template -->
 1 7 3
 1 3 2
 1 3 5
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="output">Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">2                                                                                     
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2                                                                                     
 -1
 -1
 2
 -1
 
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>建图时，同时建一个反向图，在建完原图后同时将原图中每个点能到达的节点排个序，以保证遍历时是按字典序最小的方式走的。<br></p>
+<p>建图时，同时建一个反向图，在建完原图后同时将原图中每个点能到达的节点排个序，以保证遍历时是按字典序最小的方式走的。<br /></p>
 
-<p>那么对于每一个点，以它作为终点，在反向图中标记出所以它能抵达的点，即在原图中能够到达它的点，再遍历原图中每一个点 \(u\) 能到达的点 \(v\)，找到第一个被标记过的 \(v\)，<br>
-则 \(v\) 是 \(u\) 到当前终点的路径中的字典序最小的点，即将 \(u\) 保存在 \(v\) 的上一个节点。<br>
-最后从当前终点开始 DFS，用 vector 模拟栈来保存当前路径。每次走当前节点的上一个节点，即保证了当前路径永远是字典序最小的那个，<br>
-同时，也只会计算到该节点字典序最小的路径的答案，对于不可抵达和不是最小字典序的路径，是不会遍历到的。<br></p>
+<p>那么对于每一个点，以它作为终点，在反向图中标记出所以它能抵达的点，即在原图中能够到达它的点，再遍历原图中每一个点 $u$ 能到达的点 $v$，找到第一个被标记过的 $v$，
+则 $v$ 是 $u$ 到当前终点的路径中的字典序最小的点，即将 $u$ 保存在 $v$ 的上一个节点。
+最后从当前终点开始 DFS，用 vector 模拟栈来保存当前路径。每次走当前节点的上一个节点，即保证了当前路径永远是字典序最小的那个，
+同时，也只会计算到该节点字典序最小的路径的答案，对于不可抵达和不是最小字典序的路径，是不会遍历到的。<br /></p>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">q</span><span class="p">;</span>                                                                            
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">q</span><span class="p">;</span>                                                                            
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">G</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">IG</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="n">vector</span><span class="o">&lt;</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">qs</span><span class="p">[</span><span class="n">MaxN</span><span class="p">][</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">Path</span><span class="p">,</span> <span class="n">Fa</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -286,7 +300,8 @@ into the {body} of the default.hbs template -->
         <span class="n">solve</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -335,6 +350,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -632,7 +669,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2016 Nordic Collegiate Programming Contest B</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the kattis](https://open.kattis.com/problems/autocorrect) ## Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 "autocorrelation" ，首先输入 "aut" 三个字符，再按下 Tab 键，它匹配到 "autocorrect" ，然后按下两次退格得到 "autocorre" ，最后再输入 "lation" ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 \\(n\\) 个单词，再给出 \\(m\\)</p>
+                    <p>## Problem Information source: [It's from the kattis](https://open.kattis.com/problems/autocorrect) ## Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 "autocorrelation" ，首先输入 "aut" 三个字符，再按下 Tab 键，它匹配到 "autocorrect" ，然后按下两次退格得到 "autocorre" ，最后再输入 "lation" ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 $n$ 个单词，再给出 $m$</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -675,7 +712,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Round #396 (Div. 2) E</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the Round #396 (Div. 2) of the codeforces Description 在一颗 \(n\) 个结点的树上，每个结点带有一个权值，定义从结点 \(x\) 到结点 \(y\) 所经过的所有节点的权值的异或值为这条路径的长度（ \(x≤y\) ），求树上所有路径的长度和。 Input 3 1 2 3 1 2 2 3 5</p>
+                    <p>Problem Information source: It’s from the Round #396 (Div. 2) of the codeforces Description 在一颗 $n$ 个结点的树上，每个结点带有一个权值，定义从结点 $x$ 到结点 $y$ 所经过的所有节点的权值的异或值为这条路径的长度（ $x≤y$ ），求树上所有路径的长度和。 Input 3 1 2 3 1 2 2 3 5</p>
                 </section>
             </a>
             <footer class="post-card-meta">

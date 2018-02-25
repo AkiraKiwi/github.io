@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #7" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) Solution 不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 $ [1, n] $ 中至多选择 $ k $ 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 $ Solution 不能被任何平方数整除 $\rightarrow$ 每个质因子不超过两个，由于 $ n $ 不超过 $500$，所以我们考虑 $\sqrt 500$ 以内的质数，总共只有 $8$ 个" />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-7" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #7" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) Solution 不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 $ [1, n] $ 中至多选择 $ k $ 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 $ Solution 不能被任何平方数整除 $\rightarrow$ 每个质因子不超过两个，由于 $ n $ 不超过 $500$，所以我们考虑 $\sqrt 500$ 以内的质数，总共只有 $8$ 个" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-7"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) Solution 不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个"
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 $ [1, n] $ 中至多选择 $ k $ 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 $ Solution 不能被任何平方数整除 $\rightarrow$ 每个质因子不超过两个，由于 $ n $ 不超过 $500$，所以我们考虑 $\sqrt 500$ 以内的质数，总共只有 $8$ 个"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #7" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,22 +183,22 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+7&source=1&searchmode=source">The 2017 Multi-University Training Contest #7 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+7&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #7 from HDU OJ</a></p>
 
 <h2 id="problem-f">Problem F</h2>
 
-<p>从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数  <br></p>
+<p>从 $ [1, n] $ 中至多选择 $ k $ 个数，使得它们的乘积不能被任何平方数整除，求方案数  <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 $ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个 <br></p>
+<p>不能被任何平方数整除 $\rightarrow$ 每个质因子不超过两个，由于 $ n $ 不超过 $500$，所以我们考虑 $\sqrt 500$ 以内的质数，总共只有 $8$ 个 <br /></p>
 
-<p>那么我们将所有数按其质因子分解的情况分成 \(2^8\) 组（包含多个同种因子的数直接排除，而大于 \(\sqrt 500\) 的质数每个数最多包含一个），然后我们定义 \(DP[k][s]\) 为选择 \(k\) 个数，质因子包含情况为 \(s\) 的方案数，然后遍历所有数，判断它能加入到那些状态里，统计方案（注意不同组不能相交）<br></p>
+<p>那么我们将所有数按其质因子分解的情况分成 $2^8$ 组（包含多个同种因子的数直接排除，而大于 $\sqrt 500$ 的质数每个数最多包含一个），然后我们定义 $DP[k][s]$ 为选择 $k$ 个数，质因子包含情况为 $s$ 的方案数，然后遍历所有数，判断它能加入到那些状态里，统计方案（注意不同组不能相交）<br /></p>
 
 <h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">prime</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">};</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">prime</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">};</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">use</span><span class="p">[</span><span class="mi">505</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">stat</span><span class="p">[</span><span class="mi">505</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="mi">505</span><span class="p">][</span><span class="mi">505</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
@@ -255,43 +267,44 @@ into the {body} of the default.hbs template -->
         <span class="n">out</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="problem-g">Problem G</h2>
 
-<p>给 \( n \) 个小朋友发糖果，每个人最多不能超过 \( m \) 个。 同时小朋友有 \(k\) 个要求，第\( x_i \) 个小朋友拿的糖果数不能比第 \(y_i\) 个小朋友多 \(z_i\) 个以上。第 \(i\) 个小朋友拿 \(j\) 个糖果能获得 \(w_{i,j}\) 的满足值，求最大的满足值  <br></p>
+<p>给 $ n $ 个小朋友发糖果，每个人最多不能超过 $ m $ 个。 同时小朋友有 $k$ 个要求，第$ x_i $ 个小朋友拿的糖果数不能比第 $y_i$ 个小朋友多 $z_i$ 个以上。第 $i$ 个小朋友拿 $j$ 个糖果能获得 $w_{i,j}$ 的满足值，求最大的满足值  <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,m ≤ 50, 1 ≤ k ≤ 150, 1 ≤ x,y ≤ n, \|z\| &lt; 233, 0  ≤ w_{i,j} ≤ 1000\) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,m ≤ 50, 1 ≤ k ≤ 150, 1 ≤ x,y ≤ n, $z$ &lt; 233, 0  ≤ w_{i,j} ≤ 1000$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>如果不考虑 \(k\) 个要求，我们可以对于每个小朋友取最大的满足值即可，网络流建图就是从源点出发，对于每个小朋友，从给它一颗糖果连边一直到m颗糖果，最后到汇点，流量为 \(1000-w_{i,j}\)，等价不满意值，那么整个图的最大流，即最小割就是最小的不满足值，对应最大的满足值。<br></p>
+<p>如果不考虑 $k$ 个要求，我们可以对于每个小朋友取最大的满足值即可，网络流建图就是从源点出发，对于每个小朋友，从给它一颗糖果连边一直到m颗糖果，最后到汇点，流量为 $1000-w_{i,j}$，等价不满意值，那么整个图的最大流，即最小割就是最小的不满足值，对应最大的满足值。<br /></p>
 
-<p>然后我们考虑 \(k\) 个要求，若要求 \(x_i\) 和 \(y_i\) 糖果数相差不超过 \(z_i\)，那么相当于如果选择两个相差大于 \(z_i\) 的边是不能割开整个图的，那么我们可以在 \(x_{i,j}\)  和 \(y_{i,j-z}\) 间连接一条 \(INF\) 的边，使得如果选择相差大于 \(z\) 的两条边无法割开整个图。<br></p>
+<p>然后我们考虑 $k$ 个要求，若要求 $x_i$ 和 $y_i$ 糖果数相差不超过 $z_i$，那么相当于如果选择两个相差大于 $z_i$ 的边是不能割开整个图的，那么我们可以在 $x_{i,j}$  和 $y_{i,j-z}$ 间连接一条 $INF$ 的边，使得如果选择相差大于 $z$ 的两条边无法割开整个图。<br /></p>
 
 <h2 id="problem-i">Problem I</h2>
 
-<p>给出一个序列 \( a_{1...n},\ 0 ≤  a_i &lt; p  \)，求有多少对 \( i,j \) 满足 \( \frac{1}{a_i + a_j} \equiv \frac{1}{a_i} + \frac{1}{a_j}  \)  <br></p>
+<p>给出一个序列 $ a_{1…n},\ 0 ≤  a_i &lt; p  $，求有多少对 $ i,j $ 满足 $ \frac{1}{a_i + a_j} \equiv \frac{1}{a_i} + \frac{1}{a_j}  $  <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n  ≤ 10^{5}, 2 ≤ p  ≤ 10^{18} \) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n  ≤ 10^{5}, 2 ≤ p  ≤ 10^{18} $ <br /></p>
 
-<h2 id="solution">Solution</h2>
-
-<ul>
-<li><p>法一：推公式<br><br>
-由 \( \frac{1}{a_i + a_j} \equiv \frac{1}{a_i} + \frac{1}{a_j} \ (mod\ p) \) 得:<br><br>
- \( a^2_{i} + a^2_j + a_{i}a_{j} \equiv 0 \ (mod\ p) \) <br><br>
-那么分两种情况 <br></p>
+<h2 id="solution-2">Solution</h2>
 
 <ul>
-<li>\(a_i = a_j\)：只有当 \( p = 3 \) 的时候有解，且 \(a_i = 1\) 或者 \(a_i = 2\)。<br></li>
-<li>\(a_i ≠  a_j\)：在原式两边同乘以 \(a_i-a_j\) 后转换为 \(a^3_i - a^3_j \equiv 0 \ (mod \ p) \)，那么只要统计立方后 \(mod \ p\) 同余的数即可。 <br></li>
-</ul></li>
-<li><p>法二：二次剩余<br><br>
-待补</p></li>
+  <li>法一：推公式<br />
+  由 $ \frac{1}{a_i + a_j} \equiv \frac{1}{a_i} + \frac{1}{a_j} \ (mod\ p) $ 得:<br />
+   $ a^2_{i} + a^2_j + a_{i}a_{j} \equiv 0 \ (mod\ p) $ <br />
+  那么分两种情况 <br />
+    <ul>
+      <li>$a_i = a_j$：只有当 $ p = 3 $ 的时候有解，且 $a_i = 1$ 或者 $a_i = 2$。<br /></li>
+      <li>$a_i ≠  a_j$：在原式两边同乘以 $a_i-a_j$ 后转换为 $a^3_i - a^3_j \equiv 0 \ (mod \ p) $，那么只要统计立方后 $mod \ p$ 同余的数即可。 <br /></li>
+    </ul>
+  </li>
+  <li>法二：二次剩余<br />
+  待补</li>
 </ul>
 
-<h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+<h2 id="ac-code-1">AC Code</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
 <span class="n">LL</span> <span class="n">p</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 
 <span class="n">map</span><span class="o">&lt;</span><span class="n">LL</span><span class="p">,</span><span class="n">map</span><span class="o">&lt;</span><span class="n">LL</span><span class="p">,</span><span class="n">LL</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">same</span><span class="p">;</span>
@@ -355,25 +368,26 @@ into the {body} of the default.hbs template -->
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="problem-j">Problem J</h2>
 
-<p>给出一个序列 \( a_{1...n},\ 0 ≤  a_i &lt; p  \)，求 \( m \) 次前缀异或后的序列 \( b_{1...n}  \)  <br></p>
+<p>给出一个序列 $ a_{1…n},\ 0 ≤  a_i &lt; p  $，求 $ m $ 次前缀异或后的序列 $ b_{1…n}  $  <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n ≤ 2\times 10^{5}, 1 ≤ m ≤ 10^{9}, 0 ≤ a_i ≤ 2^{30}-1 \) <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n ≤ 2\times 10^{5}, 1 ≤ m ≤ 10^{9}, 0 ≤ a_i ≤ 2^{30}-1 $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-3">Solution</h2>
 
-<p>我们可以发现一个递推式：\(DP[i][j] = DP[i-1][j] xor DP[i][j-1]\) <br><br>
-其中 \(DP[i][j]\) 指第 \(i\) 次前缀异或的 \(a_j\) 的值。<br><br>
-那么我们继续展开发现 <br><br>
-\(DP[i][j] = DP[i-2][j] xor DP[i-1][j-1] xor DP[i-1][j-1] xor DP[i][j-2]\)<br><br>
-中间两次重复异或可以消去，再继续展开，最后我们能得到 <br><br>
-\(DP[i][j] = DP[i-2^k][j] xor DP[i][j-2^k], (i-2^{k+1}<1, j-2^{k+1}<1) \\)<br><br>
-所以我们每次取不大于 \(m\) 的最大的 \(2^k\) 并计算贡献，就能得到 \(m\) 次前缀异或后的序列。 <br></p>
+<p>我们可以发现一个递推式：$DP[i][j] = DP[i-1][j] xor DP[i][j-1]$ <br />
+其中 $DP[i][j]$ 指第 $i$ 次前缀异或的 $a_j$ 的值。<br />
+那么我们继续展开发现 <br />
+$DP[i][j] = DP[i-2][j] xor DP[i-1][j-1] xor DP[i-1][j-1] xor DP[i][j-2]$<br />
+中间两次重复异或可以消去，再继续展开，最后我们能得到 <br />
+$DP[i][j] = DP[i-2^k][j] xor DP[i][j-2^k], (i-2^{k+1}&lt;1, j-2^{k+1}&lt;1) $<br />
+所以我们每次取不大于 $m$ 的最大的 $2^k$ 并计算贡献，就能得到 $m$ 次前缀异或后的序列。 <br /></p>
 
-<h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
+<h2 id="ac-code-2">AC Code</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -400,13 +414,20 @@ into the {body} of the default.hbs template -->
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%d%c"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">" </span><span class="se">\n</span><span class="s">"</span><span class="p">[</span><span class="n">i</span><span class="o">==</span><span class="n">n</span><span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="contest-summary">Contest Summary</h2>
 
 <ul>
-<li><p>涉及运算较多且复杂的题，先把公式都算清楚再开敲，并且一人敲，一人检查</p></li>
-<li><p>碰到递推式，多展开，多尝试。</p></li>
-<li><p>理解网络流的建图技巧</p></li>
+  <li>
+    <p>涉及运算较多且复杂的题，先把公式都算清楚再开敲，并且一人敲，一人检查</p>
+  </li>
+  <li>
+    <p>碰到递推式，多展开，多尝试。</p>
+  </li>
+  <li>
+    <p>理解网络流的建图技巧</p>
+  </li>
 </ul>
 
                 </div>
@@ -457,6 +478,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -754,7 +797,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #8</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #8 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+8&source=1&searchmode=source) ## Problem B 计算 \\( \\sum^n\_i \\sum^i\_{j} \\left \\lceil \\frac{i}{j} \\right \\rceil [gcd(i,j)==1] \\)。 数据范围：\\( 1 ≤ t ≤ 10^4,</p>
+                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #8 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+8&source=1&searchmode=source) ## Problem B 计算 $ \\sum^n\_i \\sum^i\_{j} \\left \\lceil \\frac{i}{j} \\right \\rceil [gcd(i,j)==1] $。 数据范围：$ 1 ≤ t ≤ 10^4,</p>
                 </section>
             </a>
             <footer class="post-card-meta">

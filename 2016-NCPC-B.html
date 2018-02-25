@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2016 Nordic Collegiate Programming Contest B" />
-    <meta property="og:description" content="Problem Information source: It&#39;s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 &quot;autocorrelation&quot; ，首先输入 &quot;aut&quot; 三个字符，再按下 Tab 键，它匹配到 &quot;autocorrect&quot; ，然后按下两次退格得到 &quot;autocorre&quot; ，最后再输入 &quot;lation&quot; ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 \(n\) 个单词，再给出 \(m\) 个待输入单词，求输入每个单词的最小按键次数。 Input 5 5 austria autocorrect program programming computer autocorrelation programming competition zyx austria Output 12 4 11 3" />
+    <meta property="og:description" content="Problem Information source: It’s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 “autocorrelation” ，首先输入 “aut” 三个字符，再按下 Tab 键，它匹配到 “autocorrect” ，然后按下两次退格得到 “autocorre” ，最后再输入 “lation” ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 $n$ 个单词，再给出 $m$ 个待输入单词，求输入每个单词的最小按键次数。 Input 5 5 austria autocorrect program programming computer autocorrelation programming competition zyx austria Output 12 4 11 3" />
     <meta property="og:url" content="http://localhost:4000/2016-NCPC-B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-102710297.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2016 Nordic Collegiate Programming Contest B" />
-    <meta name="twitter:description" content="Problem Information source: It&#39;s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 &quot;autocorrelation&quot; ，首先输入 &quot;aut&quot; 三个字符，再按下 Tab 键，它匹配到 &quot;autocorrect&quot; ，然后按下两次退格得到 &quot;autocorre&quot; ，最后再输入 &quot;lation&quot; ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 \(n\) 个单词，再给出 \(m\) 个待输入单词，求输入每个单词的最小按键次数。 Input 5 5 austria autocorrect program programming computer autocorrelation programming competition zyx austria Output 12 4 11 3" />
+    <meta name="twitter:description" content="Problem Information source: It’s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 “autocorrelation” ，首先输入 “aut” 三个字符，再按下 Tab 键，它匹配到 “autocorrect” ，然后按下两次退格得到 “autocorre” ，最后再输入 “lation” ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 $n$ 个单词，再给出 $m$ 个待输入单词，求输入每个单词的最小按键次数。 Input 5 5 austria autocorrect program programming computer autocorrelation programming competition zyx austria Output 12 4 11 3" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-102710297.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2016-NCPC-B"
     },
-    "description": "Problem Information source: It&#39;s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 &quot;autocorrelation&quot; ，首先输入 &quot;aut&quot; 三个字符，再按下 Tab 键，它匹配到 &quot;autocorrect&quot; ，然后按下两次退格得到 &quot;autocorre&quot; ，最后再输入 &quot;lation&quot; ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 \(n\) 个单词，再给出 \(m\) 个待输入单词，求输入每个单词的最小按键次数。 Input 5 5 austria autocorrect program programming computer autocorrelation programming competition zyx austria Output 12 4 11 3"
+    "description": "Problem Information source: It’s from the kattis Description 输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 “autocorrelation” ，首先输入 “aut” 三个字符，再按下 Tab 键，它匹配到 “autocorrect” ，然后按下两次退格得到 “autocorre” ，最后再输入 “lation” ，这样总共按键 12 次，而直接输入这个单词需要 15 次。 现在按照出现频率给出字典库中的 $n$ 个单词，再给出 $m$ 个待输入单词，求输入每个单词的最小按键次数。 Input 5 5 austria autocorrect program programming computer autocorrelation programming competition zyx austria Output 12 4 11 3"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2016 Nordic Collegiate Programming Contest B" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,16 +183,16 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="problem-information">Problem Information</h2>
 
-<p>source: <a href="https://open.kattis.com/problems/autocorrect">It&#39;s from the kattis</a></p>
+<p>source: <a href="https://open.kattis.com/problems/autocorrect">It’s from the kattis</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 &quot;autocorrelation&quot; ，首先输入 &quot;aut&quot; 三个字符，再按下 Tab 键，它匹配到 &quot;autocorrect&quot; ，然后按下两次退格得到 &quot;autocorre&quot; ，最后再输入 &quot;lation&quot; ，这样总共按键 12 次，而直接输入这个单词需要 15 次。<br></p>
+<p>输入法的自动补全是根据用户以前的输入建立了一个字典库，出现频率从上往下递减，每次当用户键入一个或一个以上的字符同时按下 Tab 键后，自动补全会在字典库中从上往下找到包含这几个字符的第一个字符串，然后直接补全。举个栗子，使用输入法的自动补全来键入 “autocorrelation” ，首先输入 “aut” 三个字符，再按下 Tab 键，它匹配到 “autocorrect” ，然后按下两次退格得到 “autocorre” ，最后再输入 “lation” ，这样总共按键 12 次，而直接输入这个单词需要 15 次。<br /></p>
 
-<p>现在按照出现频率给出字典库中的 \(n\) 个单词，再给出 \(m\) 个待输入单词，求输入每个单词的最小按键次数。<br></p>
+<p>现在按照出现频率给出字典库中的 $n$ 个单词，再给出 $m$ 个待输入单词，求输入每个单词的最小按键次数。<br /></p>
 
 <h2 id="input">Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">5 5                                                                                   
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5 5                                                                                   
 austria
 autocorrect
 program
@@ -191,23 +203,27 @@ programming
 competition
 zyx
 austria
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="output">Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">12                                                                                    
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12                                                                                    
 4
 11
 3
 2
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>很容易能发现这是一道最短路的问题，即询问的是从每个单词的首字母到尾字母的最短距离。<br><br>
-我们考虑对于字典库的单词建立字典树，在建树的时候同时建图：<br><br>
-* 每个单词的每个字母往它之后的那个字母连边。<br><br>
-* 每个字母往该单词的尾字母连边：若该字母未连接过其它的尾字母，则向当前单词的尾字母连边，这样能确保每次先走频率最高的单词。<br></p>
+<p>很容易能发现这是一道最短路的问题，即询问的是从每个单词的首字母到尾字母的最短距离。<br />
+我们考虑对于字典库的单词建立字典树，在建树的时候同时建图：<br /></p>
+<ul>
+  <li>每个单词的每个字母往它之后的那个字母连边。<br /></li>
+  <li>每个字母往该单词的尾字母连边：若该字母未连接过其它的尾字母，则向当前单词的尾字母连边，这样能确保每次先走频率最高的单词。<br /></li>
+</ul>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="n">Trie</span>                                                                           
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Trie</span>                                                                           
 <span class="p">{</span>
     <span class="k">const</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">CH_NUM</span> <span class="o">=</span> <span class="mi">26</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">ch</span><span class="p">[</span><span class="n">MaxN</span><span class="p">][</span><span class="n">CH_NUM</span><span class="p">];</span>
@@ -280,7 +296,8 @@ austria
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -329,6 +346,28 @@ austria
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -626,7 +665,7 @@ austria
                     <h2 class="post-card-title">2015 Southwestern Europe Regional Contest (SWERC) B</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the kattis](https://open.kattis.com/problems/blackvienna) ## Description 用 \\(26\\) 个大写字母分别表示嫌疑人的代号，其中有三个人是 "Black Vienna"，除去这三个人后剩下的 \\(23\\) 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 \\(n\\) 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 \\(n\\) 次查询的基础上，求出 "Black Vienna" 可能的集合数。 ## Input ``` 3 AB 1 1 AC 2</p>
+                    <p>## Problem Information source: [It's from the kattis](https://open.kattis.com/problems/blackvienna) ## Description 用 $26$ 个大写字母分别表示嫌疑人的代号，其中有三个人是 "Black Vienna"，除去这三个人后剩下的 $23$ 张标识有字母的扑克牌被随机分到了两名玩家的手中（允许有人一张牌都没有），现在对这两人做 $n$ 次查询，每次对其中一个人查询指定的某两张扑克牌中有几张在他的手中（回答可能与实际不符）。在这 $n$ 次查询的基础上，求出 "Black Vienna" 可能的集合数。 ## Input ``` 3 AB 1 1 AC 2</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -669,7 +708,7 @@ austria
                     <h2 class="post-card-title">CodeForces Round #436 (Div. 2) F</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the Round #436 (Div. 2) of the codeforces Description 有一个 \(n\) 个结点，\(m\) 条边的有向图，其中没有自环。定义从 \(s\) 到 \(t\) 的一条路径为一个连续的点集 \( p_1, p_2, p_3, ..., p_k \)，其中 \(p_1 = s, p_k</p>
+                    <p>Problem Information source: It’s from the Round #436 (Div. 2) of the codeforces Description 有一个 $n$ 个结点，$m$ 条边的有向图，其中没有自环。定义从 $s$ 到 $t$ 的一条路径为一个连续的点集 $ p_1, p_2, p_3, …, p_k $，其中 $p_1 = s, p_k</p>
                 </section>
             </a>
             <footer class="post-card-meta">

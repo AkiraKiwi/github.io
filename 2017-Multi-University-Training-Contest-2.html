@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #2" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 \(F_{x,y}\) 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \ (i≥2,j≥1) \] 给定 \(N,M\), 计算 \(F_{m,1}\ mod\ 1e9+7\) 数据范围：\( 1 ≤ T" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 $F_{x,y}$ 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \ (i≥2,j≥1) \] 给定 $N,M$, 计算 $F_{m,1}\ mod\ 1e9+7$ 数据范围：$ 1 ≤ T" />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-2" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #2" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 \(F_{x,y}\) 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \ (i≥2,j≥1) \] 给定 \(N,M\), 计算 \(F_{m,1}\ mod\ 1e9+7\) 数据范围：\( 1 ≤ T" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 $F_{x,y}$ 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \ (i≥2,j≥1) \] 给定 $N,M$, 计算 $F_{m,1}\ mod\ 1e9+7$ 数据范围：$ 1 ≤ T" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-2"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 \(F_{x,y}\) 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \ (i≥2,j≥1) \] 给定 \(N,M\), 计算 \(F_{m,1}\ mod\ 1e9+7\) 数据范围：\( 1 ≤ T"
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 $F_{x,y}$ 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \ (i≥2,j≥1) \] 给定 $N,M$, 计算 $F_{m,1}\ mod\ 1e9+7$ 数据范围：$ 1 ≤ T"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #2" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,50 +183,53 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+2&source=1&searchmode=source">The 2017 Multi-University Training Contest #2 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+2&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #2 from HDU OJ</a></p>
 
 <h2 id="problem-f">Problem F</h2>
 
-<p>函数 \(F_{x,y}\) 满足： <br></p>
+<p>函数 $F_{x,y}$ 满足： <br /></p>
 
-<p>\[<br>
-F_{1,1} = F_{1,2} = 1 \\ <br>
-F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \  (i≥3) \\ <br>
-F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)<br>
+<p>\[
+F_{1,1} = F_{1,2} = 1 \\ 
+F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \  (i≥3) \\ 
+F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)
 \]</p>
 
-<p>给定 \(N,M\), 计算 \(F_{m,1}\ mod\ 1e9+7\) <br></p>
+<p>给定 $N,M$, 计算 $F_{m,1}\ mod\ 1e9+7$ <br /></p>
 
-<p>数据范围：\( 1 ≤ T ≤ 10^{4}, 1 ≤ N,M &lt; 2^{63} \) <br></p>
+<p>数据范围：$ 1 ≤ T ≤ 10^{4}, 1 ≤ N,M &lt; 2^{63} $ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
 <figure>
-    <a href="https://akirakiwi.github.io/assets/img/picture/2017MUT2.jpg"><img src="https://akirakiwi.github.io/assets/img/picture/2017MUT2.jpg"></a>
-    <figcaption>
-        矩阵快速幂
-    </figcaption>
+	<a href="https://akirakiwi.github.io/assets/img/picture/2017MUT2.jpg"><img src="https://akirakiwi.github.io/assets/img/picture/2017MUT2.jpg" /></a>
+	<figcaption>
+		矩阵快速幂
+	</figcaption>
 </figure>
 
 <h2 id="problem-h">Problem H</h2>
 
-<p>给出一个 \(N\times M\) 的矩阵，每个位置有一个数，现在随机选取一个子矩阵，其中不同数字的个数为这次选取的价值，求随机选取一次子矩阵的价值的期望。 <br></p>
+<p>给出一个 $N\times M$ 的矩阵，每个位置有一个数，现在随机选取一个子矩阵，其中不同数字的个数为这次选取的价值，求随机选取一次子矩阵的价值的期望。 <br /></p>
 
-<p>数据范围：\( 1 ≤ T ≤ 8, 1 ≤ n,m ≤ 100, 0 ≤ g_{i,j} &lt; N\times M  \) <br></p>
+<p>数据范围：$ 1 ≤ T ≤ 8, 1 ≤ n,m ≤ 100, 0 ≤ g_{i,j} &lt; N\times M  $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>首先，对于任意一个给定的矩阵，子矩阵可能的情况为 \( \frac{n(n+1)\times m(m+1)}{4} \)，然后我们需要计算出每一个子矩阵的价值：<br></p>
-
-<ul>
-<li><p>枚举原矩阵每一个位置，我们判断它可能在哪些子矩阵中被计数，因为子矩阵价值等于不同数字的个数，所以我们规定，从左上角按行遍历矩阵，对于每一种数字，它有贡献的矩阵不能包含出现在它前面的同种数字，但是出现在后面的没有限制。这样我们就能保证总价值不会算重。</p></li>
-<li><p>对于某一个位置 \(g_{i,j}\)，我们统计包含它的子矩阵，只需要统计矩阵左上角和右下角的位置即可：</p>
+<p>首先，对于任意一个给定的矩阵，子矩阵可能的情况为 $ \frac{n(n+1)\times m(m+1)}{4} $，然后我们需要计算出每一个子矩阵的价值：<br /></p>
 
 <ul>
-<li>左上角：我们使用vector保存每一种数字在每一行出现的情况。首先设 \(L=1\)，特判当前行，如果当前行还有该数字 \(g_{i,j&#39;}\)，那么 \(L\) 更新为 \(j&#39;+1\)，并统计当前行左上角可能的情况，有 \(j-L+1\) 种。然后我们逐行往上遍历，每次查找该数字有没有出现在 \((L,j)\) 之间，有则更新 \(L\)，且每一行都统计 \(j-L+1\)。如果这一行在 \(j\) 处也有该数字，那么跳出遍历，因为到上界了。</li>
-<li>右下角：右下角往下的范围永远是当前行到最后一行，但是往右是有边界的。首先设 \(R=M\)，当前行直接统计 \( (R-j+1)\times (N-i+1) \) 种情况。然后我们逐行往上遍历，每次查找该数字有没有出现在 \((j,R)\) 之间，有则更新 \(R\)，且每一行都统计 \( (R-j+1)\times (N-i+1) \)。如果这一行在 \(j\) 处也有该数字，那么跳出遍历，因为到上界了。</li>
-<li>左上角和右上角是同步统计的，对于每一行，我们都会累加上 \( (j-L+1)\times (R-j+1)\times (N-i+1) \)</li>
-</ul></li>
+  <li>
+    <p>枚举原矩阵每一个位置，我们判断它可能在哪些子矩阵中被计数，因为子矩阵价值等于不同数字的个数，所以我们规定，从左上角按行遍历矩阵，对于每一种数字，它有贡献的矩阵不能包含出现在它前面的同种数字，但是出现在后面的没有限制。这样我们就能保证总价值不会算重。</p>
+  </li>
+  <li>
+    <p>对于某一个位置 $g_{i,j}$，我们统计包含它的子矩阵，只需要统计矩阵左上角和右下角的位置即可：</p>
+    <ul>
+      <li>左上角：我们使用vector保存每一种数字在每一行出现的情况。首先设 $L=1$，特判当前行，如果当前行还有该数字 $g_{i,j’}$，那么 $L$ 更新为 $j’+1$，并统计当前行左上角可能的情况，有 $j-L+1$ 种。然后我们逐行往上遍历，每次查找该数字有没有出现在 $(L,j)$ 之间，有则更新 $L$，且每一行都统计 $j-L+1$。如果这一行在 $j$ 处也有该数字，那么跳出遍历，因为到上界了。</li>
+      <li>右下角：右下角往下的范围永远是当前行到最后一行，但是往右是有边界的。首先设 $R=M$，当前行直接统计 $ (R-j+1)\times (N-i+1) $ 种情况。然后我们逐行往上遍历，每次查找该数字有没有出现在 $(j,R)$ 之间，有则更新 $R$，且每一行都统计 $ (R-j+1)\times (N-i+1) $。如果这一行在 $j$ 处也有该数字，那么跳出遍历，因为到上界了。</li>
+      <li>左上角和右上角是同步统计的，对于每一行，我们都会累加上 $ (j-L+1)\times (R-j+1)\times (N-i+1) $</li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="ac-code">AC code</h2>
@@ -304,32 +319,36 @@ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)<br>
 
 <h2 id="problem-i">Problem I</h2>
 
-<p>给出一个数组 \(A_{1...n}\)，问有多少个数组 \(B_{1...n}\) 满足：<br></p>
+<p>给出一个数组 $A_{1…n}$，问有多少个数组 $B_{1…n}$ 满足：<br /></p>
 
 <ul>
-<li><p>\( 1≤B_i≤A_i \)</p></li>
-<li><p>对于任意一个区间 \([l,r]\)，\(gcd(b_l,b_{l+1},...,b_r)≥2\)</p></li>
+  <li>
+    <p>$ 1≤B_i≤A_i $</p>
+  </li>
+  <li>
+    <p>对于任意一个区间 $[l,r]$，$gcd(b_l,b_{l+1},…,b_r)≥2$</p>
+  </li>
 </ul>
 
-<p>数据范围：\( 1 ≤ n, A_i ≤ 10^{5}\) <br></p>
+<p>数据范围：$ 1 ≤ n, A_i ≤ 10^{5}$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>首先，由第二个条件问题转换为找到一些 \(B_{1..n}\) 使得每一个数都比相应的 \(A_i\) 小，且 \(gcd(B_1,...B_n) ≥ 2\) <br><br>
-因为数值范围较小，所以先将数组值域化：记录区间 \([1,i]\) 之间有多少个数。然后我们从 \(2\) 开始枚举 \(gcd\) 值，直到大于任意一个 \(A_i\)。对于每一个 \(gcd\)，我们枚举它的倍数 \(x\)，然后统计 \([x\times gcd, (x+1) \times gcd)\) 内 \(A_i\) 的数量 \(N\)，即代表相应的 \(B_i\) 可以在该 \(gcd\) 下可以有 \(x\) 种取值，那么该 \(gcd\) 下的答案累乘上 \(x^N\) 次即可，然后最终答案累加每一次枚举 \(gcd\) 的答案。<br><br>
-这样枚举不同的 \(gcd\) 的倍数得到的 \(B_i\) 肯定是有重复的，所以我们需用到容斥原理去重：对于某一个 \(gcd\)，我们将它质因子分解，如果它含有两个及以上的相同质因子，就直接跳过；如果含有奇数个不同的质因子，则累加答案；如果含有偶数个不同的质因子，则减去答案。这样可以保证答案不重复，证明详见莫比乌斯反演。 <br></p>
+<p>首先，由第二个条件问题转换为找到一些 $B_{1..n}$ 使得每一个数都比相应的 $A_i$ 小，且 $gcd(B_1,…B_n) ≥ 2$ <br />
+因为数值范围较小，所以先将数组值域化：记录区间 $[1,i]$ 之间有多少个数。然后我们从 $2$ 开始枚举 $gcd$ 值，直到大于任意一个 $A_i$。对于每一个 $gcd$，我们枚举它的倍数 $x$，然后统计 $[x\times gcd, (x+1) \times gcd)$ 内 $A_i$ 的数量 $N$，即代表相应的 $B_i$ 可以在该 $gcd$ 下可以有 $x$ 种取值，那么该 $gcd$ 下的答案累乘上 $x^N$ 次即可，然后最终答案累加每一次枚举 $gcd$ 的答案。<br />
+这样枚举不同的 $gcd$ 的倍数得到的 $B_i$ 肯定是有重复的，所以我们需用到容斥原理去重：对于某一个 $gcd$，我们将它质因子分解，如果它含有两个及以上的相同质因子，就直接跳过；如果含有奇数个不同的质因子，则累加答案；如果含有偶数个不同的质因子，则减去答案。这样可以保证答案不重复，证明详见莫比乌斯反演。 <br /></p>
 
 <h2 id="problem-k">Problem K</h2>
 
-<p>二维平面上给N个整数点，问能构成多少个不同的正多边形。<br></p>
+<p>二维平面上给N个整数点，问能构成多少个不同的正多边形。<br /></p>
 
-<p>数据范围：\( 1 ≤ N ≤ 500, -100 ≤ x,y ≤ 100\) <br></p>
+<p>数据范围：$ 1 ≤ N ≤ 500, -100 ≤ x,y ≤ 100$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-3">Solution</h2>
 
-<p>容易得知只有正四边形可以使得所有的顶点为整数点。（具体证明可参考杨景钦在2017的国家队论文） 所以正解即求出所有的正四边形个数。 <br></p>
+<p>容易得知只有正四边形可以使得所有的顶点为整数点。（具体证明可参考杨景钦在2017的国家队论文） 所以正解即求出所有的正四边形个数。 <br /></p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">Node</span>
@@ -402,10 +421,18 @@ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)<br>
 <h2 id="contest-summary">Contest Summary</h2>
 
 <ul>
-<li><p>由于队长请假，所以这场比赛是CPL大佬拖着本蒟蒻战战兢兢打完的 _(:з」∠)_ </p></li>
-<li><p>F题 CPL大佬一波推出等比数列公式带走，不过正解是去推矩阵快速幂</p></li>
-<li><p>最后一个多小时怼08，由于蜜汁状态，没商量好做法就开始瞎敲，最后直接WA翻。赛后发现之前的代码应该是100W个vector内存出问题了，然后压缩成1W个vector，捣鼓好边界判定条件就过了，时间还算比较快，内存空间也很小。</p></li>
-<li><p>沟通很重要，沟通很重要，沟通很重要！！！</p></li>
+  <li>
+    <p>由于队长请假，所以这场比赛是CPL大佬拖着本蒟蒻战战兢兢打完的 _(:з」∠)_</p>
+  </li>
+  <li>
+    <p>F题 CPL大佬一波推出等比数列公式带走，不过正解是去推矩阵快速幂</p>
+  </li>
+  <li>
+    <p>最后一个多小时怼08，由于蜜汁状态，没商量好做法就开始瞎敲，最后直接WA翻。赛后发现之前的代码应该是100W个vector内存出问题了，然后压缩成1W个vector，捣鼓好边界判定条件就过了，时间还算比较快，内存空间也很小。</p>
+  </li>
+  <li>
+    <p>沟通很重要，沟通很重要，沟通很重要！！！</p>
+  </li>
 </ul>
 
                 </div>
@@ -456,6 +483,28 @@ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)<br>
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -753,7 +802,7 @@ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)<br>
                     <h2 class="post-card-title">四川省第七届大学生程序设计竞赛</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the Vjudge](https://vjudge.net/contest/158680#overview) ## Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：\\( length ≤ 5\\times 10^{6}\\) ## Solution 先求出禁止串的 \\(next\\) 数组，然后在 \\(KMP\\) 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 ## AC code {% highlight c++ %} char no[MaxN];</p>
+                    <p>## Contest Information source: [It's from the Vjudge](https://vjudge.net/contest/158680#overview) ## Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：$ length ≤ 5\\times 10^{6}$ ## Solution 先求出禁止串的 $next$ 数组，然后在 $KMP$ 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 ## AC code {% highlight c++ %} char no[MaxN];</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -796,7 +845,7 @@ F_{i,j} = \sum^{j+N+1}_{k=j} F_{i-1,k} \  (i≥2,j≥1)<br>
                     <h2 class="post-card-title">CodeForces Round #425 (Div. 2) D</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 \(n\) 个节点的树，执行 \(q\) 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The</p>
+                    <p>Problem Information source: It’s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 $n$ 个节点的树，执行 $q$ 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The</p>
                 </section>
             </a>
             <footer class="post-card-meta">

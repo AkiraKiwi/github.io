@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="初识连分数" />
-    <meta property="og:description" content="Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 \(r\)，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 \(r\) 为有理数，那么当小数部分为 \(0\) 时，过程中止。 连分数一般简写作： \( x = [a_0;a_1,a_2,a_3]\) For example : \(3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 \) \(4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250\) \(12.250= 12 + 0.250, \frac{1}{0.250} = 4.000\) \(4.000 = 4 + 0, stop \)" />
+    <meta property="og:description" content="Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 $r$，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 $r$ 为有理数，那么当小数部分为 $0$ 时，过程中止。 连分数一般简写作： $ x = [a_0;a_1,a_2,a_3]$ For example : $3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 $ $4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250$ $12.250= 12 + 0.250, \frac{1}{0.250} = 4.000$ $4.000 = 4 + 0, stop $" />
     <meta property="og:url" content="http://localhost:4000/%E5%88%9D%E8%AF%86%E8%BF%9E%E5%88%86%E6%95%B0" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-090504.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="初识连分数" />
-    <meta name="twitter:description" content="Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 \(r\)，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 \(r\) 为有理数，那么当小数部分为 \(0\) 时，过程中止。 连分数一般简写作： \( x = [a_0;a_1,a_2,a_3]\) For example : \(3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 \) \(4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250\) \(12.250= 12 + 0.250, \frac{1}{0.250} = 4.000\) \(4.000 = 4 + 0, stop \)" />
+    <meta name="twitter:description" content="Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 $r$，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 $r$ 为有理数，那么当小数部分为 $0$ 时，过程中止。 连分数一般简写作： $ x = [a_0;a_1,a_2,a_3]$ For example : $3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 $ $4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250$ $12.250= 12 + 0.250, \frac{1}{0.250} = 4.000$ $4.000 = 4 + 0, stop $" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-090504.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E5%88%9D%E8%AF%86%E8%BF%9E%E5%88%86%E6%95%B0"
     },
-    "description": "Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 \(r\)，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 \(r\) 为有理数，那么当小数部分为 \(0\) 时，过程中止。 连分数一般简写作： \( x = [a_0;a_1,a_2,a_3]\) For example : \(3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 \) \(4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250\) \(12.250= 12 + 0.250, \frac{1}{0.250} = 4.000\) \(4.000 = 4 + 0, stop \)"
+    "description": "Description 连分数形式通常为 : 连分数常用于无理数的逼近，例如： 连分数表示的算法： 考虑实数 $r$，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 $r$ 为有理数，那么当小数部分为 $0$ 时，过程中止。 连分数一般简写作： $ x = [a_0;a_1,a_2,a_3]$ For example : $3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 $ $4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250$ $12.250= 12 + 0.250, \frac{1}{0.250} = 4.000$ $4.000 = 4 + 0, stop $"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="初识连分数" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -172,125 +184,131 @@ into the {body} of the default.hbs template -->
                     <h2 id="description">Description</h2>
 
 <ul>
-<li><p><a href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E5%88%86%E6%95%B0">连分数</a>形式通常为 : <br><br>
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/482094f725cb2e8201a58ec1f9cac1ec5188803f" alt=""> <br></p></li>
-<li><p>连分数常用于无理数的逼近，例如：<br><br>
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e1061c96eb54e806655ef0d0298c3135030dfb7c" alt=""> <br></p></li>
-<li><p>连分数表示的算法：<br></p>
-
-<ul>
-<li>考虑实数 \(r\)，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 \(r\) 为有理数，那么当小数部分为 \(0\) 时，过程中止。<br></li>
-<li>连分数一般简写作： \( x = [a_0;a_1,a_2,a_3]\) <br></li>
-<li>For example : <br>
-\(3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 \)  <br>
-\(4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250\)  <br>
-\(12.250= 12 + 0.250, \frac{1}{0.250} = 4.000\)  <br>
-\(4.000 = 4 + 0, stop \) <br>
-\(3.245 = 3 + \frac{1}{4 + \frac{1}{12 + \frac{1}{4}}} \) <br></li>
-</ul></li>
+  <li>
+    <p><a href="https://zh.wikipedia.org/wiki/%E8%BF%9E%E5%88%86%E6%95%B0">连分数</a>形式通常为 : <br />
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/482094f725cb2e8201a58ec1f9cac1ec5188803f" alt="" /> <br /></p>
+  </li>
+  <li>
+    <p>连分数常用于无理数的逼近，例如：<br />
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e1061c96eb54e806655ef0d0298c3135030dfb7c" alt="" /> <br /></p>
+  </li>
+  <li>
+    <p>连分数表示的算法：<br /></p>
+    <ul>
+      <li>考虑实数 $r$，每次从中分离出它的整数部分，然后对于小数部分取倒数，继续重复这个过程。如果 $r$ 为有理数，那么当小数部分为 $0$ 时，过程中止。<br /></li>
+      <li>连分数一般简写作： $ x = [a_0;a_1,a_2,a_3]$ <br /></li>
+      <li>For example : <br />
+  $3.245 = 3 + 0.245, \frac{1}{0.245} = 4.082 $  <br />
+  $4.082 = 4 + 0.082, \frac{1}{0.082} = 12.250$  <br />
+  $12.250= 12 + 0.250, \frac{1}{0.250} = 4.000$  <br />
+  $4.000 = 4 + 0, stop $ <br />
+  $3.245 = 3 + \frac{1}{4 + \frac{1}{12 + \frac{1}{4}}} $ <br /></li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="problems">Problems</h2>
 
 <ul>
-<li><p><a href="http://acm.ecnu.edu.cn/problem/3305/">ECOJ 3305</a> <br></p>
-
-<ul>
-<li>Question : 要求用一个分母不超过 \(10^9\) 的分数逼近给定的小数 <br></li>
-<li>Solution : 模拟连分数计算过程，直至超过限制 <br></li>
-<li>Code : <br>
-<code class="prettyprint">c++
-double tar;
-vector&lt;LL&gt; ans;
-LL limit = 1000000000;
-void find( double now)
-{
-LL cnt = (LL)now;
-if(cnt&gt;limit || ans.size()&gt;100 ) return;
-ans.pb(cnt);
-if( now-1.0*cnt&gt;eps ) find( 1.0/(now-1.0*cnt) );
-}
-void solve()
-{
-ans.clear();
-find( 1.0/tar );
-int loc = ans.size(); 
-LL p,q;
-while(loc)
-{
-    loc--;
-    p=1,q=0;
-    for(int i=loc;i&gt;=0;i--)
-    {
-        LL tp = p*ans[i]+q, tq = p;
-        LL g = __gcd(tp, tq);
-        p = tp/g;
-        q = tq/g;
-        if(p &gt; limit || q &gt; limit) break;
-    }
-    if(p&lt;=limit) break;
-}
-cout &lt;&lt; q &lt;&lt; &quot; &quot; &lt;&lt; p &lt;&lt; endl;
-}
-int main()
-{
-while(cin &gt;&gt; tar)
-{
-    if(fabs(tar)&lt;eps) cout &lt;&lt; &quot;0 1\n&quot;;
-    else if(fabs(tar-1.0)&lt;eps) cout &lt;&lt; &quot;1 1\n&quot;; 
-    else solve();
-}
-}
-</code></li>
-</ul></li>
-<li><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6209">HDU 6209</a><br></p>
-
-<ul>
-<li>Question : 给定整数 \(k\)，要求用分母不超过 \(10^5\) 的分数逼近 \(k^{\frac{2}{3}}\) <br></li>
-<li>Solution : 暂时没用连分数的做法通过，因为分母限制比较小，那么可以考虑二分逼近的做法。<br></li>
-<li>Code : <br>
-<code class="prettyprint">c++
-int cbrt3(int x){
-return (int)cbrt(x + 0.5);
-}
-int k;
-void solve()
-{
-int limit = 100000;
-LD tar = cbrt(1.0l*k*k);
-int base = (int)tar;
-tar -= base;
-int x1 = 0, y1 = 1, x2 = 1, y2 = 1;
-while(true){
-    if(y1+y2 &gt; limit) break;
-    int up = x1 + x2, down = y1 + y2;
-    LD tmp = 1.0*up/down;
-    if(tmp&lt;tar)
-        x1 = up, y1 = down;
-    else
-        x2 = up, y2 = down;
-}
-LD tmp1 = 1.0*x1/y1, tmp2 = 1.0*x2/y2;
-if( tar - tmp1 &gt; tmp2 - tar )
-    printf(&quot;%d/%d\n&quot;, x2+y2*base, y2);
-else 
-    printf(&quot;%d/%d\n&quot;, x1+y1*base, y1);
-}
-int main()
-{
-int T;
-scanf(&quot;%d&quot;, &amp;T);
-while(T--)
-{
-    read(k);
-    int x = cbrt3(k);
-    if( k==x*x*x ) printf(&quot;%d/1\n&quot;, x*x);
-    else solve();
-}
-}
-</code></li>
-</ul></li>
+  <li><a href="http://acm.ecnu.edu.cn/problem/3305/">ECOJ 3305</a> <br />
+    <ul>
+      <li>Question : 要求用一个分母不超过 $10^9$ 的分数逼近给定的小数 <br /></li>
+      <li>Solution : 模拟连分数计算过程，直至超过限制 <br /></li>
+      <li>Code : <br />
+        <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">double</span> <span class="n">tar</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">LL</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="n">LL</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">1000000000</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">find</span><span class="p">(</span> <span class="kt">double</span> <span class="n">now</span><span class="p">)</span>
+  <span class="p">{</span>
+  <span class="n">LL</span> <span class="n">cnt</span> <span class="o">=</span> <span class="p">(</span><span class="n">LL</span><span class="p">)</span><span class="n">now</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="o">&gt;</span><span class="n">limit</span> <span class="o">||</span> <span class="n">ans</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">100</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+  <span class="n">ans</span><span class="p">.</span><span class="n">pb</span><span class="p">(</span><span class="n">cnt</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">now</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">cnt</span><span class="o">&gt;</span><span class="n">eps</span> <span class="p">)</span> <span class="n">find</span><span class="p">(</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">now</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">cnt</span><span class="p">)</span> <span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
+  <span class="p">{</span>
+  <span class="n">ans</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+  <span class="n">find</span><span class="p">(</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">tar</span> <span class="p">);</span>
+  <span class="kt">int</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">ans</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> 
+  <span class="n">LL</span> <span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">loc</span><span class="o">--</span><span class="p">;</span>
+      <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">loc</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="n">LL</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">q</span><span class="p">,</span> <span class="n">tq</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+          <span class="n">LL</span> <span class="n">g</span> <span class="o">=</span> <span class="n">__gcd</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="n">tq</span><span class="p">);</span>
+          <span class="n">p</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="n">g</span><span class="p">;</span>
+          <span class="n">q</span> <span class="o">=</span> <span class="n">tq</span><span class="o">/</span><span class="n">g</span><span class="p">;</span>
+          <span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="n">limit</span> <span class="o">||</span> <span class="n">q</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;=</span><span class="n">limit</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+  <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">tar</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">tar</span><span class="p">)</span><span class="o">&lt;</span><span class="n">eps</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"0 1</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">tar</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span><span class="o">&lt;</span><span class="n">eps</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"1 1</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> 
+      <span class="k">else</span> <span class="n">solve</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6209">HDU 6209</a><br />
+    <ul>
+      <li>Question : 给定整数 $k$，要求用分母不超过 $10^5$ 的分数逼近 $k^{\frac{2}{3}}$ <br /></li>
+      <li>Solution : 暂时没用连分数的做法通过，因为分母限制比较小，那么可以考虑二分逼近的做法。<br /></li>
+      <li>Code : <br />
+        <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">int</span> <span class="n">cbrt3</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+  <span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">cbrt</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
+  <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">;</span>
+  <span class="n">LD</span> <span class="n">tar</span> <span class="o">=</span> <span class="n">cbrt</span><span class="p">(</span><span class="mf">1.0</span><span class="n">l</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">k</span><span class="p">);</span>
+  <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">tar</span><span class="p">;</span>
+  <span class="n">tar</span> <span class="o">-=</span> <span class="n">base</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">y1</span><span class="o">+</span><span class="n">y2</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">up</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">down</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">y2</span><span class="p">;</span>
+      <span class="n">LD</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">up</span><span class="o">/</span><span class="n">down</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">&lt;</span><span class="n">tar</span><span class="p">)</span>
+          <span class="n">x1</span> <span class="o">=</span> <span class="n">up</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">down</span><span class="p">;</span>
+      <span class="k">else</span>
+          <span class="n">x2</span> <span class="o">=</span> <span class="n">up</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">down</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">LD</span> <span class="n">tmp1</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="n">y1</span><span class="p">,</span> <span class="n">tmp2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="n">y2</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">tar</span> <span class="o">-</span> <span class="n">tmp1</span> <span class="o">&gt;</span> <span class="n">tmp2</span> <span class="o">-</span> <span class="n">tar</span> <span class="p">)</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">"%d/%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x2</span><span class="o">+</span><span class="n">y2</span><span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">y2</span><span class="p">);</span>
+  <span class="k">else</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"%d/%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x1</span><span class="o">+</span><span class="n">y1</span><span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">y1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+  <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">read</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+      <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">cbrt3</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span> <span class="n">k</span><span class="o">==</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%d/1</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+      <span class="k">else</span> <span class="n">solve</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
 </ul>
+
 
                 </div>
             </section>
@@ -340,6 +358,28 @@ while(T--)
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -680,7 +720,7 @@ while(T--)
                     <h2 class="post-card-title">CodeForces Gym #100247 K</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: It&#39;s from the Gym #100247 of codeforces Problem H \(n\) 支队伍参加了 \(3\) 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：\( n ≤ 200000 \) Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 \(n\) 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 \(A\)，而不满足同一组的两支队伍就会被统计三次，设为\(B\)。那么最终答案就是\( tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}\)。 AC</p>
+                    <p>Contest Information source: It’s from the Gym #100247 of codeforces Problem H $n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：$ n ≤ 200000 $ Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$ tot - (A+B-tot)/2,tot = \frac{n*(n-1)}{2}$。 AC</p>
                 </section>
             </a>
             <footer class="post-card-meta">

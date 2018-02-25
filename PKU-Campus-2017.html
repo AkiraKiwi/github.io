@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="PKU Campus 2017 (重现)" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the Vjudge Problem F 计算出 \( (7+4\sqrt{3})^N \) 的整数部分 数据范围：\( 1 ≤ N ≤ 10^{9}\) Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 \( (7+4\sqrt{3})^N \) 展开之后是 \( a_N+b_N \sqrt{3} \) 的形式，而 \( (7-4\sqrt{3})^N \) 展开之后是 \( a_N-b_N \sqrt{3} \) 。因此 \( (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N \) 是个整数（因为" />
+    <meta property="og:description" content="Contest Information source: It’s from the Vjudge Problem F 计算出 $ (7+4\sqrt{3})^N $ 的整数部分 数据范围：$ 1 ≤ N ≤ 10^{9}$ Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 $ (7+4\sqrt{3})^N $ 展开之后是 $ a_N+b_N \sqrt{3} $ 的形式，而 $ (7-4\sqrt{3})^N $ 展开之后是 $ a_N-b_N \sqrt{3} $ 。因此 $ (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N $ 是个整数（因为" />
     <meta property="og:url" content="http://localhost:4000/PKU-Campus-2017" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-64420623.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="PKU Campus 2017 (重现)" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the Vjudge Problem F 计算出 \( (7+4\sqrt{3})^N \) 的整数部分 数据范围：\( 1 ≤ N ≤ 10^{9}\) Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 \( (7+4\sqrt{3})^N \) 展开之后是 \( a_N+b_N \sqrt{3} \) 的形式，而 \( (7-4\sqrt{3})^N \) 展开之后是 \( a_N-b_N \sqrt{3} \) 。因此 \( (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N \) 是个整数（因为" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the Vjudge Problem F 计算出 $ (7+4\sqrt{3})^N $ 的整数部分 数据范围：$ 1 ≤ N ≤ 10^{9}$ Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 $ (7+4\sqrt{3})^N $ 展开之后是 $ a_N+b_N \sqrt{3} $ 的形式，而 $ (7-4\sqrt{3})^N $ 展开之后是 $ a_N-b_N \sqrt{3} $ 。因此 $ (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N $ 是个整数（因为" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-64420623.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/PKU-Campus-2017"
     },
-    "description": "Contest Information source: It&#39;s from the Vjudge Problem F 计算出 \( (7+4\sqrt{3})^N \) 的整数部分 数据范围：\( 1 ≤ N ≤ 10^{9}\) Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 \( (7+4\sqrt{3})^N \) 展开之后是 \( a_N+b_N \sqrt{3} \) 的形式，而 \( (7-4\sqrt{3})^N \) 展开之后是 \( a_N-b_N \sqrt{3} \) 。因此 \( (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N \) 是个整数（因为"
+    "description": "Contest Information source: It’s from the Vjudge Problem F 计算出 $ (7+4\sqrt{3})^N $ 的整数部分 数据范围：$ 1 ≤ N ≤ 10^{9}$ Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 $ (7+4\sqrt{3})^N $ 展开之后是 $ a_N+b_N \sqrt{3} $ 的形式，而 $ (7-4\sqrt{3})^N $ 展开之后是 $ a_N-b_N \sqrt{3} $ 。因此 $ (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N $ 是个整数（因为"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="PKU Campus 2017 (重现)" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,22 +183,22 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="https://vjudge.net/contest/165238#rank">It&#39;s from the Vjudge</a></p>
+<p>source: <a href="https://vjudge.net/contest/165238#rank">It’s from the Vjudge</a></p>
 
 <h2 id="problem-f">Problem F</h2>
 
-<p>计算出 \( (7+4\sqrt{3})^N \) 的整数部分<br></p>
+<p>计算出 $ (7+4\sqrt{3})^N $ 的整数部分<br /></p>
 
-<p>数据范围：\( 1 ≤ N ≤ 10^{9}\) <br></p>
+<p>数据范围：$ 1 ≤ N ≤ 10^{9}$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>如果使用 double 来计算，精度肯定是不够的。我们发现 \( (7+4\sqrt{3})^N \) 展开之后是 \( a_N+b_N \sqrt{3} \) 的形式，而 \( (7-4\sqrt{3})^N \) 展开之后是 \( a_N-b_N \sqrt{3} \) 。因此 \( (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N \) 是个整数（因为 \( 0 &lt; (7-4\sqrt{3})^N &lt; 1 \) ），所以 \( (7+4\sqrt{3})^N \) 的整数部分等于 \( 2 a_N - 1\)。 <br></p>
+<p>如果使用 double 来计算，精度肯定是不够的。我们发现 $ (7+4\sqrt{3})^N $ 展开之后是 $ a_N+b_N \sqrt{3} $ 的形式，而 $ (7-4\sqrt{3})^N $ 展开之后是 $ a_N-b_N \sqrt{3} $ 。因此 $ (7+4\sqrt{3})^N + (7-4\sqrt{3})^N = 2a_N $ 是个整数（因为 $ 0 &lt; (7-4\sqrt{3})^N &lt; 1 $ ），所以 $ (7+4\sqrt{3})^N $ 的整数部分等于 $ 2 a_N - 1$。 <br /></p>
 
-<p>所以问题转换成求解出 \(a_N\)，因为<br> \( ( a_{N+1}+b_{N+1}  \sqrt{3}) = (7+4\sqrt{3})^{N+1} = (7+4\sqrt{3}) (7+4\sqrt{3})^N = (7+4\sqrt{3})  ( a_N+b_N  \sqrt{3}) \)，所以我们可以得到递推关系：<br> <br>
-    \( a_{N+1} = 7 \times a_N + 12 \times b_N \) <br><br>
-    \( b_{N+1} = 4 \times a_N + 7  \times b_N \) <br><br>
-    \( a_0 = 1, b_0 = 0 \) <br></p>
+<p>所以问题转换成求解出 $a_N$，因为<br /> $ ( a_{N+1}+b_{N+1}  \sqrt{3}) = (7+4\sqrt{3})^{N+1} = (7+4\sqrt{3}) (7+4\sqrt{3})^N = (7+4\sqrt{3})  ( a_N+b_N  \sqrt{3}) $，所以我们可以得到递推关系：<br /> 
+    $ a_{N+1} = 7 \times a_N + 12 \times b_N $ <br />
+    $ b_{N+1} = 4 \times a_N + 7  \times b_N $ <br />
+    $ a_0 = 1, b_0 = 0 $ <br /></p>
 
 <h2 id="ac-code">AC code</h2>
 
@@ -215,15 +227,15 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-h">Problem H</h2>
 
-<p>给出一个序列 \( s_1, s_2, s_3, s_4, ..., s_N \) ，给出 \(Q\) 个查询， 每次询问原序列中有多少个区间满足第 \(K\) 大的值为 \(X\) <br></p>
+<p>给出一个序列 $ s_1, s_2, s_3, s_4, …, s_N $ ，给出 $Q$ 个查询， 每次询问原序列中有多少个区间满足第 $K$ 大的值为 $X$ <br /></p>
 
-<p>数据范围：\( 1 ≤ N,S_i ≤ 2\times 10^{3}, 1 ≤ Q ≤ 2 \times 10^{6} \) <br></p>
+<p>数据范围：$ 1 ≤ N,S_i ≤ 2\times 10^{3}, 1 ≤ Q ≤ 2 \times 10^{6} $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>使用 FFT 预处理出每一个数作为第 \(K_i\) 大时有多少个区间。对于每个数，我们先统计出从它到它左边的序列里（等于它也算作大于它），它作为第 \(K_i\) 大的区间有多少个，列成多项式: \( (a_0\times x^0 + a_1\times x^1 + ... + a_n\times x^n \)，每一项的指数代表第几大，系数代表第几大时的区间数量。同样，我们再统计出它到它右边的序列里（等于它不算作大于它）， 它作为第 \(K_i\) 大的区间有多少个，列成多项式: \( (b_0\times x^0 + b_1\times x^1 + ... + b_n\times x^n \)。那么这两个多项式相乘，就能统计出这个数作为第 \(K_i\) 大的数的区间数量。 <br></p>
+<p>使用 FFT 预处理出每一个数作为第 $K_i$ 大时有多少个区间。对于每个数，我们先统计出从它到它左边的序列里（等于它也算作大于它），它作为第 $K_i$ 大的区间有多少个，列成多项式: $ (a_0\times x^0 + a_1\times x^1 + … + a_n\times x^n $，每一项的指数代表第几大，系数代表第几大时的区间数量。同样，我们再统计出它到它右边的序列里（等于它不算作大于它）， 它作为第 $K_i$ 大的区间有多少个，列成多项式: $ (b_0\times x^0 + b_1\times x^1 + … + b_n\times x^n $。那么这两个多项式相乘，就能统计出这个数作为第 $K_i$ 大的数的区间数量。 <br /></p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">val</span><span class="p">[</span><span class="n">MaxN</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="n">MaxN</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
@@ -296,25 +308,25 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-i">Problem I</h2>
 
-<p>给出 \(7\) 种不同的俄罗斯方块，要求你用尽可能多种类的方块搭出一个高度为 \(N\) 的阶梯<br></p>
+<p>给出 $7$ 种不同的俄罗斯方块，要求你用尽可能多种类的方块搭出一个高度为 $N$ 的阶梯<br /></p>
 
-<p>数据范围：\( 1 ≤ N ≤ 3\times 10^{3}\) <br></p>
+<p>数据范围：$ 1 ≤ N ≤ 3\times 10^{3}$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>只有当 \( N\%8==7 \ or\ N\%8==0 \) 时才有可能搭建成功，其中 \(N=7\) 可以凑出 \(6\) 种，\(N=8\) 可以凑出 \(7\) 种。再往后我们可以直接用样例里的输出拼凑成阶梯 <br></p>
+<p>只有当 $ N\%8==7 \ or\ N\%8==0 $ 时才有可能搭建成功，其中 $N=7$ 可以凑出 $6$ 种，$N=8$ 可以凑出 $7$ 种。再往后我们可以直接用样例里的输出拼凑成阶梯 <br /></p>
 
 <h2 id="problem-j">Problem J</h2>
 
-<p>计算满足 \( q \times x^2 + p \times y = M \) 的整数对 \( (x, y)\) 的数量  <br></p>
+<p>计算满足 $ q \times x^2 + p \times y = M $ 的整数对 $ (x, y)$ 的数量  <br /></p>
 
-<p>数据范围：\( 1 ≤ M ≤ 8\times 10^{5} \) <br></p>
+<p>数据范围：$ 1 ≤ M ≤ 8\times 10^{5} $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-3">Solution</h2>
 
-<p>首先预处理出 \( 800000 \) 以下每个数包含的平方数因子，然后枚举 \(y\) 和 \(p\)，统计 \(M-y\times p \) 的平方因子。<br></p>
+<p>首先预处理出 $ 800000 $ 以下每个数包含的平方数因子，然后枚举 $y$ 和 $p$，统计 $M-y\times p $ 的平方因子。<br /></p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-2">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">M</span><span class="p">;</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">factor</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -360,15 +372,15 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-k">Problem K</h2>
 
-<p>有\( N \) 个人，其中有好人（不会说谎），也有坏人（可能说谎）。现在从第二个人开始询问，询问第 \(i\)个人时，他有可能会说: 第 \(x\) 个人是好（坏）人；也可能会说: 如果第 \(x\) 个人是（好）（坏）人， 那么第 \(y\) 个人是 （好）（坏）人。其中 \(x,y \in [max(i-K,1),i-1] \)，要求你判断这儿最多有多少个好人 <br></p>
+<p>有$ N $ 个人，其中有好人（不会说谎），也有坏人（可能说谎）。现在从第二个人开始询问，询问第 $i$个人时，他有可能会说: 第 $x$ 个人是好（坏）人；也可能会说: 如果第 $x$ 个人是（好）（坏）人， 那么第 $y$ 个人是 （好）（坏）人。其中 $x,y \in [max(i-K,1),i-1] $，要求你判断这儿最多有多少个好人 <br /></p>
 
-<p>数据范围：\( 1 ≤ N ≤ 5\times 10^{3}, 1 ≤ K ≤ 10\) <br></p>
+<p>数据范围：$ 1 ≤ N ≤ 5\times 10^{3}, 1 ≤ K ≤ 10$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-4">Solution</h2>
 
-<p>我们定义 \( DP[i][s] \) 为在第 \(i\) 个人时，前 \(K\) 个人的好坏状态为 \(s\) 时的最大好人数量。每次假设第 \(i\)个人为好人，如果他说的话也符合当前枚举的状态那么他就真的是好人。 <br></p>
+<p>我们定义 $ DP[i][s] $ 为在第 $i$ 个人时，前 $K$ 个人的好坏状态为 $s$ 时的最大好人数量。每次假设第 $i$个人为好人，如果他说的话也符合当前枚举的状态那么他就真的是好人。 <br /></p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-3">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">K</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">DP</span><span class="p">[</span><span class="n">MaxN</span><span class="p">][(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="p">];</span>
@@ -496,6 +508,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -793,7 +827,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Round #232 (Div. 1) E</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the Round #232 (Div. 1) of the codeforces](http://codeforces.com/contest/396/problem/C) ## Description 给出一棵以 \\(1\\) 为根的有根树，有两种操作： * \\( 1\\ v\\ x\\ k\\) : 给节点 \\(v\\) 的值加上 \\(x\\)，给它的子节点（和 \\(v\\) 的深度差为 \\(i\\)</p>
+                    <p>## Problem Information source: [It's from the Round #232 (Div. 1) of the codeforces](http://codeforces.com/contest/396/problem/C) ## Description 给出一棵以 $1$ 为根的有根树，有两种操作： * $ 1\\ v\\ x\\ k$ : 给节点 $v$ 的值加上 $x$，给它的子节点（和 $v$ 的深度差为 $i$</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -836,7 +870,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">福州大学第十四届程序设计竞赛</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: It&#39;s from the FZU OJ Problem A 给出一个长度为 \(n\) 的 \(01\) 串，选择一个区间 \([L, R]\) 将其中的 \(0\) 变成 \(1\) ，\(1\) 变成 \(0\)。 至少翻转一个数字，求最多能有多少个 \(1\) ？ 数据范围：\( n ≤ 10^{5}\) Solution 我们新开一个数组把</p>
+                    <p>Contest Information source: It’s from the FZU OJ Problem A 给出一个长度为 $n$ 的 $01$ 串，选择一个区间 $[L, R]$ 将其中的 $0$ 变成 $1$ ，$1$ 变成 $0$。 至少翻转一个数字，求最多能有多少个 $1$ ？ 数据范围：$ n ≤ 10^{5}$ Solution 我们新开一个数组把</p>
                 </section>
             </a>
             <footer class="post-card-meta">

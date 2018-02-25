@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="支配集、覆盖集、独立集与匹配" />
-    <meta property="og:description" content="点支配集 支配与支配集：设无向图 \(G(V,E)\) ，顶点集合 \(V&#39; \subseteq V \) ，若对于 \( \forall v \in (V-V&#39;) \) ，\( \exists u \in V&#39;\) ，使得 \( (u,v) \in E\) ，则称 \(u\) 支配 \(v\) ，并称 \(V&#39;\) 为 \(G\) 的一个 点支配集合。 极小支配集：若支配集 \(V&#39;\) 的任何真子集都不是支配集，则称 \(V&#39;\) 是极小支配集。 最小支配集：顶点数最少的支配集称为最小支配集。 点支配数：最小支配集中的顶点数称为点支配数，记作 \(γ0(G)\) 或简记为 \(γ0\)。 性质：若 \(G\) 中无孤立点，则存在一个支配集 \(V&#39;\) ，并且" />
+    <meta property="og:description" content="点支配集 支配与支配集：设无向图 $G(V,E)$ ，顶点集合 $V’ \subseteq V $ ，若对于 $ \forall v \in (V-V’) $ ，$ \exists u \in V’$ ，使得 $ (u,v) \in E$ ，则称 $u$ 支配 $v$ ，并称 $V’$ 为 $G$ 的一个 点支配集合。 极小支配集：若支配集 $V’$ 的任何真子集都不是支配集，则称 $V’$ 是极小支配集。 最小支配集：顶点数最少的支配集称为最小支配集。 点支配数：最小支配集中的顶点数称为点支配数，记作 $γ0(G)$ 或简记为 $γ0$。 性质：若 $G$ 中无孤立点，则存在一个支配集 $V’$ ，并且" />
     <meta property="og:url" content="http://localhost:4000/%E6%94%AF%E9%85%8D%E9%9B%86-%E8%A6%86%E7%9B%96%E9%9B%86-%E7%8B%AC%E7%AB%8B%E9%9B%86-%E5%8C%B9%E9%85%8D" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-b65c73a53ad8.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="支配集、覆盖集、独立集与匹配" />
-    <meta name="twitter:description" content="点支配集 支配与支配集：设无向图 \(G(V,E)\) ，顶点集合 \(V&#39; \subseteq V \) ，若对于 \( \forall v \in (V-V&#39;) \) ，\( \exists u \in V&#39;\) ，使得 \( (u,v) \in E\) ，则称 \(u\) 支配 \(v\) ，并称 \(V&#39;\) 为 \(G\) 的一个 点支配集合。 极小支配集：若支配集 \(V&#39;\) 的任何真子集都不是支配集，则称 \(V&#39;\) 是极小支配集。 最小支配集：顶点数最少的支配集称为最小支配集。 点支配数：最小支配集中的顶点数称为点支配数，记作 \(γ0(G)\) 或简记为 \(γ0\)。 性质：若 \(G\) 中无孤立点，则存在一个支配集 \(V&#39;\) ，并且" />
+    <meta name="twitter:description" content="点支配集 支配与支配集：设无向图 $G(V,E)$ ，顶点集合 $V’ \subseteq V $ ，若对于 $ \forall v \in (V-V’) $ ，$ \exists u \in V’$ ，使得 $ (u,v) \in E$ ，则称 $u$ 支配 $v$ ，并称 $V’$ 为 $G$ 的一个 点支配集合。 极小支配集：若支配集 $V’$ 的任何真子集都不是支配集，则称 $V’$ 是极小支配集。 最小支配集：顶点数最少的支配集称为最小支配集。 点支配数：最小支配集中的顶点数称为点支配数，记作 $γ0(G)$ 或简记为 $γ0$。 性质：若 $G$ 中无孤立点，则存在一个支配集 $V’$ ，并且" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-b65c73a53ad8.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E6%94%AF%E9%85%8D%E9%9B%86-%E8%A6%86%E7%9B%96%E9%9B%86-%E7%8B%AC%E7%AB%8B%E9%9B%86-%E5%8C%B9%E9%85%8D"
     },
-    "description": "点支配集 支配与支配集：设无向图 \(G(V,E)\) ，顶点集合 \(V&#39; \subseteq V \) ，若对于 \( \forall v \in (V-V&#39;) \) ，\( \exists u \in V&#39;\) ，使得 \( (u,v) \in E\) ，则称 \(u\) 支配 \(v\) ，并称 \(V&#39;\) 为 \(G\) 的一个 点支配集合。 极小支配集：若支配集 \(V&#39;\) 的任何真子集都不是支配集，则称 \(V&#39;\) 是极小支配集。 最小支配集：顶点数最少的支配集称为最小支配集。 点支配数：最小支配集中的顶点数称为点支配数，记作 \(γ0(G)\) 或简记为 \(γ0\)。 性质：若 \(G\) 中无孤立点，则存在一个支配集 \(V&#39;\) ，并且"
+    "description": "点支配集 支配与支配集：设无向图 $G(V,E)$ ，顶点集合 $V’ \subseteq V $ ，若对于 $ \forall v \in (V-V’) $ ，$ \exists u \in V’$ ，使得 $ (u,v) \in E$ ，则称 $u$ 支配 $v$ ，并称 $V’$ 为 $G$ 的一个 点支配集合。 极小支配集：若支配集 $V’$ 的任何真子集都不是支配集，则称 $V’$ 是极小支配集。 最小支配集：顶点数最少的支配集称为最小支配集。 点支配数：最小支配集中的顶点数称为点支配数，记作 $γ0(G)$ 或简记为 $γ0$。 性质：若 $G$ 中无孤立点，则存在一个支配集 $V’$ ，并且"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="支配集、覆盖集、独立集与匹配" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -170,75 +182,89 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <ol>
-<li><p>点支配集</p>
+  <li>
+    <p>点支配集</p>
 
-<p>支配与支配集：设无向图 \(G(V,E)\) ，顶点集合 \(V&#39; \subseteq V \) ，若对于 \( \forall v \in (V-V&#39;) \) ，\( \exists u \in V&#39;\) ，使得 \( (u,v) \in E\) ，则称 \(u\) <strong>支配</strong> \(v\) ，并称 \(V&#39;\) 为 \(G\) 的一个 <strong>点支配集合</strong>。 <br></p>
+    <p>支配与支配集：设无向图 $G(V,E)$ ，顶点集合 $V’ \subseteq V $ ，若对于 $ \forall v \in (V-V’) $ ，$ \exists u \in V’$ ，使得 $ (u,v) \in E$ ，则称 $u$ <strong>支配</strong> $v$ ，并称 $V’$ 为 $G$ 的一个 <strong>点支配集合</strong>。 <br /></p>
 
-<p>极小支配集：若支配集 \(V&#39;\) 的任何真子集都不是支配集，则称 \(V&#39;\) 是极小支配集。 <br></p>
+    <p>极小支配集：若支配集 $V’$ 的任何真子集都不是支配集，则称 $V’$ 是极小支配集。 <br /></p>
 
-<p>最小支配集：顶点数最少的支配集称为最小支配集。   <br></p>
+    <p>最小支配集：顶点数最少的支配集称为最小支配集。	<br /></p>
 
-<p>点支配数：最小支配集中的顶点数称为点支配数，记作 \(γ0(G)\) 或简记为 \(γ0\)。<br></p>
+    <p>点支配数：最小支配集中的顶点数称为点支配数，记作 $γ0(G)$ 或简记为 $γ0$。<br /></p>
 
-<p>性质：若 \(G\) 中无孤立点，则存在一个支配集 \(V&#39;\) ，并且 \(V-V&#39;\) 也是一个支配集 <br></p></li>
-<li><p>点覆盖集</p>
+    <p>性质：若 $G$ 中无孤立点，则存在一个支配集 $V’$ ，并且 $V-V’$ 也是一个支配集 <br /></p>
+  </li>
+  <li>
+    <p>点覆盖集</p>
 
-<p>点覆盖集：设无向图为 \(G(V, E)\) ，顶点集合 \(V&#39;⊆V\) ，若对于 \(∀e∈E, ∃v∈V&#39;\) ，使得 \(v\) 与 \(e\) 相关联，则称 \(v\) 覆盖 \(e\)，并称 \(V&#39;\) 为 \(G\) 的一个点覆盖集或简称点覆盖。 <br></p>
+    <p>点覆盖集：设无向图为 $G(V, E)$ ，顶点集合 $V’⊆V$ ，若对于 $∀e∈E, ∃v∈V’$ ，使得 $v$ 与 $e$ 相关联，则称 $v$ 覆盖 $e$，并称 $V’$ 为 $G$ 的一个点覆盖集或简称点覆盖。 <br /></p>
 
-<p>极小点覆盖：若点覆盖 \(V&#39;\) 的任何真子集都不是点覆盖, 则称 \(V&#39;\) 是极小点覆盖 <br></p>
+    <p>极小点覆盖：若点覆盖 $V’$ 的任何真子集都不是点覆盖, 则称 $V’$ 是极小点覆盖 <br /></p>
 
-<p>最小点覆盖：顶点个数最少的点覆盖称为最小点覆盖 <br></p>
+    <p>最小点覆盖：顶点个数最少的点覆盖称为最小点覆盖 <br /></p>
 
-<p>点覆盖数：最小点覆盖的顶点数称为点覆盖数, 记作 \(α0(G)\) ，简记为 \(α0\) <br></p>
+    <p>点覆盖数：最小点覆盖的顶点数称为点覆盖数, 记作 $α0(G)$ ，简记为 $α0$ <br /></p>
 
-<p>性质：在连通图中，点覆盖必然是支配集，反之支配集却未必是点覆盖 <br></p></li>
-<li><p>点独立集</p>
+    <p>性质：在连通图中，点覆盖必然是支配集，反之支配集却未必是点覆盖 <br /></p>
+  </li>
+  <li>
+    <p>点独立集</p>
 
-<p>点独立集：设无向图为 \(G(V, E)\) ，顶点集合 \(V&#39;⊆V\) ，若 \(V&#39;\) 中任何两个顶点均不相邻，则称 \(V&#39;\) 为 \(G\) 的点独立集，或简称独立集。<br></p>
+    <p>点独立集：设无向图为 $G(V, E)$ ，顶点集合 $V’⊆V$ ，若 $V’$ 中任何两个顶点均不相邻，则称 $V’$ 为 $G$ 的点独立集，或简称独立集。<br /></p>
 
-<p>极大点独立集：若在 \(V&#39;\) 中加入任何顶点都不再是独立集，则称 \(V&#39;\) 为极大点独立集。<br></p>
+    <p>极大点独立集：若在 $V’$ 中加入任何顶点都不再是独立集，则称 $V’$ 为极大点独立集。<br /></p>
 
-<p>最大点独立集：顶点数最多的点独立集称为最大点独立集。<br></p>
+    <p>最大点独立集：顶点数最多的点独立集称为最大点独立集。<br /></p>
 
-<p>点独立数：最大点独立集的顶点数称为点独立数, 记作β0(G)，简记为β0。<br></p>
+    <p>点独立数：最大点独立集的顶点数称为点独立数, 记作β0(G)，简记为β0。<br /></p>
 
-<p>性质：图G的极大独立集必然是它的极小支配集，反之则不一定成立 <br><br>
-      一个独立集是极大独立集当且仅当它是支配集<br></p></li>
-<li><p>边覆盖集</p>
+    <p>性质：图G的极大独立集必然是它的极小支配集，反之则不一定成立 <br />
+       一个独立集是极大独立集当且仅当它是支配集<br /></p>
+  </li>
+  <li>
+    <p>边覆盖集</p>
 
-<p>覆盖与边覆盖集：设无向图为 \(G(V, E)\) ，边的集合 \(E&#39;⊆E\) ，若对于 \(∀v∈V，∃e∈E&#39;\) ，使得：\(v\) 与 \(e\) 相关联，则称 \(e\) 覆盖 \(v\) ，并称 \(E&#39;\) 为边覆盖集，或简称边覆盖。<br></p>
+    <p>覆盖与边覆盖集：设无向图为 $G(V, E)$ ，边的集合 $E’⊆E$ ，若对于 $∀v∈V，∃e∈E’$ ，使得：$v$ 与 $e$ 相关联，则称 $e$ 覆盖 $v$ ，并称 $E’$ 为边覆盖集，或简称边覆盖。<br /></p>
 
-<p>极小边覆盖：若边覆盖 \(E&#39;\) 的任何真子集都不是边覆盖, 则称 \(E&#39;\) 是极小边覆盖。<br></p>
+    <p>极小边覆盖：若边覆盖 $E’$ 的任何真子集都不是边覆盖, 则称 $E’$ 是极小边覆盖。<br /></p>
 
-<p>最小边覆盖：边数最少的边覆盖集称为最小边覆盖。<br></p>
+    <p>最小边覆盖：边数最少的边覆盖集称为最小边覆盖。<br /></p>
 
-<p>边覆盖数：最小的边覆盖所含的边数称为边覆盖数, 记作 \(α1(G)\) ，或简记为 \(α1\)。<br></p></li>
-<li><p>边独立集（匹配）</p>
+    <p>边覆盖数：最小的边覆盖所含的边数称为边覆盖数, 记作 $α1(G)$ ，或简记为 $α1$。<br /></p>
+  </li>
+  <li>
+    <p>边独立集（匹配）</p>
 
-<p>边独立集（匹配）：设无向图为 \(G(V, E)\) ，边的集合 \(E&#39;⊆E\)，若 \(E&#39;\) 中任何两条边均不相邻，则称 \(E&#39;\) 为 \(G\) 的边独立集，也称 \(E&#39;\) 为 \(G\) 的匹配 <br></p>
+    <p>边独立集（匹配）：设无向图为 $G(V, E)$ ，边的集合 $E’⊆E$，若 $E’$ 中任何两条边均不相邻，则称 $E’$ 为 $G$ 的边独立集，也称 $E’$ 为 $G$ 的匹配 <br /></p>
 
-<p>极大匹配：若在 \(E&#39;\) 中加入任意一条边所得到的集合都不是匹配，则称 \(E&#39;\) 为极大匹配。<br></p>
+    <p>极大匹配：若在 $E’$ 中加入任意一条边所得到的集合都不是匹配，则称 $E’$ 为极大匹配。<br /></p>
 
-<p>最大匹配：边数最多的匹配称为最大匹配。<br></p>
+    <p>最大匹配：边数最多的匹配称为最大匹配。<br /></p>
 
-<p>边独立数：最大匹配的边数称为边独立数或匹配数，记作 \(β1(G)\) ，简记为 \(β1\)。<br></p></li>
-<li><p>总结   </p>
+    <p>边独立数：最大匹配的边数称为边独立数或匹配数，记作 $β1(G)$ ，简记为 $β1$。<br /></p>
+  </li>
+  <li>
+    <p>总结</p>
 
-<p>最大匹配 &amp;&amp; 最小边覆盖 <br><br>
-设最大匹配为 \(M_{max}\) ，最小边覆盖为 \(F_{min}\) ，由于一个匹配能够覆盖两个点，那么最大匹配已经覆盖了 \(2\times M_{max}\) 个点，在这个基础上，我们每<br>
-增加一条边，最多可以覆盖一个点（如果能够覆盖两个点，说明之前不是最大匹配），则覆盖所有点还需要增加 \( |V|-2\times M_{max} \) 条边，即 \(F_{min} = M_{max} + |V|-2\times M_{max}\) <br><br>
-结论: \(|V| = M_{max} + F_{min} \) <br></p>
+    <p>最大匹配 &amp;&amp; 最小边覆盖 <br />
+ 设最大匹配为 $M_{max}$ ，最小边覆盖为 $F_{min}$ ，由于一个匹配能够覆盖两个点，那么最大匹配已经覆盖了 $2\times M_{max}$ 个点，在这个基础上，我们每
+ 增加一条边，最多可以覆盖一个点（如果能够覆盖两个点，说明之前不是最大匹配），则覆盖所有点还需要增加 $ |V|-2\times M_{max} $ 条边，即 $F_{min} = M_{max} + |V|-2\times M_{max}$ <br />
+ 结论: $|V| = M_{max} + F_{min} $ <br /></p>
 
-<p>最大点独立集 &amp;&amp; 最小点覆盖 <br><br>
-设最大独立集为 \(S_{max}\) ，最小点覆盖为 \(S_{min}\) ，因为独立集之间不存在有边，那么独立集以外的点就覆盖了所有边（若有点没有覆盖边，那么它就可以属于独立集）<br><br>
-结论: \(|V| = S_{max} + S_{min} \) <br></p>
+    <p>最大点独立集 &amp;&amp; 最小点覆盖 <br />
+ 设最大独立集为 $S_{max}$ ，最小点覆盖为 $S_{min}$ ，因为独立集之间不存在有边，那么独立集以外的点就覆盖了所有边（若有点没有覆盖边，那么它就可以属于独立集）<br />
+ 结论: $|V| = S_{max} + S_{min} $ <br /></p>
 
-<p>对于最大边独立（匹配）与最小边覆盖，最大点独立与最小点覆盖，求出其中一个就能求解出另外一个<br></p>
+    <p>对于最大边独立（匹配）与最小边覆盖，最大点独立与最小点覆盖，求出其中一个就能求解出另外一个<br /></p>
 
-<p>对于边（最大边独立...），二分图可以用匈牙利算法和网络流解决，一般图一般使用开花树 \(Edmonds\) 算法解决<br></p>
+    <p>对于边（最大边独立…），二分图可以用匈牙利算法和网络流解决，一般图一般使用开花树 $Edmonds$ 算法解决<br /></p>
 
-<p>对于点（最大点独立...），二分图中用最小点覆盖等于最大匹配可以解决，一般图则是NP问题，暂无高效算法<br></p></li>
-<li><p>贪心法求树的最小支配集</p></li>
+    <p>对于点（最大点独立…），二分图中用最小点覆盖等于最大匹配可以解决，一般图则是NP问题，暂无高效算法<br /></p>
+  </li>
+  <li>
+    <p>贪心法求树的最小支配集</p>
+  </li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">pre</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="c1">//存储父节点  
@@ -250,58 +276,58 @@ into the {body} of the default.hbs template -->
 <span class="kt">int</span> <span class="n">head</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="c1">//链式前向星  
 </span><span class="k">struct</span> <span class="n">Node</span>  
 <span class="p">{</span>  
-    <span class="kt">int</span> <span class="n">to</span><span class="p">;</span>  
-    <span class="kt">int</span> <span class="n">next</span><span class="p">;</span>  
+	<span class="kt">int</span> <span class="n">to</span><span class="p">;</span>  
+	<span class="kt">int</span> <span class="n">next</span><span class="p">;</span>  
 <span class="p">};</span>  
 <span class="n">Node</span> <span class="n">edge</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>  
 
 <span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>  
 <span class="p">{</span>  
-    <span class="n">newpos</span><span class="p">[</span><span class="n">now</span> <span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span><span class="c1">//记录遍历序列  
-</span> <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">x</span><span class="p">];</span> <span class="n">k</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>  
-    <span class="p">{</span>  
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visit</span><span class="p">[</span> <span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span> <span class="p">])</span>  
-        <span class="p">{</span>  
-            <span class="n">visit</span><span class="p">[</span> <span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>  
-            <span class="n">pre</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span><span class="c1">//记录父节点  
-</span>         <span class="n">DFS</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span><span class="p">);</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span>  
+	<span class="n">newpos</span><span class="p">[</span><span class="n">now</span> <span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span><span class="c1">//记录遍历序列  
+</span>	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">x</span><span class="p">];</span> <span class="n">k</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>  
+	<span class="p">{</span>  
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visit</span><span class="p">[</span> <span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span> <span class="p">])</span>  
+		<span class="p">{</span>  
+			<span class="n">visit</span><span class="p">[</span> <span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>  
+			<span class="n">pre</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span><span class="c1">//记录父节点  
+</span>			<span class="n">DFS</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">to</span><span class="p">);</span>  
+		<span class="p">}</span>  
+	<span class="p">}</span>  
 <span class="p">}</span>  
 
 <span class="kt">int</span> <span class="nf">MDS</span><span class="p">()</span>  
 <span class="p">{</span>  
-    <span class="kt">bool</span> <span class="n">s</span><span class="p">[</span><span class="n">maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>  
-    <span class="kt">bool</span> <span class="n">set</span><span class="p">[</span><span class="n">maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>  
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>  <span class="c1">//逆序进行贪心  
-</span> <span class="p">{</span>  
-        <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">newpos</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>  
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>   <span class="c1">//如果当前点没被覆盖  
-</span>     <span class="p">{</span>  
-            <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="n">set</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">])</span>  <span class="c1">//当前点的父节点不属于支配集  
-</span>         <span class="p">{</span>  
-                <span class="n">set</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span><span class="c1">//当前点的父节点加入支配集  
-</span>             <span class="n">ans</span> <span class="o">++</span><span class="p">;</span>  <span class="c1">//支配集节点个数加 1  
-</span>         <span class="p">}</span>  
-            <span class="n">s</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">//标记当前点已被覆盖  
-</span>         <span class="n">s</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span><span class="c1">// 标记当前点的父节点被覆盖  
-</span>         <span class="n">s</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span><span class="c1">//标记当前点的父节点的父节点被覆盖  
-</span>     <span class="p">}</span>  
-    <span class="p">}</span>  
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>  
+	<span class="kt">bool</span> <span class="n">s</span><span class="p">[</span><span class="n">maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>  
+	<span class="kt">bool</span> <span class="n">set</span><span class="p">[</span><span class="n">maxn</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>  
+	<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>  <span class="c1">//逆序进行贪心  
+</span>	<span class="p">{</span>  
+		<span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">newpos</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>  
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>   <span class="c1">//如果当前点没被覆盖  
+</span>		<span class="p">{</span>  
+			<span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="n">set</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">])</span>  <span class="c1">//当前点的父节点不属于支配集  
+</span>			<span class="p">{</span>  
+				<span class="n">set</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span><span class="c1">//当前点的父节点加入支配集  
+</span>				<span class="n">ans</span> <span class="o">++</span><span class="p">;</span>  <span class="c1">//支配集节点个数加 1  
+</span>			<span class="p">}</span>  
+			<span class="n">s</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">//标记当前点已被覆盖  
+</span>			<span class="n">s</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span><span class="c1">// 标记当前点的父节点被覆盖  
+</span>			<span class="n">s</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span> <span class="n">pre</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="p">]</span> <span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span><span class="c1">//标记当前点的父节点的父节点被覆盖  
+</span>		<span class="p">}</span>  
+	<span class="p">}</span>  
+	<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>  
 <span class="p">}</span>  
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>  
 <span class="p">{</span>  
-    <span class="cm">/* read Graph message*/</span> <span class="c1">//建图  
-</span> <span class="n">memset</span><span class="p">(</span><span class="n">visit</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">visit</span><span class="p">));</span><span class="c1">//初始化  
-</span> <span class="n">now</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
-    <span class="n">visit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>  
-    <span class="n">pre</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  
-    <span class="n">DFS</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//从根节点开始寻摘遍历序列  
-</span> <span class="n">MDS</span><span class="p">();</span>  
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>  
+	<span class="cm">/* read Graph message*/</span> <span class="c1">//建图  
+</span>	<span class="n">memset</span><span class="p">(</span><span class="n">visit</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">visit</span><span class="p">));</span><span class="c1">//初始化  
+</span>	<span class="n">now</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
+	<span class="n">visit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>  
+	<span class="n">pre</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  
+	<span class="n">DFS</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//从根节点开始寻摘遍历序列  
+</span>	<span class="n">MDS</span><span class="p">();</span>  
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>  
 <span class="p">}</span></code></pre></figure>
 
                 </div>
@@ -352,6 +378,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -649,7 +697,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">福州大学第十四届程序设计竞赛</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the FZU OJ](http://acm.fzu.edu.cn/contest/index.php?cid=154) ## Problem A 给出一个长度为 \\(n\\) 的 \\(01\\) 串，选择一个区间 \\([L, R]\\) 将其中的 \\(0\\) 变成 \\(1\\) ，\\(1\\) 变成 \\(0\\)。 至少翻转一个数字，求最多能有多少个 \\(1\\) ？ 数据范围：\\( n ≤ 10^{5}\\)</p>
+                    <p>## Contest Information source: [It's from the FZU OJ](http://acm.fzu.edu.cn/contest/index.php?cid=154) ## Problem A 给出一个长度为 $n$ 的 $01$ 串，选择一个区间 $[L, R]$ 将其中的 $0$ 变成 $1$ ，$1$ 变成 $0$。 至少翻转一个数字，求最多能有多少个 $1$ ？ 数据范围：$ n ≤ 10^{5}$</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -692,7 +740,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">Codeforces Educational Round #23</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: It&#39;s from the Educational Round #23 of the codeforces Problem C 给出两个整数 \(n,s\)， 设 \(n\) 的数位和为 \(ds\)，求在区间 \([1,n]\) 之间满足 \( det = (x-ds)≥s \) 的数 \(x\) 有多少个？ 数据范围：\( 1 ≤</p>
+                    <p>Contest Information source: It’s from the Educational Round #23 of the codeforces Problem C 给出两个整数 $n,s$， 设 $n$ 的数位和为 $ds$，求在区间 $[1,n]$ 之间满足 $ det = (x-ds)≥s $ 的数 $x$ 有多少个？ 数据范围：$ 1 ≤</p>
                 </section>
             </a>
             <footer class="post-card-meta">

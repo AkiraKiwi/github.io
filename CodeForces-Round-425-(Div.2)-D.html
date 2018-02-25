@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="CodeForces Round #425 (Div. 2) D" />
-    <meta property="og:description" content="Problem Information source: It&#39;s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 \(n\) 个节点的树，执行 \(q\) 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The underground has \(n\) stations connected with \(n-1\) routes so that each route connects two stations, and it" />
+    <meta property="og:description" content="Problem Information source: It’s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 $n$ 个节点的树，执行 $q$ 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The underground has $n$ stations connected with $n-1$ routes so that each route connects two stations, and it" />
     <meta property="og:url" content="http://localhost:4000/CodeForces-Round-425-(Div.2)-D" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CodeForces Round #425 (Div. 2) D" />
-    <meta name="twitter:description" content="Problem Information source: It&#39;s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 \(n\) 个节点的树，执行 \(q\) 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The underground has \(n\) stations connected with \(n-1\) routes so that each route connects two stations, and it" />
+    <meta name="twitter:description" content="Problem Information source: It’s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 $n$ 个节点的树，执行 $q$ 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The underground has $n$ stations connected with $n-1$ routes so that each route connects two stations, and it" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/CodeForces-Round-425-(Div.2)-D"
     },
-    "description": "Problem Information source: It&#39;s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 \(n\) 个节点的树，执行 \(q\) 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The underground has \(n\) stations connected with \(n-1\) routes so that each route connects two stations, and it"
+    "description": "Problem Information source: It’s from the Round #425 (Div. 2) of the codeforces Description 给出一棵 $n$ 个节点的树，执行 $q$ 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new underground. The underground has $n$ stations connected with $n-1$ routes so that each route connects two stations, and it"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="CodeForces Round #425 (Div. 2) D" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,49 +183,56 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="problem-information">Problem Information</h2>
 
-<p>source: <a href="http://codeforces.com/contest/832/problem/D">It&#39;s from the Round #425 (Div. 2) of the codeforces</a></p>
+<p>source: <a href="http://codeforces.com/contest/832/problem/D">It’s from the Round #425 (Div. 2) of the codeforces</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>给出一棵 \(n\) 个节点的树，执行 \(q\) 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。<br></p>
+<p>给出一棵 $n$ 个节点的树，执行 $q$ 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。<br /></p>
 
-<p>Misha and Grisha are funny boys, so they like to use new underground. The underground has \(n\) stations connected with \(n-1\) routes so that each route connects two stations, and it is possible to reach every station from any other.<br></p>
+<p>Misha and Grisha are funny boys, so they like to use new underground. The underground has $n$ stations connected with $n-1$ routes so that each route connects two stations, and it is possible to reach every station from any other.<br /></p>
 
-<p>The boys decided to have fun and came up with a plan. Namely, in some day in the morning Misha will ride the underground from station \(s\) to station \(f\) by the shortest path, and will draw with aerosol an ugly text &quot;Misha was here&quot; on every station he will pass through (including \(s\) and \(f\)). After that on the same day at evening Grisha will ride from station \(t\) to station \(f\) by the shortest path and will count stations with Misha&#39;s text. After that at night the underground workers will wash the texts out, because the underground should be clean.<br></p>
+<p>The boys decided to have fun and came up with a plan. Namely, in some day in the morning Misha will ride the underground from station $s$ to station $f$ by the shortest path, and will draw with aerosol an ugly text “Misha was here” on every station he will pass through (including $s$ and $f$). After that on the same day at evening Grisha will ride from station $t$ to station $f$ by the shortest path and will count stations with Misha’s text. After that at night the underground workers will wash the texts out, because the underground should be clean.<br /></p>
 
-<p>The boys have already chosen three stations \(a\), \(b\) and \(c\) for each of several following days, one of them should be station \(s\) on that day, another should be station \(f\), and the remaining should be station \(t\). They became interested how they should choose these stations \(s\), \(f\), \(t\) so that the number Grisha will count is as large as possible. They asked you for help.<br></p>
+<p>The boys have already chosen three stations $a$, $b$ and $c$ for each of several following days, one of them should be station $s$ on that day, another should be station $f$, and the remaining should be station $t$. They became interested how they should choose these stations $s$, $f$, $t$ so that the number Grisha will count is as large as possible. They asked you for help.<br /></p>
 
 <h2 id="input">Input</h2>
 
-<p>The first line contains integer \(n\ (1 ≤ n ≤ 3 \times 10^5) \)  — the number of vertices in the tree. The second line contains \(n - 1\) integers \(p_2, p_3, ... p_n\ (1 ≤ p_i &lt; i) \), where \(p_i\) is the number of the vertex that is the parent of vertex \(i\) in the tree. <br></p>
+<p>The first line contains integer $n\ (1 ≤ n ≤ 3 \times 10^5) $  — the number of vertices in the tree. The second line contains $n - 1$ integers $p_2, p_3, … p_n\ (1 ≤ p_i &lt; i) $, where $p_i$ is the number of the vertex that is the parent of vertex $i$ in the tree. <br /></p>
 
-<p>The first line contains two integers \(n\) and \(q\ (2 ≤ n ≤ 10^5, 1 ≤ q ≤ 10^5)\) — the number of stations and the number of days.<br></p>
+<p>The first line contains two integers $n$ and $q\ (2 ≤ n ≤ 10^5, 1 ≤ q ≤ 10^5)$ — the number of stations and the number of days.<br /></p>
 
-<p>The second line contains \(n - 1\) integers \(p_2, p_3, ..., p_n\ (1 ≤ p_i ≤ n)\). The integer \(p_i\) means that there is a route between stations \(p_i\) and \(i\). It is guaranteed that it&#39;s possible to reach every station from any other.<br></p>
+<p>The second line contains $n - 1$ integers $p_2, p_3, …, p_n\ (1 ≤ p_i ≤ n)$. The integer $p_i$ means that there is a route between stations $p_i$ and $i$. It is guaranteed that it’s possible to reach every station from any other.<br /></p>
 
-<p>The next \(q\) lines contains three integers \(a, b, c\) each \((1 ≤ a, b, c ≤ n)\) — the ids of stations chosen by boys for some day. Note that some of these ids could be same.<br></p>
+<p>The next $q$ lines contains three integers $a, b, c$ each $(1 ≤ a, b, c ≤ n)$ — the ids of stations chosen by boys for some day. Note that some of these ids could be same.<br /></p>
 
 <h2 id="output">Output</h2>
 
-<p>Print \(q\) lines. In the i-th of these lines print the maximum possible number Grisha can get counting when the stations \(s, t, f\) are chosen optimally from the three stations on the \(i\)-th day.</p>
+<p>Print $q$ lines. In the i-th of these lines print the maximum possible number Grisha can get counting when the stations $s, t, f$ are chosen optimally from the three stations on the $i$-th day.</p>
 
 <h2 id="sample-input">Sample Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">3 2
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 2
 1 1
 1 2 3
 2 3 3
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="sample-output">Sample Output</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">2
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
 3
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>首先用倍增法求预处理然后可以在线求任意两个结点的 \(Lca\)，对于每一组查询，我们枚举每个点作为终点，那么每次有两种情况：<br></p>
+<p>首先用倍增法求预处理然后可以在线求任意两个结点的 $Lca$，对于每一组查询，我们枚举每个点作为终点，那么每次有两种情况：<br /></p>
 
 <ul>
-<li><p>终点在两个起点的 \(Lca(b,c)\) 的子树内：共同路径节点数就是 \(Lca(a,b), Lca(a,c)\) 中不等于 \(Lca(b,c)\) 的节点到终点的路径的节点数</p></li>
-<li><p>终点在两个起点的 \(Lca(b,c)\) 的子树外：共同路径节点数就是 \(Lca(b,c))\) 到 \(a\) 的路径的节点数</p></li>
+  <li>
+    <p>终点在两个起点的 $Lca(b,c)$ 的子树内：共同路径节点数就是 $Lca(a,b), Lca(a,c)$ 中不等于 $Lca(b,c)$ 的节点到终点的路径的节点数</p>
+  </li>
+  <li>
+    <p>终点在两个起点的 $Lca(b,c)$ 的子树外：共同路径节点数就是 $Lca(b,c))$ 到 $a$ 的路径的节点数</p>
+  </li>
 </ul>
 
 <h2 id="ac-code">AC code</h2>
@@ -233,9 +252,9 @@ into the {body} of the default.hbs template -->
 <span class="kt">int</span> <span class="n">dep</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span> <span class="n">pre</span><span class="p">[</span><span class="n">MaxN</span><span class="p">][</span><span class="n">log2n</span><span class="p">],</span> <span class="n">fa</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span> <span class="n">dfn</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span> <span class="n">low</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span> <span class="n">clo</span><span class="p">;</span>
 <span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">pre</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">clo</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">i</span><span class="o">!=-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">=</span><span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>
-    <span class="p">{</span>
+	<span class="n">pre</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">dfn</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">clo</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">i</span><span class="o">!=-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">=</span><span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>
+	<span class="p">{</span>
         <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span>
         <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
         <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
@@ -246,9 +265,9 @@ into the {body} of the default.hbs template -->
 
 <span class="kt">void</span> <span class="nf">lcabinarylifting</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">j</span><span class="p">)</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">pre</span><span class="p">[</span><span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>   <span class="c1">///2^j=2^(j-1)+2^(j-1)
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">j</span><span class="p">)</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+			<span class="k">if</span><span class="p">(</span><span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span> <span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">pre</span><span class="p">[</span><span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>   <span class="c1">///2^j=2^(j-1)+2^(j-1)
 </span>
 <span class="p">}</span>
 
@@ -270,20 +289,20 @@ into the {body} of the default.hbs template -->
 <span class="kt">int</span> <span class="n">ans</span><span class="p">;</span>
 <span class="kt">void</span> <span class="nf">cal</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">dfn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">dfn</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">z</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">);</span> 
-        <span class="k">if</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="n">x</span><span class="p">)</span> <span class="n">sum</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="n">dep</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-        <span class="k">else</span> <span class="n">sum</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
-        <span class="n">sum</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">sum</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">dfn</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">dfn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">dfn</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">z</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">);</span> 
+		<span class="k">if</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="n">x</span><span class="p">)</span> <span class="n">sum</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="n">dep</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+		<span class="k">else</span> <span class="n">sum</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="n">lca</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+		<span class="n">sum</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">+</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">sum</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
@@ -321,6 +340,7 @@ into the {body} of the default.hbs template -->
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
+
 
                 </div>
             </section>
@@ -370,6 +390,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -667,7 +709,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #2</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #2 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+2&source=1&searchmode=source) ## Problem F 函数 \\(F\_{x,y}\\) 满足： \\[ F\_{1,1} = F\_{1,2} = 1 \\\\ F\_{1,i} = F\_{1,i-1} + 2\\times F\_{1,i-2} \\</p>
+                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #2 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+2&source=1&searchmode=source) ## Problem F 函数 $F\_{x,y}$ 满足： \\[ F\_{1,1} = F\_{1,2} = 1 \\\\ F\_{1,i} = F\_{1,i-1} + 2\\times F\_{1,i-2} \\</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -710,7 +752,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">Codeforces Educational Round #25</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: It&#39;s from the Educational Round #25 of the codeforces Problem E 给一个 \(n\) 个节点，\(m\) 条边的有向无环图标号，使其满足： \(1-n\) 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：\( 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5}</p>
+                    <p>Contest Information source: It’s from the Educational Round #25 of the codeforces Problem E 给一个 $n$ 个节点，$m$ 条边的有向无环图标号，使其满足： $1-n$ 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：$ 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5}</p>
                 </section>
             </a>
             <footer class="post-card-meta">

@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Codeforces Educational Round #25" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the Educational Round #25 of the codeforces Problem E 给一个 \(n\) 个节点，\(m\) 条边的有向无环图标号，使其满足： \(1-n\) 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：\( 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} \) Solution 因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。 那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。 AC code int n,m; struct Edge { int u,v,next; }edge[MaxM]; int cont, head[MaxN],in[MaxN],ans[MaxN];" />
+    <meta property="og:description" content="Contest Information source: It’s from the Educational Round #25 of the codeforces Problem E 给一个 $n$ 个节点，$m$ 条边的有向无环图标号，使其满足： $1-n$ 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：$ 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} $ Solution 因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。 那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。 AC code int n,m; struct Edge { int u,v,next; }edge[MaxM]; int cont, head[MaxN],in[MaxN],ans[MaxN];" />
     <meta property="og:url" content="http://localhost:4000/CodeForces-Educational-Round-25" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Codeforces Educational Round #25" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the Educational Round #25 of the codeforces Problem E 给一个 \(n\) 个节点，\(m\) 条边的有向无环图标号，使其满足： \(1-n\) 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：\( 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} \) Solution 因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。 那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。 AC code int n,m; struct Edge { int u,v,next; }edge[MaxM]; int cont, head[MaxN],in[MaxN],ans[MaxN];" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the Educational Round #25 of the codeforces Problem E 给一个 $n$ 个节点，$m$ 条边的有向无环图标号，使其满足： $1-n$ 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：$ 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} $ Solution 因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。 那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。 AC code int n,m; struct Edge { int u,v,next; }edge[MaxM]; int cont, head[MaxN],in[MaxN],ans[MaxN];" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/CodeForces-Educational-Round-25"
     },
-    "description": "Contest Information source: It&#39;s from the Educational Round #25 of the codeforces Problem E 给一个 \(n\) 个节点，\(m\) 条边的有向无环图标号，使其满足： \(1-n\) 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：\( 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} \) Solution 因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。 那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。 AC code int n,m; struct Edge { int u,v,next; }edge[MaxM]; int cont, head[MaxN],in[MaxN],ans[MaxN];"
+    "description": "Contest Information source: It’s from the Educational Round #25 of the codeforces Problem E 给一个 $n$ 个节点，$m$ 条边的有向无环图标号，使其满足： $1-n$ 的每一个数字出现且仅出现一次 父节点标号比子节点小 节点序号输出的标号一定是字典序最小的 数据范围：$ 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} $ Solution 因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。 那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。 AC code int n,m; struct Edge { int u,v,next; }edge[MaxM]; int cont, head[MaxN],in[MaxN],ans[MaxN];"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="Codeforces Educational Round #25" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,25 +183,31 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://codeforces.com/contest/825">It&#39;s from the Educational Round #25 of the codeforces</a></p>
+<p>source: <a href="http://codeforces.com/contest/825">It’s from the Educational Round #25 of the codeforces</a></p>
 
 <h2 id="problem-e">Problem E</h2>
 
-<p>给一个 \(n\) 个节点，\(m\) 条边的有向无环图标号，使其满足：<br></p>
+<p>给一个 $n$ 个节点，$m$ 条边的有向无环图标号，使其满足：<br /></p>
 
 <ul>
-<li><p>\(1-n\) 的每一个数字出现且仅出现一次</p></li>
-<li><p>父节点标号比子节点小</p></li>
-<li><p>节点序号输出的标号一定是字典序最小的</p></li>
+  <li>
+    <p>$1-n$ 的每一个数字出现且仅出现一次</p>
+  </li>
+  <li>
+    <p>父节点标号比子节点小</p>
+  </li>
+  <li>
+    <p>节点序号输出的标号一定是字典序最小的</p>
+  </li>
 </ul>
 
-<p>数据范围：\( 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} \) <br></p>
+<p>数据范围：$ 2 ≤ n ≤ 10^{5}, 1 ≤ m ≤ 10^{5} $ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。<br></p>
+<p>因为要保证字典序最小，如果从父节点往下标号的话，因为不知道哪边的子树含有更小的子节点，所以没法从小往大分配标号。<br /></p>
 
-<p>那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。<br></p>
+<p>那么我们可以考虑反着做，从叶子节点开始先分配大的标号，对于一堆待分配的叶子节点，为了使字典序更小，肯定是序号大的拿更大的标号。这样一层一层往上走肯定能保证父节点标号小于子节点，同时贪心策略也能保证字典序最小。<br /></p>
 
 <h2 id="ac-code">AC code</h2>
 
@@ -248,26 +266,25 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-f">Problem F</h2>
 
-<p>给出一个字符串 \(s\)，可以把连续的相同的子串压缩，例如 \(aaaa \rightarrow 4a,\ abaaba\rightarrow 2aba\) ，求压缩后的最短长度。<br></p>
+<p>给出一个字符串 $s$，可以把连续的相同的子串压缩，例如 $aaaa \rightarrow 4a,\ abaaba\rightarrow 2aba$ ，求压缩后的最短长度。<br /></p>
 
-<p>数据范围：\( 1 ≤ s ≤ 8\times 10^3\) <br></p>
+<p>数据范围：$ 1 ≤ s ≤ 8\times 10^3$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>定义 \(DP[i]\) 为前 \(i\) 个字符压缩后的最短距离，那么这明显是 \(O(n^2)\) 更新答案。但是问题在于怎么用 \(DP[j],\ (j &lt; i) \) 更新 \(DP[i]\) 的值：<br><br>
-首先，我们需要计算出 \(s_{j..i}\) 压缩后的最短距离。因为是压缩相同的子串，相当于找一段字符串的循环节，然后加上循环次数就是压缩后的长度。<br>
-但是求循环节需要先计算 \(Next\) 数组，如果对于每一段 \(s_{j..i}\)， 随着 \(j\) 往前递减都重新计算一次，那就是 \(O(n^3)\) 的复杂度，肯定不行。<br>
-我们发现循环更新的顺序是把 \(j\) 从 \(i\) 往前递推，那么我们就可以从 \(i\) 往前计算 \(Next\) 数组，即把字符串倒过来变成 \(s_{i..j}\) ，因为开始的位置不变，那么 \(Next\) 数组可以直接更新重复使用。<br></p>
+<p>定义 $DP[i]$ 为前 $i$ 个字符压缩后的最短距离，那么这明显是 $O(n^2)$ 更新答案。但是问题在于怎么用 $DP[j],\ (j &lt; i) $ 更新 $DP[i]$ 的值：<br />
+首先，我们需要计算出 $s_{j..i}$ 压缩后的最短距离。因为是压缩相同的子串，相当于找一段字符串的循环节，然后加上循环次数就是压缩后的长度。
+但是求循环节需要先计算 $Next$ 数组，如果对于每一段 $s_{j..i}$， 随着 $j$ 往前递减都重新计算一次，那就是 $O(n^3)$ 的复杂度，肯定不行。
+我们发现循环更新的顺序是把 $j$ 从 $i$ 往前递推，那么我们就可以从 $i$ 往前计算 $Next$ 数组，即把字符串倒过来变成 $s_{i..j}$ ，因为开始的位置不变，那么 $Next$ 数组可以直接更新重复使用。<br /></p>
 
-<p>计算循环节长度方法：<br>
-<code class="prettyprint"><br>
-if( len %(len-Next[len-1]) == 0 )<br>
-    length = len - Next[len-1];<br>
-else <br>
-    length = len;<br>
-</code></p>
+<p>计算循环节长度方法：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if( len %(len-Next[len-1]) == 0 )
+    length = len - Next[len-1];
+else 
+    length = len;
+</code></pre></div></div>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">DP</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -321,6 +338,7 @@ else <br>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
+
                 </div>
             </section>
 
@@ -369,6 +387,28 @@ else <br>
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -666,7 +706,7 @@ else <br>
                     <h2 class="post-card-title">CodeForces Round #425 (Div. 2) D</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the Round #425 (Div. 2) of the codeforces](http://codeforces.com/contest/832/problem/D) ## Description 给出一棵 \\(n\\) 个节点的树，执行 \\(q\\) 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new</p>
+                    <p>## Problem Information source: [It's from the Round #425 (Div. 2) of the codeforces](http://codeforces.com/contest/832/problem/D) ## Description 给出一棵 $n$ 个节点的树，执行 $q$ 次查询，每次从中挑出三个节点，选择一个为终点使得另外两个点到终点的路径重合的点数最多，输出这个点数。 Misha and Grisha are funny boys, so they like to use new</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -709,7 +749,7 @@ else <br>
                     <h2 class="post-card-title">2017 Multi-University Training Contest #1</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 \(m\) ，计算满足 \(2^m-1=10^k\) 的 \(k\) 数据范围：\( 1 ≤ m ≤ 10^{5}\) Solution \( k = m \times lg2\)</p>
+                    <p>Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 $m$ ，计算满足 $2^m-1=10^k$ 的 $k$ 数据范围：$ 1 ≤ m ≤ 10^{5}$ Solution $ k = m \times lg2$</p>
                 </section>
             </a>
             <footer class="post-card-meta">

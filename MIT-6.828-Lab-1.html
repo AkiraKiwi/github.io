@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" />
-    <meta property="og:description" content="Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git" />
+    <meta property="og:description" content="Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC’s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git" />
     <meta property="og:url" content="http://localhost:4000/MIT-6.828-Lab-1" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Guide" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" />
-    <meta name="twitter:description" content="Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git" />
+    <meta name="twitter:description" content="Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC’s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/MIT-6.828-Lab-1"
     },
-    "description": "Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git"
+    "description": "Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC’s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -174,308 +186,382 @@ into the {body} of the default.hbs template -->
 <p>This lab is split into three parts:</p>
 
 <ol>
-<li><p>Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure.</p></li>
-<li><p>Examines the boot loader for out 6.828 kernel.</p></li>
-<li><p>The 6.828 kernel.</p></li>
+  <li>
+    <p>Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC’s power-on bootstrap procedure.</p>
+  </li>
+  <li>
+    <p>Examines the boot loader for out 6.828 kernel.</p>
+  </li>
+  <li>
+    <p>The 6.828 kernel.</p>
+  </li>
 </ol>
 
-<p>P.S. : The URL for the course Git repository is <a href="https://pdos.csail.mit.edu/6.828/2017/jos.git">https://pdos.csail.mit.edu/6.828/2017/jos.git</a>,<br>and you can run <code class="prettyprint">git clone https://pdos.csail.mit.edu/6.828/2017/jos.git</code> to get the lab files.</p>
+<p>P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,<br />and you can run <code class="highlighter-rouge">git clone https://pdos.csail.mit.edu/6.828/2017/jos.git</code> to get the lab files.</p>
 
 <h2 id="part-1-pc-bootstrap">Part 1: PC Bootstrap</h2>
 
 <ol>
-<li><p><strong>Getting Started with x86 assembly</strong> <br></p>
+  <li>
+    <p><strong>Getting Started with x86 assembly</strong> <br /></p>
 
-<blockquote>
-<p><strong>Exercise 1.</strong><br>
-   * Familiar with x86 assembly language:<br><br>
-       <a href="https://pdos.csail.mit.edu/6.828/2017/readings/pcasm-book.pdf">PC Assembly Language Book</a> (warning: the examples in the book are written for the NASM assemble which uses the <em>Intel</em> syntax, but we will use the GNU assemble which uses the <em>AT&amp;T</em> syntax.) <br><br>
-       <a href="http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html">Brennan&#39;s Guide to Inline Assembly</a> (This book gives a good and quite brief description of the <em>AT&amp;T</em> assembly syntax.)<br></p>
-</blockquote></li>
-<li><p><strong>Simulating the x86</strong><br></p></li>
+    <blockquote>
+      <p><strong>Exercise 1.</strong></p>
+      <ul>
+        <li>Familiar with x86 assembly language:<br />
+  <a href="https://pdos.csail.mit.edu/6.828/2017/readings/pcasm-book.pdf">PC Assembly Language Book</a> (warning: the examples in the book are written for the NASM assemble which uses the <em>Intel</em> syntax, but we will use the GNU assemble which uses the <em>AT&amp;T</em> syntax.) <br />
+  <a href="http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html">Brennan’s Guide to Inline Assembly</a> (This book gives a good and quite brief description of the <em>AT&amp;T</em> assembly syntax.)<br /></li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Simulating the x86</strong><br /></p>
+
+    <ul>
+      <li>
+        <p>Get into the <code class="highlighter-rouge">/jos</code> directory, then run <code class="highlighter-rouge">make</code> to build the minimal 6.828 boot loader and kernel.<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> + as kern/entry.S
+  + cc kern/entrypgdir.c
+  + cc kern/init.c
+  + cc kern/console.c
+  + cc kern/monitor.c
+  + cc kern/printf.c
+  + cc kern/kdebug.c
+  + cc lib/printfmt.c
+  + cc lib/readline.c
+  + cc lib/string.c
+  + ld obj/kern/kernel
+  + as boot/boot.S
+  + cc -Os boot/main.c
+  + ld boot/boot
+  boot block is 380 bytes (max 510)
+  + mk obj/kern/kernel.img
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>The file <code class="highlighter-rouge">obj/kern/kernel.img</code> created above is the contents of the emulated PC’s “virtual hard disk.” This hard disk images contains both our boot loader(<code class="highlighter-rouge">obj/boot/boot</code>) and our kernel (<code class="highlighter-rouge">obj/kernel</code>). Then run <code class="highlighter-rouge">make qemu</code> to running our kernel:<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Booting from Hard Disk...
+  6828 decimal is XXX octal!
+  entering test_backtrace 5
+  entering test_backtrace 4
+  entering test_backtrace 3
+  entering test_backtrace 2
+  entering test_backtrace 1
+  entering test_backtrace 0
+  leaving test_backtrace 0
+  leaving test_backtrace 1
+  leaving test_backtrace 2
+  leaving test_backtrace 3
+  leaving test_backtrace 4
+  leaving test_backtrace 5
+  Welcome to the JOS kernel monitor!
+  Type 'help' for a list of commands.
+  K&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>And there are only two commands you can give to the kernel monitor, <code class="highlighter-rouge">help</code> and <code class="highlighter-rouge">kerninfo</code>: <br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> K&gt; help
+  help - display this list of commands
+  kerninfo - display information about the kernel
+  K&gt; kerninfo
+  Special kernel symbols:
+  entry  f010000c (virt)  0010000c (phys)
+  etext  f0101a75 (virt)  00101a75 (phys)
+  edata  f0112300 (virt)  00112300 (phys)
+  end    f0112960 (virt)  00112960 (phys)
+  Kernel executable memory footprint: 75KB
+  K&gt;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>The PC’s Physical Address Space</strong></p>
+
+    <ul>
+      <li>
+        <p>A PC’s physical address space is hard-wired(硬连接) to have the following general layout:<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> +------------------+  &lt;- 0xFFFFFFFF (4GB)
+  |      32-bit      |
+  |  memory mapped   |
+  |     devices      |
+  |                  |
+  /\/\/\/\/\/\/\/\/\/\
+
+  /\/\/\/\/\/\/\/\/\/\
+  |                  |
+  |      Unused      |
+  |                  |
+  +------------------+  &lt;- depends on amount of RAM
+  |                  |
+  |                  |
+  | Extended Memory  |
+  |                  |
+  |                  |
+  +------------------+  &lt;- 0x00100000 (1MB)
+  |     BIOS ROM     |
+  +------------------+  &lt;- 0x000F0000 (960KB)
+  |  16-bit devices, |
+  |  expansion ROMs  |
+  +------------------+  &lt;- 0x000C0000 (768KB)
+  |   VGA Display    |
+  +------------------+  &lt;- 0x000A0000 (640KB)
+  |                  |
+  |    Low Memory    |
+  |                  |
+  +------------------+  &lt;- 0x00000000
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>第一代 PC 基于 16 位 Intel 8080 处理器，且只有 1MB 的寻址能力，即从 <code class="highlighter-rouge">0x00000000</code> 开始，到 <code class="highlighter-rouge">0x000FFFFF</code> 结束。如图所示，从 <code class="highlighter-rouge">0x00000000</code> 开始的 640KB 分配给 <a href="https://en.wikipedia.org/wiki/Conventional_memory#Low"><strong>Low Memory/Conventional Memory</strong></a>，从 <code class="highlighter-rouge">0x000A0000</code> 到 <code class="highlighter-rouge">0x000FFFFF</code> 的 384KB 则是保留给显示器缓冲区等做特殊用途，其中最重要的部分是 Basic Input/Output System，它占用了从 <code class="highlighter-rouge">0x000F0000</code> 到 <code class="highlighter-rouge">0x000FFFFF</code> 的 64KB 空间。 <br /></p>
+      </li>
+      <li>
+        <p><strong>BOIS</strong> 负责完成最基础的系统初始化工作，类似于激活显卡，检查存储空间等等。在完成初始化之后，BIOS 从磁盘中加载出操作系统并把计算机的控制权转交给操作系统。<br /></p>
+      </li>
+      <li>
+        <p>当 Intel 突破了 1MB 内存的限制后，PC 开始支持 16MB 和 4GB 的物理内存。所以，现代PC把内存划分为 “Low Memory”(和之前一样) 和 “Extended Memory”(所有其他的东西)。另外，还有一些空间被 BIOS 保留给了 PCI 设备。<br /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>The Rom BIOS</strong></p>
+
+    <ul>
+      <li>
+        <p>Using QEMU to investigate how an IA-32 compatible computer boots.<br /></p>
+      </li>
+      <li>
+        <p>steps : <br /></p>
+
+        <ul>
+          <li>open two terminal windows and <code class="highlighter-rouge">cd</code> both shells into the lab directory.</li>
+          <li>In one, run <code class="highlighter-rouge">make qemu-gdb</code> or <code class="highlighter-rouge">make qemu-nox-gdb</code>. This start up QEMU, but QEMU stops just before the processor executes the first instruction and waits for a debugging connection from GDB.</li>
+          <li>
+            <p>In the second terminal, run <code class="highlighter-rouge">gdb</code> and we can see this: <br /></p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.3) 7.7.1
+  Copyright (C) 2014 Free Software Foundation, Inc.
+  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+  This is free software: you are free to change and redistribute it.
+  There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+  and "show warranty" for details.
+  This GDB was configured as "i686-linux-gnu".
+  Type "show configuration" for configuration details.
+  For bug reporting instructions, please see:
+  &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+  Find the GDB manual and other documentation resources online at:
+  &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+  For help, type "help".
+  Type "apropos word" to search for commands related to "word".
+  + target remote localhost:25000
+  warning: A handler for the OS ABI "GNU/Linux" is not built into this configuration
+  of GDB.  Attempting to continue with the default i8086 settings.
+
+  The target architecture is assumed to be i8086
+  [f000:fff0]    0xffff0:	ljmp   $0xf000,$0xe05b
+  0x0000fff0 in ?? ()
+  + symbol-file kernel
+  (gdb) 
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <blockquote>
+      <p><strong>Exercise 2.</strong><br /></p>
+      <ul>
+        <li>Using GDB’s <code class="highlighter-rouge">si</code>(step instruction) command to trace into the ROM BIOS, and try to have the general idea of what the BIOS is doing first.</li>
+      </ul>
+    </blockquote>
+
+    <ul>
+      <li>
+        <p>简述一下 PC 启动的流程：<br /></p>
+
+        <ul>
+          <li>PC 启动时， <code class="highlighter-rouge">CS = 0xf000, IP = 0xfff0</code>，即从物理地址 <code class="highlighter-rouge">0x000ffff0</code> 开始执行第一条指令<br /></li>
+          <li>第一条指令是 <code class="highlighter-rouge">ljmp $0xf000, $0xe05b</code>， 即跳转到分段地址 <code class="highlighter-rouge">CS = 0xf000, IP = 0xe05b</code> 。因为 BIOS 末端地址为 <code class="highlighter-rouge">0x100000</code> ， 所以刚开始的地址离结束地址只有 16 个字节，存放不了什么指令，因此第一条指令才是跳转指令，跳转到 BIOS 刚开始的地方。<br /></li>
+          <li>当 BIOS 开始 执行时，它先创建一个<strong>中断描述符表</strong>（IDT），并初始化各种设备和 PCI 总线。<br /></li>
+          <li>最后，BIOS 开始搜索可引导设备，并读取引导加载程序并把计算机控制权转交给它。<br /></li>
+        </ul>
+      </li>
+      <li>
+        <p>实模式地址：<br /></p>
+
+        <ul>
+          <li>在实模式（即 PC 刚启动时），地址换算的公式为：<br /> 
+  $physical\ address = 16 * segment + offset$. <br />
+  所以，当 PC 将 <code class="highlighter-rouge">CS</code>（code segment register） 置为 <code class="highlighter-rouge">0xf000</code> ， <code class="highlighter-rouge">IP</code>（instruction pointer） 置为 <code class="highlighter-rouge">0xfff0</code>，物理地址为： <br /> 
+  $16 * 0xf000 + 0xfff0$ <br />
+  $= 0xf0000 + 0xfff0$ <br />
+  $= 0xffff0$<br /></li>
+          <li>实模式只有 16 位的寻址能力，它将内存看成分段的区域，程序段和数据位于不同的区域，每一个指针都指向实际的物理地址。</li>
+          <li>可以通过修改 <code class="highlighter-rouge">A20</code> 总线来完成从实模式到保护模式的转换。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* Get into the `/jos` directory, then run `make` to build the minimal 6.828 boot loader and kernel.&lt;br&gt;
 
-    ```
-   + as kern/entry.S
-    + cc kern/entrypgdir.c
-    + cc kern/init.c
-    + cc kern/console.c
-    + cc kern/monitor.c
-    + cc kern/printf.c
-    + cc kern/kdebug.c
-    + cc lib/printfmt.c
-    + cc lib/readline.c
-    + cc lib/string.c
-    + ld obj/kern/kernel
-    + as boot/boot.S
-    + cc -Os boot/main.c
-    + ld boot/boot
-    boot block is 380 bytes (max 510)
-    + mk obj/kern/kernel.img
-    ```
-
-* The file `obj/kern/kernel.img` created above is the contents of the emulated PC's "virtual hard disk." This hard disk images contains both our boot loader(`obj/boot/boot`) and our kernel (`obj/kernel`). Then run `make qemu` to running our kernel:&lt;br&gt;
-
-    ```
-   Booting from Hard Disk...
-    6828 decimal is XXX octal!
-    entering test_backtrace 5
-    entering test_backtrace 4
-    entering test_backtrace 3
-    entering test_backtrace 2
-    entering test_backtrace 1
-    entering test_backtrace 0
-    leaving test_backtrace 0
-    leaving test_backtrace 1
-    leaving test_backtrace 2
-    leaving test_backtrace 3
-    leaving test_backtrace 4
-    leaving test_backtrace 5
-    Welcome to the JOS kernel monitor!
-    Type 'help' for a list of commands.
-    K&gt;
-    ```
-
-
-* And there are only two commands you can give to the kernel monitor, `help` and `kerninfo`: &lt;br&gt;
-
-    ```
-   K&gt; help
-    help - display this list of commands
-    kerninfo - display information about the kernel
-    K&gt; kerninfo
-    Special kernel symbols:
-    entry  f010000c (virt)  0010000c (phys)
-    etext  f0101a75 (virt)  00101a75 (phys)
-    edata  f0112300 (virt)  00112300 (phys)
-    end    f0112960 (virt)  00112960 (phys)
-    Kernel executable memory footprint: 75KB
-    K&gt;
-    ```
-</code></pre></div>
-<ol>
-<li><strong>The PC&#39;s Physical Address Space</strong></li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* A PC's physical address space is hard-wired(硬连接) to have the following general layout:&lt;br&gt;
-
-    ```  
-   +------------------+  &lt;- 0xFFFFFFFF (4GB)
-    |      32-bit      |
-    |  memory mapped   |
-    |     devices      |
-    |                  |
-    /\/\/\/\/\/\/\/\/\/\
-
-    /\/\/\/\/\/\/\/\/\/\
-    |                  |
-    |      Unused      |
-    |                  |
-    +------------------+  &lt;- depends on amount of RAM
-    |                  |
-    |                  |
-    | Extended Memory  |
-    |                  |
-    |                  |
-    +------------------+  &lt;- 0x00100000 (1MB)
-    |     BIOS ROM     |
-    +------------------+  &lt;- 0x000F0000 (960KB)
-    |  16-bit devices, |
-    |  expansion ROMs  |
-    +------------------+  &lt;- 0x000C0000 (768KB)
-    |   VGA Display    |
-    +------------------+  &lt;- 0x000A0000 (640KB)
-    |                  |
-    |    Low Memory    |
-    |                  |
-    +------------------+  &lt;- 0x00000000
-    ```
-
-
-* 第一代 PC 基于 16 位 Intel 8080 处理器，且只有 1MB 的寻址能力，即从 `0x00000000` 开始，到 `0x000FFFFF` 结束。如图所示，从 `0x00000000` 开始的 640KB 分配给 [**Low Memory/Conventional Memory**](https://en.wikipedia.org/wiki/Conventional_memory#Low)，从 `0x000A0000` 到 `0x000FFFFF` 的 384KB 则是保留给显示器缓冲区等做特殊用途，其中最重要的部分是 Basic Input/Output System，它占用了从 `0x000F0000` 到 `0x000FFFFF` 的 64KB 空间。 &lt;br&gt;
-
-* **BOIS** 负责完成最基础的系统初始化工作，类似于激活显卡，检查存储空间等等。在完成初始化之后，BIOS 从磁盘中加载出操作系统并把计算机的控制权转交给操作系统。&lt;br&gt;
-
-* 当 Intel 突破了 1MB 内存的限制后，PC 开始支持 16MB 和 4GB 的物理内存。所以，现代PC把内存划分为 "Low Memory"(和之前一样) 和 "Extended Memory"(所有其他的东西)。另外，还有一些空间被 BIOS 保留给了 PCI 设备。&lt;br&gt;
-</code></pre></div>
-<ol>
-<li><strong>The Rom BIOS</strong></li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* Using QEMU to investigate how an IA-32 compatible computer boots.&lt;br&gt;
-
-* steps : &lt;br&gt;
-
-    * open two terminal windows and `cd` both shells into the lab directory.
-    * In one, run `make qemu-gdb` or `make qemu-nox-gdb`. This start up QEMU, but QEMU stops just before the processor executes the first instruction and waits for a debugging connection from GDB.
-    * In the second terminal, run `gdb` and we can see this: &lt;br&gt; 
-
-        ```
-       GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.3) 7.7.1
-        Copyright (C) 2014 Free Software Foundation, Inc.
-        License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
-        This is free software: you are free to change and redistribute it.
-        There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-        and "show warranty" for details.
-        This GDB was configured as "i686-linux-gnu".
-        Type "show configuration" for configuration details.
-        For bug reporting instructions, please see:
-        &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
-        Find the GDB manual and other documentation resources online at:
-        &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
-        For help, type "help".
-        Type "apropos word" to search for commands related to "word".
-        + target remote localhost:25000
-        warning: A handler for the OS ABI "GNU/Linux" is not built into this configuration
-        of GDB.  Attempting to continue with the default i8086 settings.
-
-        The target architecture is assumed to be i8086
-        [f000:fff0]    0xffff0: ljmp   $0xf000,$0xe05b
-        0x0000fff0 in ?? ()
-        + symbol-file kernel
-        (gdb) 
-        ```
-
-&gt; **Exercise 2.**&lt;br&gt;
-&gt;   * Using GDB's `si`(step instruction) command to trace into the ROM BIOS, and try to have the general idea of what the BIOS is doing first.
-
-* 简述一下 PC 启动的流程：&lt;br&gt;
-
-    * PC 启动时， `CS = 0xf000, IP = 0xfff0`，即从物理地址 `0x000ffff0` 开始执行第一条指令&lt;br&gt;
-    * 第一条指令是 `ljmp $0xf000, $0xe05b`， 即跳转到分段地址 `CS = 0xf000, IP = 0xe05b` 。因为 BIOS 末端地址为 `0x100000` ， 所以刚开始的地址离结束地址只有 16 个字节，存放不了什么指令，因此第一条指令才是跳转指令，跳转到 BIOS 刚开始的地方。&lt;br&gt;
-    * 当 BIOS 开始 执行时，它先创建一个**中断描述符表**（IDT），并初始化各种设备和 PCI 总线。&lt;br&gt;
-    * 最后，BIOS 开始搜索可引导设备，并读取引导加载程序并把计算机控制权转交给它。&lt;br&gt;
-
-
-*  实模式地址：&lt;br&gt;
-
-    * 在实模式（即 PC 刚启动时），地址换算的公式为：&lt;br&gt; 
-        \\(physical\\ address = 16 * segment + offset\\). &lt;br&gt;
-        所以，当 PC 将 `CS`（code segment register） 置为 `0xf000` ， `IP`（instruction pointer） 置为 `0xfff0`，物理地址为： &lt;br&gt; 
-        \\(16 * 0xf000 + 0xfff0\\) &lt;br&gt;
-        \\(= 0xf0000 + 0xfff0\\) &lt;br&gt;
-        \\(= 0xffff0\\)&lt;br&gt;
-    * 实模式只有 16 位的寻址能力，它将内存看成分段的区域，程序段和数据位于不同的区域，每一个指针都指向实际的物理地址。
-    * 可以通过修改 `A20` 总线来完成从实模式到保护模式的转换。
-</code></pre></div>
 <h2 id="part-2-the-boot-loader">Part 2: The Boot Loader</h2>
 
 <ol>
-<li><p><strong>Boot Loader</strong></p>
+  <li>
+    <p><strong>Boot Loader</strong></p>
 
-<p>电脑的硬盘或软盘通常被划分为 512 字节一块的扇形区（sector）。扇形区是磁盘 IO 的最小粒度：每次读写至少包含一个或者多个扇形区。如果一个磁盘是可引导的，则它的第一块扇形区为 <em>引导扇区（boot sector）</em> ，里面存放着引导加载程序。当 BIOS 找到一个可引导的磁盘，它会先加载引导扇区到到内存中，位于物理地址 <code class="prettyprint">0x7c00</code> 到 <code class="prettyprint">0x7dff</code> 的位置。然后执行 <code class="prettyprint">jmp</code> 指令将 <code class="prettyprint">CS:IP</code> 设置为 <code class="prettyprint">0000:7c00</code>，再转交控制权。<br> </p>
+    <p>电脑的硬盘或软盘通常被划分为 512 字节一块的扇形区（sector）。扇形区是磁盘 IO 的最小粒度：每次读写至少包含一个或者多个扇形区。如果一个磁盘是可引导的，则它的第一块扇形区为 <em>引导扇区（boot sector）</em> ，里面存放着引导加载程序。当 BIOS 找到一个可引导的磁盘，它会先加载引导扇区到到内存中，位于物理地址 <code class="highlighter-rouge">0x7c00</code> 到 <code class="highlighter-rouge">0x7dff</code> 的位置。然后执行 <code class="highlighter-rouge">jmp</code> 指令将 <code class="highlighter-rouge">CS:IP</code> 设置为 <code class="highlighter-rouge">0000:7c00</code>，再转交控制权。<br /></p>
 
-<p>在 xv6 中，boot loader 由一个汇编程序 <code class="prettyprint">boot/boot.s</code> 和一个 C 语言文件 <code class="prettyprint">boot/main.c</code> 组成。boot loader 主要执行这两个函数：<br></p></li>
+    <p>在 xv6 中，boot loader 由一个汇编程序 <code class="highlighter-rouge">boot/boot.s</code> 和一个 C 语言文件 <code class="highlighter-rouge">boot/main.c</code> 组成。boot loader 主要执行这两个函数：<br /></p>
+
+    <ul>
+      <li>
+        <p>首先，boot loader 将处理器从实模式切换到 32 位的保护模式，因为只有在这个模式下，软件才能使用处理器物理地址空间中 1MB 以上的空间。在保护模式中， 从分段地址（segmented address）到物理地址的映射和实模式不同，在切换后，偏移量（offset）从 16bit 变成了 32bit <br /></p>
+      </li>
+      <li>
+        <p>然后，boot loader 从磁盘中直接读取内核。<br /></p>
+      </li>
+    </ul>
+
+    <p>在理解了 xv6 的 boot loader 源码后，可以去看看它的反汇编文件 <code class="highlighter-rouge">obj/boot/boot.asm</code>，同样还有内核的反汇编文件 <code class="highlighter-rouge">obj/kern/kernel.asm</code> <br />
+ 通过 <code class="highlighter-rouge">b</code> 指令可以在 GDB 中设置断点，例如 <code class="highlighter-rouge">b *0x7c00</code> ；在断点后，可以通过 <code class="highlighter-rouge">c</code> 和 <code class="highlighter-rouge">si</code> 指令来继续执行下一个指令，<code class="highlighter-rouge">si N</code> 可以选择跳到之后的第 N 个指令处。<br />
+ 通过 <code class="highlighter-rouge">x/i</code> 指令可以用来测试内存中的指令。<br /></p>
+
+    <blockquote>
+      <p><strong>Exercise 3.</strong><br /></p>
+      <ul>
+        <li>Set a breakpoint at address <code class="highlighter-rouge">0x7c00</code>, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in <code class="highlighter-rouge">boot/boot.S</code>, using the source code and the disassembly file <code class="highlighter-rouge">obj/boot/boot.asm</code> to keep track of where you are. Also use the <code class="highlighter-rouge">x/i</code> command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in <code class="highlighter-rouge">obj/boot/boot.asm</code> and GDB.<br /></li>
+        <li>Trace into <code class="highlighter-rouge">bootmain()</code> in <code class="highlighter-rouge">boot/main.c</code>, and then into <code class="highlighter-rouge">readsect()</code>. Identify the exact assembly instructions that correspond to each of the statements in <code class="highlighter-rouge">readsect()</code>. Trace through the rest of <code class="highlighter-rouge">readsect()</code> and back out into <code class="highlighter-rouge">bootmain()</code>, and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.<br /></li>
+      </ul>
+    </blockquote>
+
+    <p><em>Question 1</em> : At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode?<br /></p>
+    <ul>
+      <li>
+        <p>Answer : 查看 <code class="highlighter-rouge">boot.asm</code> 文件，可以发现：<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # Jump to next instruction, but in 32-bit code segment.
+  # Switches processor into 32-bit mode.
+  ljmp    $PROT_MODE_CSEG, $protcseg
+      7c2d:	ea 32 7c 08 00 66 b8 	ljmp   $0xb866,$0x87c32
+
+  00007c32 &lt;protcseg&gt;:
+
+  .code32                     # Assemble for 32-bit mode
+</code></pre></div>        </div>
+
+        <p>因此可以得出：从 <code class="highlighter-rouge">0x00007c32</code> 处开始执行 32位模式的代码，<code class="highlighter-rouge">ljmp   $0xb866,$0x87c32</code> 完成了从实模式到保护模式的切换。<br /></p>
+      </li>
+    </ul>
+
+    <p><em>Question 2</em> : What is the last instruction of the boot loader executed, and what is the first instruction of the kernel it just loaded?</p>
+    <ul>
+      <li>
+        <p>Answer : 查看 <code class="highlighter-rouge">boot.asm</code> 文件，在函数 <code class="highlighter-rouge">void bootmain(void)</code> 中可以发现 boot loader 执行的最后一条指令：<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // call the entry point from the ELF header
+  // note: does not return!
+  ((void (*)(void)) (ELFHDR-&gt;e_entry))();
+  7d61:	ff 15 18 00 01 00    	call   *0x10018
+</code></pre></div>        </div>
+
+        <p>在 <code class="highlighter-rouge">kernel.asm</code> 中可以找到 kernel 执行的第一条指令：<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> entry:
+  movw	$0x1234,0x472			# warm boot
+</code></pre></div>        </div>
+      </li>
+    </ul>
+
+    <p><em>Question 3</em> : Where is the first instruction of the kernel?</p>
+    <ul>
+      <li>
+        <p>Answer : 在 <code class="highlighter-rouge">obj/kern/</code> 目录下，使用 <code class="highlighter-rouge">objdump -f kernel</code> 命令可以查看反汇编文件的具体信息：<br /></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kernel：     文件格式 elf32-i386
+  体系结构：i386， 标志 0x00000112：
+  EXEC_P, HAS_SYMS, D_PAGED
+  起始地址 0x0010000c
+</code></pre></div>        </div>
+
+        <p>可以看出 kernel 的第一条指令的地址为 <code class="highlighter-rouge">0x0010000c</code> <br /></p>
+      </li>
+    </ul>
+
+    <p><em>Question 4</em> : How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information?</p>
+    <ul>
+      <li>Answer : 是通过 ELF 文件头获取所有 program header table，每个 program header table 记录了三个重要信息用以描述段 （segment）：<br />
+        <ul>
+          <li>p_pa （物理内存地址）<br /></li>
+          <li>p_memsz （所占内存大小）<br /></li>
+          <li>p_offset （相对文件的偏移地址）<br />
+  根据这三个信息，对每个段，从 p_offset 开始，读取 p_memsz 个 byte 的内容（需要根据扇区（sector）大小对齐），放入 p_pa 开始的内存中。通过 <code class="highlighter-rouge">objdump -p kernel</code> 命令可以查看：<br /></li>
+        </ul>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> kernel：     文件格式 elf32-i386
+
+  程序头：
+      LOAD off    0x00001000 vaddr 0xf0100000 paddr 0x00100000 align 2**12
+          filesz 0x0000716c memsz 0x0000716c flags r-x
+      LOAD off    0x00009000 vaddr 0xf0108000 paddr 0x00108000 align 2**12
+          filesz 0x0000a300 memsz 0x0000a944 flags rw-
+      STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
+          filesz 0x00000000 memsz 0x00000000 flags rwx
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Loading the Kernel</strong></p>
+
+    <p>We will now look in further detail at the C language portion of the boot loader, in <code class="highlighter-rouge">boot/main.c</code>.</p>
+
+    <blockquote>
+      <p><strong>Exercise 4.</strong><br /></p>
+      <ul>
+        <li>Read about programming with pointers in C. The best reference for the C language is “K&amp;R”</li>
+      </ul>
+    </blockquote>
+
+    <ul>
+      <li>
+        <p>什么是 <code class="highlighter-rouge">ELF</code> ? <br />
+  在编译和链接一个 C 语言程序时，编译器先从 <code class="highlighter-rouge">.c</code> 源代码文件中生成 <code class="highlighter-rouge">.o</code> 目标文件（二进制文件），链接器再结合所有已编译的目标文件，生成 ELF 格式的二进制文件， i.e “Executable and Linkable Format”.<br />
+  一个 ELF 可执行文件通常由一个定长的带有加载信息的头部（header）和几个变长的带有代码或数据段的程序部分（program sections）组成：<br /></p>
+
+        <ul>
+          <li><code class="highlighter-rouge">.text</code> :   程序的可执行指令<br /></li>
+          <li><code class="highlighter-rouge">.rodata</code> : 只读数据，例如 C 编译器产生的 ASCII 字符串常量<br /></li>
+          <li><code class="highlighter-rouge">.data:</code> :  数据段存储着程序的初始化变量，例如 声明且已初始化的全局变量<br /></li>
+        </ul>
+
+        <p>在链接器计算程序内存分布时，它会为未初始化的全局变量保留空间，并存储在 <code class="highlighter-rouge">.data</code>段后的 <code class="highlighter-rouge">.bss</code> 段中，C 语言会为未初始化的全局变量赋值为 0.<br /></p>
+      </li>
+      <li>
+        <p>几个命令：<br /></p>
+
+        <ul>
+          <li><code class="highlighter-rouge">objdump -h obj/kern/kernel</code> : Examine the full list of the names, sizes, and link addresses of all the sections in the kernel executable.<br /></li>
+          <li><code class="highlighter-rouge">objdump -h obj/boot/boot.out</code> : look at the .text section of the boot loader.<br /></li>
+          <li><code class="highlighter-rouge">objdump -x obj/kern/kernel</code> : inspect the program headers. <br /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* 首先，boot loader 将处理器从实模式切换到 32 位的保护模式，因为只有在这个模式下，软件才能使用处理器物理地址空间中 1MB 以上的空间。在保护模式中， 从分段地址（segmented address）到物理地址的映射和实模式不同，在切换后，偏移量（offset）从 16bit 变成了 32bit &lt;br&gt;
 
-* 然后，boot loader 从磁盘中直接读取内核。&lt;br&gt;
-
-在理解了 xv6 的 boot loader 源码后，可以去看看它的反汇编文件 `obj/boot/boot.asm`，同样还有内核的反汇编文件 `obj/kern/kernel.asm` &lt;br&gt;
-通过 `b` 指令可以在 GDB 中设置断点，例如 `b *0x7c00` ；在断点后，可以通过 `c` 和 `si` 指令来继续执行下一个指令，`si N` 可以选择跳到之后的第 N 个指令处。&lt;br&gt;
-通过 `x/i` 指令可以用来测试内存中的指令。&lt;br&gt;
-
-&gt; **Exercise 3.**&lt;br&gt;
-&gt;   * Set a breakpoint at address `0x7c00`, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in `boot/boot.S`, using the source code and the disassembly file `obj/boot/boot.asm` to keep track of where you are. Also use the `x/i` command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in `obj/boot/boot.asm` and GDB.&lt;br&gt;
-&gt;   * Trace into `bootmain()` in `boot/main.c`, and then into `readsect()`. Identify the exact assembly instructions that correspond to each of the statements in `readsect()`. Trace through the rest of `readsect()` and back out into `bootmain()`, and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.&lt;br&gt;
-
-*Question 1* : At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode?&lt;br&gt;
-* Answer : 查看 `boot.asm` 文件，可以发现：&lt;br&gt;
-
-    ```
-   # Jump to next instruction, but in 32-bit code segment.
-    # Switches processor into 32-bit mode.
-    ljmp    $PROT_MODE_CSEG, $protcseg
-        7c2d:   ea 32 7c 08 00 66 b8    ljmp   $0xb866,$0x87c32
-
-    00007c32 &lt;protcseg&gt;:
-
-    .code32                     # Assemble for 32-bit mode
-    ```
-
-    因此可以得出：从 `0x00007c32` 处开始执行 32位模式的代码，`ljmp   $0xb866,$0x87c32` 完成了从实模式到保护模式的切换。&lt;br&gt;
-
-*Question 2* : What is the last instruction of the boot loader executed, and what is the first instruction of the kernel it just loaded?
-* Answer : 查看 `boot.asm` 文件，在函数 `void bootmain(void)` 中可以发现 boot loader 执行的最后一条指令：&lt;br&gt;
-
-    ```
-   // call the entry point from the ELF header
-    // note: does not return!
-    ((void (*)(void)) (ELFHDR-&gt;e_entry))();
-    7d61:   ff 15 18 00 01 00       call   *0x10018
-    ```
-
-    在 `kernel.asm` 中可以找到 kernel 执行的第一条指令：&lt;br&gt;
-
-    ```
-   entry:
-    movw    $0x1234,0x472           # warm boot
-    ```
-
-*Question 3* : Where is the first instruction of the kernel?
-* Answer : 在 `obj/kern/` 目录下，使用 `objdump -f kernel` 命令可以查看反汇编文件的具体信息：&lt;br&gt;
-
-    ```
-   kernel：     文件格式 elf32-i386
-    体系结构：i386， 标志 0x00000112：
-    EXEC_P, HAS_SYMS, D_PAGED
-    起始地址 0x0010000c
-    ```
-
-    可以看出 kernel 的第一条指令的地址为 `0x0010000c` &lt;br&gt;
-
-*Question 4* : How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information?
-* Answer : 是通过 ELF 文件头获取所有 program header table，每个 program header table 记录了三个重要信息用以描述段 （segment）：&lt;br&gt;
-    * p_pa （物理内存地址）&lt;br&gt;
-    * p_memsz （所占内存大小）&lt;br&gt;
-    * p_offset （相对文件的偏移地址）&lt;br&gt;
-    根据这三个信息，对每个段，从 p_offset 开始，读取 p_memsz 个 byte 的内容（需要根据扇区（sector）大小对齐），放入 p_pa 开始的内存中。通过 `objdump -p kernel` 命令可以查看：&lt;br&gt;
-
-
-    ```
-   kernel：     文件格式 elf32-i386
-
-    程序头：
-        LOAD off    0x00001000 vaddr 0xf0100000 paddr 0x00100000 align 2**12
-            filesz 0x0000716c memsz 0x0000716c flags r-x
-        LOAD off    0x00009000 vaddr 0xf0108000 paddr 0x00108000 align 2**12
-            filesz 0x0000a300 memsz 0x0000a944 flags rw-
-        STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
-            filesz 0x00000000 memsz 0x00000000 flags rwx
-    ```
-</code></pre></div>
-<ol>
-<li><p><strong>Loading the Kernel</strong></p>
-
-<p>We will now look in further detail at the C language portion of the boot loader, in <code class="prettyprint">boot/main.c</code>.</p>
-
-<blockquote>
-<p><strong>Exercise 4.</strong><br><br>
-  * Read about programming with pointers in C. The best reference for the C language is &quot;K&amp;R&quot;</p>
-</blockquote></li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* 什么是 `ELF` ? &lt;br&gt;
-    在编译和链接一个 C 语言程序时，编译器先从 `.c` 源代码文件中生成 `.o` 目标文件（二进制文件），链接器再结合所有已编译的目标文件，生成 ELF 格式的二进制文件， i.e "Executable and Linkable Format".&lt;br&gt;
-    一个 ELF 可执行文件通常由一个定长的带有加载信息的头部（header）和几个变长的带有代码或数据段的程序部分（program sections）组成：&lt;br&gt;
-
-    * `.text` :   程序的可执行指令&lt;br&gt; 
-    * `.rodata` : 只读数据，例如 C 编译器产生的 ASCII 字符串常量&lt;br&gt;
-    * `.data:` :  数据段存储着程序的初始化变量，例如 声明且已初始化的全局变量&lt;br&gt;
-
-    在链接器计算程序内存分布时，它会为未初始化的全局变量保留空间，并存储在 `.data`段后的 `.bss` 段中，C 语言会为未初始化的全局变量赋值为 0.&lt;br&gt;
-
-* 几个命令：&lt;br&gt;
-
-    * `objdump -h obj/kern/kernel` : Examine the full list of the names, sizes, and link addresses of all the sections in the kernel executable.&lt;br&gt;
-    * `objdump -h obj/boot/boot.out` : look at the .text section of the boot loader.&lt;br&gt;
-    * `objdump -x obj/kern/kernel` : inspect the program headers. &lt;br&gt;
-</code></pre></div>
 <h2 id="summary">Summary</h2>
 
 <figure>
-    <a href="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"><img src="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"></a>
-    <figcaption>
-        fighting.
-    </figcaption>
+	<a href="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"><img src="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg" /></a>
+	<figcaption>
+		fighting.
+	</figcaption>
 </figure>
 
                 </div>
@@ -526,6 +612,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -681,7 +789,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">Hihocoder 1596</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the hihocoder](https://hihocoder.com/problemset/problem/1596) ## Description 给出一个正整数数列 \\(a\[1\], ..., a\[n\]\(n>3\) \\)，如果对于所有 \\( 2 ≤ i ≤ n-1 \\)，都有 \\( a\[i-1\] + a\[i+1\] ≥ 2×a\[i\] \\)，则称这个数列是美丽的。 现在有一个正整数数列 \\(b\[1\], ..., b\[n\]\(n>3\)</p>
+                    <p>## Contest Information source: [It's from the hihocoder](https://hihocoder.com/problemset/problem/1596) ## Description 给出一个正整数数列 $a\[1\], ..., a\[n\]\(n>3\) $，如果对于所有 $ 2 ≤ i ≤ n-1 $，都有 $ a\[i-1\] + a\[i+1\] ≥ 2×a\[i\] $，则称这个数列是美丽的。 现在有一个正整数数列 $b\[1\], ..., b\[n\]\(n>3\)</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -724,7 +832,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">MIT 6.828 OverView</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (&quot;Applying 6.033&quot;) What</p>
+                    <p>Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (“Applying 6.033”) What</p>
                 </section>
             </a>
             <footer class="post-card-meta">

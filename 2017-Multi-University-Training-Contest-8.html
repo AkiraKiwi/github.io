@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #8" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #8 from HDU OJ Problem B 计算 \( \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] \)。 数据范围：\( 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} \)。 Solution 推导： \( \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] \)" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #8 from HDU OJ Problem B 计算 $ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] $。 数据范围：$ 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} $。 Solution 推导： $ \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] $" />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-8" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #8" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #8 from HDU OJ Problem B 计算 \( \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] \)。 数据范围：\( 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} \)。 Solution 推导： \( \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] \)" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #8 from HDU OJ Problem B 计算 $ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] $。 数据范围：$ 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} $。 Solution 推导： $ \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] $" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-8"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #8 from HDU OJ Problem B 计算 \( \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] \)。 数据范围：\( 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} \)。 Solution 推导： \( \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] \)"
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #8 from HDU OJ Problem B 计算 $ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] $。 数据范围：$ 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} $。 Solution 推导： $ \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] $"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #8" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,28 +183,28 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+8&source=1&searchmode=source">The 2017 Multi-University Training Contest #8 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+8&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #8 from HDU OJ</a></p>
 
 <h2 id="problem-b">Problem B</h2>
 
-<p>计算 \( \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] \)。  <br></p>
+<p>计算 $ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)==1] $。  <br /></p>
 
-<p>数据范围：\( 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} \)。 <br></p>
+<p>数据范围：$ 1 ≤ t ≤ 10^4, 1 ≤ n ≤ 10^{6} $。 <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>推导：<br><br>
-\( \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] \) <br><br>
-\( = \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil \sum_{d\|gcd(i,j)} \mu (d) \)<br><br>
-\( = \sum^n_{d=1} \mu (d) \sum_{k_1 = 1}^{\frac{n}{d}} \sum^{k_1}_{k_2 = 1} \left \lceil \frac{k_1}{k_2} \right \rceil  \)<br><br>
-设 \( g(n) = \sum^n_{i=1} \left \lceil \frac{n}{i} \right \rceil \)<br><br>
-那么，原式为 \( \sum_{d=1}^n \mu (d) \sum^{\frac{n}{d}}_{k_1=1}  g(k_1) \)<br><br>
-通过找规律发现 \( g(n) = g(n-1) + d(n-1) + 1 \), 其中 \(d(n)\) 为 \(n\) 的约数个数。<br><br>
-所以我们预处理出 \(g(n)\) 的前缀和，然后分块累加即可。<br><br>
-时间复杂度：预处理为 \(O(n)\)，每次计算答案为 \(O(\sqrt n)\) 。<br></p>
+<p>推导：<br />
+$ \ \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil [gcd(i,j)=1] $ <br />
+$ = \sum^n_i \sum^i_{j} \left \lceil \frac{i}{j} \right \rceil \sum_{d$gcd(i,j)} \mu (d) $<br />
+$ = \sum^n_{d=1} \mu (d) \sum_{k_1 = 1}^{\frac{n}{d}} \sum^{k_1}_{k_2 = 1} \left \lceil \frac{k_1}{k_2} \right \rceil  $<br />
+设 $ g(n) = \sum^n_{i=1} \left \lceil \frac{n}{i} \right \rceil $<br />
+那么，原式为 $ \sum_{d=1}^n \mu (d) \sum^{\frac{n}{d}}_{k_1=1}  g(k_1) $<br />
+通过找规律发现 $ g(n) = g(n-1) + d(n-1) + 1 $, 其中 $d(n)$ 为 $n$ 的约数个数。<br />
+所以我们预处理出 $g(n)$ 的前缀和，然后分块累加即可。<br />
+时间复杂度：预处理为 $O(n)$，每次计算答案为 $O(\sqrt n)$ 。<br /></p>
 
 <h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="n">mu</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">prime</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">d</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">same</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">g</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">gg</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">sum</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">bool</span> <span class="n">not_prime</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -246,19 +258,20 @@ into the {body} of the default.hbs template -->
         <span class="n">printf</span><span class="p">(</span><span class="s">"%lld</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="p">(</span><span class="n">ans</span><span class="o">%</span><span class="n">mod</span><span class="o">+</span><span class="n">mod</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span> <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="problem-h">Problem H</h2>
 
-<p>给出数列 \( a_{1...n} \)。求能否从中挑出一些数累加得到 \(k\)。 <br></p>
+<p>给出数列 $ a_{1…n} $。求能否从中挑出一些数累加得到 $k$。 <br /></p>
 
-<p>数据范围：\( -10^3 ≤ a_i ≤ 10^3, 1 ≤ n ≤ 10^{3}, \|k\| ≤ 10^6 \)。 <br></p>
+<p>数据范围：$ -10^3 ≤ a_i ≤ 10^3, 1 ≤ n ≤ 10^{3}, $k$ ≤ 10^6 $。 <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>利用 \(bitset\) 记录能够到达的值：每加入一个数\(x\)，将原来的 \(bitset\) 左移或者右移 \(x\) 位然后再与原 \(bitset\) 或运算得到新的 \(bitset\)，位移运算相当于将\(x\) 累加到了原来能够到达的所有值上，或运算相当于将新得到的值与原来的值合并在一块。</p>
+<p>利用 $bitset$ 记录能够到达的值：每加入一个数$x$，将原来的 $bitset$ 左移或者右移 $x$ 位然后再与原 $bitset$ 或运算得到新的 $bitset$，位移运算相当于将$x$ 累加到了原来能够到达的所有值上，或运算相当于将新得到的值与原来的值合并在一块。</p>
 
-<h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
+<h2 id="ac-code-1">AC Code</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">char</span> <span class="n">b</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="n">bitset</span><span class="o">&lt;</span><span class="n">MaxM</span><span class="o">&gt;</span> <span class="n">Right</span><span class="p">,</span> <span class="n">Left</span><span class="p">;</span>
 
@@ -339,7 +352,8 @@ into the {body} of the default.hbs template -->
         <span class="n">solve</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -388,6 +402,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -730,7 +766,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #7</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k</p>
+                    <p>Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 $ [1, n] $ 中至多选择 $ k $ 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：$ 1 ≤ t ≤ 5, 1 ≤ n,k</p>
                 </section>
             </a>
             <footer class="post-card-meta">

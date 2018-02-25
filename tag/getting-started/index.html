@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -82,6 +93,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="Tag Page" href="/feed.xml" />
 
+    
 
 </head>
 <body class="tag-template">
@@ -171,7 +183,7 @@
                     <h2 class="post-card-title">Welcome here</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Hey! Welcome to here, it&#39;s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : $$ \begin{bmatrix} a &amp; b</p>
+                    <p>Hey! Welcome to here, it’s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : this is the code see</p>
                 </section>
             </a>
             <footer class="post-card-meta">

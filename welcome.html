@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Welcome here" />
-    <meta property="og:description" content="Hey! Welcome to here, it&#39;s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : $$ \begin{bmatrix} a &amp; b &amp; c \\ . &amp; . &amp; .\\ a &amp; b &amp; c \end{bmatrix} $$ this is" />
+    <meta property="og:description" content="Hey! Welcome to here, it’s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : this is the code see this : #include &lt;cstdio&gt; int main(int argc, char **argv) { printf("Hello, World!\n"); return 0; } this is" />
     <meta property="og:url" content="http://localhost:4000/welcome" />
     <meta property="og:image" content="http://localhost:4000/assets/images/welcome.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Getting Started" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Welcome here" />
-    <meta name="twitter:description" content="Hey! Welcome to here, it&#39;s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : $$ \begin{bmatrix} a &amp; b &amp; c \\ . &amp; . &amp; .\\ a &amp; b &amp; c \end{bmatrix} $$ this is" />
+    <meta name="twitter:description" content="Hey! Welcome to here, it’s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : this is the code see this : #include &lt;cstdio&gt; int main(int argc, char **argv) { printf("Hello, World!\n"); return 0; } this is" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/welcome.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/welcome"
     },
-    "description": "Hey! Welcome to here, it&#39;s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : $$ \begin{bmatrix} a &amp; b &amp; c \\ . &amp; . &amp; .\\ a &amp; b &amp; c \end{bmatrix} $$ this is"
+    "description": "Hey! Welcome to here, it’s great to have you :) Show somethings this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : this is the code see this : #include &lt;cstdio&gt; int main(int argc, char **argv) { printf("Hello, World!\n"); return 0; } this is"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="Welcome here" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -169,44 +181,44 @@ into the {body} of the default.hbs template -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p>Hey! Welcome to here, it&#39;s great to have you :) </p>
+                    <p>Hey! Welcome to here, it’s great to have you :)</p>
 
 <h2 id="show-somethings">Show somethings</h2>
-
-<hr>
+<hr />
 
 <h3 id="this-is-the-mathjax">this is the mathjax</h3>
 
 <p>inline : calculate this  $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$</p>
 
-<p>block :<br>
-$$<br>
-\begin{bmatrix}<br>
-a &amp; b &amp; c \\ <br>
-. &amp; . &amp; .\\ <br>
-a &amp; b &amp; c <br>
-\end{bmatrix} <br>
-$$</p>
+<p>block :
+<script type="math/tex">% <![CDATA[
+\begin{bmatrix}
+a & b & c \\\\ 
+. & . & .\\\\ 
+a & b & c 
+\end{bmatrix} %]]></script></p>
 
 <h3 id="this-is-the-code">this is the code</h3>
 
 <p>see this :</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;cstdio&gt;
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;cstdio&gt;
 </span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>                                                       
 <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h3 id="this-is-the-picture">this is the picture</h3>
 
 <figure>
-    <a href="/assets/images/stock/images-stock-photo-0127845.jpg">
-    <img src="/assets/images/stock/images-stock-photo-0127845.jpg">
+	<a href="/assets/images/stock/images-stock-photo-0127845.jpg">
+    <img src="/assets/images/stock/images-stock-photo-0127845.jpg" />
     </a>
-    <figcaption>
-        holidays.
-    </figcaption>
+	<figcaption>
+		holidays.
+	</figcaption>
 </figure>
 
                 </div>
@@ -257,6 +269,28 @@ $$</p>
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>

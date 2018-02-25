@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="福州大学第十四届程序设计竞赛" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the FZU OJ Problem A 给出一个长度为 \(n\) 的 \(01\) 串，选择一个区间 \([L, R]\) 将其中的 \(0\) 变成 \(1\) ，\(1\) 变成 \(0\)。 至少翻转一个数字，求最多能有多少个 \(1\) ？ 数据范围：\( n ≤ 10^{5}\) Solution 我们新开一个数组把 \( 0\) 对应的位置记录为 \(1\) ， \(1\) 对应的位置记录为 \(-1\) ，那么新数组的最大子段和就是对于原数组的 \(1\) 的最大增量 AC code int n,AA[MaxN],tot; void solve()" />
+    <meta property="og:description" content="Contest Information source: It’s from the FZU OJ Problem A 给出一个长度为 $n$ 的 $01$ 串，选择一个区间 $[L, R]$ 将其中的 $0$ 变成 $1$ ，$1$ 变成 $0$。 至少翻转一个数字，求最多能有多少个 $1$ ？ 数据范围：$ n ≤ 10^{5}$ Solution 我们新开一个数组把 $ 0$ 对应的位置记录为 $1$ ， $1$ 对应的位置记录为 $-1$ ，那么新数组的最大子段和就是对于原数组的 $1$ 的最大增量 AC code int n,AA[MaxN],tot; void solve()" />
     <meta property="og:url" content="http://localhost:4000/%E7%A6%8F%E5%B7%9E%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B1%8A%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-124520439.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="福州大学第十四届程序设计竞赛" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the FZU OJ Problem A 给出一个长度为 \(n\) 的 \(01\) 串，选择一个区间 \([L, R]\) 将其中的 \(0\) 变成 \(1\) ，\(1\) 变成 \(0\)。 至少翻转一个数字，求最多能有多少个 \(1\) ？ 数据范围：\( n ≤ 10^{5}\) Solution 我们新开一个数组把 \( 0\) 对应的位置记录为 \(1\) ， \(1\) 对应的位置记录为 \(-1\) ，那么新数组的最大子段和就是对于原数组的 \(1\) 的最大增量 AC code int n,AA[MaxN],tot; void solve()" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the FZU OJ Problem A 给出一个长度为 $n$ 的 $01$ 串，选择一个区间 $[L, R]$ 将其中的 $0$ 变成 $1$ ，$1$ 变成 $0$。 至少翻转一个数字，求最多能有多少个 $1$ ？ 数据范围：$ n ≤ 10^{5}$ Solution 我们新开一个数组把 $ 0$ 对应的位置记录为 $1$ ， $1$ 对应的位置记录为 $-1$ ，那么新数组的最大子段和就是对于原数组的 $1$ 的最大增量 AC code int n,AA[MaxN],tot; void solve()" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-124520439.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E7%A6%8F%E5%B7%9E%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B1%8A%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B"
     },
-    "description": "Contest Information source: It&#39;s from the FZU OJ Problem A 给出一个长度为 \(n\) 的 \(01\) 串，选择一个区间 \([L, R]\) 将其中的 \(0\) 变成 \(1\) ，\(1\) 变成 \(0\)。 至少翻转一个数字，求最多能有多少个 \(1\) ？ 数据范围：\( n ≤ 10^{5}\) Solution 我们新开一个数组把 \( 0\) 对应的位置记录为 \(1\) ， \(1\) 对应的位置记录为 \(-1\) ，那么新数组的最大子段和就是对于原数组的 \(1\) 的最大增量 AC code int n,AA[MaxN],tot; void solve()"
+    "description": "Contest Information source: It’s from the FZU OJ Problem A 给出一个长度为 $n$ 的 $01$ 串，选择一个区间 $[L, R]$ 将其中的 $0$ 变成 $1$ ，$1$ 变成 $0$。 至少翻转一个数字，求最多能有多少个 $1$ ？ 数据范围：$ n ≤ 10^{5}$ Solution 我们新开一个数组把 $ 0$ 对应的位置记录为 $1$ ， $1$ 对应的位置记录为 $-1$ ，那么新数组的最大子段和就是对于原数组的 $1$ 的最大增量 AC code int n,AA[MaxN],tot; void solve()"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="福州大学第十四届程序设计竞赛" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,17 +183,17 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.fzu.edu.cn/contest/index.php?cid=154">It&#39;s from the FZU OJ</a></p>
+<p>source: <a href="http://acm.fzu.edu.cn/contest/index.php?cid=154">It’s from the FZU OJ</a></p>
 
 <h2 id="problem-a">Problem A</h2>
 
-<p>给出一个长度为 \(n\) 的 \(01\) 串，选择一个区间 \([L, R]\) 将其中的 \(0\) 变成 \(1\) ，\(1\) 变成 \(0\)。 至少翻转一个数字，求最多能有多少个 \(1\) ？<br></p>
+<p>给出一个长度为 $n$ 的 $01$ 串，选择一个区间 $[L, R]$ 将其中的 $0$ 变成 $1$ ，$1$ 变成 $0$。 至少翻转一个数字，求最多能有多少个 $1$ ？<br /></p>
 
-<p>数据范围：\( n ≤ 10^{5}\) <br></p>
+<p>数据范围：$ n ≤ 10^{5}$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>我们新开一个数组把 \( 0\) 对应的位置记录为 \(1\) ， \(1\) 对应的位置记录为 \(-1\) ，那么新数组的最大子段和就是对于原数组的 \(1\) 的最大增量<br></p>
+<p>我们新开一个数组把 $ 0$ 对应的位置记录为 $1$ ， $1$ 对应的位置记录为 $-1$ ，那么新数组的最大子段和就是对于原数组的 $1$ 的最大增量<br /></p>
 
 <h2 id="ac-code">AC code</h2>
 
@@ -224,25 +236,25 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-b">Problem B</h2>
 
-<p>YellowStar准备了 \(n\) 个需要背的单词，每个单词的长度均为 \(m\) <br></p>
+<p>YellowStar准备了 $n$ 个需要背的单词，每个单词的长度均为 $m$ <br /></p>
 
-<p>YellowSatr准备采用联想记忆法来背诵这 \(n\) 个单词： <br></p>
+<p>YellowSatr准备采用联想记忆法来背诵这 $n$ 个单词： <br /></p>
 
-<p>1、如果YellowStar凭空背下一个新词 \(T\) ，需要消耗单词长度 \(m\) 的精力 <br></p>
+<p>1、如果YellowStar凭空背下一个新词 $T$ ，需要消耗单词长度 $m$ 的精力 <br /></p>
 
-<p>2、如果YellowSatr之前已经背诵了一些单词，它可以选择其中一个单词 \(S_i\)，然后通过联想记忆的方法去背诵新词T，需要消耗的精力为 \(hamming(S_i, T) \times w\) <br></p>
+<p>2、如果YellowSatr之前已经背诵了一些单词，它可以选择其中一个单词 $S_i$，然后通过联想记忆的方法去背诵新词T，需要消耗的精力为 $hamming(S_i, T) \times w$ <br /></p>
 
-<p>\( hamming(S_i, T) \)指的是字符串 \(S_i\) 与 \(T\) 的汉明距离，它表示两个等长字符串之间的汉明距离是两个字符串对应位置的不同字符的个数。 <br></p>
+<p>$ hamming(S_i, T) $指的是字符串 $S_i$ 与 $T$ 的汉明距离，它表示两个等长字符串之间的汉明距离是两个字符串对应位置的不同字符的个数。 <br /></p>
 
-<p>由于YellowStar还有大量繁重的行政工作，因此它想消耗最少的精力背诵下这 \(n\) 个单词，请问它最少需要消耗多少精力。<br></p>
+<p>由于YellowStar还有大量繁重的行政工作，因此它想消耗最少的精力背诵下这 $n$ 个单词，请问它最少需要消耗多少精力。<br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 10^{3}, 1 ≤ m,w ≤ 10\) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 10^{3}, 1 ≤ m,w ≤ 10$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
 <p>如果联想记忆更划算那么边权设为联想记忆，否则设置为直接记忆，然后求最小生成树即可</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">w</span><span class="p">;</span>
 <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">1010</span><span class="p">][</span><span class="mi">11</span><span class="p">];</span>
@@ -334,39 +346,39 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-c">Problem C</h2>
 
-<p>遥远的YS星球上，生活着两种物种名为Yellow和Star，简称物种Y和物种S。<br></p>
+<p>遥远的YS星球上，生活着两种物种名为Yellow和Star，简称物种Y和物种S。<br /></p>
 
-<p>神奇的是物种Y的体重始终为50kg，物种S的体重始终为100kg。<br></p>
+<p>神奇的是物种Y的体重始终为50kg，物种S的体重始终为100kg。<br /></p>
 
-<p>这天，\(n\) 只生物结伴出行，在路途中，它们被一条长长的河流挡住了去路。所幸岸边停靠着一条船，船上写着：负重 \(m\) kg。<br></p>
+<p>这天，$n$ 只生物结伴出行，在路途中，它们被一条长长的河流挡住了去路。所幸岸边停靠着一条船，船上写着：负重 $m$ kg。<br /></p>
 
-<p>YS星球上的物种有很强的时间观念，它们需要找出一种最快的方案过河：<br></p>
+<p>YS星球上的物种有很强的时间观念，它们需要找出一种最快的方案过河：<br /></p>
 
-<p>1、要开船每次至少要有一只生物在船上<br></p>
+<p>1、要开船每次至少要有一只生物在船上<br /></p>
 
-<p>2、载着的生物总重量不能超过船的负重 \(m\)<br></p>
+<p>2、载着的生物总重量不能超过船的负重 $m$<br /></p>
 
-<p>3、无论载多少只生物，船每次从岸边到另一岸边需要的时间相同，并且不考虑中间换乘时间(换句话说，要求的是最少的开船次数)<br></p>
+<p>3、无论载多少只生物，船每次从岸边到另一岸边需要的时间相同，并且不考虑中间换乘时间(换句话说，要求的是最少的开船次数)<br /></p>
 
-<p>请你帮助这些Yellow、Star们，找出最少的开船次数，并且求出最少次数下的有多少种不同的方案数。<br></p>
+<p>请你帮助这些Yellow、Star们，找出最少的开船次数，并且求出最少次数下的有多少种不同的方案数。<br /></p>
 
-<p>当存在某轮开船时，两个方案乘客的集合不同，认为这两个方案是不同的。<br></p>
+<p>当存在某轮开船时，两个方案乘客的集合不同，认为这两个方案是不同的。<br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 50, 100 ≤ m ≤ 10^3\) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 50, 100 ≤ m ≤ 10^3$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>我们发现在奇数次开船时总是从岸这边运输往岸那边，即岸这边的生物数减少；在偶数次时则是从岸那边运回来，即岸这边生物数增多。<br></p>
+<p>我们发现在奇数次开船时总是从岸这边运输往岸那边，即岸这边的生物数减少；在偶数次时则是从岸那边运回来，即岸这边生物数增多。<br /></p>
 
-<p>那么我们定义 \( DP[i][j][k]\) 为在第 \(k\) 次开船时，岸这边还剩下 \(i\) 只Y生物和 \(j\) 只S生物时的方案数。初始状态 \(DP[num_{50}][num_{100}][0] = 1\) ，然后我们枚举岸这边可能的生物数的所有状态，对于每一个状态在奇数轮枚举可能运过去的所有转移，在偶数轮枚举可能运回来的所有转移：<br></p>
+<p>那么我们定义 $ DP[i][j][k]$ 为在第 $k$ 次开船时，岸这边还剩下 $i$ 只Y生物和 $j$ 只S生物时的方案数。初始状态 $DP[num_{50}][num_{100}][0] = 1$ ，然后我们枚举岸这边可能的生物数的所有状态，对于每一个状态在奇数轮枚举可能运过去的所有转移，在偶数轮枚举可能运回来的所有转移：<br /></p>
 
-<p>奇数轮：\( DP[i][j][k] = DP[i+x][j+y][k-1] \times C^{x}_{i+x} \times C^{y}_{j+y}\)<br></p>
+<p>奇数轮：$ DP[i][j][k] = DP[i+x][j+y][k-1] \times C^{x}_{i+x} \times C^{y}_{j+y}$<br /></p>
 
-<p>偶数轮：\( DP[i][j][k] = DP[i-x][j-y][k-1] \times C^{x}_{num_{50}-i+x} \times C^{y}_{num_{100}-j+y}\)<br></p>
+<p>偶数轮：$ DP[i][j][k] = DP[i-x][j-y][k-1] \times C^{x}_{num_{50}-i+x} \times C^{y}_{num_{100}-j+y}$<br /></p>
 
-<p>最后取第一个有值的 \(DP[0][0][k]\)<br></p>
+<p>最后取第一个有值的 $DP[0][0][k]$<br /></p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-2">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span><span class="n">m50</span><span class="p">,</span><span class="n">m100</span><span class="p">;</span>
 <span class="n">LL</span> <span class="n">DP</span><span class="p">[</span><span class="mi">55</span><span class="p">][</span><span class="mi">55</span><span class="p">][</span><span class="mi">200</span><span class="p">];</span>
@@ -452,19 +464,19 @@ into the {body} of the default.hbs template -->
 
 <p>某一天，YellowStar在人生的道路上迷失了方向，迷迷糊糊之中，它误入了一座迷宫中，幸运的是它在路口处发现了一张迷宫的地图。</p>
 
-<p>经过它的观察，它发现这个迷宫一共有 \(n\) 个房间，并且这 \(n\) 个房间呈现一个有根树结构，它现在所在的 \(1\) 号房间为根，其它每个房间都有一个上级房间，连接第 \(i\) 个房间和它的上级房间 \(P_i\) 的道路长度为 \(W_i\) 。</p>
+<p>经过它的观察，它发现这个迷宫一共有 $n$ 个房间，并且这 $n$ 个房间呈现一个有根树结构，它现在所在的 $1$ 号房间为根，其它每个房间都有一个上级房间，连接第 $i$ 个房间和它的上级房间 $P_i$ 的道路长度为 $W_i$ 。</p>
 
-<p>在地图的背面，记载了这个迷宫中，每个房间拥有一个时空传送门，第 \(i\) 个房间的传送门可以花费 \(D_i\) 单位的时间传送到它的任意一个下级房间中（如果 \(x\) 是 \(y\) 的下级房间，并且 \(y\) 是 \(z\) 的下级房间，那么 \(x\) 也是 \(z\) 的下级房间）。</p>
+<p>在地图的背面，记载了这个迷宫中，每个房间拥有一个时空传送门，第 $i$ 个房间的传送门可以花费 $D_i$ 单位的时间传送到它的任意一个下级房间中（如果 $x$ 是 $y$ 的下级房间，并且 $y$ 是 $z$ 的下级房间，那么 $x$ 也是 $z$ 的下级房间）。</p>
 
-<p>YellowStar的步行速度为 \(1\) 单位时间走 \(1\) 长度，它现在想知道从 \(1\) 号房间出发，到每一个房间的最少时间。</p>
+<p>YellowStar的步行速度为 $1$ 单位时间走 $1$ 长度，它现在想知道从 $1$ 号房间出发，到每一个房间的最少时间。</p>
 
-<p>数据范围：\( 1 ≤ n ≤ 10^5, 1 ≤ D_i, W_i ≤ 10^9\) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 10^5, 1 ≤ D_i, W_i ≤ 10^9$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-3">Solution</h2>
 
 <p>对于每个节点，每次记录从父节点走过来的最小花费，同时记录从祖先节点飞过来的最小花费，每次取最小的即可。</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-3">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
 <span class="n">LL</span> <span class="n">D</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -536,15 +548,15 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-e">Problem E</h2>
 
-<p>给出一个初始值为 \(1\) 的 \(N \times M\) 的矩阵，每次随机挑选一个子矩阵将里面的数值置 \(0\)，问在 \(K\) 次挑选后能够置换的 \(1\) 的个数的期望为多少?</p>
+<p>给出一个初始值为 $1$ 的 $N \times M$ 的矩阵，每次随机挑选一个子矩阵将里面的数值置 $0$，问在 $K$ 次挑选后能够置换的 $1$ 的个数的期望为多少?</p>
 
-<p>数据范围：\( 0 ≤ K ≤ 10^4, 1 ≤ N,M ≤ 10^3\) <br></p>
+<p>数据范围：$ 0 ≤ K ≤ 10^4, 1 ≤ N,M ≤ 10^3$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-4">Solution</h2>
 
-<p>因为每个格子被置换是相互独立的，所以 \(K\) 次置换后被置换的 \(1\) 的个数的期望 \(E\) 等于每个格子在 \(K\) 次置换后被置换的 \(1\) 的个数的期望 \(E_{ij}\) 的和: \(E = \sum^{n}_{i=1}\sum^{m}_{j=1}E_{ij},\  E_{ij} = 1 - (1-P_{该格一次被置换的概率})^K \)</p>
+<p>因为每个格子被置换是相互独立的，所以 $K$ 次置换后被置换的 $1$ 的个数的期望 $E$ 等于每个格子在 $K$ 次置换后被置换的 $1$ 的个数的期望 $E_{ij}$ 的和: $E = \sum^{n}_{i=1}\sum^{m}_{j=1}E_{ij},\  E_{ij} = 1 - (1-P_{该格一次被置换的概率})^K $</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-4">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">K</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">M</span><span class="p">;</span>
 <span class="kt">double</span> <span class="nf">Pow</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
@@ -584,32 +596,38 @@ into the {body} of the default.hbs template -->
 <p>有如下取牌游戏：</p>
 
 <ol>
-<li><p>桌面上有 \(n\) 张卡牌从左到右排成一行，每张卡牌上有一个数字；</p></li>
-<li><p>游戏按轮次进行，每一轮中取掉所有比左边数值小的卡牌；</p></li>
-<li><p>当无牌可取的时候则游戏结束。</p></li>
+  <li>
+    <p>桌面上有 $n$ 张卡牌从左到右排成一行，每张卡牌上有一个数字；</p>
+  </li>
+  <li>
+    <p>游戏按轮次进行，每一轮中取掉所有比左边数值小的卡牌；</p>
+  </li>
+  <li>
+    <p>当无牌可取的时候则游戏结束。</p>
+  </li>
 </ol>
 
-<p>比如初始卡牌为 \({5, 6, 3, 7, 4, 1, 2}\)，共需 \(2\) 轮取牌。取牌过程如下（小括号为每轮取掉的牌）：</p>
+<p>比如初始卡牌为 ${5, 6, 3, 7, 4, 1, 2}$，共需 $2$ 轮取牌。取牌过程如下（小括号为每轮取掉的牌）：</p>
 
-<p>\({5, 6, 3, 7, 4, 1, 2}\)</p>
+<p>${5, 6, 3, 7, 4, 1, 2}$</p>
 
-<p>==&gt; \({5, 6, (3), 7, (4), (1), 2}\)</p>
+<p>==&gt; ${5, 6, (3), 7, (4), (1), 2}$</p>
 
-<p>==&gt; \({5, 6, 7, 2}\)</p>
+<p>==&gt; ${5, 6, 7, 2}$</p>
 
-<p>==&gt; \({5, 6, 7, (2)}\)</p>
+<p>==&gt; ${5, 6, 7, (2)}$</p>
 
-<p>==&gt; \({5, 6, 7}\)</p>
+<p>==&gt; ${5, 6, 7}$</p>
 
 <p>现按顺序给定初始的卡牌数字，请求出游戏结束时取牌的总轮次，并输出结束时桌上剩余的卡牌序列。</p>
 
-<p>数据范围：\( 0 ≤ n ≤ 10^6, 1 ≤ a_i ≤ 10^9\) <br></p>
+<p>数据范围：$ 0 ≤ n ≤ 10^6, 1 ≤ a_i ≤ 10^9$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-5">Solution</h2>
 
 <p>首先，第一张卡片是必须留下的，往后比它小的最后都会被删除，那么下一个被留下的就是第一张比它大的卡片，依次类推，最终留下的卡片序列就是从第一张开始的一个非降子序列。然后我们再判断需要多少轮才能够将其他牌取完，我们先将原序列构建成一个双向链表，那么把第一次就能够被删除的节点丢入队列中，那么对于队列中的每一个节点，如果它的后继节点没有进过队列并且比当前节点的值大，比当前节点的前驱节点要小，那么它就是下一轮需要被删除的节点。所以我们每次取出队列中的节点，并判断能否产生新的节点入队，最后保存最大回合数就是答案，队列里剩下的节点就是最后的序列。</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-5">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">Node</span>
@@ -728,6 +746,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -1025,7 +1065,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">PKU Campus 2017 (重现)</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the Vjudge](https://vjudge.net/contest/165238#rank) ## Problem F 计算出 \\( (7+4\\sqrt{3})^N \\) 的整数部分 数据范围：\\( 1 ≤ N ≤ 10^{9}\\) ## Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 \\( (7+4\\sqrt{3})^N \\) 展开之后是 \\( a\_N+b\_N</p>
+                    <p>## Contest Information source: [It's from the Vjudge](https://vjudge.net/contest/165238#rank) ## Problem F 计算出 $ (7+4\\sqrt{3})^N $ 的整数部分 数据范围：$ 1 ≤ N ≤ 10^{9}$ ## Solution 如果使用 double 来计算，精度肯定是不够的。我们发现 $ (7+4\\sqrt{3})^N $ 展开之后是 $ a\_N+b\_N</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -1068,7 +1108,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">支配集、覆盖集、独立集与匹配</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>点支配集 支配与支配集：设无向图 \(G(V,E)\) ，顶点集合 \(V&#39; \subseteq V \) ，若对于 \( \forall v \in (V-V&#39;) \) ，\( \exists u \in V&#39;\) ，使得 \( (u,v) \in E\) ，则称 \(u\) 支配 \(v\) ，并称 \(V&#39;\) 为 \(G\)</p>
+                    <p>点支配集 支配与支配集：设无向图 $G(V,E)$ ，顶点集合 $V’ \subseteq V $ ，若对于 $ \forall v \in (V-V’) $ ，$ \exists u \in V’$ ，使得 $ (u,v) \in E$ ，则称 $u$ 支配 $v$ ，并称 $V’$ 为 $G$</p>
                 </section>
             </a>
             <footer class="post-card-meta">

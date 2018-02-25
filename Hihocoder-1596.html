@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Hihocoder 1596" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the hihocoder Description 给出一个正整数数列 \(a[1], ..., a[n](n&gt;3) \)，如果对于所有 \( 2 ≤ i ≤ n-1 \)，都有 \( a[i-1] + a[i+1] ≥ 2×a[i] \)，则称这个数列是美丽的。 现在有一个正整数数列 \(b[1], ..., b[n](n&gt;3) \)，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 \(10^9+7\) 取模。 数据范围：\( 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 \) Input 4 1 2" />
+    <meta property="og:description" content="Contest Information source: It’s from the hihocoder Description 给出一个正整数数列 $a[1], …, a[n](n&gt;3) $，如果对于所有 $ 2 ≤ i ≤ n-1 $，都有 $ a[i-1] + a[i+1] ≥ 2×a[i] $，则称这个数列是美丽的。 现在有一个正整数数列 $b[1], …, b[n](n&gt;3) $，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 $10^9+7$ 取模。 数据范围：$ 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 $ Input 4 1 2" />
     <meta property="og:url" content="http://localhost:4000/Hihocoder-1596" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hihocoder 1596" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the hihocoder Description 给出一个正整数数列 \(a[1], ..., a[n](n&gt;3) \)，如果对于所有 \( 2 ≤ i ≤ n-1 \)，都有 \( a[i-1] + a[i+1] ≥ 2×a[i] \)，则称这个数列是美丽的。 现在有一个正整数数列 \(b[1], ..., b[n](n&gt;3) \)，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 \(10^9+7\) 取模。 数据范围：\( 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 \) Input 4 1 2" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the hihocoder Description 给出一个正整数数列 $a[1], …, a[n](n&gt;3) $，如果对于所有 $ 2 ≤ i ≤ n-1 $，都有 $ a[i-1] + a[i+1] ≥ 2×a[i] $，则称这个数列是美丽的。 现在有一个正整数数列 $b[1], …, b[n](n&gt;3) $，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 $10^9+7$ 取模。 数据范围：$ 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 $ Input 4 1 2" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-419599.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/Hihocoder-1596"
     },
-    "description": "Contest Information source: It&#39;s from the hihocoder Description 给出一个正整数数列 \(a[1], ..., a[n](n&gt;3) \)，如果对于所有 \( 2 ≤ i ≤ n-1 \)，都有 \( a[i-1] + a[i+1] ≥ 2×a[i] \)，则称这个数列是美丽的。 现在有一个正整数数列 \(b[1], ..., b[n](n&gt;3) \)，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 \(10^9+7\) 取模。 数据范围：\( 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 \) Input 4 1 2"
+    "description": "Contest Information source: It’s from the hihocoder Description 给出一个正整数数列 $a[1], …, a[n](n&gt;3) $，如果对于所有 $ 2 ≤ i ≤ n-1 $，都有 $ a[i-1] + a[i+1] ≥ 2×a[i] $，则称这个数列是美丽的。 现在有一个正整数数列 $b[1], …, b[n](n&gt;3) $，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 $10^9+7$ 取模。 数据范围：$ 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 $ Input 4 1 2"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="Hihocoder 1596" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,35 +183,38 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="https://hihocoder.com/problemset/problem/1596">It&#39;s from the hihocoder</a></p>
+<p>source: <a href="https://hihocoder.com/problemset/problem/1596">It’s from the hihocoder</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>给出一个正整数数列 \(a[1], ..., a[n](n&gt;3) \)，如果对于所有 \( 2 ≤ i ≤ n-1 \)，都有 \( a[i-1] + a[i+1] ≥ 2×a[i] \)，则称这个数列是美丽的。<br><br>
-现在有一个正整数数列 \(b[1], ..., b[n](n&gt;3) \)，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 \(10^9+7\) 取模。<br><br>
-数据范围：\( 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 \) <br>   </p>
+<p>给出一个正整数数列 $a[1], …, a[n](n&gt;3) $，如果对于所有 $ 2 ≤ i ≤ n-1 $，都有 $ a[i-1] + a[i+1] ≥ 2×a[i] $，则称这个数列是美丽的。<br />
+现在有一个正整数数列 $b[1], …, b[n](n&gt;3) $，可以任意调换元素位置，请问最多能生成多少个美丽数列，答案对 $10^9+7$ 取模。<br />
+数据范围：$ 3 ≤ n ≤ 60, 1 ≤ b[i] ≤ 1000000000 $ <br /></p>
 
 <h2 id="input">Input</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">4
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
 1 2 1 3
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="outpus">Outpus</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">8
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
+</code></pre></div></div>
+
 <h2 id="solution">Solution</h2>
 
-<p>计算几个&quot;美丽数列&quot;，我们很容易发现它是一个凹数列，那么我们可以通过从中间往两边枚举来计算数列个数。<br></p>
+<p>计算几个”美丽数列”，我们很容易发现它是一个凹数列，那么我们可以通过从中间往两边枚举来计算数列个数。<br /></p>
 
-<p>定义 \( DP[i][j][k][l][r] \) 为序列两端的元素序号为 \(i, j, k ,l \) 时的方案总数：<br> <br>
-当 \(r=0\) 时，序列左端为 \(i, j\)，右端为 \(k,l\);<br><br>
-当 \(r=1\) 时，序列左端为 \(j, k\)，右端为 \(l,i\);<br><br>
-转移时，判断一下是否满足条件就可以往两端添加了新元素 \(i\) 了，最后答案为所有的 \(DP[n][j][k][l][r]\) 。</p>
+<p>定义 $ DP[i][j][k][l][r] $ 为序列两端的元素序号为 $i, j, k ,l $ 时的方案总数：<br /> 
+当 $r=0$ 时，序列左端为 $i, j$，右端为 $k,l$;<br />
+当 $r=1$ 时，序列左端为 $j, k$，右端为 $l,i$;<br />
+转移时，判断一下是否满足条件就可以往两端添加了新元素 $i$ 了，最后答案为所有的 $DP[n][j][k][l][r]$ 。</p>
 
 <h2 id="ac-code">AC code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="mi">61</span><span class="p">];</span>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="mi">61</span><span class="p">];</span>
 <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">M</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">f</span><span class="p">[</span><span class="mi">61</span><span class="p">][</span><span class="mi">61</span><span class="p">][</span><span class="mi">61</span><span class="p">][</span><span class="mi">61</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
-
+ 
 <span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">sort</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">);</span>
@@ -257,7 +272,8 @@ into the {body} of the default.hbs template -->
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div>
+</code></pre></div></div>
+
                 </div>
             </section>
 
@@ -306,6 +322,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -603,7 +641,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Round #396 (Div. 2) E</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the Round #396 (Div. 2) of the codeforces](http://codeforces.com/contest/766/problem/E) ## Description 在一颗 \\(n\\) 个结点的树上，每个结点带有一个权值，定义从结点 \\(x\\) 到结点 \\(y\\) 所经过的所有节点的权值的异或值为这条路径的长度（ \\(x≤y\\) ），求树上所有路径的长度和。 ## Input ``` 3 1 2 3 1</p>
+                    <p>## Problem Information source: [It's from the Round #396 (Div. 2) of the codeforces](http://codeforces.com/contest/766/problem/E) ## Description 在一颗 $n$ 个结点的树上，每个结点带有一个权值，定义从结点 $x$ 到结点 $y$ 所经过的所有节点的权值的异或值为这条路径的长度（ $x≤y$ ），求树上所有路径的长度和。 ## Input ``` 3 1 2 3 1</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -646,7 +684,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The</p>
+                    <p>Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC’s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The</p>
                 </section>
             </a>
             <footer class="post-card-meta">

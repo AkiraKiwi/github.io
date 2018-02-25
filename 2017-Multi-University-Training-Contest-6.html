@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #6" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #6 from HDU OJ Problem A 给出 \( N \) 个字符串 \(W_i\) 和 \( Q \) 个查询，每个查询包含两个字符串 \(S_i, P_i\)，要求输出在之前的 \( N \) 个串里，满足以\(S_i\)为前缀，\(P_i\) 为后缀的字符串的数量 数据范围：\( T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000\) Solution 把 \(" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #6 from HDU OJ Problem A 给出 $ N $ 个字符串 $W_i$ 和 $ Q $ 个查询，每个查询包含两个字符串 $S_i, P_i$，要求输出在之前的 $ N $ 个串里，满足以$S_i$为前缀，$P_i$ 为后缀的字符串的数量 数据范围：$ T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000$ Solution 把 $" />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-6" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #6" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #6 from HDU OJ Problem A 给出 \( N \) 个字符串 \(W_i\) 和 \( Q \) 个查询，每个查询包含两个字符串 \(S_i, P_i\)，要求输出在之前的 \( N \) 个串里，满足以\(S_i\)为前缀，\(P_i\) 为后缀的字符串的数量 数据范围：\( T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000\) Solution 把 \(" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #6 from HDU OJ Problem A 给出 $ N $ 个字符串 $W_i$ 和 $ Q $ 个查询，每个查询包含两个字符串 $S_i, P_i$，要求输出在之前的 $ N $ 个串里，满足以$S_i$为前缀，$P_i$ 为后缀的字符串的数量 数据范围：$ T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000$ Solution 把 $" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-6"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #6 from HDU OJ Problem A 给出 \( N \) 个字符串 \(W_i\) 和 \( Q \) 个查询，每个查询包含两个字符串 \(S_i, P_i\)，要求输出在之前的 \( N \) 个串里，满足以\(S_i\)为前缀，\(P_i\) 为后缀的字符串的数量 数据范围：\( T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000\) Solution 把 \("
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #6 from HDU OJ Problem A 给出 $ N $ 个字符串 $W_i$ 和 $ Q $ 个查询，每个查询包含两个字符串 $S_i, P_i$，要求输出在之前的 $ N $ 个串里，满足以$S_i$为前缀，$P_i$ 为后缀的字符串的数量 数据范围：$ T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000$ Solution 把 $"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #6" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,34 +183,34 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+6&source=1&searchmode=source">The 2017 Multi-University Training Contest #6 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+6&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #6 from HDU OJ</a></p>
 
 <h2 id="problem-a">Problem A</h2>
 
-<p>给出 \( N \) 个字符串 \(W_i\) 和 \( Q \) 个查询，每个查询包含两个字符串 \(S_i, P_i\)，要求输出在之前的 \( N \) 个串里，满足以\(S_i\)为前缀，\(P_i\) 为后缀的字符串的数量  <br></p>
+<p>给出 $ N $ 个字符串 $W_i$ 和 $ Q $ 个查询，每个查询包含两个字符串 $S_i, P_i$，要求输出在之前的 $ N $ 个串里，满足以$S_i$为前缀，$P_i$ 为后缀的字符串的数量  <br /></p>
 
-<p>数据范围：\( T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000\) <br></p>
+<p>数据范围：$ T ≤ 5, 0 &lt; N,Q ≤ 10^5, \sum(S_i+P_i) ≤ 500000, \sum(W_i) ≤ 500000$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>把 \( S_i, P_i \) 分别用字符连接然后插入到AC自动机，然后把原字符串 \(W_i\) double后也用相同字符连接再首尾相接拼成一个长串，每个字符串中间用间隔符隔开，最后用这个长串去查询。<br></p>
+<p>把 $ S_i, P_i $ 分别用字符连接然后插入到AC自动机，然后把原字符串 $W_i$ double后也用相同字符连接再首尾相接拼成一个长串，每个字符串中间用间隔符隔开，最后用这个长串去查询。<br /></p>
 
 <h2 id="problem-g">Problem G</h2>
 
-<p>给出一个 \(1-N\) 的排列，再给出 \(M\) 个查询 \([L,R]\)，要求计算 \( \sum^R_{i=L} \sum^R_{j=i+1} \sum^R_{k=j+1} (gcd(A[i],A[j])==A[k]) \times A[k] \) <br></p>
+<p>给出一个 $1-N$ 的排列，再给出 $M$ 个查询 $[L,R]$，要求计算 $ \sum^R_{i=L} \sum^R_{j=i+1} \sum^R_{k=j+1} (gcd(A[i],A[j])==A[k]) \times A[k] $ <br /></p>
 
-<p>数据范围：\( 1 ≤ T ≤ 100, 1 ≤ N,M ≤ 10^5, 1 ≤ L,R ≤ N \) <br></p>
+<p>数据范围：$ 1 ≤ T ≤ 100, 1 ≤ N,M ≤ 10^5, 1 ≤ L,R ≤ N $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>首先，我们会想到是枚举 \(k\)，计算 \(A[k]\) 的贡献，那么由题意得，要计算 \(A[k]\) 的贡献，就要先计算所有满足 \(i &lt; j &lt; k \) 且 \( gcd( \frac{A[i]}{A[k]}, \frac{A[j]}{A[k]})==1 \) 的 \( &lt; i, j &gt; \) 的个数。<br></p>
+<p>首先，我们会想到是枚举 $k$，计算 $A[k]$ 的贡献，那么由题意得，要计算 $A[k]$ 的贡献，就要先计算所有满足 $i &lt; j &lt; k $ 且 $ gcd( \frac{A[i]}{A[k]}, \frac{A[j]}{A[k]})==1 $ 的 $ &lt; i, j &gt; $ 的个数。<br /></p>
 
-<p>那么，我们从左往右枚举 \(k\)，标记访问过的 \(A[k]\)，便于计算 \(&lt; i, j &gt;\) 时判断该数是否在 \(k\) 左边，然后对于 \(i &lt; j\) ，我们可以把已访问过的 \(A[k]\) 的倍数按下标从大到小排序，然后遍历时先当做 \(i\) 查询再当做 \(j\) 处理。怎么查询呢？问题转换成：给定一个数 \( x \)，在一堆数中查询有多少个数与它互质。我们可以先预处理出每一个数整数分解的结果，然后处理 \(j\) 的时候累加因子个数，那么查询 \(i\) 时就可以直接用莫比乌斯容斥计算答案了 \( f(n) = \sum_{d\|n} μ(d) F(\frac{n}{d}) \)。 对于每一个 \(i\) 查询得到的结果都对 \( L ∈ [1,i], R = k\) 这些区间有贡献，所以需要区间修改，这一步可以树状数组维护。<br></p>
+<p>那么，我们从左往右枚举 $k$，标记访问过的 $A[k]$，便于计算 $&lt; i, j &gt;$ 时判断该数是否在 $k$ 左边，然后对于 $i &lt; j$ ，我们可以把已访问过的 $A[k]$ 的倍数按下标从大到小排序，然后遍历时先当做 $i$ 查询再当做 $j$ 处理。怎么查询呢？问题转换成：给定一个数 $ x $，在一堆数中查询有多少个数与它互质。我们可以先预处理出每一个数整数分解的结果，然后处理 $j$ 的时候累加因子个数，那么查询 $i$ 时就可以直接用莫比乌斯容斥计算答案了 $ f(n) = \sum_{d$n} μ(d) F(\frac{n}{d}) $。 对于每一个 $i$ 查询得到的结果都对 $ L ∈ [1,i], R = k$ 这些区间有贡献，所以需要区间修改，这一步可以树状数组维护。<br /></p>
 
-<p>最后，离线所有查询，在每个 \(A[R]\) 处计算完答案，再查询相应 \([L,R]\) 的结果。<br></p>
+<p>最后，离线所有查询，在每个 $A[R]$ 处计算完答案，再查询相应 $[L,R]$ 的结果。<br /></p>
 
 <h2 id="ac-code">AC Code</h2>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++">
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kt">int</span> <span class="n">mu</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">prime</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">bool</span> <span class="n">not_prime</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fac</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -295,14 +307,23 @@ into the {body} of the default.hbs template -->
         <span class="n">solve</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="contest-summary">Contest Summary</h2>
 
 <ul>
-<li><p>字符串的题可以想到很多转换的方法，正着做很难，可以反过来想想。</p></li>
-<li><p>三分时使用黄金分割比例可以优化时间</p></li>
-<li><p><a href="http://jingyan.baidu.com/article/77b8dc7f8a792e6174eab623.html">圆的反演</a></p></li>
-<li><p>满足 \( i &lt; j &lt; k \) 的三元组的统计问题，一般都是先固定 \(K\)，然后处理 \(j\)，查询\(i\)</p></li>
+  <li>
+    <p>字符串的题可以想到很多转换的方法，正着做很难，可以反过来想想。</p>
+  </li>
+  <li>
+    <p>三分时使用黄金分割比例可以优化时间</p>
+  </li>
+  <li>
+    <p><a href="http://jingyan.baidu.com/article/77b8dc7f8a792e6174eab623.html">圆的反演</a></p>
+  </li>
+  <li>
+    <p>满足 $ i &lt; j &lt; k $ 的三元组的统计问题，一般都是先固定 $K$，然后处理 $j$，查询$i$</p>
+  </li>
 </ul>
 
                 </div>
@@ -353,6 +374,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -693,7 +736,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #5</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 \( A_{1...n},\ B_{1...m},\ k_{1...q} \)，求对于每一个 \( k \) 有多少对 \( (i,j)满足，A_i \ mod \ B_j = k \)</p>
+                    <p>Contest Information source: The 2017 Multi-University Training Contest #5 from HDU OJ Problem A 给出 $ A_{1…n},\ B_{1…m},\ k_{1…q} $，求对于每一个 $ k $ 有多少对 $ (i,j)满足，A_i \ mod \ B_j = k $</p>
                 </section>
             </a>
             <footer class="post-card-meta">

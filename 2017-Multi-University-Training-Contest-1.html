@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 Multi-University Training Contest #1" />
-    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 \(m\) ，计算满足 \(2^m-1=10^k\) 的 \(k\) 数据范围：\( 1 ≤ m ≤ 10^{5}\) Solution \( k = m \times lg2\) Problem B 建立一个 \(0-25\) 到 \(a-z\)的满射，使得对于给定的 \(n\) 个字符串 \(s_i\)，按映射转换为 \(26\) 进制数后的和最大 数据范围：\( 1 ≤ n ≤ 10^{5}," />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 $m$ ，计算满足 $2^m-1=10^k$ 的 $k$ 数据范围：$ 1 ≤ m ≤ 10^{5}$ Solution $ k = m \times lg2$ Problem B 建立一个 $0-25$ 到 $a-z$的满射，使得对于给定的 $n$ 个字符串 $s_i$，按映射转换为 $26$ 进制数后的和最大 数据范围：$ 1 ≤ n ≤ 10^{5}," />
     <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-1" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2017 Multi-University Training Contest #1" />
-    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 \(m\) ，计算满足 \(2^m-1=10^k\) 的 \(k\) 数据范围：\( 1 ≤ m ≤ 10^{5}\) Solution \( k = m \times lg2\) Problem B 建立一个 \(0-25\) 到 \(a-z\)的满射，使得对于给定的 \(n\) 个字符串 \(s_i\)，按映射转换为 \(26\) 进制数后的和最大 数据范围：\( 1 ≤ n ≤ 10^{5}," />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 $m$ ，计算满足 $2^m-1=10^k$ 的 $k$ 数据范围：$ 1 ≤ m ≤ 10^{5}$ Solution $ k = m \times lg2$ Problem B 建立一个 $0-25$ 到 $a-z$的满射，使得对于给定的 $n$ 个字符串 $s_i$，按映射转换为 $26$ 进制数后的和最大 数据范围：$ 1 ≤ n ≤ 10^{5}," />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-1"
     },
-    "description": "Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 \(m\) ，计算满足 \(2^m-1=10^k\) 的 \(k\) 数据范围：\( 1 ≤ m ≤ 10^{5}\) Solution \( k = m \times lg2\) Problem B 建立一个 \(0-25\) 到 \(a-z\)的满射，使得对于给定的 \(n\) 个字符串 \(s_i\)，按映射转换为 \(26\) 进制数后的和最大 数据范围：\( 1 ≤ n ≤ 10^{5},"
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #1 from HDU OJ Problem A 给出 $m$ ，计算满足 $2^m-1=10^k$ 的 $k$ 数据范围：$ 1 ≤ m ≤ 10^{5}$ Solution $ k = m \times lg2$ Problem B 建立一个 $0-25$ 到 $a-z$的满射，使得对于给定的 $n$ 个字符串 $s_i$，按映射转换为 $26$ 进制数后的和最大 数据范围：$ 1 ≤ n ≤ 10^{5},"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #1" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,25 +183,25 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+1&source=1&searchmode=source">The 2017 Multi-University Training Contest #1 from HDU OJ</a></p>
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2017+Multi-University+Training+Contest+-+Team+1&amp;source=1&amp;searchmode=source">The 2017 Multi-University Training Contest #1 from HDU OJ</a></p>
 
 <h2 id="problem-a">Problem A</h2>
 
-<p>给出 \(m\) ，计算满足 \(2^m-1=10^k\) 的 \(k\)<br></p>
+<p>给出 $m$ ，计算满足 $2^m-1=10^k$ 的 $k$<br /></p>
 
-<p>数据范围：\( 1 ≤ m ≤ 10^{5}\) <br></p>
+<p>数据范围：$ 1 ≤ m ≤ 10^{5}$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>\( k = m \times lg2\) <br></p>
+<p>$ k = m \times lg2$ <br /></p>
 
 <h2 id="problem-b">Problem B</h2>
 
-<p>建立一个 \(0-25\) 到 \(a-z\)的满射，使得对于给定的 \(n\) 个字符串 \(s_i\)，按映射转换为 \(26\) 进制数后的和最大 <br></p>
+<p>建立一个 $0-25$ 到 $a-z$的满射，使得对于给定的 $n$ 个字符串 $s_i$，按映射转换为 $26$ 进制数后的和最大 <br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 10^{5}, 1 ≤ s_i ≤ 10^{5}, \sum s_i ≤ 10^{6} \) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 10^{5}, 1 ≤ s_i ≤ 10^{5}, \sum s_i ≤ 10^{6} $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
 <p>贪心策略：肯定是给 在高位出现次数更多的字符 赋更大的值，才能使最后的结果最大，那么统计每位数上字符的个数，超过26个就进位，这样将每个字符在每位上出现次数的状态转换为一个字符串，再按从高位到低位的字符排序，最后排在前面的赋更大的值即可。注意一下不要给在字符串第一个位置的字符赋为0，长度为1的除外。</p>
 
@@ -293,20 +305,24 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-c">Problem C</h2>
 
-<p>给出一个 \(n\) 个节点的树，每个节点上有一种颜色 \(c_i\)，对于树上的一条路径，它的价值等于这条路径上节点的颜色的种类数，求树上所有路径的价值和（路径数量：\(\frac{n(n-1)}{2}\)） <br></p>
+<p>给出一个 $n$ 个节点的树，每个节点上有一种颜色 $c_i$，对于树上的一条路径，它的价值等于这条路径上节点的颜色的种类数，求树上所有路径的价值和（路径数量：$\frac{n(n-1)}{2}$） <br /></p>
 
-<p>数据范围：\( 2 ≤ n ≤ 2\times10^{5}, 1 ≤ c_i ≤ n\) <br></p>
+<p>数据范围：$ 2 ≤ n ≤ 2\times10^{5}, 1 ≤ c_i ≤ n$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>先一遍DFS统计出每颗子树的大小，再第二次DFS，计算每个节点的颜色对最后答案的贡献：<br></p>
+<p>先一遍DFS统计出每颗子树的大小，再第二次DFS，计算每个节点的颜色对最后答案的贡献：<br /></p>
 
 <ul>
-<li><p>该节点子树节点到非子树节点的路径：子树大小 \(\times\) 外部节点个数（需要排除与该节点颜色相同的已经访问过的节点的子树，按照DFS序走的话就是，同一种颜色，后访问的节点不能计算先访问的节点的子树）</p></li>
-<li><p>该节点的各个子树之间的路径数量：通过子树大小统计：对于第一棵子树，数量为 \(size[v_1]\times (size[u]-size[v_1])\)，那么第二棵就是 \(size[v_2]\times(size[u]-size[v_1]-size[v_2]) \)，以此类推。</p></li>
+  <li>
+    <p>该节点子树节点到非子树节点的路径：子树大小 $\times$ 外部节点个数（需要排除与该节点颜色相同的已经访问过的节点的子树，按照DFS序走的话就是，同一种颜色，后访问的节点不能计算先访问的节点的子树）</p>
+  </li>
+  <li>
+    <p>该节点的各个子树之间的路径数量：通过子树大小统计：对于第一棵子树，数量为 $size[v_1]\times (size[u]-size[v_1])$，那么第二棵就是 $size[v_2]\times(size[u]-size[v_1]-size[v_2]) $，以此类推。</p>
+  </li>
 </ul>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">col</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -381,15 +397,15 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-f">Problem F</h2>
 
-<p>给出两个序列 \(a_{1...n},b_{1...m}\) ，要求计算满足 \(f(i)=b_{f(a_i)}\) 的不同的映射\(f\) 的个数。<br></p>
+<p>给出两个序列 $a_{1…n},b_{1…m}$ ，要求计算满足 $f(i)=b_{f(a_i)}$ 的不同的映射$f$ 的个数。<br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 10^5, 1 ≤ m ≤ 10^5\) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 10^5, 1 ≤ m ≤ 10^5$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-3">Solution</h2>
 
-<p>我们发现只有对于 \(a\) 数组的每一个闭环，都必须用 \(b\) 数组里的一些闭环，组合成同样大小的环才能满足题中要求。那么我们先求出每个数组的所有闭环及其数量，然后计算它们的配对方案数。计数可以在 \(O(log(n))\) 下处理出来：对于 \(b\) 中一个大小为 \(x\) 的环，我们先统计它的数量 \(y\)，然后对于 \(x\) 的每一个倍数，我们都能用 \(y\times x\) 种方案拼凑上去（每个环旋转一次就是一个新方案），这样处理完 \(b\) 中所有能拼凑出的环的大小及其方案数，再查询 \(a\) 数组并统计答案。（在此感谢队友CPL大佬提供的 &#39;PP&#39; 算法）</p>
+<p>我们发现只有对于 $a$ 数组的每一个闭环，都必须用 $b$ 数组里的一些闭环，组合成同样大小的环才能满足题中要求。那么我们先求出每个数组的所有闭环及其数量，然后计算它们的配对方案数。计数可以在 $O(log(n))$ 下处理出来：对于 $b$ 中一个大小为 $x$ 的环，我们先统计它的数量 $y$，然后对于 $x$ 的每一个倍数，我们都能用 $y\times x$ 种方案拼凑上去（每个环旋转一次就是一个新方案），这样处理完 $b$ 中所有能拼凑出的环的大小及其方案数，再查询 $a$ 数组并统计答案。（在此感谢队友CPL大佬提供的 ‘PP’ 算法）</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-2">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
@@ -473,9 +489,15 @@ into the {body} of the default.hbs template -->
 <h2 id="contest-summary">Contest Summary</h2>
 
 <ul>
-<li><p>一些代码量比较大的题最多分配2个人去做（对，说的就是B），保证稳定AC的同时不要落下题目进度</p></li>
-<li><p>F题刚开始就有正确方向的想法，但没有和队友沟通清楚，感觉拖了不少时间， : ( 类似思维题得先把idea说清楚</p></li>
-<li><p>C题类似的乱搞题讨论出大概方向就差不多了，然后在敲的过程中再定细节，这次就一开始XJB讨论到比赛结束然后在别人的一片AC声中打出GG， : )</p></li>
+  <li>
+    <p>一些代码量比较大的题最多分配2个人去做（对，说的就是B），保证稳定AC的同时不要落下题目进度</p>
+  </li>
+  <li>
+    <p>F题刚开始就有正确方向的想法，但没有和队友沟通清楚，感觉拖了不少时间， : ( 类似思维题得先把idea说清楚</p>
+  </li>
+  <li>
+    <p>C题类似的乱搞题讨论出大概方向就差不多了，然后在敲的过程中再定细节，这次就一开始XJB讨论到比赛结束然后在别人的一片AC声中打出GG， : )</p>
+  </li>
 </ul>
 
                 </div>
@@ -526,6 +548,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -823,7 +867,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">Codeforces Educational Round #25</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the Educational Round #25 of the codeforces](http://codeforces.com/contest/825) ## Problem E 给一个 \\(n\\) 个节点，\\(m\\) 条边的有向无环图标号，使其满足： * \\(1-n\\) 的每一个数字出现且仅出现一次 * 父节点标号比子节点小 * 节点序号输出的标号一定是字典序最小的 数据范围：\\( 2 ≤ n ≤ 10^{5},</p>
+                    <p>## Contest Information source: [It's from the Educational Round #25 of the codeforces](http://codeforces.com/contest/825) ## Problem E 给一个 $n$ 个节点，$m$ 条边的有向无环图标号，使其满足： * $1-n$ 的每一个数字出现且仅出现一次 * 父节点标号比子节点小 * 节点序号输出的标号一定是字典序最小的 数据范围：$ 2 ≤ n ≤ 10^{5},</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -866,7 +910,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Round #232 (Div. 1) E</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the Round #232 (Div. 1) of the codeforces Description 给出一棵以 \(1\) 为根的有根树，有两种操作： \( 1\ v\ x\ k\) : 给节点 \(v\) 的值加上 \(x\)，给它的子节点（和 \(v\) 的深度差为 \(i\) ） 加上 \(x</p>
+                    <p>Problem Information source: It’s from the Round #232 (Div. 1) of the codeforces Description 给出一棵以 $1$ 为根的有根树，有两种操作： $ 1\ v\ x\ k$ : 给节点 $v$ 的值加上 $x$，给它的子节点（和 $v$ 的深度差为 $i$ ） 加上 $x</p>
                 </section>
             </a>
             <footer class="post-card-meta">

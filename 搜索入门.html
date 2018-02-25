@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="搜索入门" />
-    <meta property="og:description" content="本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： * 利用深搜计算一个公式，本质还是做枚举； * 例题： [Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514) ★★☆☆☆" />
+    <meta property="og:description" content="本文参考自”英雄哪里出来”的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： 利用深搜计算一个公式，本质还是做枚举； 例题： Frogs ★★☆☆☆ 容斥 幸运数字" />
     <meta property="og:url" content="http://localhost:4000/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-29360329515.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="搜索入门" />
-    <meta name="twitter:description" content="本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： * 利用深搜计算一个公式，本质还是做枚举； * 例题： [Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514) ★★☆☆☆" />
+    <meta name="twitter:description" content="本文参考自”英雄哪里出来”的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： 利用深搜计算一个公式，本质还是做枚举； 例题： Frogs ★★☆☆☆ 容斥 幸运数字" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-29360329515.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8"
     },
-    "description": "本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： * 利用深搜计算一个公式，本质还是做枚举； * 例题： [Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514) ★★☆☆☆"
+    "description": "本文参考自”英雄哪里出来”的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： 利用深搜计算一个公式，本质还是做枚举； 例题： Frogs ★★☆☆☆ 容斥 幸运数字"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="搜索入门" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -169,289 +181,463 @@ into the {body} of the default.hbs template -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p><a href="http://cppblog.com/menjitianya/archive/2015/10/09/211980.html">本文参考自&quot;英雄哪里出来&quot;的博文</a></p>
+                    <p><a href="http://cppblog.com/menjitianya/archive/2015/10/09/211980.html">本文参考自”英雄哪里出来”的博文</a></p>
 
-<h2 id="dfs">深度优先搜索 (DFS)</h2>
+<h2 id="深度优先搜索-dfs">深度优先搜索 (DFS)</h2>
 
 <h3 id="1-dfs">1. DFS</h3>
 
 <ul>
-<li><p>算法描述：</p>
+  <li>
+    <p>算法描述：</p>
 
-<p>DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作：</p>
+    <p>DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作：</p>
 
-<ul>
-<li>a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b；</li>
-<li>b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a；</li>
-<li>c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点；</li>
+    <ul>
+      <li>
+        <p>a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b；</p>
+      </li>
+      <li>
+        <p>b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a；</p>
+      </li>
+      <li>
+        <p>c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点；</p>
+      </li>
+    </ul>
+
+    <p>上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。</p>
+  </li>
+  <li>
+    <p>基础应用：</p>
+
+    <p>a. 求N的阶乘</p>
+
+    <p>b. 求斐波那契数列的第N项</p>
+
+    <p>c. 求N个数的全排列</p>
+  </li>
+  <li>
+    <p>高级应用：</p>
+
+    <p>a. 枚举：</p>
+
+    <ul>
+      <li>
+        <p>数据范围较小的的排列、组合的穷举；</p>
+      </li>
+      <li>
+        <p>例题：</p>
+
+        <p><a href="http://poj.org/problem?id=1950">Dessert</a>                    ★☆☆☆☆    枚举</p>
+
+        <p><a href="http://poj.org/problem?id=2078">Matrix</a>                     ★☆☆☆☆    枚举</p>
+
+        <p><a href="http://poj.org/problem?id=1117">Pairs of Integers</a>          ★★☆☆☆    枚举</p>
+      </li>
+    </ul>
+
+    <p>b. 容斥原理：</p>
+
+    <ul>
+      <li>
+        <p>利用深搜计算一个公式，本质还是做枚举；</p>
+      </li>
+      <li>
+        <p>例题：</p>
+
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5514">Frogs</a>                    ★★☆☆☆    容斥</p>
+
+        <p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1853">幸运数字</a>                    ★★☆☆☆    容斥</p>
+      </li>
+    </ul>
+
+    <p>c. 基于状态压缩和数位统计的动态规划：</p>
+
+    <ul>
+      <li>
+        <p>一般解决棋盘摆放问题，k进制表示状态，然后利用深搜进行状态转移；</p>
+      </li>
+      <li>
+        <p>例题：</p>
+
+        <p><a href="http://poj.org/problem?id=1321">棋盘问题</a>                    ★★☆☆☆    dfs</p>
+
+        <p><a href="http://blog.csdn.net/febr2/article/details/66976342">Beautiful Number</a>                    ★★★☆☆    数位DP</p>
+
+        <p><a href="http://blog.csdn.net/febr2/article/details/68067676">Round Number</a>                    ★★★☆☆    数位DP</p>
+      </li>
+    </ul>
+
+    <p>d.记忆化搜索：</p>
+
+    <ul>
+      <li>
+        <p>某个状态已经被计算出来，就将它cache住，下次要用的时候不需要重新求，此所谓记忆化。下面会详细讲到记忆化搜索的应用范围；</p>
+      </li>
+      <li>
+        <p>例题</p>
+
+        <p><a href="poj.org/problem?id=1088">滑雪</a>                    ★★★☆☆    记忆化搜索</p>
+
+        <p><a href="http://blog.csdn.net/febr2/article/details/66472500">Bribe the Prisoners</a>                    ★★★☆☆    记忆化搜索</p>
+      </li>
+    </ul>
+
+    <p>e.有向图强连通分量：</p>
+
+    <ul>
+      <li>
+        <p>经典的Tarjan算法；</p>
+      </li>
+      <li>
+        <p>求解2-sat问题的基础；</p>
+      </li>
+    </ul>
+
+    <p>f. 无向图割边割点和双连通分量：</p>
+
+    <ul>
+      <li>经典的Tarjan算法；</li>
+    </ul>
+
+    <p>g. LCA：</p>
+
+    <ul>
+      <li>
+        <p>最近公共祖先递归求解；</p>
+      </li>
+      <li>
+        <p>例题：</p>
+
+        <p><a href="http://poj.org/problem?id=1330">Nearest Common Ancestors</a>                    ★★☆☆☆    LCA</p>
+      </li>
+    </ul>
+
+    <p>h.博弈：</p>
+
+    <ul>
+      <li>利用深搜计算SG值；</li>
+    </ul>
+
+    <p>i.二分图最大匹配：</p>
+
+    <ul>
+      <li>
+        <p>经典的匈牙利算法；</p>
+      </li>
+      <li>
+        <p>最小顶点覆盖、最大独立集、最小值支配集 向二分图的转化；</p>
+      </li>
+      <li>
+        <p>例题</p>
+
+        <p><a href="http://poj.org/problem?id=2446">Chessboard</a>                    ★☆☆☆☆    二分图最大匹配</p>
+
+        <p><a href="http://poj.org/problem?id=1422">Air Raid</a>                    ★★☆☆☆    最小路径覆盖</p>
+
+        <p><a href="https://vjudge.net/problem/542124/origin">Difference</a>                    ★★★☆☆    二分图最大匹配</p>
+
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5727">Necklace</a>                    ★★★★☆    二分图最大匹配</p>
+      </li>
+    </ul>
+
+    <p>j.欧拉回路：</p>
+
+    <ul>
+      <li>经典的圈套圈算法；</li>
+    </ul>
+
+    <p>k. K短路：</p>
+
+    <ul>
+      <li>依赖数据，数据不卡的话可以采用2分答案 + 深搜；也可以用广搜 + A*</li>
+    </ul>
+
+    <p>l. 线段树</p>
+
+    <ul>
+      <li>二分经典思想，配合深搜枚举左右子树；</li>
+    </ul>
+
+    <p>m. 最大团</p>
+
+    <ul>
+      <li>极大完全子图的优化算法。</li>
+    </ul>
+
+    <p>n. 最大流</p>
+
+    <ul>
+      <li>EK算法求任意路径中有涉及。</li>
+    </ul>
+
+    <p>o. 树形DP：</p>
+
+    <ul>
+      <li>即树形动态规划，父结点的值由各个子结点计算得出。</li>
+    </ul>
+  </li>
 </ul>
 
-<p>上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。</p></li>
-<li><p>基础应用：</p>
-
-<p>a. 求N的阶乘</p>
-
-<p>b. 求斐波那契数列的第N项</p>
-
-<p>c. 求N个数的全排列</p></li>
-<li><p>高级应用：</p>
-
-<p>a. 枚举：</p>
+<h3 id="2-基于dfs的记忆化搜索">2. 基于DFS的记忆化搜索</h3>
 
 <ul>
-<li>数据范围较小的的排列、组合的穷举；</li>
-<li><p>例题：</p>
+  <li>
+    <p>算法原理：</p>
 
-<p><a href="http://poj.org/problem?id=1950">Dessert</a>                    ★☆☆☆☆    枚举</p>
-
-<p><a href="http://poj.org/problem?id=2078">Matrix</a>                     ★☆☆☆☆    枚举</p>
-
-<p><a href="http://poj.org/problem?id=1117">Pairs of Integers</a>          ★★☆☆☆    枚举 </p></li>
+    <p>类似动态规划的思想，每次将已经计算出来的状态的值存储到数组中，下次需要的时候直接读数组中的值，避免重复计算。</p>
+  </li>
+  <li>
+    <p>例题：往上翻 ლ(╹◡╹ლ)</p>
+  </li>
 </ul>
 
-<p>b. 容斥原理：<br>
-* 利用深搜计算一个公式，本质还是做枚举；<br>
-* 例题：</p>
-<div class="highlight"><pre><code class="language-" data-lang="">[Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514)                    ★★☆☆☆    容斥
+<h3 id="3-基于dfs的剪枝">3. 基于DFS的剪枝</h3>
 
-[幸运数字](http://www.lydsy.com/JudgeOnline/problem.php?id=1853)                    ★★☆☆☆    容斥
-</code></pre></div>
-<p>c. 基于状态压缩和数位统计的动态规划：<br>
-* 一般解决棋盘摆放问题，k进制表示状态，然后利用深搜进行状态转移；<br>
-* 例题：</p>
-<div class="highlight"><pre><code class="language-" data-lang="">[棋盘问题](http://poj.org/problem?id=1321)                    ★★☆☆☆    dfs
+<ul>
+  <li>
+    <p>算法原理</p>
 
-[Beautiful Number](http://blog.csdn.net/febr2/article/details/66976342)                    ★★★☆☆    数位DP
+    <p>通过某种判断，避免一些不必要的遍历过程</p>
 
-[Round Number](http://blog.csdn.net/febr2/article/details/68067676)                    ★★★☆☆    数位DP
-</code></pre></div>
-<p>d.记忆化搜索：<br>
-* 某个状态已经被计算出来，就将它cache住，下次要用的时候不需要重新求，此所谓记忆化。下面会详细讲到记忆化搜索的应用范围；<br>
-* 例题</p>
-<div class="highlight"><pre><code class="language-" data-lang="">[滑雪](poj.org/problem?id=1088)                    ★★★☆☆    记忆化搜索
+    <p>a. 正确性</p>
 
-[Bribe the Prisoners](http://blog.csdn.net/febr2/article/details/66472500)                    ★★★☆☆    记忆化搜索
-</code></pre></div>
-<p>e.有向图强连通分量：<br>
-* 经典的Tarjan算法；<br>
-* 求解2-sat问题的基础；</p>
+    <ul>
+      <li>剪掉的子树中如果存在可行解（或最优解），那么在其它的子树中很可能搜不到解导致搜索失败，所以剪枝的前提必须是要正确；</li>
+    </ul>
 
-<p>f. 无向图割边割点和双连通分量：<br>
-* 经典的Tarjan算法；</p>
+    <p>b. 准确性</p>
 
-<p>g. LCA：<br>
-* 最近公共祖先递归求解；<br>
-* 例题：</p>
-<div class="highlight"><pre><code class="language-" data-lang="">[Nearest Common Ancestors](http://poj.org/problem?id=1330)                    ★★☆☆☆    LCA
-</code></pre></div>
-<p>h.博弈：<br>
-* 利用深搜计算SG值；</p>
+    <ul>
+      <li>剪枝要“准”。所谓“准”，就是要在保证在正确的前提下，尽可能多得剪枝。</li>
+    </ul>
 
-<p>i.二分图最大匹配：<br>
-* 经典的匈牙利算法；<br>
-* 最小顶点覆盖、最大独立集、最小值支配集 向二分图的转化；<br>
-* 例题</p>
-<div class="highlight"><pre><code class="language-" data-lang="">[Chessboard](http://poj.org/problem?id=2446)                    ★☆☆☆☆    二分图最大匹配
+    <p>c. 高效性</p>
 
-[Air Raid](http://poj.org/problem?id=1422)                    ★★☆☆☆    最小路径覆盖
+    <ul>
+      <li>剪枝一般是通过一个函数来判断当前搜索空间是否是一个合法空间，在每个结点都会调用到这个函数，所以这个函数的效率很重要。</li>
+    </ul>
+  </li>
+  <li>
+    <p>可行性剪枝</p>
 
-[Difference](https://vjudge.net/problem/542124/origin)                    ★★★☆☆    二分图最大匹配
+    <ul>
+      <li>
+        <p>算法原理：</p>
 
-[Necklace](http://acm.hdu.edu.cn/showproblem.php?pid=5727)                    ★★★★☆    二分图最大匹配
-</code></pre></div>
-<p>j.欧拉回路：<br>
-* 经典的圈套圈算法；</p>
+        <p>如果判断子树中不可能存在可行解，俺么剪掉该子树。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>最优性剪枝(上下界剪枝) A*</p>
 
-<p>k. K短路：<br>
-* 依赖数据，数据不卡的话可以采用2分答案 + 深搜；也可以用广搜 + A*</p>
+    <ul>
+      <li>
+        <p>算法原理：</p>
 
-<p>l. 线段树<br>
-* 二分经典思想，配合深搜枚举左右子树；</p>
+        <p>最优性剪枝一般是处理最优解的问题。以求两个状态之间的最小步数为例，搜索最小步数的过程：一般情况下，需要保存一个“当前最小步数”，这个最小步数就是当前解的一个下界d。在遍历到搜索树的叶子结点时，得到了一个新解，与保存的下界作比较，如果新解的步数更小，则令它成为新的下界。搜索结束后，所保存的解就是最小步数。而当我们已经搜索了k歩，如果能够通过某种方式估算出当前状态到目标状态的理论最少步数s时，就可以计算出起点到目标点的理论最小步数，即估价函数h = k + s，那么当前情况下存在最优解的必要条件是h &lt; d，否则就可以剪枝了。最优性剪枝是不断优化解空间的过程。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>例题：</p>
 
-<p>m. 最大团<br>
-* 极大完全子图的优化算法。</p>
+    <p><a href="http://poj.org/problem?id=3400">Dropping the stones</a>                    ★★★☆☆    DFS+剪枝</p>
 
-<p>n. 最大流<br>
-* EK算法求任意路径中有涉及。</p>
-
-<p>o. 树形DP：<br>
-* 即树形动态规划，父结点的值由各个子结点计算得出。</p></li>
+    <p><a href="http://poj.org/problem?id=1419">Graph Coloring</a>                    ★★★☆☆    DFS+剪枝+最大团</p>
+  </li>
 </ul>
 
-<h3 id="2-dfs">2. 基于DFS的记忆化搜索</h3>
+<h3 id="4-基于dfs的ida">4. 基于DFS的IDA*</h3>
 
 <ul>
-<li><p>算法原理：</p>
+  <li>
+    <p>算法原理：</p>
 
-<p>类似动态规划的思想，每次将已经计算出来的状态的值存储到数组中，下次需要的时候直接读数组中的值，避免重复计算。</p></li>
-<li><p>例题：往上翻 ლ(╹◡╹ლ)</p></li>
+    <p>迭代加深分两步走：</p>
+
+    <ul>
+      <li>
+        <p>1、枚举深度。</p>
+      </li>
+      <li>
+        <p>2、根据限定的深度进行DFS，并且利用估价函数进行剪枝。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>例题：</p>
+
+    <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1667">The Rotation Game</a>                    ★★★☆☆    IDA*</p>
+  </li>
 </ul>
 
-<h3 id="3-dfs">3. 基于DFS的剪枝</h3>
-
-<ul>
-<li><p>算法原理</p>
-
-<p>通过某种判断，避免一些不必要的遍历过程</p>
-
-<p>a. 正确性</p>
-
-<ul>
-<li>剪掉的子树中如果存在可行解（或最优解），那么在其它的子树中很可能搜不到解导致搜索失败，所以剪枝的前提必须是要正确；</li>
-</ul>
-
-<p>b. 准确性<br>
-* 剪枝要“准”。所谓“准”，就是要在保证在正确的前提下，尽可能多得剪枝。</p>
-
-<p>c. 高效性<br>
-* 剪枝一般是通过一个函数来判断当前搜索空间是否是一个合法空间，在每个结点都会调用到这个函数，所以这个函数的效率很重要。</p></li>
-<li><p>可行性剪枝</p>
-
-<ul>
-<li><p>算法原理：</p>
-
-<p>如果判断子树中不可能存在可行解，俺么剪掉该子树。</p></li>
-</ul></li>
-<li><p>最优性剪枝(上下界剪枝) A*</p>
-
-<ul>
-<li><p>算法原理：</p>
-
-<p>最优性剪枝一般是处理最优解的问题。以求两个状态之间的最小步数为例，搜索最小步数的过程：一般情况下，需要保存一个“当前最小步数”，这个最小步数就是当前解的一个下界d。在遍历到搜索树的叶子结点时，得到了一个新解，与保存的下界作比较，如果新解的步数更小，则令它成为新的下界。搜索结束后，所保存的解就是最小步数。而当我们已经搜索了k歩，如果能够通过某种方式估算出当前状态到目标状态的理论最少步数s时，就可以计算出起点到目标点的理论最小步数，即估价函数h = k + s，那么当前情况下存在最优解的必要条件是h &lt; d，否则就可以剪枝了。最优性剪枝是不断优化解空间的过程。</p></li>
-</ul></li>
-<li><p>例题：</p>
-
-<p><a href="http://poj.org/problem?id=3400">Dropping the stones</a>                    ★★★☆☆    DFS+剪枝</p>
-
-<p><a href="http://poj.org/problem?id=1419">Graph Coloring</a>                    ★★★☆☆    DFS+剪枝+最大团</p></li>
-</ul>
-
-<h3 id="4-dfs-ida">4. 基于DFS的IDA*</h3>
-
-<ul>
-<li><p>算法原理：</p>
-
-<p>迭代加深分两步走：</p>
-
-<ul>
-<li>1、枚举深度。</li>
-<li>2、根据限定的深度进行DFS，并且利用估价函数进行剪枝。</li>
-</ul></li>
-<li><p>例题：</p>
-
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1667">The Rotation Game</a>                    ★★★☆☆    IDA*</p></li>
-</ul>
-
-<h2 id="bfs">广度优先搜索 (BFS)</h2>
+<h2 id="广度优先搜索-bfs">广度优先搜索 (BFS)</h2>
 
 <h3 id="1-bfs">1. BFS</h3>
 
 <ul>
-<li><p>算法原理：</p>
+  <li>
+    <p>算法原理：</p>
 
-<p>广度优先搜索即Breadth First Search，也是图遍历算法的一种</p>
+    <p>广度优先搜索即Breadth First Search，也是图遍历算法的一种</p>
 
-<p>BFS的具体算法描述为选择一个起始点v放入一个先进先出的队列中，执行如下操作：</p>
+    <p>BFS的具体算法描述为选择一个起始点v放入一个先进先出的队列中，执行如下操作：</p>
 
-<ul>
-<li>a. 如果队列不为空，弹出一个队列首元素，记为当前结点，执行b；否则算法结束；</li>
-<li>b. 将与 当前结点 相邻并且尚未被访问的结点的信息进行更新，并且全部放入队列中，继续执行a；</li>
+    <ul>
+      <li>
+        <p>a. 如果队列不为空，弹出一个队列首元素，记为当前结点，执行b；否则算法结束；</p>
+      </li>
+      <li>
+        <p>b. 将与 当前结点 相邻并且尚未被访问的结点的信息进行更新，并且全部放入队列中，继续执行a；</p>
+      </li>
+    </ul>
+
+    <p>维护广搜的数据结构是队列和HASH，队列就是官方所说的open-close表，HASH主要是用来标记状态的，比如某个状态并不是一个整数，可能是一个字符串，就需要用字符串映射到一个整数，可以自己写个散列HASH表，不建议用STL的map，效率奇低。</p>
+  </li>
+  <li>
+    <p>基础应用：</p>
+
+    <p>a. 最短路：</p>
+
+    <ul>
+      <li>
+        <p>bellman-ford最短路的优化算法SPFA，主体是利用BFS实现的。</p>
+      </li>
+      <li>
+        <p>绝大部分四向、八向迷宫的最短路问题。</p>
+      </li>
+    </ul>
+
+    <p>b. 拓扑排序：</p>
+
+    <ul>
+      <li>首先找入度为0的点入队，弹出元素执行“减度”操作，继续将减完度后入度为0的点入队，循环操作，直到队列为空，经典BFS操作；</li>
+    </ul>
+
+    <p>c. FloodFill：</p>
+
+    <ul>
+      <li>经典洪水灌溉算法；</li>
+    </ul>
+  </li>
+  <li>
+    <p>高级应用</p>
+
+    <p>a. 差分约束：</p>
+
+    <ul>
+      <li>数形结合的经典算法，利用SPFA来求解不等式组。</li>
+    </ul>
+
+    <p>b. 稳定婚姻：</p>
+
+    <ul>
+      <li>二分图的稳定匹配问题，试问没有稳定的婚姻，如何有心思学习算法，所以一定要学好BFS啊；</li>
+    </ul>
+
+    <p>c. AC自动机：</p>
+
+    <ul>
+      <li>字典树 + KMP + BFS，在设定失败指针的时候需要用到BFS。
+详细算法参见：http://www.cppblog.com/menjitianya/archive/2014/07/10/207604.html</li>
+    </ul>
+
+    <p>d. 矩阵二分：</p>
+
+    <ul>
+      <li>矩阵乘法的状态转移图的构建可以采用BFS；</li>
+    </ul>
+
+    <p>e. 基于k进制的状态压缩搜索：</p>
+
+    <ul>
+      <li>这里的k一般为2的幂，状态压缩就是将原本多维的状态压缩到一个k进制的整数中，便于存储在一个一维数组中，往往可以大大地节省空间，又由于k为2的幂，所以状态转移可以采用位运算进行加速，HDU1813和HDU3278以及HDU3900都是很好的例子；</li>
+    </ul>
+  </li>
+  <li>
+    <p>例题：</p>
+
+    <p><a href="http://poj.org/problem?id=1426">Find The Multiple</a>                    ★☆☆☆☆    BFS</p>
+
+    <p><a href="http://poj.org/problem?id=1475">Pushing Boxes</a>                    ★★☆☆☆    BFS</p>
+
+    <p><a href="http://poj.org/problem?id=1606">Jugs</a>                    ★★☆☆☆    BFS</p>
+  </li>
 </ul>
 
-<p>维护广搜的数据结构是队列和HASH，队列就是官方所说的open-close表，HASH主要是用来标记状态的，比如某个状态并不是一个整数，可能是一个字符串，就需要用字符串映射到一个整数，可以自己写个散列HASH表，不建议用STL的map，效率奇低。   </p></li>
-<li><p>基础应用：</p>
-
-<p>a. 最短路：</p>
+<h3 id="2-基于bfs的a">2. 基于BFS的A*</h3>
 
 <ul>
-<li>bellman-ford最短路的优化算法SPFA，主体是利用BFS实现的。</li>
-<li>绝大部分四向、八向迷宫的最短路问题。</li>
+  <li>
+    <p>算法原理</p>
+
+    <p>在搜索的时候，结点信息要用堆（优先队列）维护大小，即能更快到达目标的结点优先弹出。</p>
+  </li>
+  <li>
+    <p>基础应用</p>
+
+    <p>a. 八数码问题</p>
+
+    <p>b. K短路问题</p>
+  </li>
+  <li>
+    <p>例题：</p>
+
+    <p><a href="http://poj.org/problem?id=1077">Eight</a>                    ★★☆☆☆    BFS+A*</p>
+
+    <p><a href="http://poj.org/problem?id=2046">Gap</a>                    ★★★☆☆    BFS+A*</p>
+  </li>
 </ul>
 
-<p>b. 拓扑排序：<br>
-* 首先找入度为0的点入队，弹出元素执行“减度”操作，继续将减完度后入度为0的点入队，循环操作，直到队列为空，经典BFS操作；</p>
-
-<p>c. FloodFill：<br>
-* 经典洪水灌溉算法；</p></li>
-<li><p>高级应用</p>
-
-<p>a. 差分约束：</p>
-
+<h3 id="3-双向bfs">3. 双向BFS</h3>
 <ul>
-<li>数形结合的经典算法，利用SPFA来求解不等式组。</li>
-</ul>
+  <li>
+    <p>算法原理</p>
 
-<p>b. 稳定婚姻：<br>
-* 二分图的稳定匹配问题，试问没有稳定的婚姻，如何有心思学习算法，所以一定要学好BFS啊；         </p>
+    <p>初始状态 和 目标状态 都知道，求初始状态到目标状态的最短距离；</p>
 
-<p>c. AC自动机：<br>
-* 字典树 + KMP + BFS，在设定失败指针的时候需要用到BFS。<br>
-  详细算法参见：<a href="http://www.cppblog.com/menjitianya/archive/2014/07/10/207604.html">http://www.cppblog.com/menjitianya/archive/2014/07/10/207604.html</a></p>
+    <p>利用两个队列，初始化时初始状态在1号队列里，目标状态在2号队列里，并且记录这两个状态的层次都为0，</p>
 
-<p>d. 矩阵二分：<br>
-* 矩阵乘法的状态转移图的构建可以采用BFS；</p>
+    <p>然后分别执行如下操作：</p>
 
-<p>e. 基于k进制的状态压缩搜索：<br>
-* 这里的k一般为2的幂，状态压缩就是将原本多维的状态压缩到一个k进制的整数中，便于存储在一个一维数组中，往往可以大大地节省空间，又由于k为2的幂，所以状态转移可以采用位运算进行加速，HDU1813和HDU3278以及HDU3900都是很好的例子；</p></li>
-<li><p>例题：</p>
+    <ul>
+      <li>
+        <p>a. 若1号队列已空，则结束搜索，否则从1号队列逐个弹出层次为K(K &gt;= 0)的状态；</p>
 
-<p><a href="http://poj.org/problem?id=1426">Find The Multiple</a>                    ★☆☆☆☆    BFS </p>
+        <ul>
+          <li>
+            <p>i.  如果该状态在2号队列扩展状态时已经扩展到过，那么最短距离为两个队列扩展状态的层次加和，结束搜索；</p>
+          </li>
+          <li>
+            <p>ii. 否则和BFS一样扩展状态，放入1号队列，直到队列首元素的层次为K+1时执行b；</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>b. 若2号队列已空，则结束搜索，否则从2号队列逐个弹出层次为K(K &gt;= 0)的状态；</p>
 
-<p><a href="http://poj.org/problem?id=1475">Pushing Boxes</a>                    ★★☆☆☆    BFS</p>
+        <ul>
+          <li>
+            <p>i.  如果该状态在1号队列扩展状态时已经扩展到过，那么最短距离为两个队列扩展状态的层次加和，结束搜索；</p>
+          </li>
+          <li>
+            <p>ii. 否则和BFS一样扩展状态，放入2号队列，直到队列首元素的层次为K+1时执行a；</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>例题：</p>
 
-<p><a href="http://poj.org/problem?id=1606">Jugs</a>                    ★★☆☆☆    BFS</p></li>
-</ul>
+    <p><a href="http://poj.org/problem?id=1198">Solitaire</a>                    ★★★☆☆    双向BFS</p>
 
-<h3 id="2-bfs-a">2. 基于BFS的A*</h3>
+    <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1430">魔板</a>                    ★★★★☆    双向BFS</p>
 
-<ul>
-<li><p>算法原理</p>
-
-<p>在搜索的时候，结点信息要用堆（优先队列）维护大小，即能更快到达目标的结点优先弹出。</p></li>
-<li><p>基础应用</p>
-
-<p>a. 八数码问题</p>
-
-<p>b. K短路问题</p></li>
-<li><p>例题：</p>
-
-<p><a href="http://poj.org/problem?id=1077">Eight</a>                    ★★☆☆☆    BFS+A*</p>
-
-<p><a href="http://poj.org/problem?id=2046">Gap</a>                    ★★★☆☆    BFS+A*</p></li>
-</ul>
-
-<h3 id="3-bfs">3. 双向BFS</h3>
-
-<ul>
-<li><p>算法原理</p>
-
-<p>初始状态 和 目标状态 都知道，求初始状态到目标状态的最短距离；</p>
-
-<p>利用两个队列，初始化时初始状态在1号队列里，目标状态在2号队列里，并且记录这两个状态的层次都为0，</p>
-
-<p>然后分别执行如下操作：</p>
-
-<ul>
-<li>a. 若1号队列已空，则结束搜索，否则从1号队列逐个弹出层次为K(K &gt;= 0)的状态；
-
-<ul>
-<li>i.  如果该状态在2号队列扩展状态时已经扩展到过，那么最短距离为两个队列扩展状态的层次加和，结束搜索；</li>
-<li>ii. 否则和BFS一样扩展状态，放入1号队列，直到队列首元素的层次为K+1时执行b；</li>
-</ul></li>
-<li>b. 若2号队列已空，则结束搜索，否则从2号队列逐个弹出层次为K(K &gt;= 0)的状态；
-
-<ul>
-<li>i.  如果该状态在1号队列扩展状态时已经扩展到过，那么最短距离为两个队列扩展状态的层次加和，结束搜索；</li>
-<li>ii. 否则和BFS一样扩展状态，放入2号队列，直到队列首元素的层次为K+1时执行a；</li>
-</ul></li>
-</ul></li>
-<li><p>例题：</p>
-
-<p><a href="http://poj.org/problem?id=1198">Solitaire</a>                    ★★★☆☆    双向BFS</p>
-
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1430">魔板</a>                    ★★★★☆    双向BFS</p>
-
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3567">Eight II</a>                    ★★★★★    双向BFS</p></li>
+    <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3567">Eight II</a>                    ★★★★★    双向BFS</p>
+  </li>
 </ul>
 
                 </div>
@@ -502,6 +688,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -799,7 +1007,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">Codeforces Educational Round #23</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the Educational Round #23 of the codeforces](http://codeforces.com/contest/817) ## Problem C 给出两个整数 \\(n,s\\)， 设 \\(n\\) 的数位和为 \\(ds\\)，求在区间 \\([1,n]\\) 之间满足 \\( det = (x-ds)≥s \\) 的数 \\(x\\) 有多少个？ 数据范围：\\(</p>
+                    <p>## Contest Information source: [It's from the Educational Round #23 of the codeforces](http://codeforces.com/contest/817) ## Problem C 给出两个整数 $n,s$， 设 $n$ 的数位和为 $ds$，求在区间 $[1,n]$ 之间满足 $ det = (x-ds)≥s $ 的数 $x$ 有多少个？ 数据范围：$</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -842,7 +1050,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">玲珑杯 Round #17 problem B</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It&#39;s from the Round #17 of &quot;LingLong&quot; cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从\(1\)到\(N\)）可以被用来制作. 每条咸鱼都有一个咸鱼值 \( K_i \) ，初始时所有 \( K_i \) 都是\(0\). zhu是一个特别的人，他有\(M\)个咸数（咸鱼数字）, 对于每个咸数\(x\)，他都会让所有满足标号是\(x\)倍数的咸鱼的咸鱼值异或上\(1\). zhu现在想知道经过了这\(M\)个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是\(1\)? As we all know that Mr.zhu is</p>
+                    <p>Problem Information source: It’s from the Round #17 of “LingLong” cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从$1$到$N$）可以被用来制作. 每条咸鱼都有一个咸鱼值 $ K_i $ ，初始时所有 $ K_i $ 都是$0$. zhu是一个特别的人，他有$M$个咸数（咸鱼数字）, 对于每个咸数$x$，他都会让所有满足标号是$x$倍数的咸鱼的咸鱼值异或上$1$. zhu现在想知道经过了这$M$个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是$1$? As we all know that Mr.zhu is</p>
                 </section>
             </a>
             <footer class="post-card-meta">

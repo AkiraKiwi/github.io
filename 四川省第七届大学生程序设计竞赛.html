@@ -18,9 +18,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
     <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
+    <link media="all" rel="stylesheet" type="text/css"  href="/assets/built/rouge.css" type="text/css">
+    <style>pre{background: rgba(0, 0, 0, 0.95);}</style>    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style> -->
+    <!-- Mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+        }
+    });
+    </script>
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
@@ -31,7 +42,7 @@
     <meta property="og:site_name" content="Kiwi" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="四川省第七届大学生程序设计竞赛" />
-    <meta property="og:description" content="Contest Information source: It&#39;s from the Vjudge Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：\( length ≤ 5\times 10^{6}\) Solution 先求出禁止串的 \(next\) 数组，然后在 \(KMP\) 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 AC code char no[MaxN]; char str[MaxN]; int Next[MaxN]; void makeNext(const char *P,int *next) { int q,k; int m = strlen(P); next[0] = 0; for (q = 1,k = 0;" />
+    <meta property="og:description" content="Contest Information source: It’s from the Vjudge Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：$ length ≤ 5\times 10^{6}$ Solution 先求出禁止串的 $next$ 数组，然后在 $KMP$ 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 AC code char no[MaxN]; char str[MaxN]; int Next[MaxN]; void makeNext(const char *P,int *next) { int q,k; int m = strlen(P); next[0] = 0; for (q = 1,k = 0;" />
     <meta property="og:url" content="http://localhost:4000/%E5%9B%9B%E5%B7%9D%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B" />
     <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-124520439.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
@@ -41,7 +52,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="四川省第七届大学生程序设计竞赛" />
-    <meta name="twitter:description" content="Contest Information source: It&#39;s from the Vjudge Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：\( length ≤ 5\times 10^{6}\) Solution 先求出禁止串的 \(next\) 数组，然后在 \(KMP\) 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 AC code char no[MaxN]; char str[MaxN]; int Next[MaxN]; void makeNext(const char *P,int *next) { int q,k; int m = strlen(P); next[0] = 0; for (q = 1,k = 0;" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the Vjudge Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：$ length ≤ 5\times 10^{6}$ Solution 先求出禁止串的 $next$ 数组，然后在 $KMP$ 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 AC code char no[MaxN]; char str[MaxN]; int Next[MaxN]; void makeNext(const char *P,int *next) { int q,k; int m = strlen(P); next[0] = 0; for (q = 1,k = 0;" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-124520439.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -73,7 +84,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/%E5%9B%9B%E5%B7%9D%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B"
     },
-    "description": "Contest Information source: It&#39;s from the Vjudge Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：\( length ≤ 5\times 10^{6}\) Solution 先求出禁止串的 \(next\) 数组，然后在 \(KMP\) 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 AC code char no[MaxN]; char str[MaxN]; int Next[MaxN]; void makeNext(const char *P,int *next) { int q,k; int m = strlen(P); next[0] = 0; for (q = 1,k = 0;"
+    "description": "Contest Information source: It’s from the Vjudge Problem C 给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。 数据范围：$ length ≤ 5\times 10^{6}$ Solution 先求出禁止串的 $next$ 数组，然后在 $KMP$ 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。 AC code char no[MaxN]; char str[MaxN]; int Next[MaxN]; void makeNext(const char *P,int *next) { int q,k; int m = strlen(P); next[0] = 0; for (q = 1,k = 0;"
 }
     </script>
 
@@ -88,6 +99,7 @@
     <meta name="generator" content="Jekyll 3.6.2" />
     <link rel="alternate" type="application/rss+xml" title="四川省第七届大学生程序设计竞赛" href="/feed.xml" />
 
+    
 
 </head>
 <body class="post-template">
@@ -171,17 +183,17 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="https://vjudge.net/contest/158680#overview">It&#39;s from the Vjudge</a></p>
+<p>source: <a href="https://vjudge.net/contest/158680#overview">It’s from the Vjudge</a></p>
 
 <h2 id="problem-c">Problem C</h2>
 
-<p>给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。<br></p>
+<p>给出一个禁止串和一个原串，要求从原串中不断删除禁止串，然后输出删除后的新串。<br /></p>
 
-<p>数据范围：\( length ≤ 5\times 10^{6}\) <br></p>
+<p>数据范围：$ length ≤ 5\times 10^{6}$ <br /></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>先求出禁止串的 \(next\) 数组，然后在 \(KMP\) 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。<br></p>
+<p>先求出禁止串的 $next$ 数组，然后在 $KMP$ 的匹配过程中，同时开一个答案串同步存储，开一个数组保存答案串和禁止串的匹配情况，并且维护它俩的长度。如果某次匹配到了禁止串末尾，那么回退禁止串长度，同时更新当前匹配位置。<br /></p>
 
 <h2 id="ac-code">AC code</h2>
 
@@ -250,17 +262,17 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-d">Problem D</h2>
 
-<p>给出一个 \(n\) 个点，\(m\) 条边的无向图，求最小点覆盖 <br></p>
+<p>给出一个 $n$ 个点，$m$ 条边的无向图，求最小点覆盖 <br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 500, 1 ≤ m ≤ \frac{n(n-1)}{2}, min(u,v) ≤ 30 \) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 500, 1 ≤ m ≤ \frac{n(n-1)}{2}, min(u,v) ≤ 30 $ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-1">Solution</h2>
 
-<p>无向图的最小点覆盖本是NPC问题，但是本题中因为 \(min(u,v) ≤ 30 \) ，所以图中的每条边都和 \(30\) 以内的点相连，那么我们只需要枚举这些点的染色状态就能求出覆盖所有边的最小点集了。<br></p>
+<p>无向图的最小点覆盖本是NPC问题，但是本题中因为 $min(u,v) ≤ 30 $ ，所以图中的每条边都和 $30$ 以内的点相连，那么我们只需要枚举这些点的染色状态就能求出覆盖所有边的最小点集了。<br /></p>
 
-<p>从第一个点开始 \(DFS\) ：如果当前点被染色过，那么和它相连的边必然被覆盖，走下一个点；如果未被染色，我们枚举将它染色和不将它染色（需要将和它相邻的点都染色以确保覆盖掉它的边）两种情况，再走下一个点。每次回溯时记得恢复现场，使用最优化剪枝可以快速求解。</p>
+<p>从第一个点开始 $DFS$ ：如果当前点被染色过，那么和它相连的边必然被覆盖，走下一个点；如果未被染色，我们枚举将它染色和不将它染色（需要将和它相邻的点都染色以确保覆盖掉它的边）两种情况，再走下一个点。每次回溯时记得恢复现场，使用最优化剪枝可以快速求解。</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-1">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">Edge</span>
@@ -337,65 +349,77 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-f">Problem F</h2>
 
-<p>给出一串项链，上面有 \(n\) 个珠子，每个珠子有其价值 \(a_{1...n}\)，要求删除一些珠子使得其满足：<br></p>
+<p>给出一串项链，上面有 $n$ 个珠子，每个珠子有其价值 $a_{1…n}$，要求删除一些珠子使得其满足：<br /></p>
 
 <ol>
-<li><p>整串项链只有一个价值为 \(10000\) 的珠子，称为完美珠子。<br></p></li>
-<li><p>完美珠子的后面开始是一串价值组成不上升序列的珠子 <br></p></li>
-<li><p>完美珠子的前面开始是一串价值组成不下降序列的珠子<br></p></li>
+  <li>
+    <p>整串项链只有一个价值为 $10000$ 的珠子，称为完美珠子。<br /></p>
+  </li>
+  <li>
+    <p>完美珠子的后面开始是一串价值组成不上升序列的珠子 <br /></p>
+  </li>
+  <li>
+    <p>完美珠子的前面开始是一串价值组成不下降序列的珠子<br /></p>
+  </li>
 </ol>
 
-<p>要求求出满足要求的项链的最大价值和 <br></p>
+<p>要求求出满足要求的项链的最大价值和 <br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 10^5, 0 ≤ m ≤ 10^4, 1 ≤ num_{10000} ≤ 10\) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 10^5, 0 ≤ m ≤ 10^4, 1 ≤ num_{10000} ≤ 10$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-2">Solution</h2>
 
-<p>首先枚举完美珠子的位置，那么问题就转化为在这个位置后求一个不上升子序列与一个不下降子序列使得它们的和最大。<br></p>
+<p>首先枚举完美珠子的位置，那么问题就转化为在这个位置后求一个不上升子序列与一个不下降子序列使得它们的和最大。<br /></p>
 
-<p>我们可以先分别求出在完美珠子之后每一个位置的和最大的非降子序列和非升子序列，然后枚举连接点就可以求出答案。<br>
-而求一个和最大的非升（降）子序列，我们可以类比 \(LDS\) 的做法：它是对于每一个位置找到在它之前第一个大于它的位置以保证长度最大。<br>
-那么求和最大的非升子序列，我们就可以对于每一个位置找到在它之前的大于等于它的和最大的位置。<br></p>
+<p>我们可以先分别求出在完美珠子之后每一个位置的和最大的非降子序列和非升子序列，然后枚举连接点就可以求出答案。
+而求一个和最大的非升（降）子序列，我们可以类比 $LDS$ 的做法：它是对于每一个位置找到在它之前第一个大于它的位置以保证长度最大。
+那么求和最大的非升子序列，我们就可以对于每一个位置找到在它之前的大于等于它的和最大的位置。<br /></p>
 
-<p>那么问题又转换为：怎么快速 \((O(logn))\) 找到在某一个位置之前的大于等于它的和最大的位置？<br></p>
+<p>那么问题又转换为：怎么快速 $(O(logn))$ 找到在某一个位置之前的大于等于它的和最大的位置？<br /></p>
 
-<p>我们可以使用树状数组来维护：<br></p>
+<p>我们可以使用树状数组来维护：<br /></p>
 
 <ul>
-<li><p>树状数组的下标 \(1...i\) 对应原序列中的值域 \([0, max(a_{1..n})]\)。不过是最大值 \(max(a_{1..n})\) 对应前面的下标，最小值 \(min(a_{1..n})\) 对应后面的下标：因为树状数组是后面的节点保存前面的节点的信息，而我们每次需要查询值大于等于当前 \(a_i\) 的最大价值和的节点，所以需要将小的值的信息保存在后面节点， 大的值的信息保存在前面节点<br></p></li>
-<li><p>查询：因为最大值为 \(10000\)，所以对于每次查询的 \(a_i\)，我们转换为下标 \(10000-a_i+1\)，然后查询 \([0,10000-a_i+1]\) 内的最大价值和，即查询了所有大于 \(a_i\) 的节点的信息。 <br></p></li>
-<li><p>更新：每次更新到当前位置 \(i\) 的最大价值和，即需要更新所有小于 \(a_i\) 的节点的最大价值和，对应更新树状数组中 \([10000-a_i+1, 10000]\) ，即当前值对应节点后面的所有节点：因为当前值的节点信息的更改只会影响到比它小的值的节点的信息，而树状数组前面节点信息的更改也只会影响到后面节点的信息。<br></p></li>
+  <li>
+    <p>树状数组的下标 $1…i$ 对应原序列中的值域 $[0, max(a_{1..n})]$。不过是最大值 $max(a_{1..n})$ 对应前面的下标，最小值 $min(a_{1..n})$ 对应后面的下标：因为树状数组是后面的节点保存前面的节点的信息，而我们每次需要查询值大于等于当前 $a_i$ 的最大价值和的节点，所以需要将小的值的信息保存在后面节点， 大的值的信息保存在前面节点<br /></p>
+  </li>
+  <li>
+    <p>查询：因为最大值为 $10000$，所以对于每次查询的 $a_i$，我们转换为下标 $10000-a_i+1$，然后查询 $[0,10000-a_i+1]$ 内的最大价值和，即查询了所有大于 $a_i$ 的节点的信息。 <br /></p>
+  </li>
+  <li>
+    <p>更新：每次更新到当前位置 $i$ 的最大价值和，即需要更新所有小于 $a_i$ 的节点的最大价值和，对应更新树状数组中 $[10000-a_i+1, 10000]$ ，即当前值对应节点后面的所有节点：因为当前值的节点信息的更改只会影响到比它小的值的节点的信息，而树状数组前面节点信息的更改也只会影响到后面节点的信息。<br /></p>
+  </li>
 </ul>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-2">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">c</span><span class="p">[</span><span class="n">MaxN</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">mid</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span><span class="n">num</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">BIT</span><span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">tree</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
-    <span class="kt">void</span> <span class="n">init</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">){</span>
-        <span class="k">this</span><span class="o">-&gt;</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="p">;</span>
-        <span class="n">CLR</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span>
-    <span class="p">}</span>
-    
-    <span class="kt">int</span> <span class="n">lowbit</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">){</span>
-        <span class="k">return</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="p">(</span> <span class="o">-</span><span class="n">x</span> <span class="p">);</span>
-    <span class="p">}</span>
-    
-    <span class="kt">int</span> <span class="n">getmax</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">){</span>
-        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">){</span>
-            <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span> <span class="n">ans</span> <span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kt">void</span> <span class="n">update</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span> <span class="p">){</span>
-        <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span> <span class="p">){</span>
-            <span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span> <span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="n">val</span> <span class="p">)</span>  <span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">tree</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
+	<span class="kt">void</span> <span class="n">init</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">){</span>
+		<span class="k">this</span><span class="o">-&gt;</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="p">;</span>
+		<span class="n">CLR</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+	<span class="kt">int</span> <span class="n">lowbit</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">){</span>
+		<span class="k">return</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="p">(</span> <span class="o">-</span><span class="n">x</span> <span class="p">);</span>
+	<span class="p">}</span>
+	
+	<span class="kt">int</span> <span class="n">getmax</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">){</span>
+		<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">){</span>
+			<span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span> <span class="n">ans</span> <span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="kt">void</span> <span class="n">update</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span> <span class="p">){</span>
+		<span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span> <span class="p">){</span>
+			<span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span> <span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="n">val</span> <span class="p">)</span>  <span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
 <span class="p">}</span><span class="n">bit</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">Down</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span><span class="n">Up</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">loc</span><span class="p">)</span>
@@ -456,33 +480,33 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-g">Problem G</h2>
 
-<p>Party 上有 \(n\) 只青蛙，每只青蛙都有自己喜欢喝的茶：\(1\) 表示喜欢喝红茶，\(2\) 喜欢喝绿茶，\(3\) 表示都喜欢。<br></p>
+<p>Party 上有 $n$ 只青蛙，每只青蛙都有自己喜欢喝的茶：$1$ 表示喜欢喝红茶，$2$ 喜欢喝绿茶，$3$ 表示都喜欢。<br /></p>
 
-<p>但同时有 \(m\) 对青蛙之间有矛盾：不能给它们喝同样的茶，否则会打起来。同时，青蛙都喜欢宝石，如果给第 \(i\) 只青蛙 \(W_i\) 个宝石，它就不在乎矛盾了<br></p>
+<p>但同时有 $m$ 对青蛙之间有矛盾：不能给它们喝同样的茶，否则会打起来。同时，青蛙都喜欢宝石，如果给第 $i$ 只青蛙 $W_i$ 个宝石，它就不在乎矛盾了<br /></p>
 
-<p>问最少需要花费多少宝石才能使得这些青蛙之间不会产生矛盾？<br>    </p>
+<p>问最少需要花费多少宝石才能使得这些青蛙之间不会产生矛盾？<br /></p>
 
-<p>数据范围：\( 1 ≤ n ≤ 10^3, 0 ≤ m ≤ 10^4, 1 ≤ W_i ≤ 10^6\) , 并且有矛盾的青蛙刚好可以被分成两个集合，集合中的青蛙互相间没有矛盾。<br></p>
+<p>数据范围：$ 1 ≤ n ≤ 10^3, 0 ≤ m ≤ 10^4, 1 ≤ W_i ≤ 10^6$ , 并且有矛盾的青蛙刚好可以被分成两个集合，集合中的青蛙互相间没有矛盾。<br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-3">Solution</h2>
 
-<p>由于矛盾建图刚好是一个二分图，所以我们可以先将青蛙染色，分成两个内部无矛盾的集合 \(A,B\)，然后使用网络流来求解该题：<br>   </p>
+<p>由于矛盾建图刚好是一个二分图，所以我们可以先将青蛙染色，分成两个内部无矛盾的集合 $A,B$，然后使用网络流来求解该题：<br /></p>
 
-<p>首先我们将每只青蛙拆分成两个点，并且建边\(i \rightarrow i&#39;, W_i\)。<br>   </p>
+<p>首先我们将每只青蛙拆分成两个点，并且建边$i \rightarrow i’, W_i$。<br /></p>
 
-<p>对于 \(A\) 集合中的青蛙 \(a_i\)，如果它不喜欢红茶，我们建边 \(S \rightarrow a_i, INF\)；如果它不喜欢绿茶，我们建边 \(a_i&#39; \rightarrow T, INF\)。<br>   </p>
+<p>对于 $A$ 集合中的青蛙 $a_i$，如果它不喜欢红茶，我们建边 $S \rightarrow a_i, INF$；如果它不喜欢绿茶，我们建边 $a_i’ \rightarrow T, INF$。<br /></p>
 
-<p>对于 \(B\) 集合中的青蛙 \(b_i\)，如果它不喜欢红茶，我们建边 \(b_i&#39; \rightarrow T, INF\)；如果它不喜欢绿茶，我们建边 \(S \rightarrow b_i, INF\)。<br>   </p>
+<p>对于 $B$ 集合中的青蛙 $b_i$，如果它不喜欢红茶，我们建边 $b_i’ \rightarrow T, INF$；如果它不喜欢绿茶，我们建边 $S \rightarrow b_i, INF$。<br /></p>
 
-<p>此时，整个图并不联通，如果集合 \(A,B\) 之间无矛盾的话，那么我们就不用消除矛盾，原图的最小割也为0，答案也就是0。 <br> </p>
+<p>此时，整个图并不联通，如果集合 $A,B$ 之间无矛盾的话，那么我们就不用消除矛盾，原图的最小割也为0，答案也就是0。 <br /></p>
 
-<p>但是，如果二分图中存在一条边 \(a_i,b_i\)，假如他们都不喜欢红茶，说明这两只不喜欢喝红茶的青蛙之间有矛盾，那么我们需要将它添加到网络流建图中，即建立 \(a_i&#39; \rightarrow b_i, INF\)，表示需要花费流量来消除这对矛盾<br>   </p>
+<p>但是，如果二分图中存在一条边 $a_i,b_i$，假如他们都不喜欢红茶，说明这两只不喜欢喝红茶的青蛙之间有矛盾，那么我们需要将它添加到网络流建图中，即建立 $a_i’ \rightarrow b_i, INF$，表示需要花费流量来消除这对矛盾<br /></p>
 
-<p>这时，整个图就存在一条从 \(S\) 到 \(T\) 的边：\(S \rightarrow a_i \rightarrow a_i&#39; \rightarrow b_i \rightarrow b_i&#39; \rightarrow T \)，它的满流即 \(a\) 和 \(b\) 需要宝石的最小值，即对应消除矛盾的最小花费。<br> </p>
+<p>这时，整个图就存在一条从 $S$ 到 $T$ 的边：$S \rightarrow a_i \rightarrow a_i’ \rightarrow b_i \rightarrow b_i’ \rightarrow T $，它的满流即 $a$ 和 $b$ 需要宝石的最小值，即对应消除矛盾的最小花费。<br /></p>
 
 <p>所以，若对每一对矛盾在网络流中建图，最后的满流即最小割就对应消除这些矛盾的最小花费。</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-3">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">cost</span><span class="p">[</span><span class="n">MaxN</span><span class="p">],</span> <span class="n">like</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
 <span class="k">struct</span> <span class="n">EDGE</span><span class="p">{</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">next</span><span class="p">;}</span><span class="n">edge</span><span class="p">[</span><span class="n">MaxM</span><span class="p">];</span>
@@ -574,23 +598,27 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-h">Problem H</h2>
 
-<p>给出一个长度为 \(n\) 的排列 \(P_{1...n}\)，其中有 \(m_1+m_2\) 条记录：\((a_i, b_i, c_i)\) <br></p>
+<p>给出一个长度为 $n$ 的排列 $P_{1…n}$，其中有 $m_1+m_2$ 条记录：$(a_i, b_i, c_i)$ <br /></p>
 
 <ul>
-<li><p>前 \(m_1\) 条表示 \([a_i, b_i]\) 的最小值为 \(c_i\)。</p></li>
-<li><p>前 \(m_2\) 条表示 \([a_i, b_i]\) 的最大值为 \(c_i\)。</p></li>
+  <li>
+    <p>前 $m_1$ 条表示 $[a_i, b_i]$ 的最小值为 $c_i$。</p>
+  </li>
+  <li>
+    <p>前 $m_2$ 条表示 $[a_i, b_i]$ 的最大值为 $c_i$。</p>
+  </li>
 </ul>
 
 <p>输出满足条件的最小字典序的排列。</p>
 
-<p>数据范围：\( 1 ≤ n ≤ 50, 0 ≤ m_1+m_2 ≤ 50\) <br></p>
+<p>数据范围：$ 1 ≤ n ≤ 50, 0 ≤ m_1+m_2 ≤ 50$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-4">Solution</h2>
 
-<p>如果不管最小字典序，那么这个题就是一个二分图匹配，求出一个 \(1-n\) 到 \(1-n\) 的满足条件的完备匹配即可。<br>
-对于最小字典序，由于 \(n\) 的范围很小，所以我们可以枚举 \(1-n\) 的每个位置看能否用一个更小的数来匹配。</p>
+<p>如果不管最小字典序，那么这个题就是一个二分图匹配，求出一个 $1-n$ 到 $1-n$ 的满足条件的完备匹配即可。
+对于最小字典序，由于 $n$ 的范围很小，所以我们可以枚举 $1-n$ 的每个位置看能否用一个更小的数来匹配。</p>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-4">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">Min</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span><span class="n">Max</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span><span class="n">R</span><span class="p">[</span><span class="mi">55</span><span class="p">];</span>
@@ -704,20 +732,24 @@ into the {body} of the default.hbs template -->
 
 <h2 id="problem-i">Problem I</h2>
 
-<p>给出一个 \(N\) 个点的完全图，其中有 \(m\) 条边的边权为 \(a\)，其他的边边权为 \(b\)。求 \(1\) 到 \(n\) 的最短路。<br></p>
+<p>给出一个 $N$ 个点的完全图，其中有 $m$ 条边的边权为 $a$，其他的边边权为 $b$。求 $1$ 到 $n$ 的最短路。<br /></p>
 
-<p>数据范围：\( 2 ≤ n ≤ 10^5, 0 ≤ m ≤ 5\times 10^5, 1 \leq a, b \leq 10^9\) <br></p>
+<p>数据范围：$ 2 ≤ n ≤ 10^5, 0 ≤ m ≤ 5\times 10^5, 1 \leq a, b \leq 10^9$ <br /></p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="solution-5">Solution</h2>
 
-<p>分两种情况：<br></p>
+<p>分两种情况：<br /></p>
 
 <ul>
-<li><p>\( (1,n)\) 边权为 \(b\)，那么如果 \(b \leq a\)，最短路就是 \(b\)；否则我们需要判断是否存在一条从 \(1\) 到 \(n\) 的全由 \(a\) 构成的路径使得最短路小于 \(b\)，因为 \(a\) 边不多，所以这一步最短路算法或 \(BFS\) 即可解决；<br></p></li>
-<li><p>\( (1,n)\) 边权为 \(a\)，那么如果 \(a \leq b\)，最短路就是 \(a\)；否则我们需要判断是否存在一条从 \(1\) 到 \(n\) 的全由 \(b\) 构成的路径使得最短路小于 \(a\)，虽然图是完全图，但是每个点都只会被用来松弛一次，所以我们可以用 \(set\) 来维护一个下次可能用来松弛的点集，走一遍 \(BFS\) 即可。<br></p></li>
+  <li>
+    <p>$ (1,n)$ 边权为 $b$，那么如果 $b \leq a$，最短路就是 $b$；否则我们需要判断是否存在一条从 $1$ 到 $n$ 的全由 $a$ 构成的路径使得最短路小于 $b$，因为 $a$ 边不多，所以这一步最短路算法或 $BFS$ 即可解决；<br /></p>
+  </li>
+  <li>
+    <p>$ (1,n)$ 边权为 $a$，那么如果 $a \leq b$，最短路就是 $a$；否则我们需要判断是否存在一条从 $1$ 到 $n$ 的全由 $b$ 构成的路径使得最短路小于 $a$，虽然图是完全图，但是每个点都只会被用来松弛一次，所以我们可以用 $set$ 来维护一个下次可能用来松弛的点集，走一遍 $BFS$ 即可。<br /></p>
+  </li>
 </ul>
 
-<h2 id="ac-code">AC code</h2>
+<h2 id="ac-code-5">AC code</h2>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
 <span class="n">LL</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
@@ -830,8 +862,12 @@ into the {body} of the default.hbs template -->
 <h2 id="contest-summary">Contest Summary</h2>
 
 <ul>
-<li><p>记一次血崩的组队赛，三路开题，三路卡题</p></li>
-<li><p>需要加强组队配合，任务分配，并且规划一下训练内容了</p></li>
+  <li>
+    <p>记一次血崩的组队赛，三路开题，三路卡题</p>
+  </li>
+  <li>
+    <p>需要加强组队配合，任务分配，并且规划一下训练内容了</p>
+  </li>
 </ul>
 
                 </div>
@@ -882,6 +918,28 @@ into the {body} of the default.hbs template -->
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://akirakiwi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
             
 
         </article>
@@ -1179,7 +1237,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #3</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #3 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+3&source=1&searchmode=source) ## Problem C 给出一个序列 \\(A\_1, A\_2,.., A\_n \\) ，定义 \\(f(l,r,k)\\) 为 \\(A[l..r]\\) 内的第 \\(k\\) 大数，且 \\(k>r-l+1,f(l,r,k)=0\\)。给定 \\(k\\)，要求计算 \\(\\sum\_{l=1}^n \\sum\_{r=l}^n f(l,r,k)\\)</p>
+                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #3 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+3&source=1&searchmode=source) ## Problem C 给出一个序列 $A\_1, A\_2,.., A\_n $ ，定义 $f(l,r,k)$ 为 $A[l..r]$ 内的第 $k$ 大数，且 $k>r-l+1,f(l,r,k)=0$。给定 $k$，要求计算 $\\sum\_{l=1}^n \\sum\_{r=l}^n f(l,r,k)$</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -1222,7 +1280,7 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">2017 Multi-University Training Contest #2</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 \(F_{x,y}\) 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\</p>
+                    <p>Contest Information source: The 2017 Multi-University Training Contest #2 from HDU OJ Problem F 函数 $F_{x,y}$ 满足： \[ F_{1,1} = F_{1,2} = 1 \\ F_{1,i} = F_{1,i-1} + 2\times F_{1,i-2} \ (i≥3) \\</p>
                 </section>
             </a>
             <footer class="post-card-meta">
