@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="The personal publishing platform" />
+    <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/MIT-6.828-Lab-1" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Kiwi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" />
+    <meta property="og:description" content="Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git" />
+    <meta property="og:url" content="http://localhost:4000/MIT-6.828-Lab-1" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/username" />
+    <meta property="article:author" content="https://www.facebook.com/username" />
+    <meta property="article:published_time" content="2017-09-28T07:59:59+08:00" />
+    <meta property="article:modified_time" content="2017-09-28T07:59:59+08:00" />
+    <meta property="article:tag" content="Guide" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" />
+    <meta name="twitter:description" content="Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git" />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Kiwi" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Guide" />
+    <meta name="twitter:site" content="@username" />
+    <meta name="twitter:creator" content="@username" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Kiwi",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
+    },
+    "url": "http://localhost:4000/MIT-6.828-Lab-1",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000/assets/images/stock/images-stock-photo-0127845.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000/MIT-6.828-Lab-1"
+    },
+    "description": "Introduction This lab is split into three parts: Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure. Examines the boot loader for out 6.828 kernel. The 6.828 kernel. P.S. : The URL for the course Git repository is https://pdos.csail.mit.edu/6.828/2017/jos.git,and you can run git"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="Kiwi" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
+    <li class="nav-guide" role="menuitem"><a href="/tag/guide/">Guide</a></li>
+    <li class="nav-algorithm" role="menuitem"><a href="/tag/algorithm/">Algorithm</a></li>    
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/username" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/username" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post tag-guide ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="27 September 2017">27 September 2017</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/guide/'>GUIDE</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/stock/images-stock-photo-0127845.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h2 id="introduction">Introduction</h2>
+
+<p>This lab is split into three parts:</p>
+
+<ol>
+<li><p>Getting familiarize with x86 assembly language, the QEMU x86 emulator, and the PC&#39;s power-on bootstrap procedure.</p></li>
+<li><p>Examines the boot loader for out 6.828 kernel.</p></li>
+<li><p>The 6.828 kernel.</p></li>
+</ol>
+
+<p>P.S. : The URL for the course Git repository is <a href="https://pdos.csail.mit.edu/6.828/2017/jos.git">https://pdos.csail.mit.edu/6.828/2017/jos.git</a>,<br>and you can run <code class="prettyprint">git clone https://pdos.csail.mit.edu/6.828/2017/jos.git</code> to get the lab files.</p>
+
+<h2 id="part-1-pc-bootstrap">Part 1: PC Bootstrap</h2>
+
+<ol>
+<li><p><strong>Getting Started with x86 assembly</strong> <br></p>
+
+<blockquote>
+<p><strong>Exercise 1.</strong><br>
+   * Familiar with x86 assembly language:<br><br>
+       <a href="https://pdos.csail.mit.edu/6.828/2017/readings/pcasm-book.pdf">PC Assembly Language Book</a> (warning: the examples in the book are written for the NASM assemble which uses the <em>Intel</em> syntax, but we will use the GNU assemble which uses the <em>AT&amp;T</em> syntax.) <br><br>
+       <a href="http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html">Brennan&#39;s Guide to Inline Assembly</a> (This book gives a good and quite brief description of the <em>AT&amp;T</em> assembly syntax.)<br></p>
+</blockquote></li>
+<li><p><strong>Simulating the x86</strong><br></p></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* Get into the `/jos` directory, then run `make` to build the minimal 6.828 boot loader and kernel.&lt;br&gt;
+
+    ```
+   + as kern/entry.S
+    + cc kern/entrypgdir.c
+    + cc kern/init.c
+    + cc kern/console.c
+    + cc kern/monitor.c
+    + cc kern/printf.c
+    + cc kern/kdebug.c
+    + cc lib/printfmt.c
+    + cc lib/readline.c
+    + cc lib/string.c
+    + ld obj/kern/kernel
+    + as boot/boot.S
+    + cc -Os boot/main.c
+    + ld boot/boot
+    boot block is 380 bytes (max 510)
+    + mk obj/kern/kernel.img
+    ```
+
+* The file `obj/kern/kernel.img` created above is the contents of the emulated PC's "virtual hard disk." This hard disk images contains both our boot loader(`obj/boot/boot`) and our kernel (`obj/kernel`). Then run `make qemu` to running our kernel:&lt;br&gt;
+
+    ```
+   Booting from Hard Disk...
+    6828 decimal is XXX octal!
+    entering test_backtrace 5
+    entering test_backtrace 4
+    entering test_backtrace 3
+    entering test_backtrace 2
+    entering test_backtrace 1
+    entering test_backtrace 0
+    leaving test_backtrace 0
+    leaving test_backtrace 1
+    leaving test_backtrace 2
+    leaving test_backtrace 3
+    leaving test_backtrace 4
+    leaving test_backtrace 5
+    Welcome to the JOS kernel monitor!
+    Type 'help' for a list of commands.
+    K&gt;
+    ```
+
+
+* And there are only two commands you can give to the kernel monitor, `help` and `kerninfo`: &lt;br&gt;
+
+    ```
+   K&gt; help
+    help - display this list of commands
+    kerninfo - display information about the kernel
+    K&gt; kerninfo
+    Special kernel symbols:
+    entry  f010000c (virt)  0010000c (phys)
+    etext  f0101a75 (virt)  00101a75 (phys)
+    edata  f0112300 (virt)  00112300 (phys)
+    end    f0112960 (virt)  00112960 (phys)
+    Kernel executable memory footprint: 75KB
+    K&gt;
+    ```
+</code></pre></div>
+<ol>
+<li><strong>The PC&#39;s Physical Address Space</strong></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* A PC's physical address space is hard-wired(硬连接) to have the following general layout:&lt;br&gt;
+
+    ```  
+   +------------------+  &lt;- 0xFFFFFFFF (4GB)
+    |      32-bit      |
+    |  memory mapped   |
+    |     devices      |
+    |                  |
+    /\/\/\/\/\/\/\/\/\/\
+
+    /\/\/\/\/\/\/\/\/\/\
+    |                  |
+    |      Unused      |
+    |                  |
+    +------------------+  &lt;- depends on amount of RAM
+    |                  |
+    |                  |
+    | Extended Memory  |
+    |                  |
+    |                  |
+    +------------------+  &lt;- 0x00100000 (1MB)
+    |     BIOS ROM     |
+    +------------------+  &lt;- 0x000F0000 (960KB)
+    |  16-bit devices, |
+    |  expansion ROMs  |
+    +------------------+  &lt;- 0x000C0000 (768KB)
+    |   VGA Display    |
+    +------------------+  &lt;- 0x000A0000 (640KB)
+    |                  |
+    |    Low Memory    |
+    |                  |
+    +------------------+  &lt;- 0x00000000
+    ```
+
+
+* 第一代 PC 基于 16 位 Intel 8080 处理器，且只有 1MB 的寻址能力，即从 `0x00000000` 开始，到 `0x000FFFFF` 结束。如图所示，从 `0x00000000` 开始的 640KB 分配给 [**Low Memory/Conventional Memory**](https://en.wikipedia.org/wiki/Conventional_memory#Low)，从 `0x000A0000` 到 `0x000FFFFF` 的 384KB 则是保留给显示器缓冲区等做特殊用途，其中最重要的部分是 Basic Input/Output System，它占用了从 `0x000F0000` 到 `0x000FFFFF` 的 64KB 空间。 &lt;br&gt;
+
+* **BOIS** 负责完成最基础的系统初始化工作，类似于激活显卡，检查存储空间等等。在完成初始化之后，BIOS 从磁盘中加载出操作系统并把计算机的控制权转交给操作系统。&lt;br&gt;
+
+* 当 Intel 突破了 1MB 内存的限制后，PC 开始支持 16MB 和 4GB 的物理内存。所以，现代PC把内存划分为 "Low Memory"(和之前一样) 和 "Extended Memory"(所有其他的东西)。另外，还有一些空间被 BIOS 保留给了 PCI 设备。&lt;br&gt;
+</code></pre></div>
+<ol>
+<li><strong>The Rom BIOS</strong></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* Using QEMU to investigate how an IA-32 compatible computer boots.&lt;br&gt;
+
+* steps : &lt;br&gt;
+
+    * open two terminal windows and `cd` both shells into the lab directory.
+    * In one, run `make qemu-gdb` or `make qemu-nox-gdb`. This start up QEMU, but QEMU stops just before the processor executes the first instruction and waits for a debugging connection from GDB.
+    * In the second terminal, run `gdb` and we can see this: &lt;br&gt; 
+
+        ```
+       GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.3) 7.7.1
+        Copyright (C) 2014 Free Software Foundation, Inc.
+        License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+        This is free software: you are free to change and redistribute it.
+        There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+        and "show warranty" for details.
+        This GDB was configured as "i686-linux-gnu".
+        Type "show configuration" for configuration details.
+        For bug reporting instructions, please see:
+        &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+        Find the GDB manual and other documentation resources online at:
+        &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+        For help, type "help".
+        Type "apropos word" to search for commands related to "word".
+        + target remote localhost:25000
+        warning: A handler for the OS ABI "GNU/Linux" is not built into this configuration
+        of GDB.  Attempting to continue with the default i8086 settings.
+
+        The target architecture is assumed to be i8086
+        [f000:fff0]    0xffff0: ljmp   $0xf000,$0xe05b
+        0x0000fff0 in ?? ()
+        + symbol-file kernel
+        (gdb) 
+        ```
+
+&gt; **Exercise 2.**&lt;br&gt;
+&gt;   * Using GDB's `si`(step instruction) command to trace into the ROM BIOS, and try to have the general idea of what the BIOS is doing first.
+
+* 简述一下 PC 启动的流程：&lt;br&gt;
+
+    * PC 启动时， `CS = 0xf000, IP = 0xfff0`，即从物理地址 `0x000ffff0` 开始执行第一条指令&lt;br&gt;
+    * 第一条指令是 `ljmp $0xf000, $0xe05b`， 即跳转到分段地址 `CS = 0xf000, IP = 0xe05b` 。因为 BIOS 末端地址为 `0x100000` ， 所以刚开始的地址离结束地址只有 16 个字节，存放不了什么指令，因此第一条指令才是跳转指令，跳转到 BIOS 刚开始的地方。&lt;br&gt;
+    * 当 BIOS 开始 执行时，它先创建一个**中断描述符表**（IDT），并初始化各种设备和 PCI 总线。&lt;br&gt;
+    * 最后，BIOS 开始搜索可引导设备，并读取引导加载程序并把计算机控制权转交给它。&lt;br&gt;
+
+
+*  实模式地址：&lt;br&gt;
+
+    * 在实模式（即 PC 刚启动时），地址换算的公式为：&lt;br&gt; 
+        \\(physical\\ address = 16 * segment + offset\\). &lt;br&gt;
+        所以，当 PC 将 `CS`（code segment register） 置为 `0xf000` ， `IP`（instruction pointer） 置为 `0xfff0`，物理地址为： &lt;br&gt; 
+        \\(16 * 0xf000 + 0xfff0\\) &lt;br&gt;
+        \\(= 0xf0000 + 0xfff0\\) &lt;br&gt;
+        \\(= 0xffff0\\)&lt;br&gt;
+    * 实模式只有 16 位的寻址能力，它将内存看成分段的区域，程序段和数据位于不同的区域，每一个指针都指向实际的物理地址。
+    * 可以通过修改 `A20` 总线来完成从实模式到保护模式的转换。
+</code></pre></div>
+<h2 id="part-2-the-boot-loader">Part 2: The Boot Loader</h2>
+
+<ol>
+<li><p><strong>Boot Loader</strong></p>
+
+<p>电脑的硬盘或软盘通常被划分为 512 字节一块的扇形区（sector）。扇形区是磁盘 IO 的最小粒度：每次读写至少包含一个或者多个扇形区。如果一个磁盘是可引导的，则它的第一块扇形区为 <em>引导扇区（boot sector）</em> ，里面存放着引导加载程序。当 BIOS 找到一个可引导的磁盘，它会先加载引导扇区到到内存中，位于物理地址 <code class="prettyprint">0x7c00</code> 到 <code class="prettyprint">0x7dff</code> 的位置。然后执行 <code class="prettyprint">jmp</code> 指令将 <code class="prettyprint">CS:IP</code> 设置为 <code class="prettyprint">0000:7c00</code>，再转交控制权。<br> </p>
+
+<p>在 xv6 中，boot loader 由一个汇编程序 <code class="prettyprint">boot/boot.s</code> 和一个 C 语言文件 <code class="prettyprint">boot/main.c</code> 组成。boot loader 主要执行这两个函数：<br></p></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* 首先，boot loader 将处理器从实模式切换到 32 位的保护模式，因为只有在这个模式下，软件才能使用处理器物理地址空间中 1MB 以上的空间。在保护模式中， 从分段地址（segmented address）到物理地址的映射和实模式不同，在切换后，偏移量（offset）从 16bit 变成了 32bit &lt;br&gt;
+
+* 然后，boot loader 从磁盘中直接读取内核。&lt;br&gt;
+
+在理解了 xv6 的 boot loader 源码后，可以去看看它的反汇编文件 `obj/boot/boot.asm`，同样还有内核的反汇编文件 `obj/kern/kernel.asm` &lt;br&gt;
+通过 `b` 指令可以在 GDB 中设置断点，例如 `b *0x7c00` ；在断点后，可以通过 `c` 和 `si` 指令来继续执行下一个指令，`si N` 可以选择跳到之后的第 N 个指令处。&lt;br&gt;
+通过 `x/i` 指令可以用来测试内存中的指令。&lt;br&gt;
+
+&gt; **Exercise 3.**&lt;br&gt;
+&gt;   * Set a breakpoint at address `0x7c00`, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in `boot/boot.S`, using the source code and the disassembly file `obj/boot/boot.asm` to keep track of where you are. Also use the `x/i` command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in `obj/boot/boot.asm` and GDB.&lt;br&gt;
+&gt;   * Trace into `bootmain()` in `boot/main.c`, and then into `readsect()`. Identify the exact assembly instructions that correspond to each of the statements in `readsect()`. Trace through the rest of `readsect()` and back out into `bootmain()`, and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.&lt;br&gt;
+
+*Question 1* : At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode?&lt;br&gt;
+* Answer : 查看 `boot.asm` 文件，可以发现：&lt;br&gt;
+
+    ```
+   # Jump to next instruction, but in 32-bit code segment.
+    # Switches processor into 32-bit mode.
+    ljmp    $PROT_MODE_CSEG, $protcseg
+        7c2d:   ea 32 7c 08 00 66 b8    ljmp   $0xb866,$0x87c32
+
+    00007c32 &lt;protcseg&gt;:
+
+    .code32                     # Assemble for 32-bit mode
+    ```
+
+    因此可以得出：从 `0x00007c32` 处开始执行 32位模式的代码，`ljmp   $0xb866,$0x87c32` 完成了从实模式到保护模式的切换。&lt;br&gt;
+
+*Question 2* : What is the last instruction of the boot loader executed, and what is the first instruction of the kernel it just loaded?
+* Answer : 查看 `boot.asm` 文件，在函数 `void bootmain(void)` 中可以发现 boot loader 执行的最后一条指令：&lt;br&gt;
+
+    ```
+   // call the entry point from the ELF header
+    // note: does not return!
+    ((void (*)(void)) (ELFHDR-&gt;e_entry))();
+    7d61:   ff 15 18 00 01 00       call   *0x10018
+    ```
+
+    在 `kernel.asm` 中可以找到 kernel 执行的第一条指令：&lt;br&gt;
+
+    ```
+   entry:
+    movw    $0x1234,0x472           # warm boot
+    ```
+
+*Question 3* : Where is the first instruction of the kernel?
+* Answer : 在 `obj/kern/` 目录下，使用 `objdump -f kernel` 命令可以查看反汇编文件的具体信息：&lt;br&gt;
+
+    ```
+   kernel：     文件格式 elf32-i386
+    体系结构：i386， 标志 0x00000112：
+    EXEC_P, HAS_SYMS, D_PAGED
+    起始地址 0x0010000c
+    ```
+
+    可以看出 kernel 的第一条指令的地址为 `0x0010000c` &lt;br&gt;
+
+*Question 4* : How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information?
+* Answer : 是通过 ELF 文件头获取所有 program header table，每个 program header table 记录了三个重要信息用以描述段 （segment）：&lt;br&gt;
+    * p_pa （物理内存地址）&lt;br&gt;
+    * p_memsz （所占内存大小）&lt;br&gt;
+    * p_offset （相对文件的偏移地址）&lt;br&gt;
+    根据这三个信息，对每个段，从 p_offset 开始，读取 p_memsz 个 byte 的内容（需要根据扇区（sector）大小对齐），放入 p_pa 开始的内存中。通过 `objdump -p kernel` 命令可以查看：&lt;br&gt;
+
+
+    ```
+   kernel：     文件格式 elf32-i386
+
+    程序头：
+        LOAD off    0x00001000 vaddr 0xf0100000 paddr 0x00100000 align 2**12
+            filesz 0x0000716c memsz 0x0000716c flags r-x
+        LOAD off    0x00009000 vaddr 0xf0108000 paddr 0x00108000 align 2**12
+            filesz 0x0000a300 memsz 0x0000a944 flags rw-
+        STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
+            filesz 0x00000000 memsz 0x00000000 flags rwx
+    ```
+</code></pre></div>
+<ol>
+<li><p><strong>Loading the Kernel</strong></p>
+
+<p>We will now look in further detail at the C language portion of the boot loader, in <code class="prettyprint">boot/main.c</code>.</p>
+
+<blockquote>
+<p><strong>Exercise 4.</strong><br><br>
+  * Read about programming with pointers in C. The best reference for the C language is &quot;K&amp;R&quot;</p>
+</blockquote></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* 什么是 `ELF` ? &lt;br&gt;
+    在编译和链接一个 C 语言程序时，编译器先从 `.c` 源代码文件中生成 `.o` 目标文件（二进制文件），链接器再结合所有已编译的目标文件，生成 ELF 格式的二进制文件， i.e "Executable and Linkable Format".&lt;br&gt;
+    一个 ELF 可执行文件通常由一个定长的带有加载信息的头部（header）和几个变长的带有代码或数据段的程序部分（program sections）组成：&lt;br&gt;
+
+    * `.text` :   程序的可执行指令&lt;br&gt; 
+    * `.rodata` : 只读数据，例如 C 编译器产生的 ASCII 字符串常量&lt;br&gt;
+    * `.data:` :  数据段存储着程序的初始化变量，例如 声明且已初始化的全局变量&lt;br&gt;
+
+    在链接器计算程序内存分布时，它会为未初始化的全局变量保留空间，并存储在 `.data`段后的 `.bss` 段中，C 语言会为未初始化的全局变量赋值为 0.&lt;br&gt;
+
+* 几个命令：&lt;br&gt;
+
+    * `objdump -h obj/kern/kernel` : Examine the full list of the names, sizes, and link addresses of all the sections in the kernel executable.&lt;br&gt;
+    * `objdump -h obj/boot/boot.out` : look at the .text section of the boot loader.&lt;br&gt;
+    * `objdump -x obj/kern/kernel` : inspect the program headers. &lt;br&gt;
+</code></pre></div>
+<h2 id="summary">Summary</h2>
+
+<figure>
+    <a href="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"><img src="https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg"></a>
+    <figcaption>
+        fighting.
+    </figcaption>
+</figure>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Kiwi</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/kiwi.png" alt="kiwi" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/kiwi">Kiwi</a></h4>
+                                
+                                    <p>The professional publishing platform</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/kiwi">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Kiwi &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/guide/">Guide</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/GPU-Installation-Guide">Ubuntu 16.04 + GTX 1050ti + Cuda 8.0 + cuDNN 6.0 Installation Guide</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/MIT-6.828-OverView">MIT 6.828 OverView</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/guide/">
+                                
+                                    See all 2 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/Hihocoder-1596">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-419599.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/Hihocoder-1596">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Hihocoder 1596</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>## Contest Information source: [It's from the hihocoder](https://hihocoder.com/problemset/problem/1596) ## Description 给出一个正整数数列 \\(a\[1\], ..., a\[n\]\(n>3\) \\)，如果对于所有 \\( 2 ≤ i ≤ n-1 \\)，都有 \\( a\[i-1\] + a\[i+1\] ≥ 2×a\[i\] \\)，则称这个数列是美丽的。 现在有一个正整数数列 \\(b\[1\], ..., b\[n\]\(n>3\)</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/kiwi/">Kiwi</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/MIT-6.828-OverView">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-0127845.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/MIT-6.828-OverView">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Guide</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">MIT 6.828 OverView</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>Description 6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。 schedule 6.828 goals Understand operating systems in detail by designing and implementing a small O/S Hands-on experience with building systems (&quot;Applying 6.033&quot;) What</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/kiwi/">Kiwi</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://localhost:4000/">
+            
+                <img src="/assets/images/favicon.png" alt="Kiwi icon" />
+            
+            <span>Kiwi</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=MIT++6.828++Lab+1+%3A++C%EF%BC%8CAssembly%EF%BC%8CTools%EF%BC%8Cand+Bootstrapping&amp;url=https://jekyller.github.io/jasper2/MIT-6.828-Lab-1"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/MIT-6.828-Lab-1"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://localhost:4000/">Kiwi</a> &copy; 2018</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/username" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/username" target="_blank" rel="noopener">Twitter</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Kiwi" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Kiwi</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-113198900-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

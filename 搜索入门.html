@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>搜索入门</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="The personal publishing platform" />
+    <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Kiwi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="搜索入门" />
+    <meta property="og:description" content="本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： * 利用深搜计算一个公式，本质还是做枚举； * 例题： [Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514) ★★☆☆☆" />
+    <meta property="og:url" content="http://localhost:4000/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-29360329515.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/username" />
+    <meta property="article:author" content="https://www.facebook.com/username" />
+    <meta property="article:published_time" content="2017-07-06T07:59:59+08:00" />
+    <meta property="article:modified_time" content="2017-07-06T07:59:59+08:00" />
+    <meta property="article:tag" content="Algorithm" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="搜索入门" />
+    <meta name="twitter:description" content="本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： * 利用深搜计算一个公式，本质还是做枚举； * 例题： [Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514) ★★☆☆☆" />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-29360329515.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Kiwi" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:site" content="@username" />
+    <meta name="twitter:creator" content="@username" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Kiwi",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
+    },
+    "url": "http://localhost:4000/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000/assets/images/stock/images-stock-photo-29360329515.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8"
+    },
+    "description": "本文参考自&quot;英雄哪里出来&quot;的博文 深度优先搜索 (DFS) 1. DFS 算法描述： DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作： a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b； b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a； c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点； 上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。 基础应用： a. 求N的阶乘 b. 求斐波那契数列的第N项 c. 求N个数的全排列 高级应用： a. 枚举： 数据范围较小的的排列、组合的穷举； 例题： Dessert ★☆☆☆☆ 枚举 Matrix ★☆☆☆☆ 枚举 Pairs of Integers ★★☆☆☆ 枚举 b. 容斥原理： * 利用深搜计算一个公式，本质还是做枚举； * 例题： [Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514) ★★☆☆☆"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="搜索入门" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="Kiwi" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
+    <li class="nav-guide" role="menuitem"><a href="/tag/guide/">Guide</a></li>
+    <li class="nav-algorithm" role="menuitem"><a href="/tag/algorithm/">Algorithm</a></li>    
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/username" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/username" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime=" 5 July 2017"> 5 July 2017</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">搜索入门</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/stock/images-stock-photo-29360329515.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><a href="http://cppblog.com/menjitianya/archive/2015/10/09/211980.html">本文参考自&quot;英雄哪里出来&quot;的博文</a></p>
+
+<h2 id="dfs">深度优先搜索 (DFS)</h2>
+
+<h3 id="1-dfs">1. DFS</h3>
+
+<ul>
+<li><p>算法描述：</p>
+
+<p>DFS的具体算法描述为选择一个起始点v作为当前结点，执行如下操作：</p>
+
+<ul>
+<li>a. 访问 当前结点，并且标记该结点已被访问，然后跳转到b；</li>
+<li>b. 如果存在一个和 当前结点 相邻并且尚未被访问的结点u，则将u设为 当前结点，继续执行a；</li>
+<li>c. 如果不存在这样的u，则进行回溯，回溯的过程就是回退 当前结点；</li>
+</ul>
+
+<p>上述所说的当前结点需要用一个栈来维护，每次访问到的结点入栈，回溯的时候出栈（也可以用递归实现，更加方便易懂）。</p></li>
+<li><p>基础应用：</p>
+
+<p>a. 求N的阶乘</p>
+
+<p>b. 求斐波那契数列的第N项</p>
+
+<p>c. 求N个数的全排列</p></li>
+<li><p>高级应用：</p>
+
+<p>a. 枚举：</p>
+
+<ul>
+<li>数据范围较小的的排列、组合的穷举；</li>
+<li><p>例题：</p>
+
+<p><a href="http://poj.org/problem?id=1950">Dessert</a>                    ★☆☆☆☆    枚举</p>
+
+<p><a href="http://poj.org/problem?id=2078">Matrix</a>                     ★☆☆☆☆    枚举</p>
+
+<p><a href="http://poj.org/problem?id=1117">Pairs of Integers</a>          ★★☆☆☆    枚举 </p></li>
+</ul>
+
+<p>b. 容斥原理：<br>
+* 利用深搜计算一个公式，本质还是做枚举；<br>
+* 例题：</p>
+<div class="highlight"><pre><code class="language-" data-lang="">[Frogs](http://acm.hdu.edu.cn/showproblem.php?pid=5514)                    ★★☆☆☆    容斥
+
+[幸运数字](http://www.lydsy.com/JudgeOnline/problem.php?id=1853)                    ★★☆☆☆    容斥
+</code></pre></div>
+<p>c. 基于状态压缩和数位统计的动态规划：<br>
+* 一般解决棋盘摆放问题，k进制表示状态，然后利用深搜进行状态转移；<br>
+* 例题：</p>
+<div class="highlight"><pre><code class="language-" data-lang="">[棋盘问题](http://poj.org/problem?id=1321)                    ★★☆☆☆    dfs
+
+[Beautiful Number](http://blog.csdn.net/febr2/article/details/66976342)                    ★★★☆☆    数位DP
+
+[Round Number](http://blog.csdn.net/febr2/article/details/68067676)                    ★★★☆☆    数位DP
+</code></pre></div>
+<p>d.记忆化搜索：<br>
+* 某个状态已经被计算出来，就将它cache住，下次要用的时候不需要重新求，此所谓记忆化。下面会详细讲到记忆化搜索的应用范围；<br>
+* 例题</p>
+<div class="highlight"><pre><code class="language-" data-lang="">[滑雪](poj.org/problem?id=1088)                    ★★★☆☆    记忆化搜索
+
+[Bribe the Prisoners](http://blog.csdn.net/febr2/article/details/66472500)                    ★★★☆☆    记忆化搜索
+</code></pre></div>
+<p>e.有向图强连通分量：<br>
+* 经典的Tarjan算法；<br>
+* 求解2-sat问题的基础；</p>
+
+<p>f. 无向图割边割点和双连通分量：<br>
+* 经典的Tarjan算法；</p>
+
+<p>g. LCA：<br>
+* 最近公共祖先递归求解；<br>
+* 例题：</p>
+<div class="highlight"><pre><code class="language-" data-lang="">[Nearest Common Ancestors](http://poj.org/problem?id=1330)                    ★★☆☆☆    LCA
+</code></pre></div>
+<p>h.博弈：<br>
+* 利用深搜计算SG值；</p>
+
+<p>i.二分图最大匹配：<br>
+* 经典的匈牙利算法；<br>
+* 最小顶点覆盖、最大独立集、最小值支配集 向二分图的转化；<br>
+* 例题</p>
+<div class="highlight"><pre><code class="language-" data-lang="">[Chessboard](http://poj.org/problem?id=2446)                    ★☆☆☆☆    二分图最大匹配
+
+[Air Raid](http://poj.org/problem?id=1422)                    ★★☆☆☆    最小路径覆盖
+
+[Difference](https://vjudge.net/problem/542124/origin)                    ★★★☆☆    二分图最大匹配
+
+[Necklace](http://acm.hdu.edu.cn/showproblem.php?pid=5727)                    ★★★★☆    二分图最大匹配
+</code></pre></div>
+<p>j.欧拉回路：<br>
+* 经典的圈套圈算法；</p>
+
+<p>k. K短路：<br>
+* 依赖数据，数据不卡的话可以采用2分答案 + 深搜；也可以用广搜 + A*</p>
+
+<p>l. 线段树<br>
+* 二分经典思想，配合深搜枚举左右子树；</p>
+
+<p>m. 最大团<br>
+* 极大完全子图的优化算法。</p>
+
+<p>n. 最大流<br>
+* EK算法求任意路径中有涉及。</p>
+
+<p>o. 树形DP：<br>
+* 即树形动态规划，父结点的值由各个子结点计算得出。</p></li>
+</ul>
+
+<h3 id="2-dfs">2. 基于DFS的记忆化搜索</h3>
+
+<ul>
+<li><p>算法原理：</p>
+
+<p>类似动态规划的思想，每次将已经计算出来的状态的值存储到数组中，下次需要的时候直接读数组中的值，避免重复计算。</p></li>
+<li><p>例题：往上翻 ლ(╹◡╹ლ)</p></li>
+</ul>
+
+<h3 id="3-dfs">3. 基于DFS的剪枝</h3>
+
+<ul>
+<li><p>算法原理</p>
+
+<p>通过某种判断，避免一些不必要的遍历过程</p>
+
+<p>a. 正确性</p>
+
+<ul>
+<li>剪掉的子树中如果存在可行解（或最优解），那么在其它的子树中很可能搜不到解导致搜索失败，所以剪枝的前提必须是要正确；</li>
+</ul>
+
+<p>b. 准确性<br>
+* 剪枝要“准”。所谓“准”，就是要在保证在正确的前提下，尽可能多得剪枝。</p>
+
+<p>c. 高效性<br>
+* 剪枝一般是通过一个函数来判断当前搜索空间是否是一个合法空间，在每个结点都会调用到这个函数，所以这个函数的效率很重要。</p></li>
+<li><p>可行性剪枝</p>
+
+<ul>
+<li><p>算法原理：</p>
+
+<p>如果判断子树中不可能存在可行解，俺么剪掉该子树。</p></li>
+</ul></li>
+<li><p>最优性剪枝(上下界剪枝) A*</p>
+
+<ul>
+<li><p>算法原理：</p>
+
+<p>最优性剪枝一般是处理最优解的问题。以求两个状态之间的最小步数为例，搜索最小步数的过程：一般情况下，需要保存一个“当前最小步数”，这个最小步数就是当前解的一个下界d。在遍历到搜索树的叶子结点时，得到了一个新解，与保存的下界作比较，如果新解的步数更小，则令它成为新的下界。搜索结束后，所保存的解就是最小步数。而当我们已经搜索了k歩，如果能够通过某种方式估算出当前状态到目标状态的理论最少步数s时，就可以计算出起点到目标点的理论最小步数，即估价函数h = k + s，那么当前情况下存在最优解的必要条件是h &lt; d，否则就可以剪枝了。最优性剪枝是不断优化解空间的过程。</p></li>
+</ul></li>
+<li><p>例题：</p>
+
+<p><a href="http://poj.org/problem?id=3400">Dropping the stones</a>                    ★★★☆☆    DFS+剪枝</p>
+
+<p><a href="http://poj.org/problem?id=1419">Graph Coloring</a>                    ★★★☆☆    DFS+剪枝+最大团</p></li>
+</ul>
+
+<h3 id="4-dfs-ida">4. 基于DFS的IDA*</h3>
+
+<ul>
+<li><p>算法原理：</p>
+
+<p>迭代加深分两步走：</p>
+
+<ul>
+<li>1、枚举深度。</li>
+<li>2、根据限定的深度进行DFS，并且利用估价函数进行剪枝。</li>
+</ul></li>
+<li><p>例题：</p>
+
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1667">The Rotation Game</a>                    ★★★☆☆    IDA*</p></li>
+</ul>
+
+<h2 id="bfs">广度优先搜索 (BFS)</h2>
+
+<h3 id="1-bfs">1. BFS</h3>
+
+<ul>
+<li><p>算法原理：</p>
+
+<p>广度优先搜索即Breadth First Search，也是图遍历算法的一种</p>
+
+<p>BFS的具体算法描述为选择一个起始点v放入一个先进先出的队列中，执行如下操作：</p>
+
+<ul>
+<li>a. 如果队列不为空，弹出一个队列首元素，记为当前结点，执行b；否则算法结束；</li>
+<li>b. 将与 当前结点 相邻并且尚未被访问的结点的信息进行更新，并且全部放入队列中，继续执行a；</li>
+</ul>
+
+<p>维护广搜的数据结构是队列和HASH，队列就是官方所说的open-close表，HASH主要是用来标记状态的，比如某个状态并不是一个整数，可能是一个字符串，就需要用字符串映射到一个整数，可以自己写个散列HASH表，不建议用STL的map，效率奇低。   </p></li>
+<li><p>基础应用：</p>
+
+<p>a. 最短路：</p>
+
+<ul>
+<li>bellman-ford最短路的优化算法SPFA，主体是利用BFS实现的。</li>
+<li>绝大部分四向、八向迷宫的最短路问题。</li>
+</ul>
+
+<p>b. 拓扑排序：<br>
+* 首先找入度为0的点入队，弹出元素执行“减度”操作，继续将减完度后入度为0的点入队，循环操作，直到队列为空，经典BFS操作；</p>
+
+<p>c. FloodFill：<br>
+* 经典洪水灌溉算法；</p></li>
+<li><p>高级应用</p>
+
+<p>a. 差分约束：</p>
+
+<ul>
+<li>数形结合的经典算法，利用SPFA来求解不等式组。</li>
+</ul>
+
+<p>b. 稳定婚姻：<br>
+* 二分图的稳定匹配问题，试问没有稳定的婚姻，如何有心思学习算法，所以一定要学好BFS啊；         </p>
+
+<p>c. AC自动机：<br>
+* 字典树 + KMP + BFS，在设定失败指针的时候需要用到BFS。<br>
+  详细算法参见：<a href="http://www.cppblog.com/menjitianya/archive/2014/07/10/207604.html">http://www.cppblog.com/menjitianya/archive/2014/07/10/207604.html</a></p>
+
+<p>d. 矩阵二分：<br>
+* 矩阵乘法的状态转移图的构建可以采用BFS；</p>
+
+<p>e. 基于k进制的状态压缩搜索：<br>
+* 这里的k一般为2的幂，状态压缩就是将原本多维的状态压缩到一个k进制的整数中，便于存储在一个一维数组中，往往可以大大地节省空间，又由于k为2的幂，所以状态转移可以采用位运算进行加速，HDU1813和HDU3278以及HDU3900都是很好的例子；</p></li>
+<li><p>例题：</p>
+
+<p><a href="http://poj.org/problem?id=1426">Find The Multiple</a>                    ★☆☆☆☆    BFS </p>
+
+<p><a href="http://poj.org/problem?id=1475">Pushing Boxes</a>                    ★★☆☆☆    BFS</p>
+
+<p><a href="http://poj.org/problem?id=1606">Jugs</a>                    ★★☆☆☆    BFS</p></li>
+</ul>
+
+<h3 id="2-bfs-a">2. 基于BFS的A*</h3>
+
+<ul>
+<li><p>算法原理</p>
+
+<p>在搜索的时候，结点信息要用堆（优先队列）维护大小，即能更快到达目标的结点优先弹出。</p></li>
+<li><p>基础应用</p>
+
+<p>a. 八数码问题</p>
+
+<p>b. K短路问题</p></li>
+<li><p>例题：</p>
+
+<p><a href="http://poj.org/problem?id=1077">Eight</a>                    ★★☆☆☆    BFS+A*</p>
+
+<p><a href="http://poj.org/problem?id=2046">Gap</a>                    ★★★☆☆    BFS+A*</p></li>
+</ul>
+
+<h3 id="3-bfs">3. 双向BFS</h3>
+
+<ul>
+<li><p>算法原理</p>
+
+<p>初始状态 和 目标状态 都知道，求初始状态到目标状态的最短距离；</p>
+
+<p>利用两个队列，初始化时初始状态在1号队列里，目标状态在2号队列里，并且记录这两个状态的层次都为0，</p>
+
+<p>然后分别执行如下操作：</p>
+
+<ul>
+<li>a. 若1号队列已空，则结束搜索，否则从1号队列逐个弹出层次为K(K &gt;= 0)的状态；
+
+<ul>
+<li>i.  如果该状态在2号队列扩展状态时已经扩展到过，那么最短距离为两个队列扩展状态的层次加和，结束搜索；</li>
+<li>ii. 否则和BFS一样扩展状态，放入1号队列，直到队列首元素的层次为K+1时执行b；</li>
+</ul></li>
+<li>b. 若2号队列已空，则结束搜索，否则从2号队列逐个弹出层次为K(K &gt;= 0)的状态；
+
+<ul>
+<li>i.  如果该状态在1号队列扩展状态时已经扩展到过，那么最短距离为两个队列扩展状态的层次加和，结束搜索；</li>
+<li>ii. 否则和BFS一样扩展状态，放入2号队列，直到队列首元素的层次为K+1时执行a；</li>
+</ul></li>
+</ul></li>
+<li><p>例题：</p>
+
+<p><a href="http://poj.org/problem?id=1198">Solitaire</a>                    ★★★☆☆    双向BFS</p>
+
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1430">魔板</a>                    ★★★★☆    双向BFS</p>
+
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3567">Eight II</a>                    ★★★★★    双向BFS</p></li>
+</ul>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Kiwi</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/kiwi.png" alt="kiwi" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/kiwi">Kiwi</a></h4>
+                                
+                                    <p>The professional publishing platform</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/kiwi">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Kiwi &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/algorithm/">Algorithm</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/WannaFly-Round-2-B">WannaFly Round #2 B</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/2015-SWERC-B">2015 Southwestern Europe Regional Contest (SWERC) B</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/2016-NCPC-B">2016 Nordic Collegiate Programming Contest B</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/algorithm/">
+                                
+                                    See all 30 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/CodeForces-Educational-Round-23">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-419599.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/CodeForces-Educational-Round-23">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Codeforces Educational Round #23</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>## Contest Information source: [It's from the Educational Round #23 of the codeforces](http://codeforces.com/contest/817) ## Problem C 给出两个整数 \\(n,s\\)， 设 \\(n\\) 的数位和为 \\(ds\\)，求在区间 \\([1,n]\\) 之间满足 \\( det = (x-ds)≥s \\) 的数 \\(x\\) 有多少个？ 数据范围：\\(</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/kiwi/">Kiwi</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/%E7%8E%B2%E7%8F%91%E6%9D%AF-Round-17-B">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-loli.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/%E7%8E%B2%E7%8F%91%E6%9D%AF-Round-17-B">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">玲珑杯 Round #17 problem B</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>Problem Information source: It&#39;s from the Round #17 of &quot;LingLong&quot; cup Description 众所周知zhu是一个大厨，zhu一直有自己独特的咸鱼制作技巧. tang是一个咸鱼供应商，他告诉zhu在他那里面有N条咸鱼（标号从\(1\)到\(N\)）可以被用来制作. 每条咸鱼都有一个咸鱼值 \( K_i \) ，初始时所有 \( K_i \) 都是\(0\). zhu是一个特别的人，他有\(M\)个咸数（咸鱼数字）, 对于每个咸数\(x\)，他都会让所有满足标号是\(x\)倍数的咸鱼的咸鱼值异或上\(1\). zhu现在想知道经过了这\(M\)个咸数的筛选之后，最终有多少条的咸鱼的咸鱼值是\(1\)? As we all know that Mr.zhu is</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/kiwi/">Kiwi</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://localhost:4000/">
+            
+                <img src="/assets/images/favicon.png" alt="Kiwi icon" />
+            
+            <span>Kiwi</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">搜索入门</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8&amp;url=https://jekyller.github.io/jasper2/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/%E6%90%9C%E7%B4%A2%E5%85%A5%E9%97%A8"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://localhost:4000/">Kiwi</a> &copy; 2018</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/username" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/username" target="_blank" rel="noopener">Twitter</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Kiwi" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Kiwi</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-113198900-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

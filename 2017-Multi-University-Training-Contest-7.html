@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>2017 Multi-University Training Contest #7</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="The personal publishing platform" />
+    <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/2017-Multi-University-Training-Contest-7" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Kiwi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="2017 Multi-University Training Contest #7" />
+    <meta property="og:description" content="Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) Solution 不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个" />
+    <meta property="og:url" content="http://localhost:4000/2017-Multi-University-Training-Contest-7" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/username" />
+    <meta property="article:author" content="https://www.facebook.com/username" />
+    <meta property="article:published_time" content="2017-08-16T07:59:59+08:00" />
+    <meta property="article:modified_time" content="2017-08-16T07:59:59+08:00" />
+    <meta property="article:tag" content="Algorithm" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="2017 Multi-University Training Contest #7" />
+    <meta name="twitter:description" content="Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) Solution 不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个" />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Kiwi" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:site" content="@username" />
+    <meta name="twitter:creator" content="@username" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Kiwi",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
+    },
+    "url": "http://localhost:4000/2017-Multi-University-Training-Contest-7",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000/assets/images/stock/images-stock-photo-20170726.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000/2017-Multi-University-Training-Contest-7"
+    },
+    "description": "Contest Information source: The 2017 Multi-University Training Contest #7 from HDU OJ Problem F 从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数 数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) Solution 不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="2017 Multi-University Training Contest #7" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="Kiwi" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
+    <li class="nav-guide" role="menuitem"><a href="/tag/guide/">Guide</a></li>
+    <li class="nav-algorithm" role="menuitem"><a href="/tag/algorithm/">Algorithm</a></li>    
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/username" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/username" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="15 August 2017">15 August 2017</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">2017 Multi-University Training Contest #7</h1>
+            </header>
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/stock/images-stock-photo-20170726.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h2 id="contest-information">Contest Information</h2>
+
+<p>source: <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+7&source=1&searchmode=source">The 2017 Multi-University Training Contest #7 from HDU OJ</a></p>
+
+<h2 id="problem-f">Problem F</h2>
+
+<p>从 \( [1, n] \) 中至多选择 \( k \) 个数，使得它们的乘积不能被任何平方数整除，求方案数  <br></p>
+
+<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,k ≤ 500 \) <br></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>不能被任何平方数整除 \(\rightarrow\) 每个质因子不超过两个，由于 \( n \) 不超过 \(500\)，所以我们考虑 \(\sqrt 500\) 以内的质数，总共只有 \(8\) 个 <br></p>
+
+<p>那么我们将所有数按其质因子分解的情况分成 \(2^8\) 组（包含多个同种因子的数直接排除，而大于 \(\sqrt 500\) 的质数每个数最多包含一个），然后我们定义 \(DP[k][s]\) 为选择 \(k\) 个数，质因子包含情况为 \(s\) 的方案数，然后遍历所有数，判断它能加入到那些状态里，统计方案（注意不同组不能相交）<br></p>
+
+<h2 id="ac-code">AC Code</h2>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">prime</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">};</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">use</span><span class="p">[</span><span class="mi">505</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">stat</span><span class="p">[</span><span class="mi">505</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="mi">505</span><span class="p">][</span><span class="mi">505</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">;</span>
+<span class="n">LL</span> <span class="n">dp</span><span class="p">[</span><span class="mi">505</span><span class="p">][</span><span class="mi">505</span><span class="p">],</span><span class="n">last</span><span class="p">[</span><span class="mi">505</span><span class="p">][</span><span class="mi">505</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">init</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">use</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">clear</span><span class="p">();</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">%</span><span class="p">(</span><span class="n">Sqr</span><span class="p">(</span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span><span class="o">==</span><span class="mi">0</span> <span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">stat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span> <span class="n">x</span><span class="o">%</span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span> <span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">stat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">j</span><span class="p">);</span>
+                <span class="n">x</span><span class="o">/=</span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">stat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">use</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pb</span><span class="p">(</span><span class="n">stat</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">else</span> <span class="n">use</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">pb</span><span class="p">(</span><span class="n">stat</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>   
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">x</span> <span class="o">:</span> <span class="n">use</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">CLR</span><span class="p">(</span><span class="n">last</span><span class="p">);</span><span class="n">CLR</span><span class="p">(</span><span class="n">stat</span><span class="p">);</span><span class="n">CLR</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="n">CLR</span><span class="p">(</span><span class="n">dp</span><span class="p">);</span>
+        <span class="n">read</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="n">read</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+        <span class="n">init</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">use</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">s</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">);</span><span class="n">s</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">s</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+                <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>   
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">ss</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">ss</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">);</span><span class="n">ss</span><span class="o">++</span><span class="p">)</span>
+                        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">s</span><span class="o">&amp;</span><span class="n">ss</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">s</span><span class="o">|</span><span class="n">ss</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">s</span><span class="o">|</span><span class="n">ss</span><span class="p">]</span> <span class="o">+</span> <span class="n">last</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">ss</span><span class="p">])</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span> 
+            <span class="p">}</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">s</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">);</span><span class="n">s</span><span class="o">++</span><span class="p">)</span>
+                    <span class="n">last</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">s</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">s</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">);</span><span class="n">s</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">ans</span><span class="o">=</span><span class="p">(</span><span class="n">ans</span><span class="o">+</span><span class="n">last</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">s</span><span class="p">])</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">out</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="problem-g">Problem G</h2>
+
+<p>给 \( n \) 个小朋友发糖果，每个人最多不能超过 \( m \) 个。 同时小朋友有 \(k\) 个要求，第\( x_i \) 个小朋友拿的糖果数不能比第 \(y_i\) 个小朋友多 \(z_i\) 个以上。第 \(i\) 个小朋友拿 \(j\) 个糖果能获得 \(w_{i,j}\) 的满足值，求最大的满足值  <br></p>
+
+<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n,m ≤ 50, 1 ≤ k ≤ 150, 1 ≤ x,y ≤ n, \|z\| &lt; 233, 0  ≤ w_{i,j} ≤ 1000\) <br></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>如果不考虑 \(k\) 个要求，我们可以对于每个小朋友取最大的满足值即可，网络流建图就是从源点出发，对于每个小朋友，从给它一颗糖果连边一直到m颗糖果，最后到汇点，流量为 \(1000-w_{i,j}\)，等价不满意值，那么整个图的最大流，即最小割就是最小的不满足值，对应最大的满足值。<br></p>
+
+<p>然后我们考虑 \(k\) 个要求，若要求 \(x_i\) 和 \(y_i\) 糖果数相差不超过 \(z_i\)，那么相当于如果选择两个相差大于 \(z_i\) 的边是不能割开整个图的，那么我们可以在 \(x_{i,j}\)  和 \(y_{i,j-z}\) 间连接一条 \(INF\) 的边，使得如果选择相差大于 \(z\) 的两条边无法割开整个图。<br></p>
+
+<h2 id="problem-i">Problem I</h2>
+
+<p>给出一个序列 \( a_{1...n},\ 0 ≤  a_i &lt; p  \)，求有多少对 \( i,j \) 满足 \( \frac{1}{a_i + a_j} \equiv \frac{1}{a_i} + \frac{1}{a_j}  \)  <br></p>
+
+<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n  ≤ 10^{5}, 2 ≤ p  ≤ 10^{18} \) <br></p>
+
+<h2 id="solution">Solution</h2>
+
+<ul>
+<li><p>法一：推公式<br><br>
+由 \( \frac{1}{a_i + a_j} \equiv \frac{1}{a_i} + \frac{1}{a_j} \ (mod\ p) \) 得:<br><br>
+ \( a^2_{i} + a^2_j + a_{i}a_{j} \equiv 0 \ (mod\ p) \) <br><br>
+那么分两种情况 <br></p>
+
+<ul>
+<li>\(a_i = a_j\)：只有当 \( p = 3 \) 的时候有解，且 \(a_i = 1\) 或者 \(a_i = 2\)。<br></li>
+<li>\(a_i ≠  a_j\)：在原式两边同乘以 \(a_i-a_j\) 后转换为 \(a^3_i - a^3_j \equiv 0 \ (mod \ p) \)，那么只要统计立方后 \(mod \ p\) 同余的数即可。 <br></li>
+</ul></li>
+<li><p>法二：二次剩余<br><br>
+待补</p></li>
+</ul>
+
+<h2 id="ac-code">AC Code</h2>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+<span class="n">LL</span> <span class="n">p</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
+
+<span class="n">map</span><span class="o">&lt;</span><span class="n">LL</span><span class="p">,</span><span class="n">map</span><span class="o">&lt;</span><span class="n">LL</span><span class="p">,</span><span class="n">LL</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">same</span><span class="p">;</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="n">LL</span><span class="p">,</span><span class="n">LL</span><span class="o">&gt;</span><span class="n">num</span><span class="p">;</span>
+
+<span class="n">LL</span> <span class="nf">AddMod</span><span class="p">(</span><span class="n">LL</span> <span class="n">a</span><span class="p">,</span> <span class="n">LL</span> <span class="n">b</span><span class="p">,</span> <span class="n">LL</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">ans</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">LL</span> <span class="nf">cal</span><span class="p">(</span><span class="n">LL</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">read</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="n">read</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">one</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">one</span><span class="o">++</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="n">two</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">cal</span><span class="p">(</span><span class="mi">1LL</span><span class="o">*</span><span class="n">one</span><span class="p">)</span> <span class="o">+</span> <span class="n">cal</span><span class="p">(</span><span class="mi">1LL</span><span class="o">*</span><span class="n">two</span><span class="p">);</span>
+            <span class="n">out</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">same</span><span class="p">.</span><span class="n">clear</span><span class="p">(),</span> <span class="n">num</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+                <span class="n">LL</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">LL</span> <span class="n">twice</span> <span class="o">=</span> <span class="n">AddMod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+                <span class="n">LL</span> <span class="n">triple</span> <span class="o">=</span> <span class="n">AddMod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">twice</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+                <span class="n">same</span><span class="p">[</span><span class="n">triple</span><span class="p">][</span><span class="n">x</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">num</span><span class="p">[</span><span class="n">triple</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">val</span><span class="o">:</span> <span class="n">num</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">ans</span> <span class="o">+=</span> <span class="n">cal</span><span class="p">(</span><span class="n">val</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+                <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">s</span> <span class="o">:</span> <span class="n">same</span><span class="p">[</span><span class="n">val</span><span class="p">.</span><span class="n">first</span><span class="p">])</span>
+                <span class="p">{</span>
+                    <span class="n">ans</span> <span class="o">-=</span> <span class="n">cal</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">out</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="problem-j">Problem J</h2>
+
+<p>给出一个序列 \( a_{1...n},\ 0 ≤  a_i &lt; p  \)，求 \( m \) 次前缀异或后的序列 \( b_{1...n}  \)  <br></p>
+
+<p>数据范围：\( 1 ≤ t ≤ 5, 1 ≤ n ≤ 2\times 10^{5}, 1 ≤ m ≤ 10^{9}, 0 ≤ a_i ≤ 2^{30}-1 \) <br></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>我们可以发现一个递推式：\(DP[i][j] = DP[i-1][j] xor DP[i][j-1]\) <br><br>
+其中 \(DP[i][j]\) 指第 \(i\) 次前缀异或的 \(a_j\) 的值。<br><br>
+那么我们继续展开发现 <br><br>
+\(DP[i][j] = DP[i-2][j] xor DP[i-1][j-1] xor DP[i-1][j-1] xor DP[i][j-2]\)<br><br>
+中间两次重复异或可以消去，再继续展开，最后我们能得到 <br><br>
+\(DP[i][j] = DP[i-2^k][j] xor DP[i][j-2^k], (i-2^{k+1}<1, j-2^{k+1}<1) \\)<br><br>
+所以我们每次取不大于 \(m\) 的最大的 \(2^k\) 并计算贡献，就能得到 \(m\) 次前缀异或后的序列。 <br></p>
+
+<h2 id="ac-code">AC Code</h2>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">read</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="n">read</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">k</span><span class="o">&lt;</span><span class="n">m</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="n">k</span><span class="o">&lt;&lt;=</span><span class="mi">1</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">k</span><span class="o">&gt;</span><span class="n">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">k</span><span class="o">&gt;</span><span class="n">n</span> <span class="o">||</span> <span class="n">k</span><span class="o">&gt;</span><span class="n">m</span><span class="p">)</span> <span class="n">k</span><span class="o">&gt;&gt;=</span><span class="mi">1</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="o">^=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="n">m</span><span class="o">-=</span><span class="n">k</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%d%c"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">" </span><span class="se">\n</span><span class="s">"</span><span class="p">[</span><span class="n">i</span><span class="o">==</span><span class="n">n</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="contest-summary">Contest Summary</h2>
+
+<ul>
+<li><p>涉及运算较多且复杂的题，先把公式都算清楚再开敲，并且一人敲，一人检查</p></li>
+<li><p>碰到递推式，多展开，多尝试。</p></li>
+<li><p>理解网络流的建图技巧</p></li>
+</ul>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Kiwi</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/kiwi.png" alt="kiwi" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/kiwi">Kiwi</a></h4>
+                                
+                                    <p>The professional publishing platform</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/kiwi">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Kiwi &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/algorithm/">Algorithm</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/WannaFly-Round-2-B">WannaFly Round #2 B</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/2015-SWERC-B">2015 Southwestern Europe Regional Contest (SWERC) B</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/2016-NCPC-B">2016 Nordic Collegiate Programming Contest B</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/algorithm/">
+                                
+                                    See all 30 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/2017-Multi-University-Training-Contest-8">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-20170726.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/2017-Multi-University-Training-Contest-8">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">2017 Multi-University Training Contest #8</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>## Contest Information source: [The 2017 Multi-University Training Contest #8 from HDU OJ](http://acm.hdu.edu.cn/search.php?field=problem&key=2017+Multi-University+Training+Contest+-+Team+8&source=1&searchmode=source) ## Problem B 计算 \\( \\sum^n\_i \\sum^i\_{j} \\left \\lceil \\frac{i}{j} \\right \\rceil [gcd(i,j)==1] \\)。 数据范围：\\( 1 ≤ t ≤ 10^4,</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/kiwi/">Kiwi</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/%E5%80%8D%E5%A2%9E%E4%BA%8C%E5%88%86">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-18.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/%E5%80%8D%E5%A2%9E%E4%BA%8C%E5%88%86">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Algorithm</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">倍增 二分</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>Description 倍增二分，就是先倍增再二分：先逐渐扩大区间来确定一个含有答案的小区间，再在这个小区间里二分确定答案。常用于大数据范围的二分，或者需要二分次数很多的问题，可以用倍增来进行优化。 Problem A source: HDU 6109 tips: 此题需要确定每一个不合法的约束条件的位置，如果每次二分整个区间，时间复杂度可能就很大了。所以我们可以先采用倍增的方法确定一个含有不合法条件的小区间，再二分查找它，这样时间上能优化很多。 Solution int L, f[MaxN],a[MaxN],b[MaxN],c[MaxN]; int finds(int x) { return f[x]==x?x:f[x]=finds(f[x]); } void Uni(int x, int y) { x = finds(x), y = finds(y); if(x==y)</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/kiwi/">Kiwi</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://localhost:4000/">
+            
+                <img src="/assets/images/favicon.png" alt="Kiwi icon" />
+            
+            <span>Kiwi</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">2017 Multi-University Training Contest #7</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=2017+Multi-University+Training+Contest+%237&amp;url=https://jekyller.github.io/jasper2/2017-Multi-University-Training-Contest-7"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/2017-Multi-University-Training-Contest-7"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://localhost:4000/">Kiwi</a> &copy; 2018</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/username" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/username" target="_blank" rel="noopener">Twitter</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Kiwi" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Kiwi</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-113198900-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
