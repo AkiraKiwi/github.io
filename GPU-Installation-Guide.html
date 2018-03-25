@@ -194,16 +194,16 @@ into the {body} of the default.hbs template -->
 
     <ul>
       <li>
-        <p>若之前有安装过 NVIDIA 的其它驱动，需要先将其完全卸载 ：
+        <p>若之前有安装过 NVIDIA 的其它驱动，需要先将其完全卸载 ：  <br />
   <code class="highlighter-rouge">sudo apt-get purge nvidia*</code></p>
       </li>
       <li>
-        <p>添加 NVIDIA 源 ：
+        <p>添加 NVIDIA 源 ：  <br />
   <code class="highlighter-rouge">sudo add-apt-repository ppa:graphics-drivers/ppa</code></p>
       </li>
       <li>
-        <p>安装指定 NVIDIA Driver （这里选择的是 nvidia-387）:
-  <code class="highlighter-rouge">sudo apt-get update</code>
+        <p>安装指定 NVIDIA Driver （这里选择的是 nvidia-387）:  <br />
+  <code class="highlighter-rouge">sudo apt-get update</code>  <br />
   <code class="highlighter-rouge">sudo apt-get install nvidia-387 nvidia-settings</code></p>
       </li>
       <li>
@@ -250,17 +250,17 @@ into the {body} of the default.hbs template -->
         </ul>
       </li>
       <li>
-        <p>运行 Samples 检查 Cuda 是否成功安装:
-  <code class="highlighter-rouge">cd ~/NVIDIA..../1_Utilities/deviceQuery #由自己的安装目录决定</code>
-  <code class="highlighter-rouge">sudo make</code>
+        <p>运行 Samples 检查 Cuda 是否成功安装:  <br />
+  <code class="highlighter-rouge">cd ~/NVIDIA..../1_Utilities/deviceQuery #由自己的安装目录决定</code>  <br />
+  <code class="highlighter-rouge">sudo make</code>  <br />
   <code class="highlighter-rouge">sudo ./deviceQuery</code><br />
   若安装成功可看到CUDA版本信息</p>
       </li>
       <li>
-        <p>设置 CUDA 的环境变量:
-  <code class="highlighter-rouge">export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}</code>
-  <code class="highlighter-rouge">export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}</code>
-  <code class="highlighter-rouge">export CUDA_HOME=/usr/local/cuda</code>
+        <p>设置 CUDA 的环境变量:  <br />
+  <code class="highlighter-rouge">export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}</code>  <br />
+  <code class="highlighter-rouge">export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}</code>  <br />
+  <code class="highlighter-rouge">export CUDA_HOME=/usr/local/cuda</code>  <br />
   <code class="highlighter-rouge">source ~/.bashrc</code></p>
       </li>
     </ul>
@@ -269,11 +269,11 @@ into the {body} of the default.hbs template -->
     <p><strong>安装 cuDNN6.0</strong></p>
 
     <ul>
-      <li>附上参考链接中的<a href="https://pan.baidu.com/s/1cps654">百度网盘下载地址</a> 密码：52g7，下载完成后，切换到下载目录，输入以下命令，解压并将相关文件拷贝到CUDA的安装目录下：
-  <code class="highlighter-rouge">tar -zxvf cudnn-8.0-linux-x64-v6.0.tgz</code>
-  <code class="highlighter-rouge">sudo cp cuda/include/cudnn.h /usr/local/cuda/include/</code>
-  <code class="highlighter-rouge">sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d</code>
-  <code class="highlighter-rouge">sudo chmod a+r /usr/local/cuda/include/cudnn.h</code>
+      <li>附上参考链接中的<a href="https://pan.baidu.com/s/1cps654">百度网盘下载地址</a> 密码：52g7，下载完成后，切换到下载目录，输入以下命令，解压并将相关文件拷贝到CUDA的安装目录下：  <br />
+  <code class="highlighter-rouge">tar -zxvf cudnn-8.0-linux-x64-v6.0.tgz</code>  <br />
+  <code class="highlighter-rouge">sudo cp cuda/include/cudnn.h /usr/local/cuda/include/</code>  <br />
+  <code class="highlighter-rouge">sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d</code>  <br />
+  <code class="highlighter-rouge">sudo chmod a+r /usr/local/cuda/include/cudnn.h</code>  <br />
   <code class="highlighter-rouge">sudo chmod a+r /usr/local/cuda/lib64/libcudnn*</code></li>
     </ul>
   </li>
@@ -314,17 +314,17 @@ into the {body} of the default.hbs template -->
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/assets/images/kiwi.png" alt="kiwi" />
+                                <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
                             
                             <section class="author-card-content">
-                                <h4 class="author-card-name"><a href="/author/kiwi">Kiwi</a></h4>
+                                <h4 class="author-card-name"><a href="/author/Drone">Drone</a></h4>
                                 
                                     <p>The professional publishing platform</p>
                                 
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/author/kiwi">Read More</a>
+                            <a class="author-card-button" href="/author/Drone">Read More</a>
                         </div>
                     
                 
@@ -493,35 +493,35 @@ into the {body} of the default.hbs template -->
                 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/welcome">
-                <div class="post-card-image" style="background-image: url(/assets/images/welcome.jpg)"></div>
+            <a class="post-card-image-link" href="/LeetCode-Weekly-Contest-77">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-1503197979108.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/welcome">
+            <a class="post-card-content-link" href="/LeetCode-Weekly-Contest-77">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">Getting started</span>
+                                <span class="post-card-tags">Algorithm</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">Welcome here</h2>
+                    <h2 class="post-card-title">LeetCode Weekly Contest 77</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Hey! Welcome to here, it's great to have you :) ## Show somethings --- ### this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : $$ \begin{bmatrix}</p>
+                    <p>## Contest Information source: [It's from the LeetCode](https://leetcode.com/contest/weekly-contest-77) ## Description 对于一个数组 $A$, 请问是否能将它拆分成两个非空且平均数相等的数组 $B$ 和 $C$ 数据范围：$ 1 ≤ len(A) ≤ 30; 0 ≤ A[i] ≤ 10000 $ ## Input ``` [1,2,3,4,5,6,7,8] ```</p>
                 </section>
             </a>
             <footer class="post-card-meta">
                 
                     
                         
-                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
                         
                         <span class="post-card-author">
-                            <a href="/author/kiwi/">Kiwi</a>
+                            <a href="/author/Drone/">Drone</a>
                         </span>
                     
                 
@@ -561,10 +561,10 @@ into the {body} of the default.hbs template -->
                 
                     
                         
-                        <img class="author-profile-image" src="/assets/images/kiwi.png" alt="Kiwi" />
+                        <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
                         
                         <span class="post-card-author">
-                            <a href="/author/kiwi/">Kiwi</a>
+                            <a href="/author/Drone/">Drone</a>
                         </span>
                     
                 

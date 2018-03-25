@@ -1,42 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-01T20:38:18+08:00</updated><id>http://localhost:4000/</id><title type="html">drone - 以终为始，慎终如始。</title><subtitle>The personal publishing platform</subtitle><entry><title type="html">Welcome here</title><link href="http://localhost:4000/welcome" rel="alternate" type="text/html" title="Welcome here" /><published>2018-02-05T18:00:00+08:00</published><updated>2018-02-05T18:00:00+08:00</updated><id>http://localhost:4000/welcome</id><content type="html" xml:base="http://localhost:4000/welcome">&lt;p&gt;Hey! Welcome to here, it’s great to have you :)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-26T01:00:23+08:00</updated><id>http://localhost:4000/</id><title type="html">drone - 以终为始，慎终如始。</title><subtitle>The personal publishing platform</subtitle><entry><title type="html">LeetCode Weekly Contest 77</title><link href="http://localhost:4000/LeetCode-Weekly-Contest-77" rel="alternate" type="text/html" title="LeetCode Weekly Contest 77" /><published>2018-03-25T20:00:00+08:00</published><updated>2018-03-25T20:00:00+08:00</updated><id>http://localhost:4000/LeetCode-Weekly-Contest-77</id><content type="html" xml:base="http://localhost:4000/LeetCode-Weekly-Contest-77">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
 
-&lt;h2 id=&quot;show-somethings&quot;&gt;Show somethings&lt;/h2&gt;
-&lt;hr /&gt;
+&lt;p&gt;source: &lt;a href=&quot;https://leetcode.com/contest/weekly-contest-77&quot;&gt;It’s from the LeetCode&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;this-is-the-mathjax&quot;&gt;this is the mathjax&lt;/h3&gt;
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
 
-&lt;p&gt;inline : calculate this  $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$&lt;/p&gt;
+&lt;p&gt;对于一个数组 $A$, 请问是否能将它拆分成两个非空且平均数相等的数组 $B$ 和 $C$ &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;block :
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\begin{bmatrix}
-a &amp; b &amp; c \\\\ 
-. &amp; . &amp; .\\\\ 
-a &amp; b &amp; c 
-\end{bmatrix} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;数据范围：$ 1 ≤ len(A) ≤ 30; 0 ≤ A[i] ≤ 10000 $ &lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;this-is-the-code&quot;&gt;this is the code&lt;/h3&gt;
-
-&lt;p&gt;see this :&lt;/p&gt;
-
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                                       
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;h2 id=&quot;input&quot;&gt;Input&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1,2,3,4,5,6,7,8]                                                                  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;this-is-the-picture&quot;&gt;this is the picture&lt;/h3&gt;
+&lt;h2 id=&quot;output&quot;&gt;Output&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;true                                                                               
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;figure&gt;
-	&lt;a href=&quot;/assets/images/stock/images-stock-photo-0127845.jpg&quot;&gt;
-    &lt;img src=&quot;/assets/images/stock/images-stock-photo-0127845.jpg&quot; /&gt;
-    &lt;/a&gt;
-	&lt;figcaption&gt;
-		holidays.
-	&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>kiwi</name></author><category term="Getting started" /><summary type="html">Hey! Welcome to here, it’s great to have you :)</summary></entry><entry><title type="html">Ubuntu 16.04 + GTX 1050ti + Cuda 8.0 + cuDNN 6.0 Installation Guide</title><link href="http://localhost:4000/GPU-Installation-Guide" rel="alternate" type="text/html" title="Ubuntu 16.04 + GTX 1050ti + Cuda 8.0 + cuDNN 6.0 Installation Guide" /><published>2018-02-04T18:48:00+08:00</published><updated>2018-02-04T18:48:00+08:00</updated><id>http://localhost:4000/GPU-Installation-Guide</id><content type="html" xml:base="http://localhost:4000/GPU-Installation-Guide">&lt;h2 id=&quot;pre-read&quot;&gt;Pre Read&lt;/h2&gt;
+&lt;h2 id=&quot;solution-1&quot;&gt;Solution 1&lt;/h2&gt;
+
+&lt;p&gt;首先，容易得出 $B, C$ 的平均数和 $A$ 一样，所以平均数是已知的；那么，问题转换成求 $A$ 的一个真子集且平均数为 $average(A)$。&lt;br /&gt;
+如果选择直接枚举 $A$ 中的元素，那可能性有 $2^{len(A)}$ 种，不可行；所以我们可以用分治的方法：将 $A$ 拆分成两半，先在每一边中查找是否存在解，再判断它们合并是否存在解。复杂度为 $O(2^{len(A)/2})$，可以接受。&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ac-code&quot;&gt;AC code&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fractions&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fraction&lt;/span&gt;                                                     
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;splitArraySameAverage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type A: List[int]
+        :rtype: bool
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fraction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+            
+        &lt;span class=&quot;n&quot;&gt;sum_left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sum_right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum_left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;solution-2&quot;&gt;Solution 2&lt;/h2&gt;
+
+&lt;p&gt;如果存在这么一个满足条件的子集 $B$，那么必定有 $\frac{sum(B)}{len(B)} = \frac{sum(A)}{len(A)}$，所以我们可以以此为判断条件来查找是否有解。&lt;br /&gt;
+设 $DP[s][n]$ 为是否存在长度为 $n$，且和为 $s$ 的子集，可以在 $O((len(A))^2\times sum(A))$ 的复杂度下求解。&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ac-code-1&quot;&gt;AC code&lt;/h2&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;                                                                         
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;splitArraySameAverage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;   
+        &lt;span class=&quot;n&quot;&gt;DP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;DP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Contest Information</summary></entry><entry><title type="html">Ubuntu 16.04 + GTX 1050ti + Cuda 8.0 + cuDNN 6.0 Installation Guide</title><link href="http://localhost:4000/GPU-Installation-Guide" rel="alternate" type="text/html" title="Ubuntu 16.04 + GTX 1050ti + Cuda 8.0 + cuDNN 6.0 Installation Guide" /><published>2018-02-04T18:48:00+08:00</published><updated>2018-02-04T18:48:00+08:00</updated><id>http://localhost:4000/GPU-Installation-Guide</id><content type="html" xml:base="http://localhost:4000/GPU-Installation-Guide">&lt;h2 id=&quot;pre-read&quot;&gt;Pre Read&lt;/h2&gt;
 
 &lt;p&gt;据消息称 NVIDIA 的 Cuda 9.1 系列并不支持 GTX 1060 以下的显卡，于是便有了这一篇经过两三个晚上折腾后的安装指南。&lt;/p&gt;
 
@@ -48,16 +97,16 @@ a &amp; b &amp; c
 
     &lt;ul&gt;
       &lt;li&gt;
-        &lt;p&gt;若之前有安装过 NVIDIA 的其它驱动，需要先将其完全卸载 ：
+        &lt;p&gt;若之前有安装过 NVIDIA 的其它驱动，需要先将其完全卸载 ：  &lt;br /&gt;
   &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get purge nvidia*&lt;/code&gt;&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;p&gt;添加 NVIDIA 源 ：
+        &lt;p&gt;添加 NVIDIA 源 ：  &lt;br /&gt;
   &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo add-apt-repository ppa:graphics-drivers/ppa&lt;/code&gt;&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;p&gt;安装指定 NVIDIA Driver （这里选择的是 nvidia-387）:
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get update&lt;/code&gt;
+        &lt;p&gt;安装指定 NVIDIA Driver （这里选择的是 nvidia-387）:  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get update&lt;/code&gt;  &lt;br /&gt;
   &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install nvidia-387 nvidia-settings&lt;/code&gt;&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
@@ -104,17 +153,17 @@ a &amp; b &amp; c
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;p&gt;运行 Samples 检查 Cuda 是否成功安装:
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/NVIDIA..../1_Utilities/deviceQuery #由自己的安装目录决定&lt;/code&gt;
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo make&lt;/code&gt;
+        &lt;p&gt;运行 Samples 检查 Cuda 是否成功安装:  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;cd ~/NVIDIA..../1_Utilities/deviceQuery #由自己的安装目录决定&lt;/code&gt;  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo make&lt;/code&gt;  &lt;br /&gt;
   &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ./deviceQuery&lt;/code&gt;&lt;br /&gt;
   若安装成功可看到CUDA版本信息&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;p&gt;设置 CUDA 的环境变量:
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}&lt;/code&gt;
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}&lt;/code&gt;
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;export CUDA_HOME=/usr/local/cuda&lt;/code&gt;
+        &lt;p&gt;设置 CUDA 的环境变量:  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}&lt;/code&gt;  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}&lt;/code&gt;  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;export CUDA_HOME=/usr/local/cuda&lt;/code&gt;  &lt;br /&gt;
   &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -123,11 +172,11 @@ a &amp; b &amp; c
     &lt;p&gt;&lt;strong&gt;安装 cuDNN6.0&lt;/strong&gt;&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;附上参考链接中的&lt;a href=&quot;https://pan.baidu.com/s/1cps654&quot;&gt;百度网盘下载地址&lt;/a&gt; 密码：52g7，下载完成后，切换到下载目录，输入以下命令，解压并将相关文件拷贝到CUDA的安装目录下：
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;tar -zxvf cudnn-8.0-linux-x64-v6.0.tgz&lt;/code&gt;
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo cp cuda/include/cudnn.h /usr/local/cuda/include/&lt;/code&gt;
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d&lt;/code&gt;
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod a+r /usr/local/cuda/include/cudnn.h&lt;/code&gt;
+      &lt;li&gt;附上参考链接中的&lt;a href=&quot;https://pan.baidu.com/s/1cps654&quot;&gt;百度网盘下载地址&lt;/a&gt; 密码：52g7，下载完成后，切换到下载目录，输入以下命令，解压并将相关文件拷贝到CUDA的安装目录下：  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;tar -zxvf cudnn-8.0-linux-x64-v6.0.tgz&lt;/code&gt;  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo cp cuda/include/cudnn.h /usr/local/cuda/include/&lt;/code&gt;  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d&lt;/code&gt;  &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod a+r /usr/local/cuda/include/cudnn.h&lt;/code&gt;  &lt;br /&gt;
   &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod a+r /usr/local/cuda/lib64/libcudnn*&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -138,7 +187,7 @@ a &amp; b &amp; c
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;最坑的就是官方不告诉我们 cuda 9.1 不支持 1050&lt;/p&gt;</content><author><name>kiwi</name></author><category term="guide" /><summary type="html">Pre Read</summary></entry><entry><title type="html">WannaFly Round #2 B</title><link href="http://localhost:4000/WannaFly-Round-2-B" rel="alternate" type="text/html" title="WannaFly Round #2 B" /><published>2017-11-01T07:59:59+08:00</published><updated>2017-11-01T07:59:59+08:00</updated><id>http://localhost:4000/WannaFly%20Round#2%20B</id><content type="html" xml:base="http://localhost:4000/WannaFly-Round-2-B">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
+&lt;p&gt;最坑的就是官方不告诉我们 cuda 9.1 不支持 1050&lt;/p&gt;</content><author><name>Drone</name></author><category term="guide" /><summary type="html">Pre Read</summary></entry><entry><title type="html">WannaFly Round #2 B</title><link href="http://localhost:4000/WannaFly-Round-2-B" rel="alternate" type="text/html" title="WannaFly Round #2 B" /><published>2017-11-01T07:59:59+08:00</published><updated>2017-11-01T07:59:59+08:00</updated><id>http://localhost:4000/WannaFly%20Round#2%20B</id><content type="html" xml:base="http://localhost:4000/WannaFly-Round-2-B">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;https://www.nowcoder.com/acm/contest/17/B&quot;&gt;It’s from the nowcoder&lt;/a&gt;&lt;/p&gt;
 
@@ -219,7 +268,7 @@ a &amp; b &amp; c
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kiwi</name></author><category term="algorithm" /><summary type="html">Contest Information</summary></entry><entry><title type="html">2015 Southwestern Europe Regional Contest (SWERC) B</title><link href="http://localhost:4000/2015-SWERC-B" rel="alternate" type="text/html" title="2015 Southwestern Europe Regional Contest (SWERC) B" /><published>2017-10-06T07:59:59+08:00</published><updated>2017-10-06T07:59:59+08:00</updated><id>http://localhost:4000/2015-SWERC-B</id><content type="html" xml:base="http://localhost:4000/2015-SWERC-B">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Contest Information</summary></entry><entry><title type="html">2015 Southwestern Europe Regional Contest (SWERC) B</title><link href="http://localhost:4000/2015-SWERC-B" rel="alternate" type="text/html" title="2015 Southwestern Europe Regional Contest (SWERC) B" /><published>2017-10-06T07:59:59+08:00</published><updated>2017-10-06T07:59:59+08:00</updated><id>http://localhost:4000/2015-SWERC-B</id><content type="html" xml:base="http://localhost:4000/2015-SWERC-B">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;https://open.kattis.com/problems/blackvienna&quot;&gt;It’s from the kattis&lt;/a&gt;&lt;/p&gt;
 
@@ -325,7 +374,7 @@ BC 1 0
         &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kiwi</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">2016 Nordic Collegiate Programming Contest B</title><link href="http://localhost:4000/2016-NCPC-B" rel="alternate" type="text/html" title="2016 Nordic Collegiate Programming Contest B" /><published>2017-10-05T07:59:59+08:00</published><updated>2017-10-05T07:59:59+08:00</updated><id>http://localhost:4000/2016-NCPC-B</id><content type="html" xml:base="http://localhost:4000/2016-NCPC-B">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">2016 Nordic Collegiate Programming Contest B</title><link href="http://localhost:4000/2016-NCPC-B" rel="alternate" type="text/html" title="2016 Nordic Collegiate Programming Contest B" /><published>2017-10-05T07:59:59+08:00</published><updated>2017-10-05T07:59:59+08:00</updated><id>http://localhost:4000/2016-NCPC-B</id><content type="html" xml:base="http://localhost:4000/2016-NCPC-B">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;https://open.kattis.com/problems/autocorrect&quot;&gt;It’s from the kattis&lt;/a&gt;&lt;/p&gt;
 
@@ -440,7 +489,7 @@ austria
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kiwi</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">CodeForces Round #436 (Div. 2) F</title><link href="http://localhost:4000/CodeForces-Round-436-(Div.2)-F" rel="alternate" type="text/html" title="CodeForces Round #436 (Div. 2) F" /><published>2017-10-04T07:59:59+08:00</published><updated>2017-10-04T07:59:59+08:00</updated><id>http://localhost:4000/CodeForces-Round-#436-(Div.2)-F</id><content type="html" xml:base="http://localhost:4000/CodeForces-Round-436-(Div.2)-F">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">CodeForces Round #436 (Div. 2) F</title><link href="http://localhost:4000/CodeForces-Round-436-(Div.2)-F" rel="alternate" type="text/html" title="CodeForces Round #436 (Div. 2) F" /><published>2017-10-04T07:59:59+08:00</published><updated>2017-10-04T07:59:59+08:00</updated><id>http://localhost:4000/CodeForces-Round-#436-(Div.2)-F</id><content type="html" xml:base="http://localhost:4000/CodeForces-Round-436-(Div.2)-F">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;http://codeforces.com/contest/864/problem/F&quot;&gt;It’s from the Round #436 (Div. 2) of the codeforces&lt;/a&gt;&lt;/p&gt;
 
@@ -559,7 +608,7 @@ austria
         &lt;span class=&quot;n&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kiwi</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">CodeForces Round #396 (Div. 2) E</title><link href="http://localhost:4000/CodeForces-Round-396-(Div.2)-E" rel="alternate" type="text/html" title="CodeForces Round #396 (Div. 2) E" /><published>2017-10-03T07:59:59+08:00</published><updated>2017-10-03T07:59:59+08:00</updated><id>http://localhost:4000/CodeForces-Round-#396-(Div.2)-E</id><content type="html" xml:base="http://localhost:4000/CodeForces-Round-396-(Div.2)-E">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">CodeForces Round #396 (Div. 2) E</title><link href="http://localhost:4000/CodeForces-Round-396-(Div.2)-E" rel="alternate" type="text/html" title="CodeForces Round #396 (Div. 2) E" /><published>2017-10-03T07:59:59+08:00</published><updated>2017-10-03T07:59:59+08:00</updated><id>http://localhost:4000/CodeForces-Round-#396-(Div.2)-E</id><content type="html" xml:base="http://localhost:4000/CodeForces-Round-396-(Div.2)-E">&lt;h2 id=&quot;problem-information&quot;&gt;Problem Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;http://codeforces.com/contest/766/problem/E&quot;&gt;It’s from the Round #396 (Div. 2) of the codeforces&lt;/a&gt;&lt;/p&gt;
 
@@ -661,7 +710,7 @@ austria
         &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kiwi</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">Hihocoder 1596</title><link href="http://localhost:4000/Hihocoder-1596" rel="alternate" type="text/html" title="Hihocoder 1596" /><published>2017-10-02T07:59:59+08:00</published><updated>2017-10-02T07:59:59+08:00</updated><id>http://localhost:4000/Hihocoder-1596</id><content type="html" xml:base="http://localhost:4000/Hihocoder-1596">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Problem Information</summary></entry><entry><title type="html">Hihocoder 1596</title><link href="http://localhost:4000/Hihocoder-1596" rel="alternate" type="text/html" title="Hihocoder 1596" /><published>2017-10-02T07:59:59+08:00</published><updated>2017-10-02T07:59:59+08:00</updated><id>http://localhost:4000/Hihocoder-1596</id><content type="html" xml:base="http://localhost:4000/Hihocoder-1596">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;https://hihocoder.com/problemset/problem/1596&quot;&gt;It’s from the hihocoder&lt;/a&gt;&lt;/p&gt;
 
@@ -752,7 +801,7 @@ austria
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>kiwi</name></author><category term="algorithm" /><summary type="html">Contest Information</summary></entry><entry><title type="html">MIT 6.828 Lab 1 : C，Assembly，Tools，and Bootstrapping</title><link href="http://localhost:4000/MIT-6.828-Lab-1" rel="alternate" type="text/html" title="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" /><published>2017-09-28T07:59:59+08:00</published><updated>2017-09-28T07:59:59+08:00</updated><id>http://localhost:4000/MIT-6.828-Lab-1</id><content type="html" xml:base="http://localhost:4000/MIT-6.828-Lab-1">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">Contest Information</summary></entry><entry><title type="html">MIT 6.828 Lab 1 : C，Assembly，Tools，and Bootstrapping</title><link href="http://localhost:4000/MIT-6.828-Lab-1" rel="alternate" type="text/html" title="MIT  6.828  Lab 1 :  C，Assembly，Tools，and Bootstrapping" /><published>2017-09-28T07:59:59+08:00</published><updated>2017-09-28T07:59:59+08:00</updated><id>http://localhost:4000/MIT-6.828-Lab-1</id><content type="html" xml:base="http://localhost:4000/MIT-6.828-Lab-1">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;This lab is split into three parts:&lt;/p&gt;
 
@@ -1133,7 +1182,7 @@ austria
 	&lt;figcaption&gt;
 		fighting.
 	&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>kiwi</name></author><category term="guide" /><summary type="html">Introduction</summary></entry><entry><title type="html">MIT 6.828 OverView</title><link href="http://localhost:4000/MIT-6.828-OverView" rel="alternate" type="text/html" title="MIT 6.828 OverView" /><published>2017-09-27T07:59:59+08:00</published><updated>2017-09-27T07:59:59+08:00</updated><id>http://localhost:4000/MIT-6.828-OverView</id><content type="html" xml:base="http://localhost:4000/MIT-6.828-OverView">&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;/figure&gt;</content><author><name>Drone</name></author><category term="guide" /><summary type="html">Introduction</summary></entry><entry><title type="html">MIT 6.828 OverView</title><link href="http://localhost:4000/MIT-6.828-OverView" rel="alternate" type="text/html" title="MIT 6.828 OverView" /><published>2017-09-27T07:59:59+08:00</published><updated>2017-09-27T07:59:59+08:00</updated><id>http://localhost:4000/MIT-6.828-OverView</id><content type="html" xml:base="http://localhost:4000/MIT-6.828-OverView">&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1224,4 +1273,4 @@ Codename:		trusty
 	&lt;figcaption&gt;
 		fighting.
 	&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>kiwi</name></author><category term="guide" /><summary type="html">Description</summary></entry></feed>
+&lt;/figure&gt;</content><author><name>Drone</name></author><category term="guide" /><summary type="html">Description</summary></entry></feed>

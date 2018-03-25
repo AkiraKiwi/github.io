@@ -11,7 +11,7 @@
 
 
 
-    <title>AtCoder Regular Contest 081 E</title>
+    <title>LeetCode Weekly Contest 77</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -35,26 +35,26 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/AtCoder-Regular-Contest-081-E" />
+    <link rel="canonical" href="http://localhost:4000/LeetCode-Weekly-Contest-77" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="drone - 以终为始，慎终如始。" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AtCoder Regular Contest 081 E" />
-    <meta property="og:description" content="Problem Information source: It’s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： $ 1 ≤ $A$ ≤ 2 \times 10^5 $ $A$ consists of lowercase English letters. Input $A$ Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that" />
-    <meta property="og:url" content="http://localhost:4000/AtCoder-Regular-Contest-081-E" />
-    <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-Yb054.jpg" />
+    <meta property="og:title" content="LeetCode Weekly Contest 77" />
+    <meta property="og:description" content="Contest Information source: It’s from the LeetCode Description 对于一个数组 $A$, 请问是否能将它拆分成两个非空且平均数相等的数组 $B$ 和 $C$ 数据范围：$ 1 ≤ len(A) ≤ 30; 0 ≤ A[i] ≤ 10000 $ Input [1,2,3,4,5,6,7,8] Output true Solution 1 首先，容易得出 $B, C$ 的平均数和 $A$ 一样，所以平均数是已知的；那么，问题转换成求 $A$ 的一个真子集且平均数为 $average(A)$。 如果选择直接枚举 $A$ 中的元素，那可能性有 $2^{len(A)}$ 种，不可行；所以我们可以用分治的方法：将 $A$ 拆分成两半，先在每一边中查找是否存在解，再判断它们合并是否存在解。复杂度为 $O(2^{len(A)/2})$，可以接受。 AC" />
+    <meta property="og:url" content="http://localhost:4000/LeetCode-Weekly-Contest-77" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-1503197979108.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
     <meta property="article:author" content="https://www.facebook.com/username" />
-    <meta property="article:published_time" content="2017-08-21T07:59:59+08:00" />
-    <meta property="article:modified_time" content="2017-08-21T07:59:59+08:00" />
+    <meta property="article:published_time" content="2018-03-25T20:00:00+08:00" />
+    <meta property="article:modified_time" content="2018-03-25T20:00:00+08:00" />
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AtCoder Regular Contest 081 E" />
-    <meta name="twitter:description" content="Problem Information source: It’s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： $ 1 ≤ $A$ ≤ 2 \times 10^5 $ $A$ consists of lowercase English letters. Input $A$ Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that" />
+    <meta name="twitter:title" content="LeetCode Weekly Contest 77" />
+    <meta name="twitter:description" content="Contest Information source: It’s from the LeetCode Description 对于一个数组 $A$, 请问是否能将它拆分成两个非空且平均数相等的数组 $B$ 和 $C$ 数据范围：$ 1 ≤ len(A) ≤ 30; 0 ≤ A[i] ≤ 10000 $ Input [1,2,3,4,5,6,7,8] Output true Solution 1 首先，容易得出 $B, C$ 的平均数和 $A$ 一样，所以平均数是已知的；那么，问题转换成求 $A$ 的一个真子集且平均数为 $average(A)$。 如果选择直接枚举 $A$ 中的元素，那可能性有 $2^{len(A)}$ 种，不可行；所以我们可以用分治的方法：将 $A$ 拆分成两半，先在每一边中查找是否存在解，再判断它们合并是否存在解。复杂度为 $O(2^{len(A)/2})$，可以接受。 AC" />
     <meta name="twitter:url" content="http://localhost:4000/" />
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-Yb054.jpg" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/stock/images-stock-photo-1503197979108.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="drone - 以终为始，慎终如始。" />
     <meta name="twitter:label2" content="Filed under" />
@@ -73,18 +73,18 @@
         "name": "drone - 以终为始，慎终如始。",
         "logo": "http://localhost:4000/assets/images/blog-icon.png"
     },
-    "url": "http://localhost:4000/AtCoder-Regular-Contest-081-E",
+    "url": "http://localhost:4000/LeetCode-Weekly-Contest-77",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:4000/assets/images/stock/images-stock-photo-Yb054.jpg",
+        "url": "http://localhost:4000/assets/images/stock/images-stock-photo-1503197979108.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000/AtCoder-Regular-Contest-081-E"
+        "@id": "http://localhost:4000/LeetCode-Weekly-Contest-77"
     },
-    "description": "Problem Information source: It’s from the Regular Contest 081 of the AtCoder Description 给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。 数据范围： $ 1 ≤ $A$ ≤ 2 \times 10^5 $ $A$ consists of lowercase English letters. Input $A$ Output Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that"
+    "description": "Contest Information source: It’s from the LeetCode Description 对于一个数组 $A$, 请问是否能将它拆分成两个非空且平均数相等的数组 $B$ 和 $C$ 数据范围：$ 1 ≤ len(A) ≤ 30; 0 ≤ A[i] ≤ 10000 $ Input [1,2,3,4,5,6,7,8] Output true Solution 1 首先，容易得出 $B, C$ 的平均数和 $A$ 一样，所以平均数是已知的；那么，问题转换成求 $A$ 的一个真子集且平均数为 $average(A)$。 如果选择直接枚举 $A$ 中的元素，那可能性有 $2^{len(A)}$ 种，不可行；所以我们可以用分治的方法：将 $A$ 拆分成两半，先在每一边中查找是否存在解，再判断它们合并是否存在解。复杂度为 $O(2^{len(A)/2})$，可以接受。 AC"
 }
     </script>
 
@@ -97,7 +97,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="AtCoder Regular Contest 081 E" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="LeetCode Weekly Contest 77" href="/feed.xml" />
 
     
 
@@ -162,7 +162,7 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="20 August 2017">20 August 2017</time>
+                    <time class="post-full-meta-date" datetime="25 March 2018">25 March 2018</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -172,96 +172,103 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">AtCoder Regular Contest 081 E</h1>
+                <h1 class="post-full-title">LeetCode Weekly Contest 77</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/stock/images-stock-photo-Yb054.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/stock/images-stock-photo-1503197979108.jpg)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <h2 id="problem-information">Problem Information</h2>
+                    <h2 id="contest-information">Contest Information</h2>
 
-<p>source: <a href="http://arc081.contest.atcoder.jp/tasks/arc081_c">It’s from the Regular Contest 081 of the AtCoder</a></p>
+<p>source: <a href="https://leetcode.com/contest/weekly-contest-77">It’s from the LeetCode</a></p>
 
 <h2 id="description">Description</h2>
 
-<p>给出一个字符串 $A$ ，求出一个不属于它的子序列的最短字符串，若有多个则取字典序最小的。<br /></p>
+<p>对于一个数组 $A$, 请问是否能将它拆分成两个非空且平均数相等的数组 $B$ 和 $C$ <br /></p>
 
-<p>数据范围：<br /></p>
-<ul>
-  <li>$ 1 ≤ $A$ ≤ 2 \times 10^5 $ <br /></li>
-  <li>$A$ consists of lowercase English letters.<br /></li>
-</ul>
+<p>数据范围：$ 1 ≤ len(A) ≤ 30; 0 ≤ A[i] ≤ 10000 $ <br /></p>
 
 <h2 id="input">Input</h2>
-
-<p>$A$ <br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1,2,3,4,5,6,7,8]                                                                  
+</code></pre></div></div>
 
 <h2 id="output">Output</h2>
-
-<p>Print the lexicographically smallest string among the shortest strings consisting of lowercase English letters that are not subsequences of $A$. <br /></p>
-
-<h2 id="sample-input">Sample Input</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>atcoderregularcontest
-abcdefghijklmnopqrstuvwxyz
-frqnvhydscshfcgdemurlfrutcpzhopfotpifgepnqjxupnskapziurswqazdwnwbgdhyktfyhqqxpoidfhjdakoxraiedxskywuepzfniuyskxiyjpjlxuqnfgmnjcvtlpnclfkpervxmdbvrbrdn
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>true                                                                               
 </code></pre></div></div>
 
-<h2 id="sample-output">Sample Output</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b
-aa
-aca
-</code></pre></div></div>
+<h2 id="solution-1">Solution 1</h2>
 
-<h2 id="solution">Solution</h2>
-
-<p>首先，字典序最小可以通过从小到大确定答案来解决。那么，我们只需要知道怎么找到最短的非子序列字符串。 <br /></p>
-
-<p>我们考虑任意一个非子序列的字符串，它一定是匹配到了原串的某一个位置，且该位置后的字符少于 $26$ 种，
-此时我们添加一个没有出现过的字符即可凑出一个非子序列的字符串。那么再要求字符串长度最短，那么我们可以从最后往前递推，确定每个字符到缺省字符的最短路径。<br /></p>
+<p>首先，容易得出 $B, C$ 的平均数和 $A$ 一样，所以平均数是已知的；那么，问题转换成求 $A$ 的一个真子集且平均数为 $average(A)$。<br />
+如果选择直接枚举 $A$ 中的元素，那可能性有 $2^{len(A)}$ 种，不可行；所以我们可以用分治的方法：将 $A$ 拆分成两半，先在每一边中查找是否存在解，再判断它们合并是否存在解。复杂度为 $O(2^{len(A)/2})$，可以接受。<br /></p>
 
 <h2 id="ac-code">AC code</h2>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">loc</span><span class="p">[</span><span class="n">MaxN</span><span class="p">][</span><span class="mi">26</span><span class="p">],</span> <span class="n">to</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">dep</span><span class="p">[</span><span class="n">MaxN</span><span class="p">];</span>
-<span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">memcpy</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">to</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">to</span><span class="p">));</span>
-		<span class="n">to</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dep</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">;</span>
-	<span class="k">while</span><span class="p">(</span><span class="n">u</span><span class="o">!=</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="k">for</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">v</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">v</span><span class="o">++</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="k">if</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="n">dep</span><span class="p">[</span><span class="n">loc</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="sc">'a'</span><span class="p">);</span>
-		<span class="n">u</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">];</span>
-	<span class="p">}</span>
-	<span class="n">puts</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">))</span>
-		<span class="n">solve</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>                                                     
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">splitArraySameAverage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+        <span class="s">"""
+        :type A: List[int]
+        :rtype: bool
+        """</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="bp">False</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">A</span><span class="p">]</span>
+        
+        <span class="n">left</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)):</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="p">{</span> <span class="n">x</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">left</span><span class="p">}</span> <span class="o">|</span> <span class="n">left</span> <span class="o">|</span> <span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]}</span>
+            <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">left</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
+        
+        <span class="n">right</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="p">{</span> <span class="n">x</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">right</span> <span class="p">}</span> <span class="o">|</span> <span class="n">right</span> <span class="o">|</span> <span class="p">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]}</span>
+            <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">right</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
+            
+        <span class="n">sum_left</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">sum_right</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">N</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="o">-</span><span class="n">dis</span> <span class="ow">in</span> <span class="n">right</span> <span class="ow">and</span> <span class="p">(</span><span class="n">dis</span><span class="p">,</span> <span class="o">-</span><span class="n">dis</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">sum_left</span><span class="p">,</span> <span class="n">sum_right</span><span class="p">)</span> <span class="k">for</span> <span class="n">dis</span> <span class="ow">in</span> <span class="n">left</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="solution-2">Solution 2</h2>
+
+<p>如果存在这么一个满足条件的子集 $B$，那么必定有 $\frac{sum(B)}{len(B)} = \frac{sum(A)}{len(A)}$，所以我们可以以此为判断条件来查找是否有解。<br />
+设 $DP[s][n]$ 为是否存在长度为 $n$，且和为 $s$ 的子集，可以在 $O((len(A))^2\times sum(A))$ 的复杂度下求解。<br /></p>
+
+<h2 id="ac-code-1">AC code</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>                                                                         
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">splitArraySameAverage</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">sum</span><span class="o">+=</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">DP</span><span class="p">(</span><span class="n">sum</span><span class="o">+</span><span class="mi">1</span> <span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>   
+        <span class="n">DP</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">=</span><span class="n">sum</span><span class="p">;</span> <span class="n">s</span><span class="o">&gt;=</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">s</span><span class="o">--</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">n</span><span class="o">&lt;=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">DP</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">DP</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">|</span> <span class="n">DP</span><span class="p">[</span><span class="n">s</span><span class="o">-</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">cnt</span><span class="o">%</span><span class="n">len</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">DP</span><span class="p">[</span><span class="n">cnt</span><span class="o">/</span><span class="n">len</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div></div>
 
                 </div>
@@ -369,11 +376,6 @@ aca
                                 
                                   
                                     
-                                        
-                                        
-                                            <li><a href="/LeetCode-Weekly-Contest-77">LeetCode Weekly Contest 77</a></li>
-                                        
-                                    
                                   
                                 
                                   
@@ -400,37 +402,7 @@ aca
                                     
                                         
                                         
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                    
-                                        
-                                        
-                                    
-                                  
-                                
-                                  
-                                
-                                  
-                                
-                                  
-                                    
-                                        
+                                            <li><a href="/2016-NCPC-B">2016 Nordic Collegiate Programming Contest B</a></li>
                                         
                                     
                                   
@@ -457,6 +429,41 @@ aca
                                   
                                 
                                   
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                     
                                   
                                 
@@ -615,74 +622,31 @@ aca
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
-                
-    <article class="post-card post-template">
-        
-            <a class="post-card-image-link" href="/CodeForces-Round-431-(Div.2)-D">
-                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-419599.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/CodeForces-Round-431-(Div.2)-D">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Algorithm</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">CodeForces Round #431 (Div. 2) D</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    <p>## Problem Information source: [It's from the Round #431 (Div. 2) of the codeforces](http://codeforces.com/contest/849/problem/D) ## Description 在一个平面坐标系上有一个矩形舞台，四个顶点为 $ (0,0), (w,0), (w,h), (0,h) $，在舞台的左侧和下方一共有 $n$ 个舞者， 坐标分别为 $ (x\_i, 0), (0, y\_i) $，每个舞者在第 $t\_i$</p>
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/Drone/">Drone</a>
-                        </span>
-                    
-                
-            </footer>
-        </div>
-    </article>
-
-            
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
             
                 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94">
-                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-18.jpg)"></div>
+            <a class="post-card-image-link" href="/GPU-Installation-Guide">
+                <div class="post-card-image" style="background-image: url(/assets/images/stock/images-stock-photo-0127845.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94">
+            <a class="post-card-content-link" href="/GPU-Installation-Guide">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">Algorithm</span>
+                                <span class="post-card-tags">Guide</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">Mobius</h2>
+                    <h2 class="post-card-title">Ubuntu 16.04 + GTX 1050ti + Cuda 8.0 + cuDNN 6.0 Installation Guide</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Description
-
-待补
-</p>
+                    <p>Pre Read 据消息称 NVIDIA 的 Cuda 9.1 系列并不支持 GTX 1060 以下的显卡，于是便有了这一篇经过两三个晚上折腾后的安装指南。 Installation Guide 安装 NVIDIA 显卡驱动 若之前有安装过 NVIDIA 的其它驱动，需要先将其完全卸载 ： sudo apt-get purge nvidia* 添加 NVIDIA 源 ： sudo add-apt-repository ppa:graphics-drivers/ppa 安装指定 NVIDIA</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -717,18 +681,18 @@ aca
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">AtCoder Regular Contest 081 E</div>
+    <div class="floating-header-title">LeetCode Weekly Contest 77</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=AtCoder+Regular+Contest+081+E&amp;url=https://jekyller.github.io/jasper2/AtCoder-Regular-Contest-081-E"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=LeetCode+Weekly+Contest+77&amp;url=https://jekyller.github.io/jasper2/LeetCode-Weekly-Contest-77"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/AtCoder-Regular-Contest-081-E"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/LeetCode-Weekly-Contest-77"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 
