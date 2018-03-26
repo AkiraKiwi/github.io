@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-26T01:00:23+08:00</updated><id>http://localhost:4000/</id><title type="html">drone - 以终为始，慎终如始。</title><subtitle>The personal publishing platform</subtitle><entry><title type="html">LeetCode Weekly Contest 77</title><link href="http://localhost:4000/LeetCode-Weekly-Contest-77" rel="alternate" type="text/html" title="LeetCode Weekly Contest 77" /><published>2018-03-25T20:00:00+08:00</published><updated>2018-03-25T20:00:00+08:00</updated><id>http://localhost:4000/LeetCode-Weekly-Contest-77</id><content type="html" xml:base="http://localhost:4000/LeetCode-Weekly-Contest-77">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-26T09:20:10+08:00</updated><id>http://localhost:4000/</id><title type="html">drone - 以终为始，慎终如始。</title><subtitle>The personal publishing platform</subtitle><entry><title type="html">Welcome here</title><link href="http://localhost:4000/welcome" rel="alternate" type="text/html" title="Welcome here" /><published>2018-03-26T07:59:59+08:00</published><updated>2018-03-26T07:59:59+08:00</updated><id>http://localhost:4000/welcome</id><content type="html" xml:base="http://localhost:4000/welcome">&lt;p&gt;Hey! Welcome to here, it’s great to have you :)&lt;/p&gt;
+
+&lt;h2 id=&quot;show-somethings&quot;&gt;Show somethings&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;this-is-the-mathjax&quot;&gt;this is the mathjax&lt;/h3&gt;
+
+&lt;p&gt;inline : calculate this  $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$&lt;/p&gt;
+
+&lt;p&gt;block :
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}
+a &amp; b &amp; c \\\\ 
+. &amp; . &amp; .\\\\ 
+a &amp; b &amp; c 
+\end{bmatrix} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;this-is-the-code&quot;&gt;this is the code&lt;/h3&gt;
+
+&lt;p&gt;see this :&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                                       
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;this-is-the-picture&quot;&gt;this is the picture&lt;/h3&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;/assets/images/stock/images-stock-photo-0127845.jpg&quot;&gt;
+    &lt;img src=&quot;/assets/images/stock/images-stock-photo-0127845.jpg&quot; /&gt;
+    &lt;/a&gt;
+	&lt;figcaption&gt;
+		holidays.
+	&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name>Drone</name></author><category term="Getting started" /><summary type="html">Hey! Welcome to here, it’s great to have you :)</summary></entry><entry><title type="html">LeetCode Weekly Contest 77</title><link href="http://localhost:4000/LeetCode-Weekly-Contest-77" rel="alternate" type="text/html" title="LeetCode Weekly Contest 77" /><published>2018-03-25T20:00:00+08:00</published><updated>2018-03-25T20:00:00+08:00</updated><id>http://localhost:4000/LeetCode-Weekly-Contest-77</id><content type="html" xml:base="http://localhost:4000/LeetCode-Weekly-Contest-77">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;https://leetcode.com/contest/weekly-contest-77&quot;&gt;It’s from the LeetCode&lt;/a&gt;&lt;/p&gt;
 
@@ -1182,95 +1220,4 @@ austria
 	&lt;figcaption&gt;
 		fighting.
 	&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Drone</name></author><category term="guide" /><summary type="html">Introduction</summary></entry><entry><title type="html">MIT 6.828 OverView</title><link href="http://localhost:4000/MIT-6.828-OverView" rel="alternate" type="text/html" title="MIT 6.828 OverView" /><published>2017-09-27T07:59:59+08:00</published><updated>2017-09-27T07:59:59+08:00</updated><id>http://localhost:4000/MIT-6.828-OverView</id><content type="html" xml:base="http://localhost:4000/MIT-6.828-OverView">&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;6.828 是 MIT 的操作系统工程这门课的课程编号，同时 MIT 还开发了一个用于教学的操作系统 xv6 (x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6))。&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://pdos.csail.mit.edu/6.828/2017/schedule.html&quot;&gt;schedule&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;6828-goals&quot;&gt;6.828 goals&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Understand operating systems in detail by designing and implementing a small O/S &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Hands-on experience with building systems  (“Applying 6.033”) &lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-do-applications-want-from-an-os&quot;&gt;What do applications want from an O/S?&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Abstract the hardware for convenience and portability&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Multiplex the hardware among multiple applications&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Isolate applications to contain bugs&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Allow sharing among applications&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-is-an-os&quot;&gt;What is an OS?&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;e.g. OSX, Windows, Linux&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;the small view: a h/w management library&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;the big view: physical machine -&amp;gt; abstract one w/ better properties&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;organization-layered-picture&quot;&gt;Organization: layered picture&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;h/w: CPU, mem, disk&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;kernel: [various services]&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;user: applications, e.g. vi and gcc&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;we care a lot about the interfaces and internel kernel structure&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-services-does-an-os-kernel-typically-provide&quot;&gt;What services does an O/S kernel typically provide?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;processes&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;memory&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;file contents&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;directories and file names&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;security&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;many others: users, IPC, network, time, terminals&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;what-does-an-os-abstraction-look-like&quot;&gt;What does an O/S abstraction look like?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Applications only see them via system calls&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Examples, from UNIX / Linux:&lt;br /&gt;
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;out&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;why-is-os-designimplementation-hardinteresting&quot;&gt;Why is O/S design/implementation hard/interesting?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;the environment is unforgiving: weird h/w, no debugger&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;it must be efficient (thus low-level?)&lt;br /&gt;
-  …but abstract/portable (thus high-level?)&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;powerful (thus many features?)&lt;br /&gt;
-  …but simple (thus a few composable building blocks?)&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;features interact: &lt;code class=&quot;highlighter-rouge&quot;&gt;fd = open(); ...; fork()&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;behaviors interact: CPU priority vs memory allocator.&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;open problems: security, multi-core&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;my-system-information&quot;&gt;My System Information&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Distributor ID:	Ubuntu
-Description:	Ubuntu 14.04.5 LTS
-Release:		14.04
-Codename:		trusty
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;start-your-journey-&quot;&gt;Start your journey !&lt;/h3&gt;
-
-&lt;figure&gt;
-	&lt;a href=&quot;https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg&quot;&gt;&lt;img src=&quot;https://akirakiwi.github.io/assets/img/stock/images-stock-photo-0127845.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;
-		fighting.
-	&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Drone</name></author><category term="guide" /><summary type="html">Description</summary></entry></feed>
+&lt;/figure&gt;</content><author><name>Drone</name></author><category term="guide" /><summary type="html">Introduction</summary></entry></feed>
