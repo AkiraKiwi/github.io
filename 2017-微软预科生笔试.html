@@ -35,7 +35,7 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The personal publishing platform" />
     <link rel="shortcut icon" href="http://localhost:4000//assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/2017-MS" />
+    <link rel="canonical" href="http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
@@ -43,7 +43,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2017 微软预科生笔试" />
     <meta property="og:description" content="Contest Information source: It’s from the HihoCoder 昨天刚做了 2018 的笔试，想起来之前做过 2017 的题目，顺便写一下题解。 Problem A : Queen Attack $N$个皇后在一个无限大的棋盘上, 处于同一行，同一列或同一对角线上的两个皇后可以互相攻击。给出 $N$ 个皇后的位置，请问有多少对皇后可以互相攻击？ 数据范围： For $80\%$ of the data, $1 &lt;= N &lt;= 1000$ For $100\%$ of the data, $1 &lt;= N &lt;= 100000, 0 &lt;= R_i, C_i &lt;= 1000000000$ Input 5" />
-    <meta property="og:url" content="http://localhost:4000/2017-MS" />
+    <meta property="og:url" content="http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95" />
     <meta property="og:image" content="http://localhost:4000/assets/images/locked.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/username" />
     <meta property="article:author" content="https://www.facebook.com/username" />
@@ -73,7 +73,7 @@
         "name": "drone - 以终为始，慎终如始.",
         "logo": "http://localhost:4000/assets/images/blog-icon.png"
     },
-    "url": "http://localhost:4000/2017-MS",
+    "url": "http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95",
     "image": {
         "@type": "ImageObject",
         "url": "http://localhost:4000/assets/images/locked.jpg",
@@ -82,7 +82,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000/2017-MS"
+        "@id": "http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95"
     },
     "description": "Contest Information source: It’s from the HihoCoder 昨天刚做了 2018 的笔试，想起来之前做过 2017 的题目，顺便写一下题解。 Problem A : Queen Attack $N$个皇后在一个无限大的棋盘上, 处于同一行，同一列或同一对角线上的两个皇后可以互相攻击。给出 $N$ 个皇后的位置，请问有多少对皇后可以互相攻击？ 数据范围： For $80\%$ of the data, $1 &lt;= N &lt;= 1000$ For $100\%$ of the data, $1 &lt;= N &lt;= 100000, 0 &lt;= R_i, C_i &lt;= 1000000000$ Input 5"
 }
@@ -443,7 +443,7 @@ For $100\%$ of the data, $1 &lt;= N &lt;= 2000, 0 &lt;= F_i &lt;= N, 0 &lt;= IN_
 
 <h2 id="solution-3">Solution</h2>
 
-<p>先解决一个小问题：对于每一个有下属的 NPC，刺杀他需要 $IN$ 点信息，他有 $x$ 个下属，杀死每个下属需要 $C$ 点花费，但能获得 $IP$ 个信息，求刺杀他的最小花费。这样就变成了一道很明显的 $01$ 背包 问题（需要注意背包最大容量的设定）。那么原问题就变成从叶子节点层层递归上去求解 $01$ 背包。<br /></p>
+<p>先解决一个小问题：对于每一个有下属的 NPC，刺杀他需要获得关于他的 $IN$ 点信息，他有 $x$ 个下属，杀死每个下属需要 $C$ 点花费，但能获得其上司的 $IP$ 个信息，求刺杀他的最小花费。这样就变成了一道很明显的 $01$ 背包 问题（需要注意背包最大容量的设定）。那么原问题就变成从叶子节点层层递归上去求解 $01$ 背包。<br /></p>
 
 <h2 id="ac-code-3">AC code</h2>
 
@@ -637,6 +637,15 @@ For $100\%$ of the data, $1 &lt;= N &lt;= 2000, 0 &lt;= F_i &lt;= N, 0 &lt;= IN_
                                 
                                   
                                     
+                                        
+                                        
+                                            <li><a href="/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95">2018 微软预科生面试</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
                                   
                                 
                                   
@@ -662,8 +671,6 @@ For $100\%$ of the data, $1 &lt;= N &lt;= 2000, 0 &lt;= F_i &lt;= N, 0 &lt;= IN_
                                   
                                     
                                         
-                                        
-                                            <li><a href="/2015-SWERC-B">2015 Southwestern Europe Regional Contest (SWERC) B</a></li>
                                         
                                     
                                   
@@ -880,7 +887,7 @@ For $100\%$ of the data, $1 &lt;= N &lt;= 2000, 0 &lt;= F_i &lt;= N, 0 &lt;= IN_
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 32 posts  →
+                                    See all 33 posts  →
                                 
                             </a>
                         </footer>
@@ -893,25 +900,25 @@ For $100\%$ of the data, $1 &lt;= N &lt;= 2000, 0 &lt;= F_i &lt;= N, 0 &lt;= IN_
                 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/welcome">
-                <div class="post-card-image" style="background-image: url(/assets/images/welcome.jpg)"></div>
+            <a class="post-card-image-link" href="/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95">
+                <div class="post-card-image" style="background-image: url(/assets/images/locked.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/welcome">
+            <a class="post-card-content-link" href="/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">Getting started</span>
+                                <span class="post-card-tags">Algorithm</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">Welcome here</h2>
+                    <h2 class="post-card-title">2018 微软预科生面试</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Hey! Welcome to here, it's great to have you :) ## Show somethings --- ### this is the mathjax inline : calculate this $ \ \sum^n_i(a_i+b)\times (\frac{1}{x_i}) = y^c$ block : $$ \begin{bmatrix}</p>
+                    <p>4月2日参加在线笔试，4月13日收到了面试邀请，也是非常开心。\\ 面试时间：4月26日 \\ 面试地点：中关村微软大厦 \\ > 插曲：4月26日因为高铁班次原因，HR小姐姐非常好心地帮我把面试时间调整到了下午并让我注意安全别急着赶路，真是大厂风范，非常感激了。 ## 面试流程 ### 准备 * 等待面试的同学都被安排在一间大屋子里休息，里面提供饮料（气泡饮料和水）、盒饭（咖喱鸡块，意面等），还能享受在微软大厦中俯瞰中关村的风光 23333 \\ * 认识了几个来自天南地北的小伙伴，有的已经等待三面了，最少的也面了一面了，只有我是刚到，马上交流了一下面试经历，调整了一下心态\\ * 下午一点开始面试 ### 一面 * 面试官是一位很年轻很有活力的程序猿，上来先聊了一会 Surface * 聊天时问了一个问题：说一个你觉得最有趣的数据结构 * 傻乎乎地说了 Treap * 说完发现自己退役后好久没用了，细节都忘了 * 总结：简直愚蠢，面试时应该时刻保持清醒</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -995,12 +1002,12 @@ For $100\%$ of the data, $1 &lt;= N &lt;= 2000, 0 &lt;= F_i &lt;= N, 0 &lt;= IN_
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=2017+%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95&amp;url=https://jekyller.github.io/jasper2/2017-MS"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=2017+%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95&amp;url=https://jekyller.github.io/jasper2/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/2017-MS"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

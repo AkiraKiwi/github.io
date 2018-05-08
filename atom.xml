@@ -14,10 +14,27 @@
 
 </description>
         
-        <pubDate>Tue, 03 Apr 2018 23:59:59 +0000</pubDate>
+        <pubDate>Sun, 06 May 2018 23:59:59 +0000</pubDate>
         <link>
         http://localhost:4000/welcome</link>
         <guid isPermaLink="true">http://localhost:4000/welcome</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>2018 微软预科生面试</title>
+        
+          <description>&lt;p&gt;4月2日参加在线笔试，4月13日收到了面试邀请，也是非常开心。&lt;br /&gt;
+面试时间：4月26日 &lt;br /&gt;
+面试地点：中关村微软大厦 \&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 26 Apr 2018 21:59:59 +0000</pubDate>
+        <link>
+        http://localhost:4000/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95</guid>
       </item>
       
     
@@ -31,8 +48,8 @@
         
         <pubDate>Tue, 03 Apr 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/2017-MS</link>
-        <guid isPermaLink="true">http://localhost:4000/2017-MS</guid>
+        http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95</link>
+        <guid isPermaLink="true">http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95</guid>
       </item>
       
     
