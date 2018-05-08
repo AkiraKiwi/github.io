@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-08T15:12:03+08:00</updated><id>http://localhost:4000/</id><title type="html">drone - 以终为始，慎终如始.</title><subtitle>The personal publishing platform</subtitle><entry><title type="html">Welcome here</title><link href="http://localhost:4000/welcome" rel="alternate" type="text/html" title="Welcome here" /><published>2018-05-07T07:59:59+08:00</published><updated>2018-05-07T07:59:59+08:00</updated><id>http://localhost:4000/welcome</id><content type="html" xml:base="http://localhost:4000/welcome">&lt;p&gt;Hey! Welcome to here, it’s great to have you :)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-08T15:24:55+08:00</updated><id>http://localhost:4000/</id><title type="html">drone - 以终为始，慎终如始.</title><subtitle>The personal publishing platform</subtitle><entry><title type="html">Welcome here</title><link href="http://localhost:4000/welcome" rel="alternate" type="text/html" title="Welcome here" /><published>2018-05-07T07:59:59+08:00</published><updated>2018-05-07T07:59:59+08:00</updated><id>http://localhost:4000/welcome</id><content type="html" xml:base="http://localhost:4000/welcome">&lt;p&gt;Hey! Welcome to here, it’s great to have you :)&lt;/p&gt;
 
 &lt;h2 id=&quot;show-somethings&quot;&gt;Show somethings&lt;/h2&gt;
 &lt;hr /&gt;
@@ -38,22 +38,24 @@ a &amp; b &amp; c
 	&lt;/figcaption&gt;
 &lt;/figure&gt;</content><author><name>Drone</name></author><category term="Getting started" /><summary type="html">Hey! Welcome to here, it’s great to have you :)</summary></entry><entry><title type="html">2018 微软预科生面试</title><link href="http://localhost:4000/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95" rel="alternate" type="text/html" title="2018 微软预科生面试" /><published>2018-04-27T05:59:59+08:00</published><updated>2018-04-27T05:59:59+08:00</updated><id>http://localhost:4000/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95</id><content type="html" xml:base="http://localhost:4000/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95">&lt;p&gt;4月2日参加在线笔试，4月13日收到了面试邀请，也是非常开心。&lt;br /&gt;
 面试时间：4月26日 &lt;br /&gt;
-面试地点：中关村微软大厦 \&lt;/p&gt;
+面试地点：中关村微软大厦&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;插曲：4月26日因为高铁班次原因，HR小姐姐非常好心地帮我把面试时间调整到了下午并让我注意安全别急着赶路，真是大厂风范，非常感激了。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;面试流程&quot;&gt;面试流程&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;准备&quot;&gt;准备&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;等待面试的同学都被安排在一间大屋子里休息，里面提供饮料（气泡饮料和水）、盒饭（咖喱鸡块，意面等），还能享受在微软大厦中俯瞰中关村的风光 23333 \&lt;/p&gt;
+    &lt;p&gt;等待面试的同学都被安排在一间大屋子里休息，提供饮料、盒饭，还能享受在微软大厦中俯瞰中关村的风光 :)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;认识了几个来自天南地北的小伙伴，有的已经等待三面了，最少的也面了一面了，只有我是刚到，马上交流了一下面试经历，调整了一下心态\&lt;/p&gt;
+    &lt;p&gt;认识了几个来自天南地北的小伙伴&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;下午一点开始面试&lt;/p&gt;
@@ -61,32 +63,33 @@ a &amp; b &amp; c
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;一面&quot;&gt;一面&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;面试官是一位很年轻很有活力的程序猿，上来先聊了一会 Surface&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;聊天时问了一个问题：说一个你觉得最有趣的数据结构
+  &lt;li&gt;问了一个问题：说一个你觉得最有趣的数据结构
     &lt;ul&gt;
       &lt;li&gt;傻乎乎地说了 Treap&lt;/li&gt;
-      &lt;li&gt;说完发现自己退役后好久没用了，细节都忘了&lt;/li&gt;
-      &lt;li&gt;总结：简直愚蠢，面试时应该时刻保持清醒&lt;/li&gt;
+      &lt;li&gt;但是自己退役后好久没用了，细节都忘了&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;第一题：简单地写一下数字转字符串
     &lt;ul&gt;
-      &lt;li&gt;记得判断负数即可&lt;/li&gt;
+      &lt;li&gt;记得判断负数&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;第二题：给出两个已排序数组，要求找出它们合并后的中位数
     &lt;ul&gt;
       &lt;li&gt;刚开始很蠢地说了一个 $O(n)$ 的做法&lt;/li&gt;
-      &lt;li&gt;面试官提醒还有没有时间复杂度更优的 idea, 于是想到了二分瞎搞&lt;/li&gt;
+      &lt;li&gt;面试官提醒还有没有时间复杂度更优的 idea, 于是想到了二分&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;二面&quot;&gt;二面&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -97,24 +100,25 @@ a &amp; b &amp; c
   &lt;/li&gt;
   &lt;li&gt;第一题：找出一个字符串里第一个只出现过一次的字符
     &lt;ul&gt;
-      &lt;li&gt;考虑到想一次跑出结果，说了一个用队列一次遍历出结果的方法&lt;/li&gt;
-      &lt;li&gt;面试官提示要用常数空间，但是我忘记了ASCII码大小，最后定了个1000的数组遍历两次&lt;/li&gt;
+      &lt;li&gt;考虑到想一次跑出结果，说了一个用队列存储的方法&lt;/li&gt;
+      &lt;li&gt;面试官提示要用常数空间，但是我忘记了ASCII码大小，最后设了个1000大小的数组遍历两次&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;第二题：2 SUM问题
     &lt;ul&gt;
       &lt;li&gt;先用 stl::map 写了一下&lt;/li&gt;
-      &lt;li&gt;面试官要求时间复杂度更优，于是瞎想了一个前后同时扫的方法，也没去想证明了，跟着感觉走&lt;/li&gt;
+      &lt;li&gt;面试官要求时间复杂度更优，于是想了一个从前后同时扫的方法，也没去想证明了，跟着感觉走&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;第三题：求LCA
     &lt;ul&gt;
-      &lt;li&gt;之前学的各种版本的操作都不记得啦，直接写了一个预处理深度的，然后时间就到了&lt;/li&gt;
+      &lt;li&gt;直接写了一个预处理深度的方法，然后时间就到了&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;三面&quot;&gt;三面&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -141,16 +145,16 @@ a &amp; b &amp; c
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
-
-&lt;p&gt;4月28日晚收到了HR的邮件，表示我的面试结果很positive, :)&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+4月28日晚收到了HR的邮件，表示我的面试结果很positive, :)&lt;/p&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;ACMer 可以刷一下 LeetCode 适应面试题的风格难度（避免想太多）&lt;/li&gt;
-  &lt;li&gt;最后准备一下相关的项目内容来和面试官聊&lt;/li&gt;
-  &lt;li&gt;最后平常心应该都能得到很好的结果&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">4月2日参加在线笔试，4月13日收到了面试邀请，也是非常开心。 面试时间：4月26日 面试地点：中关村微软大厦 \</summary></entry><entry><title type="html">2017 微软预科生笔试</title><link href="http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95" rel="alternate" type="text/html" title="2017 微软预科生笔试" /><published>2018-04-03T20:00:00+08:00</published><updated>2018-04-03T20:00:00+08:00</updated><id>http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95</id><content type="html" xml:base="http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
+  &lt;li&gt;可以准备一下相关的项目内容来和面试官聊&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Drone</name></author><category term="algorithm" /><summary type="html">4月2日参加在线笔试，4月13日收到了面试邀请，也是非常开心。 面试时间：4月26日 面试地点：中关村微软大厦</summary></entry><entry><title type="html">2017 微软预科生笔试</title><link href="http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95" rel="alternate" type="text/html" title="2017 微软预科生笔试" /><published>2018-04-03T20:00:00+08:00</published><updated>2018-04-03T20:00:00+08:00</updated><id>http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95</id><content type="html" xml:base="http://localhost:4000/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95">&lt;h2 id=&quot;contest-information&quot;&gt;Contest Information&lt;/h2&gt;
 
 &lt;p&gt;source: &lt;a href=&quot;http://hihocoder.com/contest/mstest2017april/problems&quot;&gt;It’s from the HihoCoder&lt;/a&gt;&lt;/p&gt;
 
