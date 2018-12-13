@@ -125,9 +125,9 @@ into the {body} of the default.hbs template -->
     <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
     <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
     <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li>
-    <li class="nav-guide" role="menuitem"><a href="/tag/guide/">Guide</a></li>
+    <li class="nav-guide" role="menuitem"><a href="/tag/tutorials/">tutorials</a></li>
     <li class="nav-algorithm" role="menuitem"><a href="/tag/algorithm/">Algorithm</a></li> 
-    <li class="nav-algorithm" role="menuitem"><a href="/tag/drone/">Drone</a></li>     
+    <!-- <li class="nav-algorithm" role="menuitem"><a href="/tag/drone/">Drone</a></li>      -->
 </ul>
 
         
@@ -313,17 +313,17 @@ into the {body} of the default.hbs template -->
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
+                                <img class="author-profile-image" src="/assets/images/avatar/darron.jpg" alt="Darron" />
                             
                             <section class="author-card-content">
-                                <h4 class="author-card-name"><a href="/author/Drone">Drone</a></h4>
+                                <h4 class="author-card-name"><a href="/author/Darron">Darron</a></h4>
                                 
                                     <p>The professional publishing platform</p>
                                 
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/author/Drone">Read More</a>
+                            <a class="author-card-button" href="/author/Darron">Read More</a>
                         </div>
                     
                 
@@ -394,6 +394,15 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
+                                            <li><a href="/2018-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E9%9D%A2%E8%AF%95">2018 微软预科生面试</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
                                             <li><a href="/2017-%E5%BE%AE%E8%BD%AF%E9%A2%84%E7%A7%91%E7%94%9F%E7%AC%94%E8%AF%95">2017 微软预科生笔试</a></li>
                                         
                                     
@@ -413,8 +422,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/WannaFly-Round-2-B">WannaFly Round #2 B</a></li>
                                         
                                     
                                   
@@ -635,7 +642,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/algorithm/">
                                 
-                                    See all 32 posts  →
+                                    See all 33 posts  →
                                 
                             </a>
                         </footer>
@@ -666,17 +673,17 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Gym #100247 K</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>## Contest Information source: [It's from the Gym #100247 of codeforces](http://codeforces.com/gym/100247/problem/K) ## Problem H $n$ 支队伍参加了 $3$ 场比赛，定义两支队伍属于一组，当且仅当两支队伍至少在一场比赛中排名小于另一支队伍。给出他们每场比赛的排名，求一共有多少组 数据范围：$ n ≤ 200000 $ ## Solution 我们容易想到的做法是按照某一场比赛排序后，从后往前统计在另外两场比赛中排名在当前队伍前的队伍数，但这样会产生重复，又 $n$ 的数量级太大，也不能使用二维树状数组。 那么，我们考虑两支队伍之间的关系：对于满足在同一组的两支队伍，其中一支队伍必定在两场比赛中排名小于另一支；而不满足同组关系的两支队伍，其中一支队伍必定在三场比赛中排名小于另一支。所以我们对于第一、二场，第二、三场，第一、三场比赛分别统计在两场比赛中都小于的组的数量，那么满足同一组的两支队伍肯定会被统计一次，设为 $A$，而不满足同一组的两支队伍就会被统计三次，设为$B$。那么最终答案就是$ tot - (A+B-tot)/2,tot</p>
+                    <p>## Contest Information source: [It's from the Gym #100247 of</p>
                 </section>
             </a>
             <footer class="post-card-meta">
                 
                     
                         
-                        <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
+                        <img class="author-profile-image" src="/assets/images/avatar/darron.jpg" alt="Darron" />
                         
                         <span class="post-card-author">
-                            <a href="/author/Drone/">Drone</a>
+                            <a href="/author/Darron/">Darron</a>
                         </span>
                     
                 
@@ -709,17 +716,17 @@ into the {body} of the default.hbs template -->
                     <h2 class="post-card-title">CodeForces Round #431 (Div. 2) D</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>Problem Information source: It’s from the Round #431 (Div. 2) of the codeforces Description 在一个平面坐标系上有一个矩形舞台，四个顶点为 $ (0,0), (w,0), (w,h), (0,h) $，在舞台的左侧和下方一共有 $n$ 个舞者， 坐标分别为 $ (x_i, 0), (0, y_i) $，每个舞者在第 $t_i$ 时刻会向垂直于其所在坐标系的方向以每秒一个单位的速度移动，如果与其它舞者碰撞，则互相交换移动方向，直到抵达舞台边缘停止。求每个舞者最后抵达的位置。 On</p>
+                    <p>Problem Information source: It’s from the Round #431 (Div. 2)</p>
                 </section>
             </a>
             <footer class="post-card-meta">
                 
                     
                         
-                        <img class="author-profile-image" src="/assets/images/drone.png" alt="Drone" />
+                        <img class="author-profile-image" src="/assets/images/avatar/darron.jpg" alt="Darron" />
                         
                         <span class="post-card-author">
-                            <a href="/author/Drone/">Drone</a>
+                            <a href="/author/Darron/">Darron</a>
                         </span>
                     
                 
